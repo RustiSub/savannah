@@ -9,6 +9,7 @@ window.addEventListener("load", function() {
   svgAnimal = SVG.adopt(svgAnimal);
 
   svgBackground = SVG.adopt(svgBackground);
+
   var nestedBackground = svgBackground.nested();
 
   var svgAnimalLayer = background.getElementById('animalLayer');
@@ -24,15 +25,31 @@ window.addEventListener("load", function() {
   nestedAnimalLayer.x(svgAnimalLayerRect.x());
   nestedAnimalLayer.y(svgAnimalLayerRect.y());
 
-  //svgBackground.viewbox(0, 0, 508 * 2, 285.8 * 2);
+  // svgBackground.viewbox(0, 0, 1920, 1080);
 
   var camera = document.getElementById('camera').contentDocument;
-  var svgCamera = camera.getElementById('g3314');
+  var svgCamera = camera.getElementById('g3300');
   svgCamera = SVG.adopt(svgCamera);
+  var dimensions = camera.getElementById('dimensions');
+
+  dimensions = SVG.adopt(dimensions);
+
+  svgCamera.toParent(nestedBackground);
 
   svgCamera.scale(0.5);
 
-  svgCamera.toParent(nestedBackground);
+
+  var rect4648 = background.getElementById('rect4648');
+  rect4648 = SVG.adopt(rect4648);
+
+  svgCamera.x(rect4648.width() / 2);
+
+
+  // dimensions = SVG.adopt(dimensions);
+
+  //console.log(svgCamera.select('#dimensions'));
+
+  // svgCamera.x(rect4648.width() / 2 );
 
 /*
 
