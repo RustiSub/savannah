@@ -1,5 +1,7 @@
 window.addEventListener("load", function() {
 
+  var zoomLevel = 1;
+
   var background = document.getElementById('looptest').contentDocument;
 
   var parent = background.getElementById('svg8');
@@ -10,7 +12,11 @@ window.addEventListener("load", function() {
   var scene1Group = background.getElementById('scene1Group');
   scene1Group = SVG.adopt(scene1Group);
 
-  var nestedParent1 = parent.nested();
+  var sceneParent = parent.nested();
+
+  sceneParent.viewbox(parent.viewbox());
+
+  var nestedParent1 = sceneParent.nested();
 
   var nestedScene1 = scene1Group.toParent(nestedParent1);
   var nestedScene1Parent = nestedScene1.parent();
@@ -25,7 +31,7 @@ window.addEventListener("load", function() {
   var scene2Group = background.getElementById('scene2Group');
   scene2Group = SVG.adopt(scene2Group);
 
-  var nestedParent2 = parent.nested();
+  var nestedParent2 = sceneParent.nested();
 
   var nestedScene2 = scene2Group.toParent(nestedParent2);
   var nestedScene2Parent = nestedScene2.parent();
@@ -76,34 +82,55 @@ window.addEventListener("load", function() {
   });
   scene1Observer.observe(nestedScene1Parent.node, mutationConfig);
 
-/*  camera.cx(scene1.cx());
-  camera.cy(scene1.cy());*/
+  var cameraZoom = function(sceneParent, zoom) {
+    zoom *= -1;
+
+    var viewbox = sceneParent.viewbox();
+    viewbox.x = camera.bbox().x - zoom;
+    viewbox.y = camera.bbox().y - zoom;
+    viewbox.width = camera.bbox().width + (zoom * 2);
+    viewbox.height = camera.bbox().height + (zoom * 2);
+
+    sceneParent.viewbox(viewbox);
+
+    return viewbox;
+  };
+
+  cameraZoom(sceneParent, zoomLevel);
 
   document.onkeydown = function(event) {
+    var movement = 10 / (Math.abs(zoomLevel));
+
     switch (event.keyCode) {
       case 37:
-        nestedScene1Parent.x(nestedScene1Parent.x() + 10);
-        nestedScene2Parent.x(nestedScene2Parent.x() + 10);
-        break;
-      case 38:
-        var viewbox = parent.viewbox();
-
-        viewbox.width -= 1;
-        viewbox.height -= 1;
-
-        parent.viewbox(viewbox);
+        nestedScene1Parent.x(nestedScene1Parent.x() + movement);
+        nestedScene2Parent.x(nestedScene2Parent.x() + movement);
         break;
       case 39:
-        nestedScene1Parent.x(nestedScene1Parent.x() - 10);
-        nestedScene2Parent.x(nestedScene2Parent.x() - 10);
+        nestedScene1Parent.x(nestedScene1Parent.x() - movement);
+        nestedScene2Parent.x(nestedScene2Parent.x() - movement);
+        break;
+      case 38:
+        nestedScene1Parent.y(nestedScene1Parent.y() + movement);
+        nestedScene2Parent.y(nestedScene2Parent.y() + movement);
         break;
       case 40:
-        var viewbox = parent.viewbox();
+        nestedScene1Parent.y(nestedScene1Parent.y() - movement);
+        nestedScene2Parent.y(nestedScene2Parent.y() - movement);
+        break;
+      case 90:
+        zoomLevel += 1;
 
-        viewbox.width += 1;
-        viewbox.height += 1;
+        zoomLevel = zoomLevel <= 0 ? 1 : zoomLevel;
 
-        parent.viewbox(viewbox);
+        cameraZoom(sceneParent, zoomLevel);
+        break;
+      case 83:
+        zoomLevel -= 1;
+
+        zoomLevel = zoomLevel <= 0 ? 1 : zoomLevel;
+
+        cameraZoom(sceneParent, zoomLevel);
         break;
     }
   };

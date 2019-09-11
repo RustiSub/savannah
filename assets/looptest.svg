@@ -9,9 +9,9 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    id="svg8"
    version="1.1"
-   viewBox="0 0 70 120"
-   height="720px"
-   width="420px"
+   width="240"
+   height="270"
+   viewBox="0 0 80 90"
    sodipodi:docname="looptest.svg"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
   <sodipodi:namedview
@@ -27,13 +27,19 @@
      inkscape:window-height="837"
      id="namedview821"
      showgrid="false"
-     inkscape:zoom="1.332"
-     inkscape:cx="178.3033"
-     inkscape:cy="302.88632"
+     inkscape:zoom="2.664"
+     inkscape:cx="65.560683"
+     inkscape:cy="38.281201"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
-     inkscape:current-layer="g4557" />
+     inkscape:current-layer="scene1Group"
+     scale-x="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:snap-global="false" />
   <defs
      id="defs2" />
   <metadata
@@ -49,18 +55,19 @@
     </rdf:RDF>
   </metadata>
   <g
-     id="scene1Group">
+     id="scene1Group"
+     >
     <rect
        style="opacity:1;fill:#003800;fill-opacity:1;stroke:none;stroke-width:0.13229166;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="scene1"
-       width="79.375"
-       height="92.98214"
+       width="80"
+       height="90"
        x="0"
        y="0" />
     <path
        inkscape:transform-center-y="0.49614235"
        inkscape:transform-center-x="0.7636841"
-       d="m 72.372372,20.12012 -8.648776,-0.401622 -5.233969,6.896969 -2.290654,-8.349583 -8.176793,-2.84652 7.233075,-4.758704 0.180433,-8.6562154 6.760939,5.4085419 8.288307,-2.5033149 -3.054584,8.1013664 z"
+       d="m 52.175095,50.810163 -8.648776,-0.401622 -5.233969,6.896969 -2.290654,-8.349583 -8.176793,-2.84652 7.233074,-4.758704 0.180434,-8.656215 6.760939,5.408542 8.288307,-2.503315 -3.054584,8.101366 z"
        inkscape:randomized="0"
        inkscape:rounded="0"
        inkscape:flatsided="false"
@@ -68,8 +75,8 @@
        sodipodi:arg1="0.50486137"
        sodipodi:r2="6.5190072"
        sodipodi:r1="13.038014"
-       sodipodi:cy="13.813813"
-       sodipodi:cx="60.960961"
+       sodipodi:cy="44.503858"
+       sodipodi:cx="40.763683"
        sodipodi:sides="5"
        id="path4549"
        style="opacity:1;fill:#0087ff;fill-opacity:1;stroke:none;stroke-width:0.2;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -80,9 +87,9 @@
     <rect
        style="opacity:1;fill:#e9fadc;fill-opacity:1;stroke:none;stroke-width:0.13229166;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="scene2"
-       width="79.375"
-       height="92.98214"
-       x="79.375"
+       width="80"
+       height="90"
+       x="80"
        y="0" />
     <rect
        y="58.258255"
@@ -92,10 +99,10 @@
        id="rect4543"
        style="opacity:1;fill:#0087ff;fill-opacity:1;stroke:none;stroke-width:0.2;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
-    <circle
-            style="opacity:1;fill:#00ffff;fill-opacity:1;stroke:none;stroke-width:0.21643837;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-            id="camera"
-            cx="39.6875"
-            cy="46.49107"
-            r="23.723724" />
+  <circle
+     style="opacity:0.41300001;fill:#00ffff;fill-opacity:1;stroke:none;stroke-width:0.21643837;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="camera"
+     cx="40"
+     cy="45"
+     r="23.723724" />
 </svg>
