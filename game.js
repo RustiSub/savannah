@@ -1,15 +1,20 @@
-window.addEventListener("load", function() {
+window.addEventListener("load", async function() {
 
   var zoomLevel = 1;
 
-  var background = document.getElementById('looptest').contentDocument;
-
-  var parent = background.getElementById('svg8');
+  // BEGIN DEV HACK TO WORK WITH UNEXPANDED IMG TAG
+  var img;
+  if (img = document.getElementById('dev_tag')) {
+    let resp = await fetch(img.src);
+    let data = await resp.text();
+    img.parentNode.innerHTML = data;
+  }
+  var parent = document.querySelector('#svg8');
   parent = SVG.adopt(parent);
 
   //Scene 1
 
-  var scene1Group = background.getElementById('scene1Group');
+  var scene1Group = document.querySelector('#scene1Group');
   scene1Group = SVG.adopt(scene1Group);
 
   var sceneParent = parent.nested();
@@ -25,12 +30,12 @@ window.addEventListener("load", function() {
 
   nestedScene1Parent.x(nestedScene1Parent.x());
 
-  var scene1 = background.getElementById('scene1');
+  var scene1 = document.querySelector('#scene1');
   scene1 = SVG.adopt(scene1);
 
   //Scene 2
 
-  var scene2Group = background.getElementById('scene2Group');
+  var scene2Group = document.querySelector('#scene2Group');
     scene2Group = SVG.adopt(scene2Group);
 
     var nestedParent2 = sceneParent.nested();
@@ -40,12 +45,12 @@ window.addEventListener("load", function() {
 
     nestedScene2Parent.x(nestedScene2Parent.x());
 
-    var scene2 = background.getElementById('scene2');
+    var scene2 = document.querySelector('#scene2');
     scene2 = SVG.adopt(scene2);
 
     //Camera
 
-    var cameraGraphic = background.getElementById('cameraGroup');
+    var cameraGraphic = document.querySelector('#cameraGroup');
     cameraGraphic = SVG.adopt(cameraGraphic);
 
     //camera.transform({ scale: 0.40 });
@@ -54,7 +59,7 @@ window.addEventListener("load", function() {
 
     cameraGraphic.front();
 
-    var camera = background.getElementById('cameraReticle');
+    var camera = document.querySelector('#cameraReticle');
     camera = SVG.adopt(camera);
 
     const mutationConfig = {
