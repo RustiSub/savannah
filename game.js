@@ -74,24 +74,22 @@ window.addEventListener("load", function() {
 
         console.log(camera.cx(), centerParent1, centerParent2, scene1Width, scene2Width);
 
+        var fixSeam = 5;
+
         if (camera.cx() > centerParent2 && centerParent2 > centerParent1) {
-          console.log(1);
-          nestedScene1Parent.x(nestedScene1Parent.x() + scene1Width + scene2Width);
+          nestedScene1Parent.x(nestedScene1Parent.x() + scene1Width + scene2Width - fixSeam);
         }
 
         if (camera.cx() > centerParent1 && centerParent1 > centerParent2) {
-          console.log(2);
-          nestedScene2Parent.x(nestedScene2Parent.x() + scene1Width + scene2Width);
+          nestedScene2Parent.x(nestedScene2Parent.x() + scene1Width + scene2Width  - fixSeam);
         }
 
         if (camera.cx() < centerParent2 && centerParent2 < centerParent1) {
-          console.log(3);
-          nestedScene1Parent.x(nestedScene1Parent.x() - scene1Width - scene2Width);
+          nestedScene1Parent.x(nestedScene1Parent.x() - scene1Width - scene2Width + fixSeam);
         }
 
         if (camera.cx() < centerParent1 && centerParent1 < centerParent2) {
-          console.log(4);
-          nestedScene2Parent.x(nestedScene2Parent.x() - scene1Width - scene2Width);
+          nestedScene2Parent.x(nestedScene2Parent.x() - scene1Width - scene2Width + fixSeam);
         }
       });
     });
