@@ -43,10 +43,17 @@ window.addEventListener("load", function() {
 
   //Camera
 
-  var camera = background.getElementById('camera');
-  camera = SVG.adopt(camera);
+  var cameraGraphic = background.getElementById('cameraGroup');
+  cameraGraphic = SVG.adopt(cameraGraphic);
 
-  camera.front();
+  //camera.transform({ scale: 0.40 });
+  //camera.x(scene1Group.node.getBBox().width + camera.node.getBBox().x - (camera.node.getBBox().width / 2));
+  //camera.y(scene1Group.node.getBBox().height + camera.node.getBBox().y - (camera.node.getBBox().height / 2));
+
+  cameraGraphic.front();
+
+  var camera = background.getElementById('cameraReticle');
+  camera = SVG.adopt(camera);
 
   const mutationConfig = {
     attributes: true,
