@@ -124,7 +124,7 @@ window.addEventListener("load", function () {
 
     return viewbox;
   };
-  //zoomLevel = -50;
+  zoomLevel = -3;
   cameraZoom(sceneParent, zoomLevel);
 
   document.onkeydown = function (event) {
