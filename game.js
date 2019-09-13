@@ -107,16 +107,11 @@ window.addEventListener("load", function () {
   scene1Observer.observe(nestedScene1Parent.node, mutationConfig);
 
   var cameraZoom = function (sceneParent, zoom) {
-    //zoom *= 2;
-
-
     var viewbox = sceneParent.viewbox();
 
     if (zoom === 0) {
       return viewbox;
     }
-
-
 
     var zoomMod = (1 / Math.abs(zoom)) * (1/2);
 
@@ -129,14 +124,13 @@ window.addEventListener("load", function () {
       zoomMod = 1 / zoomMod;
     }
 
-    viewbox.x *= zoomMod;
-    viewbox.y *= zoomMod;
-    viewbox.width *= zoomMod;
-    viewbox.height *= zoomMod;
+    var xMod = viewbox.width - (viewbox.width * (zoomMod));
+    var yMod = viewbox.height - (viewbox.height * (zoomMod));
 
-    //console.log(viewbox);
-    console.log(zoom);
-    console.log(zoomMod);
+    viewbox.x += xMod / 2;
+    viewbox.y += yMod / 2;
+    viewbox.width = viewbox.width * (zoomMod);
+    viewbox.height = viewbox.height * (zoomMod);
 
     sceneParent.viewbox(viewbox);
 
