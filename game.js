@@ -83,8 +83,6 @@ window.addEventListener("load", function () {
       var centerParent1 = scene1.x() + nestedScene1Parent.x() + (scene1Width / 2);
       var centerParent2 = scene2.x() + nestedScene2Parent.x() + (scene2Width / 2);
 
-      console.log(camera.cx(), centerParent1, centerParent2, scene1Width, scene2Width);
-
       var fixSeam = 5;
 
       if (camera.cx() > centerParent2 && centerParent2 > centerParent1) {
@@ -175,4 +173,66 @@ window.addEventListener("load", function () {
         break;
     }
   };
+
+  const useEventType = (typeof window.PointerEvent === 'function') ? 'pointer' : 'mouse';
+
+  var moveDistance = {
+    x: 0,
+    y: 0
+  };
+
+  var pointerHandler = (event) => {
+    event.preventDefault();
+
+    if (Math.abs(camera.cx() - event.x) > 10) {
+      moveDistance.x = camera.cx() - event.x;
+    } else {
+      moveDistance.x = 0;
+    }
+
+    if (Math.abs(camera.cy() - event.y) > 10) {
+      moveDistance.y = camera.cy() - event.y;
+    } else {
+      moveDistance.y = 0;
+    }
+
+    moveDistance.x *= (Math.abs(moveDistance.x) / 500);
+    moveDistance.y *= (Math.abs(moveDistance.y) / 500);
+  };
+
+  background.addEventListener('pointermove', pointerHandler);
+
+  var mouseWheelHandler = (event) => {
+    event.preventDefault();
+
+    zoomLevel -= event.deltaY / 50;
+
+    cameraZoom(sceneParent, zoomLevel);
+  };
+
+  background.addEventListener('mousewheel', mouseWheelHandler);
+
+  function update(progress) {
+    // Update the state of the world for the elapsed time since last render
+    if (moveDistance.x) {
+      nestedScene1Parent.x(nestedScene1Parent.x() + moveDistance.x);
+      nestedScene2Parent.x(nestedScene2Parent.x() + moveDistance.x);
+    }
+
+    if (moveDistance.y) {
+      nestedScene1Parent.y(nestedScene1Parent.y() + moveDistance.y);
+      nestedScene2Parent.y(nestedScene2Parent.y() + moveDistance.y);
+    }
+  }
+
+  function loop(timestamp) {
+    var progress = timestamp - lastRender;
+
+    update(progress);
+
+    lastRender = timestamp;
+    window.requestAnimationFrame(loop);
+  }
+  var lastRender = 0;
+  window.requestAnimationFrame(loop);
 });
