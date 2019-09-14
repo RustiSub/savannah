@@ -2,13 +2,15 @@ window.addEventListener("load", async function() {
 
   var zoomLevel = 1;
 
-  // BEGIN DEV HACK TO WORK WITH UNEXPANDED IMG TAG
+  // BEGIN DEV HACK TO WORK WITH IMG TAG
   var img;
   var background = document;
-  if (img = document.getElementById('dev_tag')) {
+  if (img = document.querySelector('img[inline]')) {
     let resp = await fetch(img.src);
     let data = await resp.text();
-    img.parentNode.innerHTML = data;
+    let svg = document.createElement('svg');
+    svg.innerHTML = data;
+    img.replaceWith(svg);
   }
   var parent = document.querySelector('#svg8');
   parent = SVG.adopt(parent);
