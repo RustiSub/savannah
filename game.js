@@ -68,6 +68,46 @@ window.addEventListener("load", function () {
   var camera = background.getElementById('cameraReticle');
   camera = SVG.adopt(camera);
 
+  // Book
+
+  var book = background.getElementById('bookGroup'); //        "ego/map-geopunt-module": "4.1.*@dev",
+  book = SVG.adopt(book);
+
+  book.toParent(parent);
+  book.front();
+  book.hide();
+
+  // Animals
+  var rhino = background.getElementById('rhino'); //        "ego/map-geopunt-module": "4.1.*@dev",
+  rhino = SVG.adopt(rhino);
+
+  rhino.toParent(scene1Group);
+
+  var capturedCount = 0;
+
+  function captureAnimal(animal) {
+    capturedCount += 1;
+
+    var bookSlot = background.getElementById('bookSlot.' + capturedCount); //        "ego/map-geopunt-module": "4.1.*@dev",
+    bookSlot = SVG.adopt(bookSlot);
+
+    animal.toParent(book);
+    animal.front();
+
+    animal.transform(bookSlot.transform());
+
+    var ratio = animal.width() / animal.height();
+
+    animal.width(bookSlot.width() - 10);
+    animal.height(animal.width() / ratio);
+    animal.cx(bookSlot.cx());
+    animal.cy(bookSlot.cy());
+  }
+
+  rhino.click(function(event) {
+    captureAnimal(this.clone());
+  });
+
   const mutationConfig = {
     attributes: true,
     childList: true,
@@ -137,43 +177,6 @@ window.addEventListener("load", function () {
 
   cameraZoom(sceneParent, zoomLevel);
 
-  document.onkeydown = function (event) {
-    var movement = 50 / (Math.abs(zoomLevel));
-
-    switch (event.keyCode) {
-      case 37:
-        nestedScene1Parent.x(nestedScene1Parent.x() + movement);
-        nestedScene2Parent.x(nestedScene2Parent.x() + movement);
-        break;
-      case 39:
-        nestedScene1Parent.x(nestedScene1Parent.x() - movement);
-        nestedScene2Parent.x(nestedScene2Parent.x() - movement);
-        break;
-      case 38:
-        nestedScene1Parent.y(nestedScene1Parent.y() + movement);
-        nestedScene2Parent.y(nestedScene2Parent.y() + movement);
-        break;
-      case 40:
-        nestedScene1Parent.y(nestedScene1Parent.y() - movement);
-        nestedScene2Parent.y(nestedScene2Parent.y() - movement);
-        break;
-      case 90:
-        zoomLevel += 1;
-
-        //zoomLevel = zoomLevel <= 0 ? 1 : zoomLevel;
-
-        cameraZoom(sceneParent, zoomLevel);
-        break;
-      case 83:
-        zoomLevel -= 1;
-
-        //zoomLevel = zoomLevel <= 0 ? 1 : zoomLevel;
-
-        cameraZoom(sceneParent, zoomLevel);
-        break;
-    }
-  };
-
   const useEventType = (typeof window.PointerEvent === 'function') ? 'pointer' : 'mouse';
 
   var moveDistance = {
@@ -182,15 +185,21 @@ window.addEventListener("load", function () {
   };
 
   var pointerHandler = (event) => {
-    event.preventDefault();
+    if (book.visible()) {
+      return event;
+    }
 
-    if (Math.abs(camera.cx() - event.x) > 10) {
+    //event.preventDefault();
+
+    var deadZone = 10;
+
+    if (Math.abs(camera.cx() - event.x) > deadZone) {
       moveDistance.x = camera.cx() - event.x;
     } else {
       moveDistance.x = 0;
     }
 
-    if (Math.abs(camera.cy() - event.y) > 10) {
+    if (Math.abs(camera.cy() - event.y) > deadZone) {
       moveDistance.y = camera.cy() - event.y;
     } else {
       moveDistance.y = 0;
@@ -203,7 +212,7 @@ window.addEventListener("load", function () {
   background.addEventListener('pointermove', pointerHandler);
 
   var mouseWheelHandler = (event) => {
-    event.preventDefault();
+    //event.preventDefault();
 
     zoomLevel -= event.deltaY / 50;
 
@@ -211,6 +220,64 @@ window.addEventListener("load", function () {
   };
 
   background.addEventListener('mousewheel', mouseWheelHandler);
+
+  background.addEventListener('keydown',
+      function (event) {
+        //event.stopPropagation();
+        //event.preventDefault();
+
+        var movement = 50 / (Math.abs(zoomLevel));
+
+        switch (event.keyCode) {
+          case 69:
+            console.log('test');
+            if (book.visible()) {
+              book.hide();
+              cameraGraphic.show();
+            } else {
+              book.show();
+              cameraGraphic.hide();
+              moveDistance.x = 0;
+              moveDistance.y = 0;
+            }
+            break;
+          case 37:
+            nestedScene1Parent.x(nestedScene1Parent.x() + movement);
+            nestedScene2Parent.x(nestedScene2Parent.x() + movement);
+            break;
+          case 39:
+            nestedScene1Parent.x(nestedScene1Parent.x() - movement);
+            nestedScene2Parent.x(nestedScene2Parent.x() - movement);
+            break;
+          case 38:
+            nestedScene1Parent.y(nestedScene1Parent.y() + movement);
+            nestedScene2Parent.y(nestedScene2Parent.y() + movement);
+            break;
+          case 40:
+            nestedScene1Parent.y(nestedScene1Parent.y() - movement);
+            nestedScene2Parent.y(nestedScene2Parent.y() - movement);
+            break;
+          case 90:
+            zoomLevel += 1;
+
+            //zoomLevel = zoomLevel <= 0 ? 1 : zoomLevel;
+
+            cameraZoom(sceneParent, zoomLevel);
+            break;
+          case 83:
+            zoomLevel -= 1;
+
+            //zoomLevel = zoomLevel <= 0 ? 1 : zoomLevel;
+
+            cameraZoom(sceneParent, zoomLevel);
+            break;
+        }
+      }
+  );
+
+  background.addEventListener('click', function(event) {
+
+  });
 
   function update(progress) {
     // Update the state of the world for the elapsed time since last render
