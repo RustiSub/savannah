@@ -1,5 +1,7 @@
 window.addEventListener("load", function () {
 
+  var Vector = wrect.Physics.Vector;
+
   var zoomLevel = 1;
 
   var background = document.getElementById('looptest').contentDocument;
@@ -59,11 +61,22 @@ window.addEventListener("load", function () {
   var cameraGraphic = background.getElementById('cameraGroup');
   cameraGraphic = SVG.adopt(cameraGraphic);
 
-  //cameraGraphic.transform({ scale: 2 });
-  //camera.x(scene1Group.node.getBBox().width + camera.node.getBBox().x - (camera.node.getBBox().width / 2));
-  //camera.y(scene1Group.node.getBBox().height + camera.node.getBBox().y - (camera.node.getBBox().height / 2));
-
   cameraGraphic.front();
+
+  var focusEffect = background.getElementById('focusEffect');
+  focusEffect = SVG.adopt(focusEffect);
+
+  focusEffect.x(parent.viewbox().x);
+  focusEffect.y(parent.viewbox().y);
+  focusEffect.width(parent.viewbox().width);
+  focusEffect.height(parent.viewbox().height);
+
+/*  focusEffect.style('opacity', 0);
+  focusEffect.animate().style('opacity', 1);
+  focusEffect.animate().style('opacity', 0);*/
+
+  focusEffect.front();
+  focusEffect.hide();
 
   var camera = background.getElementById('cameraReticle');
   camera = SVG.adopt(camera);
@@ -184,25 +197,36 @@ window.addEventListener("load", function () {
     y: 0
   };
 
+  var cameraDeadZone = background.getElementById('cameraDeadZone');
+  cameraDeadZone = SVG.adopt(cameraDeadZone);
+
+  //console.log(cameraDeadZone);
+
   var pointerHandler = (event) => {
     if (book.visible()) {
       return event;
     }
 
-    //event.preventDefault();
+    event.preventDefault();
 
-    var deadZone = 10;
+    console.log(focusEnabled);
 
-    if (Math.abs(camera.cx() - event.x) > deadZone) {
+    var deadZone = cameraDeadZone.width() / 2;
+    var mouseVector = new Vector(event.x, event.y);
+    var cameraCenterVector = new Vector(camera.cx(), camera.cy());
+    var distanceVector = mouseVector.distance(cameraCenterVector);
+
+    if (distanceVector > deadZone) {
       moveDistance.x = camera.cx() - event.x;
-    } else {
-      moveDistance.x = 0;
-    }
-
-    if (Math.abs(camera.cy() - event.y) > deadZone) {
       moveDistance.y = camera.cy() - event.y;
     } else {
+      moveDistance.x = 0;
       moveDistance.y = 0;
+    }
+
+    if (focusEnabled) {
+      moveDistance.x *= 0.5;
+      moveDistance.y *= 0.5;
     }
 
     moveDistance.x *= (Math.abs(moveDistance.x) / 500);
@@ -260,23 +284,51 @@ window.addEventListener("load", function () {
           case 90:
             zoomLevel += 1;
 
-            //zoomLevel = zoomLevel <= 0 ? 1 : zoomLevel;
-
             cameraZoom(sceneParent, zoomLevel);
             break;
           case 83:
             zoomLevel -= 1;
 
-            //zoomLevel = zoomLevel <= 0 ? 1 : zoomLevel;
-
             cameraZoom(sceneParent, zoomLevel);
+            break;
+          case 32:
+            focusEnabled = !focusEnabled;
             break;
         }
       }
   );
 
-  background.addEventListener('click', function(event) {
+  var focusEnabled = false;
 
+  background.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+
+    return false;
+  });
+
+  background.addEventListener('mousedown', function(event) {
+
+    switch (event.button) {
+      case 0:
+        break;
+      case 2:
+        focusEnabled = true;
+        break;
+    }
+
+    return false;
+  });
+
+  background.addEventListener('mouseup', function(event) {
+    switch (event.button) {
+      case 0:
+        break;
+      case 2:
+        focusEnabled = false;
+        break;
+    }
+
+    return false;
   });
 
   function update(progress) {
