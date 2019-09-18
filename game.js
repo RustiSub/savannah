@@ -443,11 +443,13 @@ window.addEventListener("load", function () {
       moveDistance.y *= 0.5;
     }
 
-    let absMoveX = Math.abs(moveDistance.x) / zoomLevel;
-    let absMoveXY= Math.abs(moveDistance.y) / zoomLevel;
+    var adjustedMoveClamp = moveClamp * (zoomLevel * 2);
 
-    absMoveX = absMoveX < moveClamp ? absMoveX : moveClamp;
-    absMoveXY = absMoveXY < moveClamp ? absMoveXY : moveClamp;
+    let absMoveX = Math.abs(moveDistance.x) / (zoomLevel * 1.5);
+    let absMoveXY= Math.abs(moveDistance.y) / (zoomLevel * 1.5);
+
+    absMoveX = absMoveX < adjustedMoveClamp ? absMoveX : adjustedMoveClamp;
+    absMoveXY = absMoveXY < adjustedMoveClamp ? absMoveXY : adjustedMoveClamp;
 
     moveDistance.x *= (absMoveX / 500000) * absMoveX;
     moveDistance.y *= (absMoveXY / 500000) * absMoveXY;
@@ -460,7 +462,7 @@ window.addEventListener("load", function () {
   var mouseWheelHandler = (event) => {
     //event.preventDefault();
 
-    let zoomDelta = event.deltaY / 50;
+    let zoomDelta = (event.deltaY / 50) * (zoomLevel / 2);
 
     zoomLevel = zoomLevel - zoomDelta < zoomClamp ? zoomClamp : zoomLevel - zoomDelta;
 
