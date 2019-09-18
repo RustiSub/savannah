@@ -3,6 +3,7 @@ window.addEventListener("load", function () {
   var Vector = wrect.Physics.Vector;
 
   var zoomLevel = 1;
+  let zoomClamp = 0.6;
 
   var background = document.getElementById('looptest').contentDocument;
 
@@ -315,7 +316,7 @@ window.addEventListener("load", function () {
 
     return viewbox;
   };
-  zoomLevel = -2;
+
   cameraZoom(sceneParent, zoomLevel);
 
   const useEventType = (typeof window.PointerEvent === 'function') ? 'pointer' : 'mouse';
@@ -328,7 +329,10 @@ window.addEventListener("load", function () {
   var cameraDeadZone = background.getElementById('cameraDeadZone');
   cameraDeadZone = SVG.adopt(cameraDeadZone);
 
+  // Camera Move with Mouse
+
   var pointerHandler = (event) => {
+    //return event;
     if (book.visible()) {
       return event;
     }
@@ -355,6 +359,8 @@ window.addEventListener("load", function () {
 
     moveDistance.x *= (Math.abs(moveDistance.x) / 500);
     moveDistance.y *= (Math.abs(moveDistance.y) / 500);
+
+    return false;
   };
 
   background.addEventListener('pointermove', pointerHandler);
@@ -362,9 +368,13 @@ window.addEventListener("load", function () {
   var mouseWheelHandler = (event) => {
     //event.preventDefault();
 
-    zoomLevel -= event.deltaY / 50;
+    let zoomDelta = event.deltaY / 50;
+
+    zoomLevel = zoomLevel - zoomDelta < zoomClamp ? zoomClamp : zoomLevel - zoomDelta;
 
     cameraZoom(sceneParent, zoomLevel);
+
+    return false;
   };
 
   background.addEventListener('mousewheel', mouseWheelHandler);
@@ -465,6 +475,16 @@ window.addEventListener("load", function () {
     }
 
     if (moveDistance.y) {
+      if (nestedScene1Parent.y() + moveDistance.y > 1750) {
+        moveDistance.y = 1750 - nestedScene1Parent.y();
+      }
+
+      if (nestedScene1Parent.y() + moveDistance.y < -450) {
+        moveDistance.y = 0;
+
+        moveDistance.y = -450 - nestedScene1Parent.y();
+      }
+
       nestedScene1Parent.y(nestedScene1Parent.y() + moveDistance.y);
       nestedScene2Parent.y(nestedScene2Parent.y() + moveDistance.y);
 

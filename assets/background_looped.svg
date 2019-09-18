@@ -29,13 +29,13 @@
      inkscape:window-height="855"
      id="namedview821"
      showgrid="false"
-     inkscape:zoom="0.25"
-     inkscape:cx="1321.4168"
-     inkscape:cy="450.98183"
+     inkscape:zoom="0.125"
+     inkscape:cx="1686.4315"
+     inkscape:cy="734.76784"
      inkscape:window-x="0"
      inkscape:window-y="1"
      inkscape:window-maximized="1"
-     inkscape:current-layer="sunGroup1"
+     inkscape:current-layer="g10113"
      scale-x="1"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -776,9 +776,9 @@
        x="1920"
        y="0" />
     <rect
-       y="-939.99994"
+       y="-1776.8418"
        x="1920"
-       height="1430.9475"
+       height="2267.7893"
        width="1920"
        id="rect4648-5"
        style="display:inline;opacity:1;fill:url(#linearGradient22034);fill-opacity:1;stroke-width:11.57045841;stroke-miterlimit:4;stroke-dasharray:none" />
@@ -898,12 +898,13 @@
        style="display:inline;opacity:1"
        id="g10113">
       <rect
-         y="-247.94809"
+         y="-469.46109"
          x="0.47646299"
-         height="317.74976"
+         height="539.2627"
          width="508"
-         id="rect4648"
-         style="opacity:1;fill:url(#linearGradient20054);fill-opacity:1;stroke-width:2.83805132;stroke-miterlimit:4;stroke-dasharray:none" />
+         id="sky1"
+         style="opacity:1;fill:url(#linearGradient20054);fill-opacity:1;stroke-width:2.83805132;stroke-miterlimit:4;stroke-dasharray:none"
+         inkscape:label="#rect4648" />
       <rect
          y="69.528831"
          x="194.82332"
