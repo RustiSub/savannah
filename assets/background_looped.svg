@@ -29,13 +29,13 @@
      inkscape:window-height="855"
      id="namedview821"
      showgrid="false"
-     inkscape:zoom="0.5"
-     inkscape:cx="1399.1584"
-     inkscape:cy="1500.7497"
+     inkscape:zoom="0.25"
+     inkscape:cx="1321.4168"
+     inkscape:cy="450.98183"
      inkscape:window-x="0"
      inkscape:window-y="1"
      inkscape:window-maximized="1"
-     inkscape:current-layer="sun1"
+     inkscape:current-layer="sunGroup1"
      scale-x="1"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -187,7 +187,7 @@
     <linearGradient
        id="GUI"
        osb:paint="solid"
-       gradientTransform="matrix(0.14792798,0,0,0.14792798,184.87172,7.2260014)">
+       gradientTransform="matrix(0.02831067,0,0,0.02831067,211.19975,9.6710199)">
       <stop
          style="stop-color:#090909;stop-opacity:1;"
          offset="0"
@@ -1843,39 +1843,46 @@
          width="1.9600457"
          id="rect1072"
          style="opacity:1;fill:url(#GUI);fill-opacity:1;stroke:none;stroke-width:0.55909789;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-      <rect
-         y="8.2880983"
-         x="170.91476"
-         height="4.2633104"
-         width="1.4109039"
-         id="rect1072-8"
-         style="opacity:1;fill:url(#GUI);fill-opacity:1;stroke:none;stroke-width:0.55909789;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-      <use
-         height="100%"
-         width="100%"
-         transform="translate(2.3033944)"
-         id="use1099"
-         xlink:href="#rect1072-8"
-         y="0"
-         x="0" />
-      <use
-         style="opacity:1"
-         height="100%"
-         width="100%"
-         transform="translate(4.6067904)"
-         id="use1099-1"
-         xlink:href="#rect1072-8"
-         y="0"
-         x="0" />
-      <use
-         style="opacity:1"
-         height="100%"
-         width="100%"
-         transform="translate(6.9101773)"
-         id="use1099-1-4"
-         xlink:href="#rect1072-8"
-         y="0"
-         x="0" />
+      <g
+         id="g1511"
+         transform="translate(0.20143509)">
+        <rect
+           y="8.2880983"
+           x="173.42256"
+           height="4.2633104"
+           width="1.4109039"
+           id="batteryPowerBar.2"
+           style="opacity:1;fill:url(#GUI);fill-opacity:1;stroke:none;stroke-width:0.55909789;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        <rect
+           y="8.2880983"
+           x="175.83221"
+           height="4.2633104"
+           width="1.4109039"
+           id="batteryPowerBar.3"
+           style="opacity:1;fill:url(#GUI);fill-opacity:1;stroke:none;stroke-width:0.55909789;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        <rect
+           y="8.2880983"
+           x="178.24184"
+           height="4.2633104"
+           width="1.4109039"
+           id="batteryPowerBar.4"
+           style="opacity:1;fill:url(#GUI);fill-opacity:1;stroke:none;stroke-width:0.55909789;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        <rect
+           y="8.2880983"
+           x="180.65146"
+           height="4.2633104"
+           width="1.4109039"
+           id="batteryPowerBar.5"
+           style="opacity:1;fill:url(#GUI);fill-opacity:1;stroke:none;stroke-width:0.55909789;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        <rect
+           y="8.2880983"
+           x="171.01294"
+           height="4.2633104"
+           width="1.4109039"
+           id="batteryPowerBar.1"
+           style="opacity:0.57;fill:url(#GUI);fill-opacity:1;stroke:none;stroke-width:0.55909789;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           inkscape:label="#batteryPowerBar.2-5" />
+      </g>
     </g>
   </g>
   <circle
@@ -1887,7 +1894,8 @@
      inkscape:label="#path3129-1" />
   <g
      id="sunGroup1"
-     inkscape:label="#g22056">
+     inkscape:label="#g22056"
+     transform="matrix(0.74764937,0,0,0.74764937,-50.668821,91.276212)">
     <g
        id="sunDial1">
       <path
@@ -1912,13 +1920,11 @@
          id="sunOrb1"
          style="opacity:1;fill:url(#Sun);fill-opacity:1;stroke:none;stroke-width:0.21988402;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     </g>
-    <g id="moon1">
-      <path
-              id="moon1Path"
-              d="m 1956.8538,1402.6538 a 125.64248,125.64248 0 0 0 -125.6422,125.6422 125.64248,125.64248 0 0 0 125.6422,125.6422 125.64248,125.64248 0 0 0 18.0726,-1.4239 149.95181,149.95181 0 0 1 -66.0352,-124.2183 149.95181,149.95181 0 0 1 66.1121,-124.1607 125.64248,125.64248 0 0 0 -18.1495,-1.4815 z"
-              style="opacity:1;fill:url(#linearGradient5688);fill-opacity:1;stroke:none;stroke-width:53.33432388;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-              inkscape:connector-curvature="0"
-              inkscape:label="#path1307-0" />
-    </g>
+    <path
+       id="moon1"
+       d="m 1956.8538,1402.6538 a 125.64248,125.64248 0 0 0 -125.6422,125.6422 125.64248,125.64248 0 0 0 125.6422,125.6422 125.64248,125.64248 0 0 0 18.0726,-1.4239 149.95181,149.95181 0 0 1 -66.0352,-124.2183 149.95181,149.95181 0 0 1 66.1121,-124.1607 125.64248,125.64248 0 0 0 -18.1495,-1.4815 z"
+       style="opacity:1;fill:url(#linearGradient5688);fill-opacity:1;stroke:none;stroke-width:53.33432388;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:connector-curvature="0"
+       inkscape:label="#path1307-0" />
   </g>
 </svg>

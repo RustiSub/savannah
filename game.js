@@ -45,50 +45,6 @@ window.addEventListener("load", function () {
   var scene2 = background.getElementById('scene2');
   scene2 = SVG.adopt(scene2);
 
-  // Sun and Moon 1
-  var sunGroup1 = background.getElementById('sunGroup1');
-  sunGroup1 = SVG.adopt(sunGroup1);
-
-  sunGroup1.toParent(sceneParent);
-
-  var sunPath1 = background.getElementById('sunPath1');
-  sunPath1 = SVG.adopt(sunPath1);
-  var sunPath1Length = sunPath1.length();
-
-  var sunDial1 = background.getElementById('sunDial1');
-  sunDial1 = SVG.adopt(sunDial1);
-
-  var sun1 = background.getElementById('sun1');
-  sun1 = SVG.adopt(sun1);
-
-  var sun1Animation = sun1.animate(8000, '-').during(function(pos, morph, eased){
-    var p = sunPath1.pointAt((eased) * sunPath1Length);
-
-    sun1.translate(
-        p.x - ((sun1.node.getBBox().x + (sun1.node.getBBox().width / 2)) * sun1.transform().scaleX),
-        p.y - ((sun1.node.getBBox().y + (sun1.node.getBBox().height / 2)) * sun1.transform().scaleY)
-    );
-  }).loop().pause();
-
-
-  var moon1 = background.getElementById('moon1');
-  moon1 = SVG.adopt(moon1);
-
-  var moon1Animation = moon1.animate(8000, '-').during(function(pos, morph, eased){
-    var p = sunPath1.pointAt((eased ) * sunPath1Length);
-
-    moon1.translate(
-        p.x - ((moon1.node.getBBox().x + (moon1.node.getBBox().width / 2)) * moon1.transform().scaleX),
-        p.y - ((moon1.node.getBBox().y + (moon1.node.getBBox().height / 2)) * moon1.transform().scaleY)
-    );
-  }).loop().pause();
-
-  console.log('test');
-/*  sun1Animation.at(0.75, true);
-  moon1Animation.at(0.25, true);
-  sun1Animation.play();
-  moon1Animation.play();*/
-
   //Camera
 
   var cameraGraphic = background.getElementById('cameraGroup');
@@ -152,6 +108,137 @@ window.addEventListener("load", function () {
 
   rhino.click(function(event) {
     captureAnimal(this.clone());
+  });
+
+  // Game State
+  var gameState = 0;
+  var gameTimer = 0;
+
+  // Sun and Moon 1
+  var sunGroup1 = background.getElementById('sunGroup1');
+  sunGroup1 = SVG.adopt(sunGroup1);
+
+  sunGroup1.toParent(sceneParent);
+
+  var sunPath1 = background.getElementById('sunPath1');
+  sunPath1 = SVG.adopt(sunPath1);
+  var sunPath1Length = sunPath1.length();
+
+  var sun1 = background.getElementById('sun1');
+  sun1 = SVG.adopt(sun1);
+
+  var sun1Animation = sun1.animate(1000, '-').during(function(pos, morph, eased, situation){
+    var p = sunPath1.pointAt((eased) * sunPath1Length);
+
+    if (gameTimer < situation.loop) {
+      gameTimer = situation.loop;
+      depleteBattery();
+    }
+
+    sun1.translate(
+        p.x - ((sun1.node.getBBox().x + (sun1.node.getBBox().width / 2)) * sun1.transform().scaleX),
+        p.y - ((sun1.node.getBBox().y + (sun1.node.getBBox().height / 2)) * sun1.transform().scaleY)
+    );
+  }).loop().pause();
+
+
+  var moon1 = background.getElementById('moon1');
+  moon1 = SVG.adopt(moon1);
+
+  var moon1Animation = moon1.animate(1000, '-').during(function(pos, morph, eased, situation){
+    var p = sunPath1.pointAt((eased ) * sunPath1Length);
+
+    moon1.translate(
+        p.x - ((moon1.node.getBBox().x + (moon1.node.getBBox().width / 2)) * moon1.transform().scaleX),
+        p.y - ((moon1.node.getBBox().y + (moon1.node.getBBox().height / 2)) * moon1.transform().scaleY)
+    );
+  }).loop().pause();
+
+  var batteries = {};
+  var batteryPower = 5;
+
+  var depleteBattery = function() {
+    if (!batteries[batteryPower]) {
+      stopGame();
+
+      return;
+    }
+
+    batteries[batteryPower].animate(100).style('opacity', 0.1);
+
+    batteryPower -= 1;
+  };
+
+  var batteryGroup = SVG.adopt(background.getElementById('batteryGroup'));
+
+  var powerUpAnimation;
+
+  // Battery Power & Game End
+  for (var b = 5; b >= 1; b--) {
+    var nextBar;
+    var batteryPowerBar = SVG.adopt(background.getElementById('batteryPowerBar.' + b));
+
+    batteryPowerBar.style('opacity', 0.1);
+
+    powerUpAnimation = batteryPowerBar.animate(500).style('opacity', 1);
+    powerUpAnimation.pause();
+
+    if (nextBar) {
+      var loadNextBarFunction = function(barAnimation) {
+        return function(situation) {
+          console.log('charge');
+          barAnimation.play();
+        };
+      } (nextBar);
+
+      powerUpAnimation.after(loadNextBarFunction);
+    } else {
+      powerUpAnimation.after(function() {
+        batteryPower = 5;
+
+        sun1Animation.play();
+        moon1Animation.play();
+      });
+    }
+
+    nextBar = batteryPowerBar;
+
+    batteries[b] = batteryPowerBar;
+  }
+
+  nextBar = null;
+
+  // Game Start
+
+  var startButton = parent.rect(100, 100);
+
+  startButton.x(camera.cx() - 50);
+  startButton.y(camera.cy() - 50);
+
+  function startGame() {
+    console.log('Game Start');
+
+    startButton.hide();
+    gameState = 1;
+
+    sun1Animation.at(0.75, true);
+    moon1Animation.at(0.25, true);
+
+    powerUpAnimation.play();
+  }
+
+  function stopGame() {
+    console.log('Game Stop');
+
+    startButton.show();
+    gameState = 0;
+
+    sun1Animation.pause();
+    moon1Animation.pause();
+  }
+
+  startButton.click(function(event) {
+    startGame();
   });
 
   const mutationConfig = {
@@ -281,8 +368,6 @@ window.addEventListener("load", function () {
   };
 
   background.addEventListener('mousewheel', mouseWheelHandler);
-
-  var animation = parent.rect(100, 100).move(50, 50).animate(5000).move(200, 200).loop().pause();
 
   background.addEventListener('keydown',
       function (event) {
