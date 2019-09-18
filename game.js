@@ -3,7 +3,7 @@ window.addEventListener("load", function () {
   var Vector = wrect.Physics.Vector;
 
   var zoomLevel = 1;
-  let zoomClamp = 0.6;
+  let zoomClamp = 0.1;
 
   var background = document.getElementById('looptest').contentDocument;
 
@@ -142,7 +142,6 @@ window.addEventListener("load", function () {
     );
   }).loop().pause();
 
-
   var moon1 = background.getElementById('moon1');
   moon1 = SVG.adopt(moon1);
 
@@ -152,6 +151,45 @@ window.addEventListener("load", function () {
     moon1.translate(
         p.x - ((moon1.node.getBBox().x + (moon1.node.getBBox().width / 2)) * moon1.transform().scaleX),
         p.y - ((moon1.node.getBBox().y + (moon1.node.getBBox().height / 2)) * moon1.transform().scaleY)
+    );
+  }).loop().pause();
+
+  //Sun Group 2
+  var sunGroup2 = background.getElementById('sunGroup2');
+  sunGroup2 = SVG.adopt(sunGroup2);
+
+  sunGroup2.toParent(sceneParent);
+
+  var sunPath2 = background.getElementById('sunPath2');
+  sunPath2 = SVG.adopt(sunPath2);
+  var sunPath2Length = sunPath2.length();
+
+  var sun2 = background.getElementById('sun2');
+  sun2 = SVG.adopt(sun2);
+
+  var sun2Animation = sun2.animate(1000, '-').during(function(pos, morph, eased, situation){
+    var p = sunPath1.pointAt((eased) * sunPath2Length);
+
+    if (gameTimer < situation.loop) {
+      gameTimer = situation.loop;
+      depleteBattery();
+    }
+
+    sun2.translate(
+        p.x - ((sun2.node.getBBox().x + (sun2.node.getBBox().width / 2)) * sun2.transform().scaleX),
+        p.y - ((sun2.node.getBBox().y + (sun2.node.getBBox().height / 2)) * sun2.transform().scaleY)
+    );
+  }).loop().pause();
+
+  var moon2 = background.getElementById('moon2');
+  moon2 = SVG.adopt(moon2);
+
+  var moon2Animation = moon2.animate(1000, '-').during(function(pos, morph, eased, situation){
+    var p = sunPath1.pointAt((eased ) * sunPath1Length);
+
+    moon2.translate(
+        p.x - ((moon2.node.getBBox().x + (moon2.node.getBBox().width / 2)) * moon2.transform().scaleX),
+        p.y - ((moon2.node.getBBox().y + (moon2.node.getBBox().height / 2)) * moon2.transform().scaleY)
     );
   }).loop().pause();
 
@@ -198,7 +236,9 @@ window.addEventListener("load", function () {
         batteryPower = 5;
 
         sun1Animation.play();
+        sun2Animation.play();
         moon1Animation.play();
+        moon2Animation.play();
       });
     }
 
@@ -223,7 +263,9 @@ window.addEventListener("load", function () {
     gameState = 1;
 
     sun1Animation.at(0.75, true);
+    sun2Animation.at(0.75, true);
     moon1Animation.at(0.25, true);
+    moon2Animation.at(0.25, true);
 
     powerUpAnimation.play();
   }
@@ -235,7 +277,9 @@ window.addEventListener("load", function () {
     gameState = 0;
 
     sun1Animation.pause();
+    sun2Animation.pause();
     moon1Animation.pause();
+    moon2Animation.pause();
   }
 
   startButton.click(function(event) {
@@ -268,7 +312,7 @@ window.addEventListener("load", function () {
       if (camera.cx() > centerParent1 && centerParent1 > centerParent2) {
         nestedScene2Parent.x(nestedScene2Parent.x() + scene1Width + scene2Width - fixSeam);
 
-        // sunGroup2.x(sunGroup2.x() + scene1Width + scene2Width - fixSeam);
+        sunGroup2.x(sunGroup2.x() + scene1Width + scene2Width - fixSeam);
       }
 
       if (camera.cx() < centerParent2 && centerParent2 < centerParent1) {
@@ -280,7 +324,7 @@ window.addEventListener("load", function () {
       if (camera.cx() < centerParent1 && centerParent1 < centerParent2) {
         nestedScene2Parent.x(nestedScene2Parent.x() - scene1Width - scene2Width + fixSeam);
 
-        // sunGroup2.x(sunGroup2.x() - scene1Width - scene2Width + fixSeam);
+        sunGroup2.x(sunGroup2.x() - scene1Width - scene2Width + fixSeam);
       }
     });
   });
@@ -471,7 +515,7 @@ window.addEventListener("load", function () {
       nestedScene2Parent.x(nestedScene2Parent.x() + moveDistance.x);
 
       sunGroup1.x(sunGroup1.x() + moveDistance.x);
-      // sunGroup2.x(sunGroup2.x() + moveDistance.x);
+      sunGroup2.x(sunGroup2.x() + moveDistance.x);
     }
 
     if (moveDistance.y) {
@@ -489,7 +533,7 @@ window.addEventListener("load", function () {
       nestedScene2Parent.y(nestedScene2Parent.y() + moveDistance.y);
 
       sunGroup1.y(sunGroup1.y() + moveDistance.y);
-      // sunGroup2.y(sunGroup2.y() + moveDistance.y);
+      sunGroup2.y(sunGroup2.y() + moveDistance.y);
     }
   }
 

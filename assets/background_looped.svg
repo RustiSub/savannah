@@ -35,7 +35,7 @@
      inkscape:window-x="0"
      inkscape:window-y="1"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g10113"
+     inkscape:current-layer="svg8"
      scale-x="1"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -567,6 +567,16 @@
        y2="1518.9464"
        gradientUnits="userSpaceOnUse"
        gradientTransform="rotate(15,1920.0003,1518.9464)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2112"
+       id="linearGradient1872"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="rotate(15,1920.0003,1518.9464)"
+       x1="1832.3759"
+       y1="1518.9464"
+       x2="2007.6248"
+       y2="1518.9464" />
   </defs>
   <metadata
      id="metadata5">
@@ -1895,8 +1905,7 @@
      inkscape:label="#path3129-1" />
   <g
      id="sunGroup1"
-     inkscape:label="#g22056"
-     transform="matrix(0.74764937,0,0,0.74764937,-50.668821,91.276212)">
+     inkscape:label="#g22056">
     <g
        id="sunDial1">
       <path
@@ -1925,6 +1934,41 @@
        id="moon1"
        d="m 1956.8538,1402.6538 a 125.64248,125.64248 0 0 0 -125.6422,125.6422 125.64248,125.64248 0 0 0 125.6422,125.6422 125.64248,125.64248 0 0 0 18.0726,-1.4239 149.95181,149.95181 0 0 1 -66.0352,-124.2183 149.95181,149.95181 0 0 1 66.1121,-124.1607 125.64248,125.64248 0 0 0 -18.1495,-1.4815 z"
        style="opacity:1;fill:url(#linearGradient5688);fill-opacity:1;stroke:none;stroke-width:53.33432388;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:connector-curvature="0"
+       inkscape:label="#path1307-0" />
+  </g>
+  <g
+     transform="translate(-8.3953864e-7,2.8422375e-5)"
+     id="sunGroup2"
+     inkscape:label="#g22056">
+    <g
+       id="sunDial1-7">
+      <path
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:18.89763832;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 3076.8267,374.05594 A 1156.8267,1156.8267 0 0 1 1920,1530.8826 1156.8267,1156.8267 0 0 1 763.17334,374.05594 1156.8267,1156.8267 0 0 1 1920,-782.77072 1156.8267,1156.8267 0 0 1 3076.8267,374.05594 Z"
+         id="sunPath2"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       transform="matrix(49.772875,0,0,49.772875,-4663.7729,-1557.9148)"
+       style="opacity:1"
+       id="sun2">
+      <path
+         style="opacity:1;fill:url(#Sun);fill-opacity:1;stroke:none;stroke-width:0.0463697;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 132.15484,12.802987 -0.67606,1.061563 -1.24752,-0.164258 0.27287,1.228531 -0.99912,0.765624 1.06153,0.676033 -0.16424,1.248889 1.22855,-0.272857 0.76558,0.997758 0.67606,-1.061555 1.24891,0.16425 -0.27287,-1.228524 0.99912,-0.76563 -1.06292,-0.676027 0.16562,-1.247533 -1.22993,0.271494 z m 0.12079,1.15387 a 1.6173385,1.6173385 0 0 1 1.61812,1.616772 1.6173385,1.6173385 0 0 1 -1.61812,1.616771 1.6173385,1.6173385 0 0 1 -1.61679,-1.616771 1.6173385,1.6173385 0 0 1 1.61679,-1.616772 z"
+         id="path1299-0-5"
+         inkscape:connector-curvature="0" />
+      <circle
+         r="0.97739398"
+         cy="15.573624"
+         cx="132.27632"
+         id="sunOrb1-8"
+         style="opacity:1;fill:url(#Sun);fill-opacity:1;stroke:none;stroke-width:0.21988402;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+    <path
+       id="moon2"
+       d="m 1956.8538,1402.6538 a 125.64248,125.64248 0 0 0 -125.6422,125.6422 125.64248,125.64248 0 0 0 125.6422,125.6422 125.64248,125.64248 0 0 0 18.0726,-1.4239 149.95181,149.95181 0 0 1 -66.0352,-124.2183 149.95181,149.95181 0 0 1 66.1121,-124.1607 125.64248,125.64248 0 0 0 -18.1495,-1.4815 z"
+       style="opacity:1;fill:url(#linearGradient1872);fill-opacity:1;stroke:none;stroke-width:53.33432388;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        inkscape:connector-curvature="0"
        inkscape:label="#path1307-0" />
   </g>
