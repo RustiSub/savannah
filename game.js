@@ -62,50 +62,32 @@ window.addEventListener("load", function () {
   sun1 = SVG.adopt(sun1);
 
   var sun1Animation = sun1.animate(8000, '-').during(function(pos, morph, eased){
-    var offset = 0;
-    var p = sunPath1.pointAt((eased + offset) * sunPath1Length);
+    var p = sunPath1.pointAt((eased) * sunPath1Length);
 
     sun1.translate(
         p.x - ((sun1.node.getBBox().x + (sun1.node.getBBox().width / 2)) * sun1.transform().scaleX),
         p.y - ((sun1.node.getBBox().y + (sun1.node.getBBox().height / 2)) * sun1.transform().scaleY)
     );
-  }).loop();
+  }).loop().pause();
+
 
   var moon1 = background.getElementById('moon1');
   moon1 = SVG.adopt(moon1);
 
-  /*var moon1Animation = moon1.animate(8000, '-').during(function(pos, morph, eased){
-    var offset = 0.25;
-    var p = sunPath1.pointAt((eased + offset) * sunPath1Length);
+  var moon1Animation = moon1.animate(8000, '-').during(function(pos, morph, eased){
+    var p = sunPath1.pointAt((eased ) * sunPath1Length);
 
     moon1.translate(
         p.x - ((moon1.node.getBBox().x + (moon1.node.getBBox().width / 2)) * moon1.transform().scaleX),
         p.y - ((moon1.node.getBBox().y + (moon1.node.getBBox().height / 2)) * moon1.transform().scaleY)
     );
-  }).loop();*/
+  }).loop().pause();
 
-
-  // sunGroup1.front();
-
-  // Sun and Moon 2
-  // var sunGroup2 = background.getElementById('sunGroup2');
-  // sunGroup2 = SVG.adopt(sunGroup2);
-  //
-  // sunGroup2.toParent(sceneParent);
-  //
-  // var sunPath2 = background.getElementById('sunPath2');
-  // sunPath2 = SVG.adopt(sunPath2);
-  //
-  // var sunDial2 = background.getElementById('sunDial2');
-  // sunDial2 = SVG.adopt(sunDial2);
-  //
-  // sunDial2.animate(6000).rotate(360, sunPath2.cx(), sunPath2.cy()).loop();
-  // sunGroup2.front();
-  //
-  // sunGroup2.hide();
-
-  // var sunPath = background.getElementById('sunPath');
-  // sunPath = SVG.adopt(sunPath);
+  console.log('test');
+/*  sun1Animation.at(0.75, true);
+  moon1Animation.at(0.25, true);
+  sun1Animation.play();
+  moon1Animation.play();*/
 
   //Camera
 
@@ -299,6 +281,8 @@ window.addEventListener("load", function () {
   };
 
   background.addEventListener('mousewheel', mouseWheelHandler);
+
+  var animation = parent.rect(100, 100).move(50, 50).animate(5000).move(200, 200).loop().pause();
 
   background.addEventListener('keydown',
       function (event) {
