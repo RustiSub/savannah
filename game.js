@@ -45,16 +45,120 @@ window.addEventListener("load", function () {
   var scene2 = background.getElementById('scene2');
   scene2 = SVG.adopt(scene2);
 
-  // Sun and Moon
-  // var sunGroup = background.getElementById('sunGroup');
-  // sunGroup = SVG.adopt(sunGroup);
+  // Sun and Moon 1
+  var sunGroup1 = background.getElementById('sunGroup1');
+  sunGroup1 = SVG.adopt(sunGroup1);
+
+  sunGroup1.toParent(sceneParent);
+
+  var sunPath1 = background.getElementById('sunPath1');
+  sunPath1 = SVG.adopt(sunPath1);
+  var sunPath1Length = sunPath1.length();
+
+  var sunDial1 = background.getElementById('sunDial1');
+  sunDial1 = SVG.adopt(sunDial1);
+
+  var sun1 = background.getElementById('sun1');
+  sun1 = SVG.adopt(sun1);
+
+  var moon1 = background.getElementById('moon1');
+  moon1 = SVG.adopt(moon1);
+  // sun1.hide();
+
+  // var sunOrb1 = background.getElementById('sunOrb1');
+  // sunOrb1 = SVG.adopt(sunOrb1);
   //
+  // sunOrb1.front();
+  // sunOrb1.hide();
+
+  let scaleX = sun1.transform().scaleX;
+  let scaleY = sun1.transform().scaleY;
+  let translateX = sun1.transform().x;
+  let translateY = sun1.transform().y;
+
+  // 3076 => 1920
+
+  // -4663.7729   => 132.27632 (top point of circle) => 1920
+  // x            => 155.5184042575901                => 3076.8251953125
+
+  // (1 + 4663.7729) / 49.772875
+
+  // (1 + 4663.7729) / 49.772875 = 93.72118648962915
+  // 1 - (93.72118648962915 * 49.772875) = -4663.7729
+
+
+/*  moon1.delay(4000).animate(8000).during(function(pos, morph, eased){
+    var p = sunPath1.pointAt(eased * sunPath1Length);
+
+    moon1.x(p.x);
+    moon1.y(p.y);
+  }).loop();*/
+
+  // (1920 + 4663.7729) / 49.772875 = 132.2763231981275
+  // 132.27632 * 49.772875 - 4663.7729 = 1920
+  // - 4663.7729 = 1920 - (132.27632 * 49.772875)
+
+/*  var transformedX = (3076.8251953125 -  translateX) / scaleX;
+  console.log(transformedX);
+  //- 4663.7729 = 1920 - (132.27632 * 49.772875)
+  var newTranslateX = 3076.8251953125 - (transformedX * scaleX);
+
+  console.log(newTranslateX);*/
+
+  //132.27632 * 49.772875 - 4663.7729 = 1920
+  // - 4663.7729 = 1920 - (132.27632 * 49.772875)
+
+  var sun1X = sun1.node.getBBox().x + (sun1.node.getBBox().width / 2);
+  var sun1Y = sun1.node.getBBox().y + (sun1.node.getBBox().height / 2);
+
+  // 132.2763442993164 * 49.772875 -4663.7729 = 1920
+  // -4663.7729 = 0 - (132.2763442993164 * 49.772875)
+  //
+
+  var transformedX = (960 -  translateX) / scaleX;
+
+  sun1.animate(8000).during(function(pos, morph, eased){
+    var p = sunPath1.pointAt(eased * sunPath1Length);
+
+    sun1.translate(
+        p.x - (sun1X * scaleX),
+        p.y - (sun1Y * scaleY)
+    );
+
+    //sun1.translate(translateX + p.x);
+    //console.log(sun1.transform().x);
+
+    // - 4663.7729 = 1920 - (132.27632 * 49.772875)
+
+    //(1920 + 4663.7729) / 49.772875 = 132.2763231981275
+/*    var transformedX = (p.x -  translateX) / scaleX;
+    //- 4663.7729 = 1920 - (132.27632 * 49.772875)
+    var newTranslateX = p.x - (transformedX * scaleX);*/
+
+    //sun1.translate(p.x - (transformedX * scaleX));
+  });
+
+  // sunGroup1.front();
+
+  // Sun and Moon 2
+  // var sunGroup2 = background.getElementById('sunGroup2');
+  // sunGroup2 = SVG.adopt(sunGroup2);
+  //
+  // sunGroup2.toParent(sceneParent);
+  //
+  // var sunPath2 = background.getElementById('sunPath2');
+  // sunPath2 = SVG.adopt(sunPath2);
+  //
+  // var sunDial2 = background.getElementById('sunDial2');
+  // sunDial2 = SVG.adopt(sunDial2);
+  //
+  // sunDial2.animate(6000).rotate(360, sunPath2.cx(), sunPath2.cy()).loop();
+  // sunGroup2.front();
+  //
+  // sunGroup2.hide();
+
   // var sunPath = background.getElementById('sunPath');
   // sunPath = SVG.adopt(sunPath);
-  //
-  // sunGroup.toParent(sceneParent);
-  //
-  // sunGroup.animate().rotate(360, sunPath.cx(), sunPath.cy());
 
   //Camera
 
@@ -140,18 +244,26 @@ window.addEventListener("load", function () {
 
       if (camera.cx() > centerParent2 && centerParent2 > centerParent1) {
         nestedScene1Parent.x(nestedScene1Parent.x() + scene1Width + scene2Width - fixSeam);
+
+        sunGroup1.x(sunGroup1.x() + scene1Width + scene2Width - fixSeam);
       }
 
       if (camera.cx() > centerParent1 && centerParent1 > centerParent2) {
         nestedScene2Parent.x(nestedScene2Parent.x() + scene1Width + scene2Width - fixSeam);
+
+        // sunGroup2.x(sunGroup2.x() + scene1Width + scene2Width - fixSeam);
       }
 
       if (camera.cx() < centerParent2 && centerParent2 < centerParent1) {
         nestedScene1Parent.x(nestedScene1Parent.x() - scene1Width - scene2Width + fixSeam);
+
+        sunGroup1.x(sunGroup1.x() - scene1Width - scene2Width + fixSeam);
       }
 
       if (camera.cx() < centerParent1 && centerParent1 < centerParent2) {
         nestedScene2Parent.x(nestedScene2Parent.x() - scene1Width - scene2Width + fixSeam);
+
+        // sunGroup2.x(sunGroup2.x() - scene1Width - scene2Width + fixSeam);
       }
     });
   });
@@ -187,7 +299,7 @@ window.addEventListener("load", function () {
 
     return viewbox;
   };
-
+  zoomLevel = -2;
   cameraZoom(sceneParent, zoomLevel);
 
   const useEventType = (typeof window.PointerEvent === 'function') ? 'pointer' : 'mouse';
@@ -200,16 +312,12 @@ window.addEventListener("load", function () {
   var cameraDeadZone = background.getElementById('cameraDeadZone');
   cameraDeadZone = SVG.adopt(cameraDeadZone);
 
-  //console.log(cameraDeadZone);
-
   var pointerHandler = (event) => {
     if (book.visible()) {
       return event;
     }
 
     event.preventDefault();
-
-    console.log(focusEnabled);
 
     var deadZone = cameraDeadZone.width() / 2;
     var mouseVector = new Vector(event.x, event.y);
@@ -254,7 +362,6 @@ window.addEventListener("load", function () {
 
         switch (event.keyCode) {
           case 69:
-            console.log('test');
             if (book.visible()) {
               book.hide();
               cameraGraphic.show();
@@ -336,11 +443,17 @@ window.addEventListener("load", function () {
     if (moveDistance.x) {
       nestedScene1Parent.x(nestedScene1Parent.x() + moveDistance.x);
       nestedScene2Parent.x(nestedScene2Parent.x() + moveDistance.x);
+
+      sunGroup1.x(sunGroup1.x() + moveDistance.x);
+      // sunGroup2.x(sunGroup2.x() + moveDistance.x);
     }
 
     if (moveDistance.y) {
       nestedScene1Parent.y(nestedScene1Parent.y() + moveDistance.y);
       nestedScene2Parent.y(nestedScene2Parent.y() + moveDistance.y);
+
+      sunGroup1.y(sunGroup1.y() + moveDistance.y);
+      // sunGroup2.y(sunGroup2.y() + moveDistance.y);
     }
   }
 
