@@ -3,14 +3,16 @@ window.addEventListener("load", function () {
   var Vector = wrect.Physics.Vector;
 
   let zoomClamp = 0.45;
-  zoomClamp = 0.1;
+  //zoomClamp = 0.1;
 
   var zoomLevel = zoomClamp;
 
   let yUpperClamp = 1750;
   let yLowerClamp = -450;
 
-  let cycleLength = 6000;
+  let moveClamp = 200;
+
+  let cycleLength = 60000;
   let batteryChargeTime = 1;
 
   var background = document.getElementById('looptest').contentDocument;
@@ -441,8 +443,14 @@ window.addEventListener("load", function () {
       moveDistance.y *= 0.5;
     }
 
-    moveDistance.x *= (Math.abs(moveDistance.x) / 500);
-    moveDistance.y *= (Math.abs(moveDistance.y) / 500);
+    let absMoveX = Math.abs(moveDistance.x) / zoomLevel;
+    let absMoveXY= Math.abs(moveDistance.y) / zoomLevel;
+
+    absMoveX = absMoveX < moveClamp ? absMoveX : moveClamp;
+    absMoveXY = absMoveXY < moveClamp ? absMoveXY : moveClamp;
+
+    moveDistance.x *= (absMoveX / 500000) * absMoveX;
+    moveDistance.y *= (absMoveXY / 500000) * absMoveXY;
 
     return false;
   };
