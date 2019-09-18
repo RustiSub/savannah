@@ -3,7 +3,13 @@ window.addEventListener("load", function () {
   var Vector = wrect.Physics.Vector;
 
   var zoomLevel = 1;
+
+  //let zoomClamp = 0.45;
   let zoomClamp = 0.1;
+  let yUpperClamp = 1750;
+  let yLowerClamp = -450;
+
+  let cycleLength = 5000;
 
   var background = document.getElementById('looptest').contentDocument;
 
@@ -121,6 +127,8 @@ window.addEventListener("load", function () {
 
   sunGroup1.toParent(sceneParent);
 
+  sunGroup1.back();
+
   var sunPath1 = background.getElementById('sunPath1');
   sunPath1 = SVG.adopt(sunPath1);
   var sunPath1Length = sunPath1.length();
@@ -128,7 +136,8 @@ window.addEventListener("load", function () {
   var sun1 = background.getElementById('sun1');
   sun1 = SVG.adopt(sun1);
 
-  var sun1Animation = sun1.animate(1000, '-').during(function(pos, morph, eased, situation){
+
+  var sun1Animation = sun1.animate(cycleLength, '-').during(function(pos, morph, eased, situation){
     var p = sunPath1.pointAt((eased) * sunPath1Length);
 
     if (gameTimer < situation.loop) {
@@ -145,7 +154,7 @@ window.addEventListener("load", function () {
   var moon1 = background.getElementById('moon1');
   moon1 = SVG.adopt(moon1);
 
-  var moon1Animation = moon1.animate(1000, '-').during(function(pos, morph, eased, situation){
+  var moon1Animation = moon1.animate(cycleLength, '-').during(function(pos, morph, eased, situation){
     var p = sunPath1.pointAt((eased ) * sunPath1Length);
 
     moon1.translate(
@@ -160,6 +169,8 @@ window.addEventListener("load", function () {
 
   sunGroup2.toParent(sceneParent);
 
+  sunGroup2.back();
+
   var sunPath2 = background.getElementById('sunPath2');
   sunPath2 = SVG.adopt(sunPath2);
   var sunPath2Length = sunPath2.length();
@@ -167,7 +178,7 @@ window.addEventListener("load", function () {
   var sun2 = background.getElementById('sun2');
   sun2 = SVG.adopt(sun2);
 
-  var sun2Animation = sun2.animate(1000, '-').during(function(pos, morph, eased, situation){
+  var sun2Animation = sun2.animate(cycleLength, '-').during(function(pos, morph, eased, situation){
     var p = sunPath1.pointAt((eased) * sunPath2Length);
 
     if (gameTimer < situation.loop) {
@@ -184,7 +195,7 @@ window.addEventListener("load", function () {
   var moon2 = background.getElementById('moon2');
   moon2 = SVG.adopt(moon2);
 
-  var moon2Animation = moon2.animate(1000, '-').during(function(pos, morph, eased, situation){
+  var moon2Animation = moon2.animate(cycleLength, '-').during(function(pos, morph, eased, situation){
     var p = sunPath1.pointAt((eased ) * sunPath1Length);
 
     moon2.translate(
@@ -519,14 +530,15 @@ window.addEventListener("load", function () {
     }
 
     if (moveDistance.y) {
-      if (nestedScene1Parent.y() + moveDistance.y > 1750) {
-        moveDistance.y = 1750 - nestedScene1Parent.y();
+      if (nestedScene1Parent.y() + moveDistance.y > yUpperClamp) {
+        moveDistance.y = yUpperClamp - nestedScene1Parent.y();
       }
 
-      if (nestedScene1Parent.y() + moveDistance.y < -450) {
+
+      if (nestedScene1Parent.y() + moveDistance.y < yLowerClamp) {
         moveDistance.y = 0;
 
-        moveDistance.y = -450 - nestedScene1Parent.y();
+        moveDistance.y = yLowerClamp - nestedScene1Parent.y();
       }
 
       nestedScene1Parent.y(nestedScene1Parent.y() + moveDistance.y);
