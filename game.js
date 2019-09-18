@@ -3,7 +3,7 @@ window.addEventListener("load", function () {
   var Vector = wrect.Physics.Vector;
 
   let zoomClamp = 0.45;
-  //zoomClamp = 0.1;
+  zoomClamp = 0.1;
 
   var zoomLevel = zoomClamp;
 
@@ -11,6 +11,7 @@ window.addEventListener("load", function () {
   let yLowerClamp = -450;
 
   let cycleLength = 5000;
+  let batteryChargeTime = 1;
 
   var background = document.getElementById('looptest').contentDocument;
 
@@ -138,9 +139,28 @@ window.addEventListener("load", function () {
   var sun1 = background.getElementById('sun1');
   sun1 = SVG.adopt(sun1);
 
+  var nightFilter1 = SVG.adopt(background.getElementById('nightFilter1'));
+  var sky1Night = SVG.adopt(background.getElementById('sky1Night'));
+  var nightFilter2 = SVG.adopt(background.getElementById('nightFilter2'));
+  var sky2Night = SVG.adopt(background.getElementById('sky2Night'));
 
   var sun1Animation = sun1.animate(cycleLength, '-').during(function(pos, morph, eased, situation){
     var p = sunPath1.pointAt((eased) * sunPath1Length);
+
+    var opacity = 0;
+
+    if (pos <= 0.5) {
+      opacity = pos / 0.5;
+    } else {
+      opacity = (1 - pos) / pos;
+    }
+
+    console.log(opacity);
+
+    nightFilter1.style('opacity', opacity);
+    nightFilter2.style('opacity', opacity);
+    sky1Night.style('opacity', opacity);
+    sky2Night.style('opacity', opacity);
 
     if (gameTimer < situation.loop) {
       gameTimer = situation.loop;
@@ -217,7 +237,7 @@ window.addEventListener("load", function () {
       return;
     }
 
-    batteries[batteryPower].animate(100).style('opacity', 0.1);
+    batteries[batteryPower].animate(batteryChargeTime).style('opacity', 0.1);
 
     batteryPower -= 1;
   };
@@ -239,7 +259,6 @@ window.addEventListener("load", function () {
     if (nextBar) {
       var loadNextBarFunction = function(barAnimation) {
         return function(situation) {
-          console.log('charge');
           barAnimation.play();
         };
       } (nextBar);
@@ -269,7 +288,7 @@ window.addEventListener("load", function () {
 
   startButton.x(camera.cx() - 50);
   startButton.y(camera.cy() - 50);
-  startButton.hide();
+  //startButton.hide();
   function startGame() {
     console.log('Game Start');
 
