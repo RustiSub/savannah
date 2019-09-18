@@ -10,7 +10,7 @@ window.addEventListener("load", function () {
   let yUpperClamp = 1750;
   let yLowerClamp = -450;
 
-  let cycleLength = 5000;
+  let cycleLength = 6000;
   let batteryChargeTime = 1;
 
   var background = document.getElementById('looptest').contentDocument;
@@ -141,6 +141,12 @@ window.addEventListener("load", function () {
 
   var nightFilter1 = SVG.adopt(background.getElementById('nightFilter1'));
   var sky1Night = SVG.adopt(background.getElementById('sky1Night'));
+  var clouds1 = SVG.adopt(background.getElementById('clouds1'));
+  var clouds2 = SVG.adopt(background.getElementById('clouds2'));
+
+  clouds1.x(0);
+  clouds2.x(-100);
+
   var nightFilter2 = SVG.adopt(background.getElementById('nightFilter2'));
   var sky2Night = SVG.adopt(background.getElementById('sky2Night'));
 
@@ -155,12 +161,13 @@ window.addEventListener("load", function () {
       opacity = (1 - pos) / pos;
     }
 
-    console.log(opacity);
-
     nightFilter1.style('opacity', opacity);
     nightFilter2.style('opacity', opacity);
     sky1Night.style('opacity', opacity);
     sky2Night.style('opacity', opacity);
+
+    clouds1.x(400 * opacity);
+    clouds2.x(200 * opacity);
 
     if (gameTimer < situation.loop) {
       gameTimer = situation.loop;
