@@ -61,82 +61,29 @@ window.addEventListener("load", function () {
   var sun1 = background.getElementById('sun1');
   sun1 = SVG.adopt(sun1);
 
-  var moon1 = background.getElementById('moon1');
-  moon1 = SVG.adopt(moon1);
-  // sun1.hide();
-
-  // var sunOrb1 = background.getElementById('sunOrb1');
-  // sunOrb1 = SVG.adopt(sunOrb1);
-  //
-  // sunOrb1.front();
-  // sunOrb1.hide();
-
-  let scaleX = sun1.transform().scaleX;
-  let scaleY = sun1.transform().scaleY;
-  let translateX = sun1.transform().x;
-  let translateY = sun1.transform().y;
-
-  // 3076 => 1920
-
-  // -4663.7729   => 132.27632 (top point of circle) => 1920
-  // x            => 155.5184042575901                => 3076.8251953125
-
-  // (1 + 4663.7729) / 49.772875
-
-  // (1 + 4663.7729) / 49.772875 = 93.72118648962915
-  // 1 - (93.72118648962915 * 49.772875) = -4663.7729
-
-
-/*  moon1.delay(4000).animate(8000).during(function(pos, morph, eased){
-    var p = sunPath1.pointAt(eased * sunPath1Length);
-
-    moon1.x(p.x);
-    moon1.y(p.y);
-  }).loop();*/
-
-  // (1920 + 4663.7729) / 49.772875 = 132.2763231981275
-  // 132.27632 * 49.772875 - 4663.7729 = 1920
-  // - 4663.7729 = 1920 - (132.27632 * 49.772875)
-
-/*  var transformedX = (3076.8251953125 -  translateX) / scaleX;
-  console.log(transformedX);
-  //- 4663.7729 = 1920 - (132.27632 * 49.772875)
-  var newTranslateX = 3076.8251953125 - (transformedX * scaleX);
-
-  console.log(newTranslateX);*/
-
-  //132.27632 * 49.772875 - 4663.7729 = 1920
-  // - 4663.7729 = 1920 - (132.27632 * 49.772875)
-
-  var sun1X = sun1.node.getBBox().x + (sun1.node.getBBox().width / 2);
-  var sun1Y = sun1.node.getBBox().y + (sun1.node.getBBox().height / 2);
-
-  // 132.2763442993164 * 49.772875 -4663.7729 = 1920
-  // -4663.7729 = 0 - (132.2763442993164 * 49.772875)
-  //
-
-  var transformedX = (960 -  translateX) / scaleX;
-
-  sun1.animate(8000).during(function(pos, morph, eased){
-    var p = sunPath1.pointAt(eased * sunPath1Length);
+  var sun1Animation = sun1.animate(8000, '-').during(function(pos, morph, eased){
+    var offset = 0;
+    var p = sunPath1.pointAt((eased + offset) * sunPath1Length);
 
     sun1.translate(
-        p.x - (sun1X * scaleX),
-        p.y - (sun1Y * scaleY)
+        p.x - ((sun1.node.getBBox().x + (sun1.node.getBBox().width / 2)) * sun1.transform().scaleX),
+        p.y - ((sun1.node.getBBox().y + (sun1.node.getBBox().height / 2)) * sun1.transform().scaleY)
     );
+  }).loop();
 
-    //sun1.translate(translateX + p.x);
-    //console.log(sun1.transform().x);
+  var moon1 = background.getElementById('moon1');
+  moon1 = SVG.adopt(moon1);
 
-    // - 4663.7729 = 1920 - (132.27632 * 49.772875)
+  /*var moon1Animation = moon1.animate(8000, '-').during(function(pos, morph, eased){
+    var offset = 0.25;
+    var p = sunPath1.pointAt((eased + offset) * sunPath1Length);
 
-    //(1920 + 4663.7729) / 49.772875 = 132.2763231981275
-/*    var transformedX = (p.x -  translateX) / scaleX;
-    //- 4663.7729 = 1920 - (132.27632 * 49.772875)
-    var newTranslateX = p.x - (transformedX * scaleX);*/
+    moon1.translate(
+        p.x - ((moon1.node.getBBox().x + (moon1.node.getBBox().width / 2)) * moon1.transform().scaleX),
+        p.y - ((moon1.node.getBBox().y + (moon1.node.getBBox().height / 2)) * moon1.transform().scaleY)
+    );
+  }).loop();*/
 
-    //sun1.translate(p.x - (transformedX * scaleX));
-  });
 
   // sunGroup1.front();
 

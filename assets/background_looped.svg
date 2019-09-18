@@ -1912,11 +1912,13 @@
          id="sunOrb1"
          style="opacity:1;fill:url(#Sun);fill-opacity:1;stroke:none;stroke-width:0.21988402;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     </g>
-    <path
-       id="moon1"
-       d="m 1956.8538,1402.6538 a 125.64248,125.64248 0 0 0 -125.6422,125.6422 125.64248,125.64248 0 0 0 125.6422,125.6422 125.64248,125.64248 0 0 0 18.0726,-1.4239 149.95181,149.95181 0 0 1 -66.0352,-124.2183 149.95181,149.95181 0 0 1 66.1121,-124.1607 125.64248,125.64248 0 0 0 -18.1495,-1.4815 z"
-       style="opacity:1;fill:url(#linearGradient5688);fill-opacity:1;stroke:none;stroke-width:53.33432388;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       inkscape:connector-curvature="0"
-       inkscape:label="#path1307-0" />
+    <g id="moon1">
+      <path
+              id="moon1Path"
+              d="m 1956.8538,1402.6538 a 125.64248,125.64248 0 0 0 -125.6422,125.6422 125.64248,125.64248 0 0 0 125.6422,125.6422 125.64248,125.64248 0 0 0 18.0726,-1.4239 149.95181,149.95181 0 0 1 -66.0352,-124.2183 149.95181,149.95181 0 0 1 66.1121,-124.1607 125.64248,125.64248 0 0 0 -18.1495,-1.4815 z"
+              style="opacity:1;fill:url(#linearGradient5688);fill-opacity:1;stroke:none;stroke-width:53.33432388;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+              inkscape:connector-curvature="0"
+              inkscape:label="#path1307-0" />
+    </g>
   </g>
 </svg>
