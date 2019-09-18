@@ -2,10 +2,11 @@ window.addEventListener("load", function () {
 
   var Vector = wrect.Physics.Vector;
 
-  var zoomLevel = 1;
+  let zoomClamp = 0.45;
+  //zoomClamp = 0.1;
 
-  //let zoomClamp = 0.45;
-  let zoomClamp = 0.1;
+  var zoomLevel = zoomClamp;
+
   let yUpperClamp = 1750;
   let yLowerClamp = -450;
 
@@ -131,6 +132,7 @@ window.addEventListener("load", function () {
 
   var sunPath1 = background.getElementById('sunPath1');
   sunPath1 = SVG.adopt(sunPath1);
+  sunPath1.hide();
   var sunPath1Length = sunPath1.length();
 
   var sun1 = background.getElementById('sun1');
@@ -173,6 +175,7 @@ window.addEventListener("load", function () {
 
   var sunPath2 = background.getElementById('sunPath2');
   sunPath2 = SVG.adopt(sunPath2);
+  sunPath2.hide();
   var sunPath2Length = sunPath2.length();
 
   var sun2 = background.getElementById('sun2');
@@ -266,7 +269,7 @@ window.addEventListener("load", function () {
 
   startButton.x(camera.cx() - 50);
   startButton.y(camera.cy() - 50);
-
+  startButton.hide();
   function startGame() {
     console.log('Game Start');
 
