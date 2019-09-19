@@ -4,7 +4,7 @@ window.addEventListener("load", function () {
 
   let zoomClamp = 0.45;
   //zoomClamp = 0.1;
-  zoomClamp = 2;
+  //zoomClamp = 1.5;
 
   var zoomLevel = zoomClamp;
 
@@ -92,18 +92,54 @@ window.addEventListener("load", function () {
   book.hide();
 
   // Animals
+  var rhinoWrapper = SVG.adopt(background.getElementById('rhinoWrapper'));
   var rhino = SVG.adopt(background.getElementById('rhino'));
   var rhinoHeadUpPath = SVG.adopt(background.getElementById('rhino.head.up'));
   var rhinoWalk1 = SVG.adopt(background.getElementById('rhino.walk.1'));
   var rhinoWalk2 = SVG.adopt(background.getElementById('rhino.walk.2'));
+  var rhinoWalk3 = SVG.adopt(background.getElementById('rhino.walk.3'));
+  var rhinoWalk4 = SVG.adopt(background.getElementById('rhino.walk.4'));
 
-  rhino.toParent(scene1Group);
+  rhinoWrapper.toParent(scene1Group);
 
-  rhino
-      .animate().plot(rhinoHeadUpPath.array())
-      .animate().plot(rhinoWalk1.array())
-      .animate().plot(rhinoWalk2.array())
-  ;
+  var walkAnimationLength = 100;
+  var moveSpeed = 1;
+  var moveSpeedModifier = 50;
+
+  rhino.scale(0.5);
+
+  //rhinoWrapper.x(rhinoWrapper.x() + 100);
+
+  // rhino
+  //     .animate(walkAnimationLength).plot(rhinoHeadUpPath.array());
+
+  //rhinoGroup.translate(500);
+
+  function moveRhino(pos, morph, eased, situation) {
+    //console.log(eased);
+    //console.log(10 * eased);
+    // console.log(rhino.x() + 10);
+    //rhino.animate(100).move(100);
+    //rhinoWrapper.x(rhinoWrapper.x() - 1 * eased);
+
+    //rhinoWrapper.animate(walkAnimationLength).move(-10);
+
+    rhinoWrapper.x(rhinoWrapper.x() - (moveSpeedModifier / walkAnimationLength));
+  }
+
+  function rhinoWalk() {
+    rhino
+        .animate(walkAnimationLength).plot(rhinoWalk1.array()).during(moveRhino)
+        .animate(walkAnimationLength).plot(rhinoWalk2.array()).during(moveRhino)
+        .animate(walkAnimationLength).plot(rhinoWalk3.array()).during(moveRhino)
+        .animate(walkAnimationLength).plot(rhinoWalk4.array()).during(moveRhino)
+        .after(function() {
+          rhinoWalk();
+        })
+    ;
+  }
+
+  rhinoWalk();
 
   var capturedCount = 0;
 
