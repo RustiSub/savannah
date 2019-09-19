@@ -4,6 +4,7 @@ window.addEventListener("load", function () {
 
   let zoomClamp = 0.45;
   //zoomClamp = 0.1;
+  zoomClamp = 2;
 
   var zoomLevel = zoomClamp;
 
@@ -83,7 +84,7 @@ window.addEventListener("load", function () {
 
   // Book
 
-  var book = background.getElementById('bookGroup'); //        "ego/map-geopunt-module": "4.1.*@dev",
+  var book = background.getElementById('bookGroup');
   book = SVG.adopt(book);
 
   book.toParent(parent);
@@ -91,17 +92,25 @@ window.addEventListener("load", function () {
   book.hide();
 
   // Animals
-  var rhino = background.getElementById('rhino'); //        "ego/map-geopunt-module": "4.1.*@dev",
-  rhino = SVG.adopt(rhino);
+  var rhino = SVG.adopt(background.getElementById('rhino'));
+  var rhinoHeadUpPath = SVG.adopt(background.getElementById('rhino.head.up'));
+  var rhinoWalk1 = SVG.adopt(background.getElementById('rhino.walk.1'));
+  var rhinoWalk2 = SVG.adopt(background.getElementById('rhino.walk.2'));
 
   rhino.toParent(scene1Group);
+
+  rhino
+      .animate().plot(rhinoHeadUpPath.array())
+      .animate().plot(rhinoWalk1.array())
+      .animate().plot(rhinoWalk2.array())
+  ;
 
   var capturedCount = 0;
 
   function captureAnimal(animal) {
     capturedCount += 1;
 
-    var bookSlot = background.getElementById('bookSlot.' + capturedCount); //        "ego/map-geopunt-module": "4.1.*@dev",
+    var bookSlot = background.getElementById('bookSlot.' + capturedCount);
     bookSlot = SVG.adopt(bookSlot);
 
     animal.toParent(book);
@@ -297,7 +306,7 @@ window.addEventListener("load", function () {
 
   startButton.x(camera.cx() - 50);
   startButton.y(camera.cy() - 50);
-  //startButton.hide();
+  startButton.hide();
   function startGame() {
     console.log('Game Start');
 
