@@ -27,6 +27,35 @@ window.addEventListener("load", function () {
 
   sceneParent.viewbox(parent.viewbox());
 
+  // Intro
+
+  gameState = 0;
+
+  var introGroup = SVG.adopt(background.getElementById('introGroup'));
+  var fakeDarkness = SVG.adopt(background.getElementById('fakeDarkness'));
+  var fakeLight = SVG.adopt(background.getElementById('fakeLight'));
+  var tentFabric = SVG.adopt(background.getElementById('tentFabric'));
+
+  introGroup.front();
+
+  fakeDarkness.animate(6000).style({opacity: 0});
+  tentFabric.animate(6000).style({opacity: 0.99});
+  fakeLight.animate(2000).style({opacity: 0});
+
+  var tentDoorLeft = SVG.adopt(background.getElementById('tentDoorLeft'));
+  var tentDoorLeftOpen = SVG.adopt(background.getElementById('tentDoorLeft.open'));
+  tentDoorLeft.animate(1000).delay(6000).plot(tentDoorLeftOpen.array());
+
+  var tentDoorRight= SVG.adopt(background.getElementById('tentDoorRight'));
+  var tentDoorRightOpen = SVG.adopt(background.getElementById('tentDoorRight.open'));
+  tentDoorRight.animate(1000).delay(6000).plot(tentDoorRightOpen.array());
+
+  //introGroup.animate().move(-220, -200);
+
+  //sceneParent.hide();
+
+  zoomClamp = 0.1;
+
   //Scene 1
 
   var scene1Group = background.getElementById('scene1Group');
@@ -139,7 +168,7 @@ window.addEventListener("load", function () {
     ;
   }
 
-  rhinoWalk();
+  //rhinoWalk();
 
   var capturedCount = 0;
 
@@ -342,7 +371,7 @@ window.addEventListener("load", function () {
 
   startButton.x(camera.cx() - 50);
   startButton.y(camera.cy() - 50);
-  //startButton.hide();
+  startButton.hide();
   function startGame() {
     console.log('Game Start');
 
@@ -634,6 +663,9 @@ window.addEventListener("load", function () {
   }
 
   function loop(timestamp) {
+    // if (gameState !== 1) {
+    //   return;
+    // }
     var progress = timestamp - lastRender;
 
     update(progress);
