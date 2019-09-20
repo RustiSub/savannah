@@ -29,9 +29,9 @@
      inkscape:window-height="855"
      id="namedview821"
      showgrid="false"
-     inkscape:zoom="0.41321552"
-     inkscape:cx="861.94988"
-     inkscape:cy="297.11104"
+     inkscape:zoom="0.2921875"
+     inkscape:cx="964.47895"
+     inkscape:cy="-787.68902"
      inkscape:window-x="0"
      inkscape:window-y="1"
      inkscape:window-maximized="1"
@@ -826,6 +826,16 @@
        y1="83.893265"
        x2="286.08951"
        y2="83.893265" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#NightFilter"
+       id="linearGradient3500-4"
+       gradientUnits="userSpaceOnUse"
+       x1="508.47647"
+       y1="97.924797"
+       x2="508.47647"
+       y2="-258.29205"
+       gradientTransform="matrix(1.2418923,0,0,1.2306962,850.22738,518.22006)" />
   </defs>
   <metadata
      id="metadata5">
@@ -5060,10 +5070,18 @@
        sodipodi:nodetypes="ccccccc"
        inkscape:label="alarmClock" />
     <rect
+       style="display:inline;opacity:1;fill:url(#linearGradient3500-4);fill-opacity:1;stroke:none;stroke-width:1.35826492;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="nightFilterIntro"
+       width="630.88135"
+       height="1129.1426"
+       x="849.04395"
+       y="-60.301136"
+       inkscape:label="nightFilterIntro" />
+    <rect
        y="-60.301136"
        x="850.8316"
        height="1129.1426"
-       width="627.30603"
+       width="621.68329"
        id="fakeDarkness"
        style="display:inline;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2.17224216;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        inkscape:label="fakeDarkness" />

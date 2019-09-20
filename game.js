@@ -16,6 +16,8 @@ window.addEventListener("load", function () {
   let cycleLength = 60000;
   let batteryChargeTime = 1;
 
+  var mouseCameraLocked = true;
+
   var moveDistance = {
     x: 0,
     y: 0
@@ -211,6 +213,7 @@ window.addEventListener("load", function () {
   var sky2Night = SVG.adopt(background.getElementById('sky2Night'));
 
   var sun1Animation = sun1.animate(cycleLength, '-').during(function(pos, morph, eased, situation){
+    console.log(pos);
     var p = sunPath1.pointAt((eased) * sunPath1Length);
 
     var opacity = 0;
@@ -356,60 +359,79 @@ window.addEventListener("load", function () {
   var introGroup = SVG.adopt(background.getElementById('introGroup'));
 
   introGroup.toParent(scene1Group);
+  introGroup.hide();
 
-  var fakeDarkness = SVG.adopt(background.getElementById('fakeDarkness'));
-  var fakeLight = SVG.adopt(background.getElementById('fakeLight'));
-  var tentFabric = SVG.adopt(background.getElementById('tentFabric'));
-  var tentGroup = SVG.adopt(background.getElementById('tentGroup'));
+  function intro() {
+    startButton.hide();
+    introGroup.show();
 
-  introGroup.front();
+    gameState = 0;
 
-  moveCamera(-10, -390);
+    sun1Animation.at(0.30, true);
+    sun2Animation.at(0.30, true);
+    moon1Animation.at(0.80, true);
+    moon2Animation.at(0.80, true);
 
-  cameraGraphic.style({opacity: 0});
+    zoomClamp = 0.55;
+    zoomLevel = zoomClamp;
+    cameraZoom(sceneParent, zoomLevel);
 
-  fakeDarkness.delay(1000).delay(1000).during(function () {
-    moveCamera(150 / (60), 0);
-  }).delay(1000).delay(2000).during(function () {
-    moveCamera(-100 / (60 * 2), 0)
-  }).animate(6000).style({opacity: 0});
-  tentFabric.delay(1000).animate(6000).style({opacity: 0.99});
-  fakeLight.delay(1000).animate(2000).style({opacity: 0});
+    var fakeDarkness = SVG.adopt(background.getElementById('fakeDarkness'));
+    var fakeLight = SVG.adopt(background.getElementById('fakeLight'));
+    var tentFabric = SVG.adopt(background.getElementById('tentFabric'));
+    var tentGroup = SVG.adopt(background.getElementById('tentGroup'));
 
-  var tentDoorLeft = SVG.adopt(background.getElementById('tentDoorLeft'));
-  var tentDoorLeftOpen = SVG.adopt(background.getElementById('tentDoorLeft.open'));
-  tentDoorLeft.delay(6000).animate(3000).delay(2000).plot(tentDoorLeftOpen.array()).delay(3000);
+    moveCamera(-10, -390);
 
-  var tentDoorRight= SVG.adopt(background.getElementById('tentDoorRight'));
-  var tentDoorRightOpen = SVG.adopt(background.getElementById('tentDoorRight.open'));
+    cameraGraphic.style({opacity: 0});
 
-  tentDoorRight
-      .delay(6000)
-      .animate(3000)
-      .delay(2000)
-      .plot(tentDoorRightOpen.array())
-      .delay(3000)
-      .during(function (pos, morphed, eased) {
-        moveCamera(-50 / (60 * 2), 600 / (60 * 2));
-      }).delay(2000)
-      .during(function(pos) {
-        moveCamera(0, -450 / (60 * 2));
+    fakeDarkness.delay(1000).delay(1000).during(function () {
+      moveCamera(150 / (60), 0);
+    }).delay(1000).delay(2000).during(function () {
+      moveCamera(-100 / (60 * 2), 0);
 
-        tentDoorLeft.style({opacity: 1 - pos});
-        tentDoorRight.style({opacity: 1 - pos});
-      })
-      .after(function () {
-        tentFabric.animate(2000).style({opacity: 0})
-          .after(function() {
-            introGroup.hide();
-            cameraGraphic.animate(500).style({opacity: 0.9});
-          })
-        ;x
-      })
-  ;
+      powerUpAnimation.play();
+    }).animate(6000).style({opacity: 0});
 
-  zoomClamp = 0.55;
-  zoomLevel = zoomClamp;
+    tentFabric.delay(1000).animate(6000).style({opacity: 0.99});
+    fakeLight.delay(1000).animate(2000).style({opacity: 0});
+
+    var tentDoorLeft = SVG.adopt(background.getElementById('tentDoorLeft'));
+    var tentDoorLeftOpen = SVG.adopt(background.getElementById('tentDoorLeft.open'));
+    tentDoorLeft.delay(6000).animate(3000).delay(2000).plot(tentDoorLeftOpen.array()).delay(3000);
+
+    var tentDoorRight= SVG.adopt(background.getElementById('tentDoorRight'));
+    var tentDoorRightOpen = SVG.adopt(background.getElementById('tentDoorRight.open'));
+
+    tentDoorRight
+        .delay(6000)
+        .animate(3000)
+        .delay(2000)
+        .plot(tentDoorRightOpen.array())
+        .delay(3000)
+        .during(function (pos, morphed, eased) {
+          moveCamera(-50 / (60 * 2), 600 / (60 * 2));
+        }).delay(2000)
+        .during(function(pos) {
+          moveCamera(0, -450 / (60 * 2));
+
+          tentDoorLeft.style({opacity: 1 - pos});
+          tentDoorRight.style({opacity: 1 - pos});
+        })
+        .after(function () {
+          tentFabric.animate(2000).style({opacity: 0})
+              .after(function() {
+                introGroup.hide();
+                cameraGraphic.animate(500).style({opacity: 0.75}).after(
+                    function () {
+                      mouseCameraLocked = false;
+                    }
+                );
+              })
+          ;
+        })
+    ;
+  }
 
   // Game Start
 
@@ -417,19 +439,22 @@ window.addEventListener("load", function () {
 
   startButton.x(camera.cx() - 50);
   startButton.y(camera.cy() - 50);
-  startButton.hide();
+  //startButton.hide();
   function startGame() {
-    console.log('Game Start');
+    intro();
+/*    console.log('Game Start');
+
+    mouseCameraLocked = false;
 
     startButton.hide();
     gameState = 1;
 
-    sun1Animation.at(0.75, true);
-    sun2Animation.at(0.75, true);
-    moon1Animation.at(0.25, true);
-    moon2Animation.at(0.25, true);
+    sun1Animation.at(0.53, true);
+    sun2Animation.at(0.53, true);
+    moon1Animation.at(0.03, true);
+    moon2Animation.at(0.03, true);*/
 
-    powerUpAnimation.play();
+    //powerUpAnimation.play();
   }
 
   function stopGame() {
@@ -445,7 +470,9 @@ window.addEventListener("load", function () {
   }
 
   startButton.click(function(event) {
-    startGame();
+    intro();
+    //zoomClamp  = 0.1;
+    //startGame();
   });
 
   const mutationConfig = {
@@ -535,7 +562,10 @@ window.addEventListener("load", function () {
   // Camera Move with Mouse
 
   var pointerHandler = (event) => {
-    //return event;
+    if (mouseCameraLocked) {
+      return;
+    }
+
     if (book.visible()) {
       return event;
     }
@@ -577,6 +607,10 @@ window.addEventListener("load", function () {
   background.addEventListener('pointermove', pointerHandler);
 
   var mouseWheelHandler = (event) => {
+    if (mouseCameraLocked) {
+      return;
+    }
+
     //event.preventDefault();
 
     let zoomDelta = (event.deltaY / 50) * (zoomLevel / 2);
@@ -720,4 +754,7 @@ window.addEventListener("load", function () {
   }
   var lastRender = 0;
   window.requestAnimationFrame(loop);
+
+  //intro();
+  //startGame();
 });
