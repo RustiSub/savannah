@@ -16,6 +16,25 @@ window.addEventListener("load", function () {
   let cycleLength = 60000;
   let batteryChargeTime = 1;
 
+  var moveDistance = {
+    x: 0,
+    y: 0
+  };
+
+  function moveCamera(x, y) {
+    nestedScene1Parent.x(nestedScene1Parent.x() + x);
+    nestedScene2Parent.x(nestedScene2Parent.x() + x);
+
+    sunGroup1.x(sunGroup1.x() + x);
+    sunGroup2.x(sunGroup2.x() + x);
+
+    nestedScene1Parent.y(nestedScene1Parent.y() + y);
+    nestedScene2Parent.y(nestedScene2Parent.y() + y);
+
+    sunGroup1.y(sunGroup1.y() + y);
+    sunGroup2.y(sunGroup2.y() + y);
+  }
+
   var background = document.getElementById('looptest').contentDocument;
 
   var parent = background.getElementById('svg8');
@@ -27,34 +46,6 @@ window.addEventListener("load", function () {
 
   sceneParent.viewbox(parent.viewbox());
 
-  // Intro
-
-  gameState = 0;
-
-  var introGroup = SVG.adopt(background.getElementById('introGroup'));
-  var fakeDarkness = SVG.adopt(background.getElementById('fakeDarkness'));
-  var fakeLight = SVG.adopt(background.getElementById('fakeLight'));
-  var tentFabric = SVG.adopt(background.getElementById('tentFabric'));
-
-  introGroup.front();
-
-  fakeDarkness.animate(6000).style({opacity: 0});
-  tentFabric.animate(6000).style({opacity: 0.99});
-  fakeLight.animate(2000).style({opacity: 0});
-
-  var tentDoorLeft = SVG.adopt(background.getElementById('tentDoorLeft'));
-  var tentDoorLeftOpen = SVG.adopt(background.getElementById('tentDoorLeft.open'));
-  tentDoorLeft.animate(1000).delay(6000).plot(tentDoorLeftOpen.array());
-
-  var tentDoorRight= SVG.adopt(background.getElementById('tentDoorRight'));
-  var tentDoorRightOpen = SVG.adopt(background.getElementById('tentDoorRight.open'));
-  tentDoorRight.animate(1000).delay(6000).plot(tentDoorRightOpen.array());
-
-  //introGroup.animate().move(-220, -200);
-
-  //sceneParent.hide();
-
-  zoomClamp = 0.1;
 
   //Scene 1
 
@@ -130,6 +121,7 @@ window.addEventListener("load", function () {
   var rhinoWalk4 = SVG.adopt(background.getElementById('rhino.walk.4'));
 
   rhinoWrapper.toParent(scene1Group);
+  rhinoWrapper.hide();
 
   var walkAnimationLength = 100;
   var moveSpeed = 1;
@@ -145,14 +137,6 @@ window.addEventListener("load", function () {
   //rhinoGroup.translate(500);
 
   function moveRhino(pos, morph, eased, situation) {
-    //console.log(eased);
-    //console.log(10 * eased);
-    // console.log(rhino.x() + 10);
-    //rhino.animate(100).move(100);
-    //rhinoWrapper.x(rhinoWrapper.x() - 1 * eased);
-
-    //rhinoWrapper.animate(walkAnimationLength).move(-10);
-
     rhinoWrapper.x(rhinoWrapper.x() - (moveSpeedModifier / walkAnimationLength));
   }
 
@@ -365,6 +349,68 @@ window.addEventListener("load", function () {
 
   nextBar = null;
 
+  // Intro
+
+  gameState = 0;
+
+  var introGroup = SVG.adopt(background.getElementById('introGroup'));
+
+  introGroup.toParent(scene1Group);
+
+  var fakeDarkness = SVG.adopt(background.getElementById('fakeDarkness'));
+  var fakeLight = SVG.adopt(background.getElementById('fakeLight'));
+  var tentFabric = SVG.adopt(background.getElementById('tentFabric'));
+  var tentGroup = SVG.adopt(background.getElementById('tentGroup'));
+
+  introGroup.front();
+
+  moveCamera(-10, -390);
+
+  cameraGraphic.style({opacity: 0});
+
+  fakeDarkness.delay(1000).delay(1000).during(function () {
+    moveCamera(150 / (60), 0);
+  }).delay(1000).delay(2000).during(function () {
+    moveCamera(-100 / (60 * 2), 0)
+  }).animate(6000).style({opacity: 0});
+  tentFabric.delay(1000).animate(6000).style({opacity: 0.99});
+  fakeLight.delay(1000).animate(2000).style({opacity: 0});
+
+  var tentDoorLeft = SVG.adopt(background.getElementById('tentDoorLeft'));
+  var tentDoorLeftOpen = SVG.adopt(background.getElementById('tentDoorLeft.open'));
+  tentDoorLeft.delay(6000).animate(3000).delay(2000).plot(tentDoorLeftOpen.array()).delay(3000);
+
+  var tentDoorRight= SVG.adopt(background.getElementById('tentDoorRight'));
+  var tentDoorRightOpen = SVG.adopt(background.getElementById('tentDoorRight.open'));
+
+  tentDoorRight
+      .delay(6000)
+      .animate(3000)
+      .delay(2000)
+      .plot(tentDoorRightOpen.array())
+      .delay(3000)
+      .during(function (pos, morphed, eased) {
+        moveCamera(-50 / (60 * 2), 600 / (60 * 2));
+      }).delay(2000)
+      .during(function(pos) {
+        moveCamera(0, -450 / (60 * 2));
+
+        tentDoorLeft.style({opacity: 1 - pos});
+        tentDoorRight.style({opacity: 1 - pos});
+      })
+      .after(function () {
+        tentFabric.animate(2000).style({opacity: 0})
+          .after(function() {
+            introGroup.hide();
+            cameraGraphic.animate(500).style({opacity: 0.9});
+          })
+        ;x
+      })
+  ;
+
+  zoomClamp = 0.55;
+  zoomLevel = zoomClamp;
+
   // Game Start
 
   var startButton = parent.rect(100, 100);
@@ -481,10 +527,7 @@ window.addEventListener("load", function () {
 
   const useEventType = (typeof window.PointerEvent === 'function') ? 'pointer' : 'mouse';
 
-  var moveDistance = {
-    x: 0,
-    y: 0
-  };
+
 
   var cameraDeadZone = background.getElementById('cameraDeadZone');
   cameraDeadZone = SVG.adopt(cameraDeadZone);
@@ -631,6 +674,8 @@ window.addEventListener("load", function () {
 
     return false;
   });
+
+  //Basic Loop and Positioning
 
   function update(progress) {
     // Update the state of the world for the elapsed time since last render
