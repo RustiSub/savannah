@@ -342,7 +342,7 @@ window.addEventListener("load", function () {
 
   startButton.x(camera.cx() - 50);
   startButton.y(camera.cy() - 50);
-  startButton.hide();
+  //startButton.hide();
   function startGame() {
     console.log('Game Start');
 
