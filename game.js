@@ -223,7 +223,7 @@ window.addEventListener("load", function () {
     } else {
       opacity = (1 - pos) / pos;
     }
-
+console.log('opacity', opacity);
     nightFilter1.style('opacity', opacity);
     nightFilter2.style('opacity', opacity);
     sky1Night.style('opacity', opacity);
@@ -367,10 +367,12 @@ window.addEventListener("load", function () {
 
     gameState = 0;
 
-    sun1Animation.at(0.30, true);
-    sun2Animation.at(0.30, true);
-    moon1Animation.at(0.80, true);
-    moon2Animation.at(0.80, true);
+    var sunPos = 0.63;
+
+    sun1Animation.at(sunPos, true);
+    sun2Animation.at(sunPos, true);
+    moon1Animation.at(sunPos - 0.5, true);
+    moon2Animation.at(sunPos - 0.5, true);
 
     zoomClamp = 0.55;
     zoomLevel = zoomClamp;
@@ -378,9 +380,10 @@ window.addEventListener("load", function () {
 
     var fakeDarkness = SVG.adopt(background.getElementById('fakeDarkness'));
     var fakeLight = SVG.adopt(background.getElementById('fakeLight'));
+    var nightFilterIntro = SVG.adopt(background.getElementById('nightFilterIntro'));
     var tentFabric = SVG.adopt(background.getElementById('tentFabric'));
     var tentGroup = SVG.adopt(background.getElementById('tentGroup'));
-
+    nightFilterIntro.hide();
     moveCamera(-10, -390);
 
     cameraGraphic.style({opacity: 0});
@@ -422,10 +425,22 @@ window.addEventListener("load", function () {
           tentFabric.animate(2000).style({opacity: 0})
               .after(function() {
                 introGroup.hide();
-                cameraGraphic.animate(500).style({opacity: 0.75}).after(
-                    function () {
-                      mouseCameraLocked = false;
-                    }
+                cameraGraphic.animate(500).style({opacity: 0.75})
+                    .during(function(pos) {
+                      zoomClamp = 0.43;
+                      //30 steps
+                      var zoom =  zoomClamp - zoomLevel;
+                      zoom = zoom / 30;
+
+                      zoomLevel += zoom;
+
+                      //zoomLevel = zoomClamp;
+                      cameraZoom(sceneParent, zoomLevel);
+                    })
+                .after(
+                  function () {
+                    mouseCameraLocked = false;
+                  }
                 );
               })
           ;
@@ -441,18 +456,21 @@ window.addEventListener("load", function () {
   startButton.y(camera.cy() - 50);
   //startButton.hide();
   function startGame() {
-    intro();
-/*    console.log('Game Start');
+    console.log('Game Start');
 
     mouseCameraLocked = false;
 
     startButton.hide();
+
+    zoomClamp = 0.43;
     gameState = 1;
 
-    sun1Animation.at(0.53, true);
-    sun2Animation.at(0.53, true);
-    moon1Animation.at(0.03, true);
-    moon2Animation.at(0.03, true);*/
+    var sunPos = 0;
+
+    sun1Animation.at(sunPos, true);
+    sun2Animation.at(sunPos, true);
+    moon1Animation.at(sunPos - 0.50, true);
+    moon2Animation.at(sunPos - 0.50, true);
 
     //powerUpAnimation.play();
   }
@@ -470,6 +488,7 @@ window.addEventListener("load", function () {
   }
 
   startButton.click(function(event) {
+    //startGame();
     intro();
     //zoomClamp  = 0.1;
     //startGame();

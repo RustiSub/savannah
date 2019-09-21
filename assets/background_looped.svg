@@ -29,13 +29,13 @@
      inkscape:window-height="855"
      id="namedview821"
      showgrid="false"
-     inkscape:zoom="0.2921875"
-     inkscape:cx="964.47895"
-     inkscape:cy="-787.68902"
+     inkscape:zoom="0.10330388"
+     inkscape:cx="288.04631"
+     inkscape:cy="1174.8744"
      inkscape:window-x="0"
      inkscape:window-y="1"
      inkscape:window-maximized="1"
-     inkscape:current-layer="introGroup"
+     inkscape:current-layer="sunDial1-7"
      scale-x="1"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -2183,7 +2183,7 @@
        id="sunDial1">
       <path
          style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:18.89763832;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 3076.8267,374.05594 A 1156.8267,1156.8267 0 0 1 1920,1530.8826 1156.8267,1156.8267 0 0 1 763.17334,374.05594 1156.8267,1156.8267 0 0 1 1920,-782.77072 1156.8267,1156.8267 0 0 1 3076.8267,374.05594 Z"
+         d="M 1920,-782.77074 A 1156.8267,1156.8267 0 0 1 3076.8267,374.05596 1156.8267,1156.8267 0 0 1 1920,1530.8826 1156.8267,1156.8267 0 0 1 763.17336,374.05596 1156.8267,1156.8267 0 0 1 1920,-782.77074 Z"
          id="sunPath1"
          inkscape:connector-curvature="0" />
     </g>
@@ -3155,7 +3155,7 @@
        id="sunDial1-7">
       <path
          style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:18.89763832;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 3076.8267,374.05594 A 1156.8267,1156.8267 0 0 1 1920,1530.8826 1156.8267,1156.8267 0 0 1 763.17334,374.05594 1156.8267,1156.8267 0 0 1 1920,-782.77072 1156.8267,1156.8267 0 0 1 3076.8267,374.05594 Z"
+         d="M 1920,-782.77074 A 1156.8267,1156.8267 0 0 1 3076.8267,374.05596 1156.8267,1156.8267 0 0 1 1920,1530.8826 1156.8267,1156.8267 0 0 1 763.17336,374.05596 1156.8267,1156.8267 0 0 1 1920,-782.77074 Z"
          id="sunPath2"
          inkscape:connector-curvature="0" />
     </g>
