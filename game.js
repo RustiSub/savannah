@@ -18,6 +18,15 @@ window.addEventListener("load", function () {
 
   var mouseCameraLocked = true;
 
+  var cameraState = {
+    afterIntro: {
+      zoom: 0,
+      zoomClamp: 0,
+      x: 0,
+      y: 0
+    }
+  };
+
   var moveDistance = {
     x: 0,
     y: 0
@@ -35,6 +44,20 @@ window.addEventListener("load", function () {
 
     sunGroup1.y(sunGroup1.y() + y);
     sunGroup2.y(sunGroup2.y() + y);
+  }
+
+  function moveCameraTo(x, y) {
+    nestedScene1Parent.x(x);
+    nestedScene2Parent.x(x);
+
+    sunGroup1.x(x);
+    sunGroup2.x(x);
+
+    nestedScene1Parent.y(y);
+    nestedScene2Parent.y(y);
+
+    sunGroup1.y(y);
+    sunGroup2.y(y);
   }
 
   var background = document.getElementById('looptest').contentDocument;
@@ -375,6 +398,18 @@ window.addEventListener("load", function () {
   introGroup.toParent(scene1Group);
   introGroup.hide();
 
+  var fakeDarkness = SVG.adopt(background.getElementById('fakeDarkness'));
+  var fakeLight = SVG.adopt(background.getElementById('fakeLight'));
+  var tentFabric = SVG.adopt(background.getElementById('tentFabric'));
+  var tentGroup = SVG.adopt(background.getElementById('tentGroup'));
+  var startButtonAlarm = SVG.adopt(background.getElementById('startButton'));
+
+  var tentDoorLeft = SVG.adopt(background.getElementById('tentDoorLeft'));
+  var tentDoorLeftOpen = SVG.adopt(background.getElementById('tentDoorLeft.open'));
+
+  var tentDoorRight = SVG.adopt(background.getElementById('tentDoorRight'));
+  var tentDoorRightOpen = SVG.adopt(background.getElementById('tentDoorRight.open'));
+
   function intro() {
     startButton.hide();
     introGroup.show();
@@ -391,12 +426,6 @@ window.addEventListener("load", function () {
     zoomClamp = 0.55;
     zoomLevel = zoomClamp;
     cameraZoom(sceneParent, zoomLevel);
-
-    var fakeDarkness = SVG.adopt(background.getElementById('fakeDarkness'));
-    var fakeLight = SVG.adopt(background.getElementById('fakeLight'));
-    var tentFabric = SVG.adopt(background.getElementById('tentFabric'));
-    var tentGroup = SVG.adopt(background.getElementById('tentGroup'));
-    var startButtonAlarm = SVG.adopt(background.getElementById('startButton'));
 
     moveCamera(-10, -390);
 
@@ -434,8 +463,7 @@ window.addEventListener("load", function () {
       tentFabric.delay(1000).animate(6000).style({opacity: 0.99});
       fakeLight.delay(1000).animate(2000).style({opacity: 0});
 
-      var tentDoorLeft = SVG.adopt(background.getElementById('tentDoorLeft'));
-      var tentDoorLeftOpen = SVG.adopt(background.getElementById('tentDoorLeft.open'));
+
       tentDoorLeft
           .delay(6000)
           .animate(3000)
@@ -443,9 +471,6 @@ window.addEventListener("load", function () {
           .plot(tentDoorLeftOpen.array())
           .delay(3000)
       ;
-
-      var tentDoorRight = SVG.adopt(background.getElementById('tentDoorRight'));
-      var tentDoorRightOpen = SVG.adopt(background.getElementById('tentDoorRight.open'));
 
       tentDoorRight
           .delay(6000)
@@ -484,9 +509,18 @@ window.addEventListener("load", function () {
                       })
                       .after(
                           function () {
+                            cameraState.afterIntro = {
+                              zoom: zoomLevel,
+                              zoomClamp: zoomClamp,
+                              x: nestedScene1Parent.x,
+                              y: nestedScene1Parent.y
+                            };
+
                             mouseCameraLocked = false;
 
-                            introGroup.remove();
+                            introGroup.hide();
+
+                            outro();
                           }
                       );
                 })
@@ -494,6 +528,41 @@ window.addEventListener("load", function () {
           })
       ;
     }
+  }
+
+  cameraState.afterIntro = {
+    zoom: zoomLevel,
+    zoomClamp: zoomClamp,
+    x: nestedScene1Parent.x(),
+    y: nestedScene1Parent.y()
+  };
+
+  function outro() {
+    gameState = 2;
+
+    mouseCameraLocked = true;
+
+    introGroup.show();
+    //fakeDarkness.hide();
+
+    startButton.hide();
+
+    cameraGraphic.animate(3000).style({opacity: 0})
+        .during(function(pos) {
+          moveCamera(
+              (cameraState.afterIntro.x - nestedScene1Parent.x()) * (pos / 60 * 3),
+              (cameraState.afterIntro.y - nestedScene1Parent.y()) * (pos  / 60 * 3)
+          );
+
+          zoomClamp = cameraState.afterIntro.zoomClamp;
+          cameraZoom(sceneParent,  zoomLevel - ((zoomLevel - cameraState.afterIntro.zoom) * pos));
+        })
+        .after(function() {
+          tentFabric.animate(2000).style({opacity: 1});
+
+          book.show();
+        })
+    ;
   }
 
   // Game Start
@@ -538,6 +607,7 @@ window.addEventListener("load", function () {
   startButton.click(function(event) {
     //startGame();
     intro();
+    //outro();
     //zoomClamp  = 0.1;
     //startGame();
   });
@@ -821,7 +891,4 @@ window.addEventListener("load", function () {
   }
   var lastRender = 0;
   window.requestAnimationFrame(loop);
-
-  //intro();
-  //startGame();
 });
