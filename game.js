@@ -212,9 +212,12 @@ window.addEventListener("load", function () {
   var nightFilter2 = SVG.adopt(background.getElementById('nightFilter2'));
   var sky2Night = SVG.adopt(background.getElementById('sky2Night'));
 
-  var sun1Animation = sun1.animate(cycleLength, '-').during(function(pos, morph, eased, situation){
-    console.log(pos);
+  var sunPosition = 0;
+
+  var sun1Animation = sun1.animate(cycleLength, '-').during(function(pos, morph, eased, situation) {
     var p = sunPath1.pointAt((eased) * sunPath1Length);
+
+    sunPosition = pos;
 
     var opacity = 0;
 
@@ -223,7 +226,7 @@ window.addEventListener("load", function () {
     } else {
       opacity = (1 - pos) / pos;
     }
-console.log('opacity', opacity);
+
     nightFilter1.style('opacity', opacity);
     nightFilter2.style('opacity', opacity);
     sky1Night.style('opacity', opacity);
@@ -316,6 +319,13 @@ console.log('opacity', opacity);
 
   var powerUpAnimation;
 
+  function startSun() {
+    sun1Animation.play();
+    sun2Animation.play();
+    moon1Animation.play();
+    moon2Animation.play();
+  }
+
   // Battery Power & Game End
   for (var b = 5; b >= 1; b--) {
     var nextBar;
@@ -337,11 +347,6 @@ console.log('opacity', opacity);
     } else {
       powerUpAnimation.after(function() {
         batteryPower = 5;
-
-        sun1Animation.play();
-        sun2Animation.play();
-        moon1Animation.play();
-        moon2Animation.play();
       });
     }
 
@@ -367,7 +372,7 @@ console.log('opacity', opacity);
 
     gameState = 0;
 
-    var sunPos = 0.63;
+    var sunPos = 0.75;
 
     sun1Animation.at(sunPos, true);
     sun2Animation.at(sunPos, true);
@@ -399,15 +404,18 @@ console.log('opacity', opacity);
     var startButtonAlarmAnimation = startButtonAlarm.animate().style({opacity: 0}).loop();
 
     startButtonAlarm.click(function () {
-      startButtonAlarmAnimation.pause();
+      startButtonAlarmAnimation.finish();
 
           fakeDarkness
               .delay(1000)
               .delay(2000).during(function () {
                 moveCamera(-100 / (60 * 2), 0);
-                powerUpAnimation.play();
               })
-              .animate(6000).style({opacity: 0});
+              .animate(6000).style({opacity: 0})
+/*              .during(function () {
+                moveCamera(50 / (60 * 2), 0);
+              })*/
+          ;
 
           afterStartButton();
         }
@@ -419,7 +427,13 @@ console.log('opacity', opacity);
 
       var tentDoorLeft = SVG.adopt(background.getElementById('tentDoorLeft'));
       var tentDoorLeftOpen = SVG.adopt(background.getElementById('tentDoorLeft.open'));
-      tentDoorLeft.delay(6000).animate(3000).delay(2000).plot(tentDoorLeftOpen.array()).delay(3000);
+      tentDoorLeft
+          .delay(6000)
+          .animate(3000)
+          //.delay(2000)
+          .plot(tentDoorLeftOpen.array())
+          .delay(3000)
+      ;
 
       var tentDoorRight = SVG.adopt(background.getElementById('tentDoorRight'));
       var tentDoorRightOpen = SVG.adopt(background.getElementById('tentDoorRight.open'));
@@ -427,12 +441,15 @@ console.log('opacity', opacity);
       tentDoorRight
           .delay(6000)
           .animate(3000)
-          .delay(2000)
+          //.delay(2000)
           .plot(tentDoorRightOpen.array())
           .delay(3000)
           .during(function (pos, morphed, eased) {
             moveCamera(-50 / (60 * 2), 600 / (60 * 2));
-          }).delay(2000)
+
+            startSun();
+          })
+          .delay(2000)
           .during(function (pos) {
             moveCamera(0, -450 / (60 * 2));
 
@@ -443,6 +460,7 @@ console.log('opacity', opacity);
             tentFabric.animate(2000).style({opacity: 0})
                 .after(function () {
                   introGroup.hide();
+                  powerUpAnimation.play();
                   cameraGraphic.animate(500).style({opacity: 0.75})
                       .during(function (pos) {
                         zoomClamp = 0.43;
@@ -458,6 +476,8 @@ console.log('opacity', opacity);
                       .after(
                           function () {
                             mouseCameraLocked = false;
+
+                            introGroup.remove();
                           }
                       );
                 })
