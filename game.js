@@ -214,6 +214,8 @@ window.addEventListener("load", function () {
 
   var sunPosition = 0;
 
+  var timerGroup = SVG.adopt(background.getElementById('timerGroup'));
+
   var sun1Animation = sun1.animate(cycleLength, '-').during(function(pos, morph, eased, situation) {
     var p = sunPath1.pointAt((eased) * sunPath1Length);
 
@@ -244,6 +246,13 @@ window.addEventListener("load", function () {
         p.x - ((sun1.node.getBBox().x + (sun1.node.getBBox().width / 2)) * sun1.transform().scaleX),
         p.y - ((sun1.node.getBBox().y + (sun1.node.getBBox().height / 2)) * sun1.transform().scaleY)
     );
+
+    timerGroup.rotate(
+        360 * eased,
+        timerGroup.node.getBBox().x + timerGroup.node.getBBox().width / 2,
+        timerGroup.node.getBBox().y + timerGroup.node.getBBox().height / 2
+    );
+
   }).loop().pause();
 
   var moon1 = background.getElementById('moon1');
