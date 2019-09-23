@@ -29,9 +29,9 @@
      inkscape:window-height="855"
      id="namedview821"
      showgrid="false"
-     inkscape:zoom="0.34729255"
-     inkscape:cx="689.76318"
-     inkscape:cy="534.98569"
+     inkscape:zoom="0.49114584"
+     inkscape:cx="938.15079"
+     inkscape:cy="666.22839"
      inkscape:window-x="0"
      inkscape:window-y="1"
      inkscape:window-maximized="1"
@@ -5588,7 +5588,8 @@
        id="galleryIcon"
        inkscape:label="galleryIcon"
        style="opacity:0.75"
-       onmouseover="">
+       onmouseover=""
+       transform="matrix(0.84299844,0,0,0.84299844,30.873856,17.778814)">
       <rect
          rx="0.73963994"
          y="109.68533"
