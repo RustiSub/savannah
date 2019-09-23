@@ -845,6 +845,16 @@ window.addEventListener("load", function () {
     return false;
   });
 
+  var galleryIcon = SVG.adopt(background.getElementById('galleryIcon'));
+
+  galleryIcon.mouseover(function() {
+    galleryIcon.style({opacity: 1});
+  });
+
+  galleryIcon.mouseout(function() {
+    galleryIcon.style({opacity: 0.50});
+  });
+
   var albumSlotSizeMode = 4;
 
   var albumFocus = SVG('albumFocus').size(1920, 1080);
