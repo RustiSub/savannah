@@ -139,6 +139,7 @@ window.addEventListener("load", function () {
   // Animals
   var rhinoWrapper = SVG.adopt(background.getElementById('rhinoWrapper'));
   var rhino = SVG.adopt(background.getElementById('rhino'));
+  var rhinoPath = rhino.array();
   var rhinoHeadUpPath = SVG.adopt(background.getElementById('rhino.head.up'));
   var rhinoWalk1 = SVG.adopt(background.getElementById('rhino.walk.1'));
   var rhinoWalk2 = SVG.adopt(background.getElementById('rhino.walk.2'));
@@ -147,31 +148,48 @@ window.addEventListener("load", function () {
 
   var animalPathDessertGroup = SVG.adopt(background.getElementById('animalPath.dessert.group'));
   var animalPathDessert = SVG.adopt(background.getElementById('animalPath.dessert'));
+  animalPathDessert.hide();
 
   rhinoWrapper.toParent(animalPathDessertGroup);
   rhino.flip('x');
   var animalPathDessertLength = animalPathDessert.length();
-  rhino.plot(rhinoWalk1.array());
+
   var animations = [];
+  animations.push(rhinoWalk2.array());
+  animations.push(rhinoWalk3.array());
+  animations.push(rhinoWalk4.array());
+  animations.push(rhinoWalk3.array());
 
-  animations.push(rhino.animate().plot(rhinoWalk2.array()).loop().pause());
-  animations.push(rhino.animate().plot(rhinoWalk3.array()).loop().pause());
-  animations.push(rhino.animate().plot(rhinoWalk4.array()).loop().pause());
 
-  var rhinoWalkAnimation = function(pos, seconds, max) {
-    var animationLength = max / animations.length;
-    var animationIndex = Math.ceil(seconds / animationLength);
+  var lastIndex = 0;
+
+  var rhinoWalkAnimation = function(pos, seconds, animationDuration) {
+    var animationIndex = Math.ceil(seconds / animationDuration);
 
     animationIndex -= animations.length * Math.floor(animationIndex / animations.length);
 
-    if (animations[animationIndex - 1]) {
-      var animation = animations[animationIndex - 1];
+    if (animations[animationIndex]) {
+      var animation = animations[animationIndex];
 
-      animation.at(seconds / (animationLength * animationIndex));
+      // How many animations have played so far
+      var animationCycleCounter = Math.floor(seconds / animationDuration);
+
+      // Make indexed animations loop around each cycle
+      var animationIndexOffset = animationCycleCounter * animationDuration;
+
+      var currentAnimationCycleTime = (seconds - animationIndexOffset) / animationDuration;
+
+      if (lastIndex !== animationIndex) {
+        var currentAnimation = rhino.animate(animationDuration).plot(animation).pause();
+
+        currentAnimation.play();
+      }
+
+      lastIndex = animationIndex;
     }
   };
   var animationLength = 20000;
-  var rhinoWrapperAnimation = rhinoWrapper.animate(animationLength, '-').during(function(pos, morph, eased, situation) {
+  rhinoWrapper.animate(animationLength, '-').during(function(pos, morph, eased, situation) {
     var p = animalPathDessert.pointAt((eased) * animalPathDessertLength);
 
     rhinoWrapper.translate(
@@ -179,9 +197,9 @@ window.addEventListener("load", function () {
         p.y - ((rhinoWrapper.node.getBBox().y + (rhinoWrapper.node.getBBox().height / 2)) * rhinoWrapper.transform().scaleY)
     );
 
-      rhinoWalkAnimation(pos, animationLength * pos, 1000);
-
-    //rhinoWalkAnimation.at(pos1);
+      rhinoWalkAnimation(pos, animationLength * eased, 200);
+  }).after(function() {
+    rhino.animate(1000).plot(rhinoPath);
   });
 
   //rhinoWalk();
