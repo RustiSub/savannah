@@ -3,8 +3,7 @@ html, body {
 }
 
 html {
-	display: table;
-	margin: auto;
+
 }
 
 body {
@@ -12,4 +11,18 @@ body {
 	display: table-cell;
 	vertical-align: middle;
 	background-color: black;
+}
+
+.inner {
+	position: absolute;
+}
+
+#album {
+	width:1920px; /* or whatever width you want. */
+	max-width:1920px; /* or whatever width you want. */
+	/*background-color: white;*/
+}
+
+.album-focus-wrapper {
+
 }

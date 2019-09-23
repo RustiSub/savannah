@@ -633,8 +633,8 @@ window.addEventListener("load", function () {
   }
 
   startButton.click(function(event) {
-    //startGame();
-    splashScreen();
+    startGame();
+    //splashScreen();
     //intro();
     //outro();
     //zoomClamp  = 0.1;
@@ -751,11 +751,6 @@ window.addEventListener("load", function () {
       moveDistance.y = 0;
     }
 
-    if (focusEnabled) {
-      moveDistance.x *= 0.5;
-      moveDistance.y *= 0.5;
-    }
-
     var adjustedMoveClamp = moveClamp * (zoomLevel * 2);
 
     let absMoveX = Math.abs(moveDistance.x) / (zoomLevel * 1.5);
@@ -850,25 +845,76 @@ window.addEventListener("load", function () {
     return false;
   });
 
+  var albumSlotSizeMode = 4;
+
+  var albumFocus = SVG('albumFocus').size(1920, 1080);
+  albumFocus.hide();
+
+  var album = document.getElementById('album');
+
+  album.hidden = true;
+
+  function captureImage() {
+    var slot = document.createElement("div");
+    album.appendChild(slot);
+    slot.id = 'bookSlot';
+
+    var slot1 = SVG(slot.id).size(1920 / albumSlotSizeMode, 1080/ albumSlotSizeMode);
+
+    var clonedBackground = parent.clone(slot1);
+
+    clonedBackground.width(clonedBackground.width() / albumSlotSizeMode);
+    clonedBackground.height(clonedBackground.height() / albumSlotSizeMode);
+
+    clonedBackground.click(
+        function(event) {
+          console.log(event);
+          albumFocus.clear();
+          var focusedPhoto = clonedBackground.clone(albumFocus);
+
+          focusedPhoto.width(1920);
+          focusedPhoto.height(1080);
+
+          albumFocus.show();
+
+          focusedPhoto.click(
+            function() {
+              albumFocus.hide();
+            }
+          );
+        }
+    );
+  }
+
   background.addEventListener('mousedown', function(event) {
 
     switch (event.button) {
       case 0:
+        console.log('CLICK');
+        captureImage();
         break;
       case 2:
-        focusEnabled = true;
+
         break;
     }
 
     return false;
   });
 
+  var cameraLockGroup = SVG.adopt(background.getElementById('cameraLockGroup'));
+
   background.addEventListener('mouseup', function(event) {
     switch (event.button) {
       case 0:
         break;
       case 2:
-        focusEnabled = false;
+        mouseCameraLocked = !mouseCameraLocked;
+        moveDistance.x = 0;
+        moveDistance.y = 0;
+
+        var locked = mouseCameraLocked ? 1 : 0.1;
+        cameraLockGroup.style({opacity: locked});
+
         break;
     }
 
@@ -921,5 +967,5 @@ window.addEventListener("load", function () {
   var lastRender = 0;
   window.requestAnimationFrame(loop);
 
-  splashScreen();
+  //splashScreen();
 });
