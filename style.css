@@ -18,9 +18,17 @@ body {
 }
 
 #album {
-	width:1920px; /* or whatever width you want. */
-	max-width:1920px; /* or whatever width you want. */
+	max-width:1540px; /* or whatever width you want. */
 	/*background-color: white;*/
+
+	margin-left: 240px;
+	margin-top: 220px;
+	width: 1540px;
+	height: 614px;
+}
+
+#albumFocus {
+
 }
 
 .album-focus-wrapper {

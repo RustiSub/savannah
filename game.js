@@ -599,7 +599,7 @@ window.addEventListener("load", function () {
 
   startButton.x(camera.cx() - 50);
   startButton.y(camera.cy() - 50);
-  //startButton.hide();
+  startButton.hide();
   function startGame() {
     console.log('Game Start');
 
@@ -846,6 +846,13 @@ window.addEventListener("load", function () {
   });
 
   var galleryIcon = SVG.adopt(background.getElementById('galleryIcon'));
+  var galleryBackground = SVG.adopt(background.getElementById('galleryBackground'));
+
+  galleryBackground.hide();
+
+  galleryBackground.click(function() {
+    toggleGallery();
+  });
 
   galleryIcon.mouseover(function() {
     galleryIcon.style({opacity: 1});
@@ -855,14 +862,42 @@ window.addEventListener("load", function () {
     galleryIcon.style({opacity: 0.50});
   });
 
-  var albumSlotSizeMode = 4;
+  function toggleGallery() {
+    album.hidden = !album.hidden;
+
+    if (album.hidden) {
+      galleryBackground.hide();
+    } else {
+      galleryBackground.show();
+    }
+  }
+
+  galleryIcon.click(function() {
+    toggleGallery();
+  });
+
+  var albumSlotSizeMode = 8;
 
   var albumFocus = SVG('albumFocus').size(1920, 1080);
   albumFocus.hide();
 
   var album = document.getElementById('album');
 
+  var photoFocused = false;
+
+  album.addEventListener('click', function() {
+    if (!photoFocused) {
+      toggleGallery();
+    }
+  });
+
   album.hidden = true;
+
+  sceneParent.click(function(event) {
+    captureImage();
+
+    return event;
+  });
 
   function captureImage() {
     var slot = document.createElement("div");
@@ -873,12 +908,18 @@ window.addEventListener("load", function () {
 
     var clonedBackground = parent.clone(slot1);
 
+    var clonedCameraGraphic = SVG.adopt(clonedBackground.node.getElementById('cameraGroup'));
+    clonedCameraGraphic.remove();
+
     clonedBackground.width(clonedBackground.width() / albumSlotSizeMode);
     clonedBackground.height(clonedBackground.height() / albumSlotSizeMode);
 
     clonedBackground.click(
         function(event) {
-          console.log(event);
+          photoFocused = true;
+
+          event.preventDefault();
+
           albumFocus.clear();
           var focusedPhoto = clonedBackground.clone(albumFocus);
 
@@ -890,25 +931,18 @@ window.addEventListener("load", function () {
           focusedPhoto.click(
             function() {
               albumFocus.hide();
+
+              photoFocused = false;
             }
           );
+
+          return false;
         }
     );
   }
 
   background.addEventListener('mousedown', function(event) {
 
-    switch (event.button) {
-      case 0:
-        console.log('CLICK');
-        captureImage();
-        break;
-      case 2:
-
-        break;
-    }
-
-    return false;
   });
 
   var cameraLockGroup = SVG.adopt(background.getElementById('cameraLockGroup'));
