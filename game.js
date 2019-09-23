@@ -410,6 +410,35 @@ window.addEventListener("load", function () {
   var tentDoorRight = SVG.adopt(background.getElementById('tentDoorRight'));
   var tentDoorRightOpen = SVG.adopt(background.getElementById('tentDoorRight.open'));
 
+  var splashScreenGroup = SVG.adopt(background.getElementById('splashScreenGroup'));
+  var flash = SVG.adopt(background.getElementById('flash'));
+  splashScreenGroup.hide();
+
+  function splashScreen() {
+
+    splashScreenGroup.show();
+    splashScreenGroup.front();
+
+    splashScreenGroup.click(
+        function() {
+          flash
+            .animate(500, '>').style({opacity: 1})
+            .after(function() {
+              flash
+                .animate(1000, '<').style({ cursor: 'pointer', fill: '#000000' })
+                .after(function() {
+                  introGroup.show();
+                  //splashScreenGroup.animate(1000).style({opacity: 0});
+                  splashScreenGroup.remove();
+                  intro();
+                })
+              ;
+            })
+          ;
+        }
+    );
+  }
+
   function intro() {
     startButton.hide();
     introGroup.show();
@@ -450,9 +479,6 @@ window.addEventListener("load", function () {
                 moveCamera(-100 / (60 * 2), 0);
               })
               .animate(6000).style({opacity: 0})
-/*              .during(function () {
-                moveCamera(50 / (60 * 2), 0);
-              })*/
           ;
 
           afterStartButton();
@@ -520,7 +546,7 @@ window.addEventListener("load", function () {
 
                             introGroup.hide();
 
-                            outro();
+                            //outro();
                           }
                       );
                 })
@@ -558,9 +584,11 @@ window.addEventListener("load", function () {
           cameraZoom(sceneParent,  zoomLevel - ((zoomLevel - cameraState.afterIntro.zoom) * pos));
         })
         .after(function() {
-          tentFabric.animate(2000).style({opacity: 1});
-
-          book.show();
+          tentFabric.animate(2000).style({opacity: 1})
+              .after(function() {
+                book.show();
+              })
+          ;
         })
     ;
   }
@@ -606,7 +634,8 @@ window.addEventListener("load", function () {
 
   startButton.click(function(event) {
     //startGame();
-    intro();
+    splashScreen();
+    //intro();
     //outro();
     //zoomClamp  = 0.1;
     //startGame();
@@ -891,4 +920,6 @@ window.addEventListener("load", function () {
   }
   var lastRender = 0;
   window.requestAnimationFrame(loop);
+
+  splashScreen();
 });

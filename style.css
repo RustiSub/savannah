@@ -11,4 +11,5 @@ body {
 	overflow: hidden;
 	display: table-cell;
 	vertical-align: middle;
+	background-color: black;
 }
