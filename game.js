@@ -145,8 +145,48 @@ window.addEventListener("load", function () {
   var rhinoWalk3 = SVG.adopt(background.getElementById('rhino.walk.3'));
   var rhinoWalk4 = SVG.adopt(background.getElementById('rhino.walk.4'));
 
-  rhinoWrapper.toParent(scene1Group);
-  rhinoWrapper.hide();
+  var animalPathDessertGroup = SVG.adopt(background.getElementById('animalPath.dessert.group'));
+  var animalPathDessert = SVG.adopt(background.getElementById('animalPath.dessert'));
+
+  rhinoWrapper.toParent(animalPathDessertGroup);
+  rhino.flip('x');
+  var animalPathDessertLength = animalPathDessert.length();
+  rhino.plot(rhinoWalk1.array());
+  var animations = [];
+
+  animations.push(rhino.animate().plot(rhinoWalk2.array()).loop().pause());
+  animations.push(rhino.animate().plot(rhinoWalk3.array()).loop().pause());
+  animations.push(rhino.animate().plot(rhinoWalk4.array()).loop().pause());
+
+  var rhinoWalkAnimation = function(pos, seconds, max) {
+    var animationLength = max / animations.length;
+    var animationIndex = Math.ceil(seconds / animationLength);
+
+    animationIndex -= animations.length * Math.floor(animationIndex / animations.length);
+
+    if (animations[animationIndex - 1]) {
+      var animation = animations[animationIndex - 1];
+
+      animation.at(seconds / (animationLength * animationIndex));
+    }
+  };
+  var animationLength = 20000;
+  var rhinoWrapperAnimation = rhinoWrapper.animate(animationLength, '-').during(function(pos, morph, eased, situation) {
+    var p = animalPathDessert.pointAt((eased) * animalPathDessertLength);
+
+    rhinoWrapper.translate(
+        p.x - ((rhinoWrapper.node.getBBox().x + (rhinoWrapper.node.getBBox().width / 2)) * rhinoWrapper.transform().scaleX),
+        p.y - ((rhinoWrapper.node.getBBox().y + (rhinoWrapper.node.getBBox().height / 2)) * rhinoWrapper.transform().scaleY)
+    );
+
+      rhinoWalkAnimation(pos, animationLength * pos, 1000);
+
+    //rhinoWalkAnimation.at(pos1);
+  });
+
+  //rhinoWalk();
+
+  //rhinoWrapper.hide();
 
   var walkAnimationLength = 100;
   var moveSpeed = 1;
