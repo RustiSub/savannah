@@ -903,9 +903,34 @@ window.addEventListener("load", function () {
 
   sceneParent.click(function(event) {
     captureImage();
-
+    playDoubleBeep();
     return event;
   });
+
+  function playDoubleBeep() {
+    var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    // create Oscillator node
+    var oscillator = audioCtx.createOscillator();
+
+    oscillator.type = 'square';
+    oscillator.frequency.setValueAtTime(3000, audioCtx.currentTime); // value in hertz
+    oscillator.connect(audioCtx.destination);
+    oscillator.start();
+    setTimeout(()=>{
+      oscillator.stop();
+    }, 75);
+
+    setTimeout(()=>{
+      oscillator = audioCtx.createOscillator();
+
+        oscillator.type = 'square';
+        oscillator.frequency.setValueAtTime(3000, audioCtx.currentTime); // value in hertz
+        oscillator.connect(audioCtx.destination);
+        oscillator.start();
+        setTimeout(()=>{oscillator.stop();}, 75);
+
+    }, 100);
+  }
 
   function captureImage() {
     var slot = document.createElement("div");
