@@ -212,56 +212,6 @@ window.addEventListener("load", function () {
 
   rhino.scale(0.5);
 
-  //rhinoWrapper.x(rhinoWrapper.x() + 100);
-
-  // rhino
-  //     .animate(walkAnimationLength).plot(rhinoHeadUpPath.array());
-
-  //rhinoGroup.translate(500);
-
-  function moveRhino(pos, morph, eased, situation) {
-    rhinoWrapper.x(rhinoWrapper.x() - (moveSpeedModifier / walkAnimationLength));
-  }
-
-  function rhinoWalk() {
-    rhino
-        .animate(walkAnimationLength).plot(rhinoWalk1.array()).during(moveRhino)
-        .animate(walkAnimationLength).plot(rhinoWalk2.array()).during(moveRhino)
-        .animate(walkAnimationLength).plot(rhinoWalk3.array()).during(moveRhino)
-        .animate(walkAnimationLength).plot(rhinoWalk4.array()).during(moveRhino)
-        .after(function() {
-          rhinoWalk();
-        })
-    ;
-  }
-
-  //rhinoWalk();
-
-  var capturedCount = 0;
-
-  function captureAnimal(animal) {
-    capturedCount += 1;
-
-    var bookSlot = background.getElementById('bookSlot.' + capturedCount);
-    bookSlot = SVG.adopt(bookSlot);
-
-    animal.toParent(book);
-    animal.front();
-
-    animal.transform(bookSlot.transform());
-
-    var ratio = animal.width() / animal.height();
-
-    animal.width(bookSlot.width() - 10);
-    animal.height(animal.width() / ratio);
-    animal.cx(bookSlot.cx());
-    animal.cy(bookSlot.cy());
-  }
-
-  rhino.click(function(event) {
-    captureAnimal(this.clone());
-  });
-
   // Game State
   var gameState = 0;
   var gameTimer = 0;
@@ -967,7 +917,7 @@ window.addEventListener("load", function () {
     var clonedBackground = parent.clone(slot1);
 
     var clonedCameraGraphic = SVG.adopt(clonedBackground.node.getElementById('cameraGroup'));
-    clonedCameraGraphic.remove();
+    clonedCameraGraphic.hide();
 
     clonedBackground.width(clonedBackground.width() / albumSlotSizeMode);
     clonedBackground.height(clonedBackground.height() / albumSlotSizeMode);
@@ -986,13 +936,33 @@ window.addEventListener("load", function () {
 
           albumFocus.show();
 
-          focusedPhoto.click(
-            function() {
-              albumFocus.hide();
+          focusedPhoto.node.addEventListener('contextmenu', function(event) {
+            event.preventDefault();
 
-              photoFocused = false;
-            }
-          );
+            focusedPhoto.select('.photoSubject').members.forEach(function(subject) {
+              var rbox = subject.rbox();
+
+              var rect = focusedPhoto.rect(rbox.width, rbox.height);
+              rect.x(rbox.x);
+              rect.y(rbox.y);
+
+              console.log('scale x', rbox.width / 1920);
+              console.log('scale y', rbox.height / 1080);
+              console.log('center x', rbox.cx / 1920);
+              console.log('center y', rbox.cy / 1080);
+            });
+
+            return false;
+          });
+
+          focusedPhoto.node.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            albumFocus.hide();
+            focusedPhoto = false;
+
+            return false;
+          });
 
           return false;
         }
