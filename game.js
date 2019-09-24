@@ -907,6 +907,29 @@ window.addEventListener("load", function () {
     return event;
   });
 
+  var tagList = {};
+
+  function buildTagList() {
+    var suggestionBox1 = SVG.adopt(background.getElementById('suggestionBox.1'));
+
+    console.log(suggestionBox1);
+
+    parent.select('.photo-subject').members.forEach(function(subject) {
+      subject.classes().forEach(function(cssClass) {
+        if (cssClass.match(/tag\-/)) {
+          var tag = cssClass.substring(4);
+
+          tagList[tag] = tagList[tag] || [];
+
+          tagList[tag].push(subject);
+        }
+      });
+    });
+
+  }
+
+  buildTagList();
+
   function captureImage() {
     var slot = document.createElement("div");
     album.appendChild(slot);
@@ -921,6 +944,21 @@ window.addEventListener("load", function () {
 
     clonedBackground.width(clonedBackground.width() / albumSlotSizeMode);
     clonedBackground.height(clonedBackground.height() / albumSlotSizeMode);
+
+    var previewPhoto;
+
+    cameraGraphic.delay(0)
+        .after(function() {
+          previewPhoto = clonedBackground.clone(parent);
+
+          previewPhoto.width(1920);
+          previewPhoto.height(1080);
+        })
+        .delay(250)
+        .after(function() {
+          previewPhoto.remove();
+        })
+    ;
 
     clonedBackground.click(
         function(event) {
@@ -939,17 +977,27 @@ window.addEventListener("load", function () {
           focusedPhoto.node.addEventListener('contextmenu', function(event) {
             event.preventDefault();
 
-            focusedPhoto.select('.photoSubject').members.forEach(function(subject) {
+            focusedPhoto.select('.photo-subject.tag-rhino').members.forEach(function(subject) {
+
               var rbox = subject.rbox();
 
               var rect = focusedPhoto.rect(rbox.width, rbox.height);
               rect.x(rbox.x);
               rect.y(rbox.y);
 
-              console.log('scale x', rbox.width / 1920);
+
+              //Check if any part of the bounding box is in view
+              var xContains = rbox.x2 > 0 && rbox.x < 1920;
+              var yContains = rbox.y > 0 && rbox.y2 < 1080;
+
+              if (!xContains || !yContains) {
+                return;
+              }
+
+/*              console.log('scale x', rbox.width / 1920);
               console.log('scale y', rbox.height / 1080);
               console.log('center x', rbox.cx / 1920);
-              console.log('center y', rbox.cy / 1080);
+              console.log('center y', rbox.cy / 1080);*/
             });
 
             return false;
