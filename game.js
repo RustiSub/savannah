@@ -433,23 +433,28 @@ window.addEventListener("load", function () {
 
     splashScreenGroup.click(
         function() {
-          flash
-            .animate(500, '>').style({opacity: 1})
-            .after(function() {
-              flash
-                .animate(1000, '<').style({ cursor: 'pointer', fill: '#000000' })
-                .after(function() {
-                  //introGroup.show();
-                  //splashScreenGroup.animate(1000).style({opacity: 0});
-                  splashScreenGroup.remove();
-                  //:intro();
-                  loadCameraClickAudio();
-                  loadZoomInAudio();
-                  loadZoomOutAudio();
+          loadCameraClickAudio();
+          loadZoomInAudio();
+          loadZoomOutAudio();
 
-                })
-              ;
-            })
+          splashScreenGroup
+              .delay(0)
+              .after(function() {
+                if (zoomOutAudio.currentTime > 0.2) {
+                  zoomOutAudio.currentTime = 0;
+                }
+
+                zoomOutAudio.play();
+              })
+              .style({opacity: 1})
+              .animate(1500)
+              .transform({scale: 10, cx: 951, cy: 400})
+              .style({opacity: 0})
+              .after(
+                  function() {
+                    splashScreenGroup.remove();
+                  }
+              )
           ;
         }
     );
