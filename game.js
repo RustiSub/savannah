@@ -19,6 +19,7 @@ window.addEventListener("load", function () {
   var zoomInAudio;
   var zoomOutAudio;
   var cameraClickAudio;
+  var guiBleepAudio;
 
   var mouseCameraLocked = true;
 
@@ -436,6 +437,7 @@ window.addEventListener("load", function () {
           loadCameraClickAudio();
           loadZoomInAudio();
           loadZoomOutAudio();
+          loadGuiBleepAudio();
 
           splashScreenGroup
               .delay(0)
@@ -905,6 +907,11 @@ window.addEventListener("load", function () {
   });
 
   function toggleGallery() {
+    if (guiBleepAudio.currentTime > 0.1) {
+      guiBleepAudio.currentTime = 0;
+    }
+    guiBleepAudio.play();
+
     album.hidden = !album.hidden;
 
     if (album.hidden) {
@@ -1005,6 +1012,28 @@ window.addEventListener("load", function () {
     }, 0);
   }
 
+  function loadGuiBleepAudio() {
+    var player = new CPlayer();
+    player.init(guiBleep);
+
+    // Generate music...
+    var done = false;
+    setInterval(function () {
+      if (done) {
+        return;
+      }
+
+      done = player.generate() >= 1;
+
+      if (done) {
+        // Put the generated song in an Audio element.
+        var wave = player.createWave();
+        guiBleepAudio = document.createElement("audio");
+        guiBleepAudio.src = URL.createObjectURL(new Blob([wave], {type: "audio/wav"}));
+      }
+    }, 0);
+  }
+
   function cameraClick() {
     captureImage();
     //playDoubleBeep();
@@ -1068,11 +1097,11 @@ window.addEventListener("load", function () {
 
   buildTagList();
 
-  function captureImage() {
-    var slot = document.createElement("div");
-    album.appendChild(slot);
-    slot.id = 'bookSlot';
+  var slot = document.createElement("div");
+  album.appendChild(slot);
+  slot.id = 'bookSlot';
 
+  function captureImage() {
     var slot1 = SVG(slot.id).size(1920 / albumSlotSizeMode, 1080/ albumSlotSizeMode);
 
     var clonedBackground = parent.clone(slot1);

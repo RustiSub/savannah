@@ -29,6 +29,10 @@ body {
 	height: 614px;
 }
 
+#bookSlot svg {
+	margin-left: 24px;
+}
+
 #albumFocus {
 
 }
