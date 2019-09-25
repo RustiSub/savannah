@@ -16,6 +16,10 @@ window.addEventListener("load", function () {
   let cycleLength = 60000;
   let batteryChargeTime = 1;
 
+  var zoomInAudio;
+  var zoomOutAudio;
+  var cameraClickAudio;
+
   var mouseCameraLocked = true;
 
   var cameraState = {
@@ -435,10 +439,14 @@ window.addEventListener("load", function () {
               flash
                 .animate(1000, '<').style({ cursor: 'pointer', fill: '#000000' })
                 .after(function() {
-                  introGroup.show();
+                  //introGroup.show();
                   //splashScreenGroup.animate(1000).style({opacity: 0});
                   splashScreenGroup.remove();
-                  intro();
+                  //:intro();
+                  loadCameraClickAudio();
+                  loadZoomInAudio();
+                  loadZoomOutAudio();
+
                 })
               ;
             })
@@ -694,6 +702,7 @@ window.addEventListener("load", function () {
   scene1Observer.observe(nestedScene1Parent.node, mutationConfig);
 
   var cameraZoom = function (sceneParent, zoom) {
+
     var viewbox = sceneParent.viewbox();
 
     if (zoom === 0) {
@@ -775,18 +784,38 @@ window.addEventListener("load", function () {
 
   background.addEventListener('pointermove', pointerHandler);
 
+  var zoomTotal = 0;
+
   var mouseWheelHandler = (event) => {
     if (mouseCameraLocked) {
       return;
     }
-
-    //event.preventDefault();
 
     let zoomDelta = (event.deltaY / 50) * (zoomLevel / 2);
 
     zoomLevel = zoomLevel - zoomDelta < zoomClamp ? zoomClamp : zoomLevel - zoomDelta;
 
     cameraZoom(sceneParent, zoomLevel);
+
+    zoomTotal += zoomDelta;
+
+    if (zoomTotal > 0.1) {
+      if (zoomInAudio.currentTime > 0.2) {
+        zoomInAudio.currentTime = 0;
+      }
+
+      zoomInAudio.play();
+
+      zoomTotal = 0;
+    } else if (zoomTotal < -0.1) {
+      if (zoomOutAudio.currentTime > 0.2) {
+        zoomOutAudio.currentTime = 0;
+      }
+
+      zoomOutAudio.play();
+
+      zoomTotal = 0;
+    }
 
     return false;
   };
@@ -880,8 +909,12 @@ window.addEventListener("load", function () {
     }
   }
 
-  galleryIcon.click(function() {
+  galleryIcon.click(function(event) {
+    event.preventDefault();
+
     toggleGallery();
+
+    return false;
   });
 
   var albumSlotSizeMode = 8;
@@ -901,9 +934,86 @@ window.addEventListener("load", function () {
 
   album.hidden = true;
 
-  sceneParent.click(function(event) {
+  function loadZoomOutAudio() {
+    var player = new CPlayer();
+    player.init(zoomOut);
+
+    // Generate music...
+    var done = false;
+    setInterval(function () {
+      if (done) {
+        return;
+      }
+
+      done = player.generate() >= 1;
+
+      if (done) {
+        // Put the generated song in an Audio element.
+        var wave = player.createWave();
+        zoomOutAudio = document.createElement("audio");
+        zoomOutAudio.src = URL.createObjectURL(new Blob([wave], {type: "audio/wav"}));
+      }
+    }, 0);
+  }
+
+  function loadZoomInAudio() {
+    var player = new CPlayer();
+    player.init(zoomIn);
+
+    // Generate music...
+    var done = false;
+    setInterval(function () {
+      if (done) {
+        return;
+      }
+
+      done = player.generate() >= 1;
+
+      if (done) {
+        // Put the generated song in an Audio element.
+        var wave = player.createWave();
+        zoomInAudio = document.createElement("audio");
+        zoomInAudio.src = URL.createObjectURL(new Blob([wave], {type: "audio/wav"}));
+      }
+    }, 0);
+  }
+
+  function loadCameraClickAudio() {
+    var player = new CPlayer();
+    player.init(cameraClickSound);
+
+    // Generate music...
+    var done = false;
+    setInterval(function () {
+      if (done) {
+        return;
+      }
+
+      done = player.generate() >= 1;
+
+      if (done) {
+        // Put the generated song in an Audio element.
+        var wave = player.createWave();
+        cameraClickAudio = document.createElement("audio");
+        cameraClickAudio.src = URL.createObjectURL(new Blob([wave], {type: "audio/wav"}));
+      }
+    }, 0);
+  }
+
+  function cameraClick() {
     captureImage();
-    playDoubleBeep();
+    //playDoubleBeep();
+
+    if (cameraClickAudio.currentTime > 0.5) {
+      cameraClickAudio.currentTime = 0;
+    }
+
+    cameraClickAudio.play();
+  }
+
+  sceneParent.click(function(event) {
+    cameraClick();
+
     return event;
   });
 
@@ -936,8 +1046,6 @@ window.addEventListener("load", function () {
 
   function buildTagList() {
     var suggestionBox1 = SVG.adopt(background.getElementById('suggestionBox.1'));
-
-    console.log(suggestionBox1);
 
     parent.select('.photo-subject').members.forEach(function(subject) {
       subject.classes().forEach(function(cssClass) {
@@ -979,7 +1087,7 @@ window.addEventListener("load", function () {
           previewPhoto.width(1920);
           previewPhoto.height(1080);
         })
-        .delay(250)
+        .delay(350)
         .after(function() {
           previewPhoto.remove();
         })
@@ -1112,5 +1220,5 @@ window.addEventListener("load", function () {
   var lastRender = 0;
   window.requestAnimationFrame(loop);
 
-  //splashScreen();
+  splashScreen();
 });
