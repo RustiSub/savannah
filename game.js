@@ -653,7 +653,7 @@ window.addEventListener("load", function () {
     moon1Animation.at(sunPos - 0.5, true);
     moon2Animation.at(sunPos - 0.5, true);
 
-    toggleCameraLock(false);
+    toggleCameraLock(true);
 
     powerUpAnimation.play();
   }
@@ -1067,9 +1067,9 @@ window.addEventListener("load", function () {
 
   sceneParent.click(function(event) {
     console.log('sceneParent');
-    if (!mouseCameraLocked) {
+    // if (!mouseCameraLocked) {
       cameraClick();
-    }
+    // }
 
     return event;
   });
@@ -1129,7 +1129,7 @@ window.addEventListener("load", function () {
   var shareButton = SVG.adopt(background.getElementById('shareButton'));
   var likesGlobal = SVG.adopt(background.getElementById('likesGlobal'));
   var likesGroup = SVG.adopt(background.getElementById('likesGroup'));
-  var likesGroupScore = SVG.adopt(background.getElementById('likesGroupScore'));
+  var starsGroupScore = SVG.adopt(background.getElementById('starsGroupScore'));
 
   function updateHighScore() {
     var likeHighScore;
@@ -1139,9 +1139,9 @@ window.addEventListener("load", function () {
     likeHighScore = Math.ceil(highScoreLikes / photos.length);
 
     for (var s=1; s <= likeHighScore; s++) {
-      var scoreLike = likesGroup.select('#likesGroupHighScore' + s).first();
+      var scoreLike = likesGroup.select('#starsGroupHighScore' + s).first();
 
-      scoreLike.style({ fill: '#f00', opacity: 1 });
+      scoreLike.style({ fill: '#FFF', opacity: 1 });
       scoreLike.style('fill-opacity', 1);
     }
   }
@@ -1190,13 +1190,13 @@ window.addEventListener("load", function () {
 
     let finalScore = Math.ceil(5 * (total / subjectCount));
 
-    var like = likesGroupScore.clone(focusedPhoto);
+    var like = starsGroupScore.clone(focusedPhoto);
     like.front();
 
     for (var s=1; s <= finalScore; s++) {
-      var scoreLike = like.select('#likesGroupScore' + s).first();
+      var scoreLike = like.select('#starsGroupScore' + s).first();
 
-      scoreLike.style({ fill: '#f00', opacity: 1 });
+      scoreLike.style({ fill: '#FFF', opacity: 1 });
       scoreLike.style('fill-opacity', 1);
     }
 
