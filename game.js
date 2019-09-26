@@ -425,6 +425,9 @@ window.addEventListener("load", function () {
 
   var splashScreenGroup = SVG.adopt(background.getElementById('splashScreenGroup'));
   var flash = SVG.adopt(background.getElementById('flash'));
+  var skipIntroButton = SVG.adopt(background.getElementById('skipIntroButton'));
+  var splashStartButton = SVG.adopt(background.getElementById('splashStartButton'));
+
   splashScreenGroup.hide();
 
   function splashScreen() {
@@ -432,21 +435,16 @@ window.addEventListener("load", function () {
     splashScreenGroup.show();
     splashScreenGroup.front();
 
-    splashScreenGroup.click(
+    skipIntroButton.click(
         function() {
-          loadCameraClickAudio();
-          loadZoomInAudio();
-          loadZoomOutAudio();
-          loadGuiBleepAudio();
+          startSun();
+          flash.front();
+          loadAudio();
 
           splashScreenGroup
               .delay(0)
               .after(function() {
-                if (zoomOutAudio.currentTime > 0.2) {
-                  zoomOutAudio.currentTime = 0;
-                }
-
-                zoomOutAudio.play();
+                // flash.animate().style({opacity: 1});
               })
               .style({opacity: 1})
               .animate(1500)
@@ -454,6 +452,33 @@ window.addEventListener("load", function () {
               .style({opacity: 0})
               .after(
                   function() {
+                    startGame();
+
+                    splashScreenGroup.remove();
+                  }
+              )
+          ;
+        }
+    );
+
+    splashStartButton.click(
+        function() {
+          flash.front();
+          loadAudio();
+
+          splashScreenGroup
+              .delay(0)
+              .after(function() {
+                flash.animate().style({opacity: 1});
+              })
+              .style({opacity: 1})
+              .animate(1500)
+              .transform({scale: 10, cx: 951, cy: 400})
+              // .style({opacity: 0})
+              .after(
+                  function() {
+                    intro();
+
                     splashScreenGroup.remove();
                   }
               )
@@ -463,7 +488,8 @@ window.addEventListener("load", function () {
   }
 
   function intro() {
-    startButton.hide();
+    mouseCameraLocked = true;
+
     introGroup.show();
 
     gameState = 0;
@@ -565,8 +591,6 @@ window.addEventListener("load", function () {
                               y: nestedScene1Parent.y
                             };
 
-                            mouseCameraLocked = false;
-
                             introGroup.hide();
 
                             //outro();
@@ -594,8 +618,6 @@ window.addEventListener("load", function () {
     introGroup.show();
     //fakeDarkness.hide();
 
-    startButton.hide();
-
     cameraGraphic.animate(3000).style({opacity: 0})
         .during(function(pos) {
           moveCamera(
@@ -618,35 +640,27 @@ window.addEventListener("load", function () {
 
   // Game Start
 
-  var startButton = parent.rect(100, 100);
-
-  startButton.x(camera.cx() - 50);
-  startButton.y(camera.cy() - 50);
-  startButton.hide();
   function startGame() {
     console.log('Game Start');
-
-    mouseCameraLocked = false;
-
-    startButton.hide();
 
     zoomClamp = 0.43;
     gameState = 1;
 
-    var sunPos = 0;
+    var sunPos = 0.75;
 
     sun1Animation.at(sunPos, true);
     sun2Animation.at(sunPos, true);
-    moon1Animation.at(sunPos - 0.50, true);
-    moon2Animation.at(sunPos - 0.50, true);
+    moon1Animation.at(sunPos - 0.5, true);
+    moon2Animation.at(sunPos - 0.5, true);
 
-    //powerUpAnimation.play();
+    toggleCameraLock(false);
+
+    powerUpAnimation.play();
   }
 
   function stopGame() {
     console.log('Game Stop');
 
-    startButton.show();
     gameState = 0;
 
     sun1Animation.pause();
@@ -654,15 +668,6 @@ window.addEventListener("load", function () {
     moon1Animation.pause();
     moon2Animation.pause();
   }
-
-  startButton.click(function(event) {
-    startGame();
-    //splashScreen();
-    //intro();
-    //outro();
-    //zoomClamp  = 0.1;
-    //startGame();
-  });
 
   const mutationConfig = {
     attributes: true,
@@ -895,7 +900,8 @@ window.addEventListener("load", function () {
   galleryBackground.hide();
 
   galleryBackground.click(function() {
-    toggleGallery();
+    console.log('galleryBackground');
+    //toggleGallery();
   });
 
   galleryIcon.mouseover(function() {
@@ -906,22 +912,29 @@ window.addEventListener("load", function () {
     galleryIcon.style({opacity: 0.50});
   });
 
-  function toggleGallery() {
+  function menuBleep() {
     if (guiBleepAudio.currentTime > 0.1) {
       guiBleepAudio.currentTime = 0;
     }
     guiBleepAudio.play();
+  }
+
+  function toggleGallery() {
+    menuBleep();
 
     album.hidden = !album.hidden;
 
     if (album.hidden) {
       galleryBackground.hide();
+      cameraInnerGroup.show();
     } else {
       galleryBackground.show();
+      cameraInnerGroup.hide();
     }
   }
 
   galleryIcon.click(function(event) {
+    console.log('galleryIcon');
     event.preventDefault();
 
     toggleGallery();
@@ -1034,6 +1047,13 @@ window.addEventListener("load", function () {
     }, 0);
   }
 
+  function loadAudio() {
+    loadCameraClickAudio();
+    loadZoomInAudio();
+    loadZoomOutAudio();
+    loadGuiBleepAudio();
+  }
+
   function cameraClick() {
     captureImage();
     //playDoubleBeep();
@@ -1046,7 +1066,10 @@ window.addEventListener("load", function () {
   }
 
   sceneParent.click(function(event) {
-    cameraClick();
+    console.log('sceneParent');
+    if (!mouseCameraLocked) {
+      cameraClick();
+    }
 
     return event;
   });
@@ -1097,6 +1120,115 @@ window.addEventListener("load", function () {
 
   buildTagList();
 
+  //Scoring
+
+  var highScoreLikes = 0;
+  var photos = [];
+
+  //Sharebutton
+  var shareButton = SVG.adopt(background.getElementById('shareButton'));
+  var likesGlobal = SVG.adopt(background.getElementById('likesGlobal'));
+  var likesGroup = SVG.adopt(background.getElementById('likesGroup'));
+  var likesGroupScore = SVG.adopt(background.getElementById('likesGroupScore'));
+
+  function updateHighScore() {
+    var likeHighScore;
+
+    console.log(highScoreLikes, photos.length);
+
+    likeHighScore = Math.ceil(highScoreLikes / photos.length);
+
+    for (var s=1; s <= likeHighScore; s++) {
+      var scoreLike = likesGroup.select('#likesGroupHighScore' + s).first();
+
+      scoreLike.style({ fill: '#f00', opacity: 1 });
+      scoreLike.style('fill-opacity', 1);
+    }
+  }
+
+  function scorePhoto(focusedPhoto) {
+    var total = 0;
+    var subjectCount = 0;
+
+    focusedPhoto.select('.photo-subject').members.forEach(function (subject) {
+      var rbox = subject.rbox();
+
+      //Check if any part of the bounding box is in view
+      let width = 1920;
+      let height = 1080;
+
+      var xContains = rbox.x2 - 100 > 0 && rbox.x + 100 < width;
+      var yContains = rbox.y - 100 > 0 && rbox.y2 + 100 < height;
+
+      if (!xContains || !yContains) {
+        return;
+      }
+
+      var rect = focusedPhoto.rect(rbox.width, rbox.height);
+      rect.x(rbox.x);
+      rect.y(rbox.y);
+      rect.stroke({ color: '#f06', opacity: 0.6, width: 5 });
+      rect.fill({ color: '#f06', opacity: 0 });
+
+      let perfectScaleRatio = 0.75;
+      let perfectCenter = 0.50;
+
+      var scoring = {
+        scaleX:  (rbox.width / (width * perfectScaleRatio)),
+        scaleY: (rbox.height / (height * perfectScaleRatio)),
+        centerX: 1 - Math.abs(perfectCenter - (rbox.cx / width)),
+        centerY: 1 - Math.abs(perfectCenter - (rbox.cy / height)),
+      };
+
+      var subTtotal = (scoring.scaleX + scoring.scaleY + scoring.centerX + scoring.centerY) / 4;
+
+      subjectCount += 1;
+      total += subTtotal;
+
+      console.log(scoring, subTtotal);
+    });
+
+    let finalScore = Math.ceil(5 * (total / subjectCount));
+
+    var like = likesGroupScore.clone(focusedPhoto);
+    like.front();
+
+    for (var s=1; s <= finalScore; s++) {
+      var scoreLike = like.select('#likesGroupScore' + s).first();
+
+      scoreLike.style({ fill: '#f00', opacity: 1 });
+      scoreLike.style('fill-opacity', 1);
+    }
+
+    highScoreLikes += finalScore;
+
+    updateHighScore();
+  }
+
+  shareButton.click(function() {
+    menuBleep();
+
+    photos.forEach(function(focusedPhoto) {
+      //scorePhoto(focusedPhoto);
+    });
+  });
+
+  shareButton.mouseover(function() {
+    shareButton.style({opacity: 1});
+  });
+
+  shareButton.mouseout(function() {
+    shareButton.style({opacity: 0.50});
+  });
+
+  //Score Algorithme
+
+  //Show Score on Thumbnail
+
+  //Mark photo as scored
+
+  var cameraInnerGroup = SVG.adopt(background.getElementById('cameraInnerGroup'));
+
   var slot = document.createElement("div");
   album.appendChild(slot);
   slot.id = 'bookSlot';
@@ -1112,6 +1244,8 @@ window.addEventListener("load", function () {
     clonedBackground.width(clonedBackground.width() / albumSlotSizeMode);
     clonedBackground.height(clonedBackground.height() / albumSlotSizeMode);
 
+    photos.push(clonedBackground);
+
     var previewPhoto;
 
     cameraGraphic.delay(0)
@@ -1124,6 +1258,8 @@ window.addEventListener("load", function () {
         .delay(350)
         .after(function() {
           previewPhoto.remove();
+
+          //scorePhoto(clonedBackground);
         })
     ;
 
@@ -1141,34 +1277,7 @@ window.addEventListener("load", function () {
 
           albumFocus.show();
 
-          focusedPhoto.node.addEventListener('contextmenu', function(event) {
-            event.preventDefault();
-
-            focusedPhoto.select('.photo-subject.tag-rhino').members.forEach(function(subject) {
-
-              var rbox = subject.rbox();
-
-              var rect = focusedPhoto.rect(rbox.width, rbox.height);
-              rect.x(rbox.x);
-              rect.y(rbox.y);
-
-
-              //Check if any part of the bounding box is in view
-              var xContains = rbox.x2 > 0 && rbox.x < 1920;
-              var yContains = rbox.y > 0 && rbox.y2 < 1080;
-
-              if (!xContains || !yContains) {
-                return;
-              }
-
-/*              console.log('scale x', rbox.width / 1920);
-              console.log('scale y', rbox.height / 1080);
-              console.log('center x', rbox.cx / 1920);
-              console.log('center y', rbox.cy / 1080);*/
-            });
-
-            return false;
-          });
+          scorePhoto(focusedPhoto);
 
           focusedPhoto.node.addEventListener('click', function(event) {
             event.preventDefault();
@@ -1190,17 +1299,22 @@ window.addEventListener("load", function () {
 
   var cameraLockGroup = SVG.adopt(background.getElementById('cameraLockGroup'));
 
+  function toggleCameraLock(lock) {
+    mouseCameraLocked = lock || !mouseCameraLocked;
+
+    var locked = mouseCameraLocked ? 1 : 0.1;
+    cameraLockGroup.style({opacity: locked});
+  }
+
   background.addEventListener('mouseup', function(event) {
     switch (event.button) {
       case 0:
         break;
       case 2:
-        mouseCameraLocked = !mouseCameraLocked;
         moveDistance.x = 0;
         moveDistance.y = 0;
 
-        var locked = mouseCameraLocked ? 1 : 0.1;
-        cameraLockGroup.style({opacity: locked});
+        toggleCameraLock();
 
         break;
     }
