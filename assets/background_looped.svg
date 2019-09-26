@@ -29,13 +29,13 @@
      inkscape:window-height="995"
      id="namedview821"
      showgrid="false"
-     inkscape:zoom="0.69458515"
-     inkscape:cx="887.90524"
-     inkscape:cy="450.16853"
+     inkscape:zoom="1.9645835"
+     inkscape:cx="970.26549"
+     inkscape:cy="502.61762"
      inkscape:window-x="72"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
-     inkscape:current-layer="svg8"
+     inkscape:current-layer="cameraGroup"
      scale-x="1"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -6381,6 +6381,26 @@
          id="rect4512-7-4"
          inkscape:connector-curvature="0"
          sodipodi:nodetypes="csssscccscc" />
+    </g>
+    <g
+       style="display:inline;opacity:1"
+       id="batteryGroupEmpty"
+       inkscape:label="batteryGroupEmpty"
+       transform="matrix(0.45147044,0,0,0.45147044,4.9609112,56.910935)">
+      <rect
+         y="7.2955489"
+         x="170.18045"
+         height="6.1759934"
+         width="13.117271"
+         id="rect1070-7"
+         style="opacity:1;fill:none;fill-opacity:1;stroke:url(#GUI);stroke-width:0.55913514;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <rect
+         y="8.2385902"
+         x="183.57727"
+         height="4.2899113"
+         width="1.9600457"
+         id="rect1072-5"
+         style="opacity:1;fill:url(#GUI);fill-opacity:1;stroke:none;stroke-width:0.55909789;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     </g>
   </g>
   <g

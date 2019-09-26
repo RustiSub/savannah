@@ -252,6 +252,19 @@ window.addEventListener("load", function () {
 
   var timerGroup = SVG.adopt(background.getElementById('timerGroup'));
 
+  var chargeRate = 0.10;
+  var chargeTime = {
+    0.75: false,
+    0.85: false,
+    1: false,
+    0.15: false,
+    0.25: false
+  };
+
+  const chargeTimes = Object.entries(chargeTime);
+
+  console.log(chargeTime);
+
   var sun1Animation = sun1.animate(cycleLength, '-').during(function(pos, morph, eased, situation) {
     var p = sunPath1.pointAt((eased) * sunPath1Length);
 
@@ -289,6 +302,13 @@ window.addEventListener("load", function () {
         timerGroup.node.getBBox().y + timerGroup.node.getBBox().height / 2
     );
 
+    if (sunPosition > 0.75 && sunPosition < 0.25) {
+      for (var [t, c] of chargeTimes) {
+
+      }
+    }
+
+
   }).loop().pause();
 
   var moon1 = background.getElementById('moon1');
@@ -325,6 +345,14 @@ window.addEventListener("load", function () {
     if (gameTimer < situation.loop) {
       gameTimer = situation.loop;
       depleteBattery();
+
+      chargeTime = {
+        0.75: false,
+        0.85: false,
+        1: false,
+        0.15: false,
+        0.25: false
+      };
     }
 
     sun2.translate(
@@ -350,17 +378,30 @@ window.addEventListener("load", function () {
 
   var depleteBattery = function() {
     if (!batteries[batteryPower]) {
-      stopGame();
+      // stopGame();
 
-      return;
+      return false;
     }
 
     batteries[batteryPower].animate(batteryChargeTime).style('opacity', 0.1);
 
     batteryPower -= 1;
+
+    return true;
   };
 
+  function batteryCharge() {
+    if (batteryPower !== 5) {
+      batteries[batteryPower].animate(batteryChargeTime).style('opacity', 1);
+
+      batteryPower += 1;
+    }
+  }
+
   var batteryGroup = SVG.adopt(background.getElementById('batteryGroup'));
+  var batteryGroupEmpty = SVG.adopt(background.getElementById('batteryGroupEmpty'));
+
+  batteryGroupEmpty.style({opacity: 0});
 
   var powerUpAnimation;
 
@@ -378,7 +419,7 @@ window.addEventListener("load", function () {
 
     batteryPowerBar.style('opacity', 0.1);
 
-    powerUpAnimation = batteryPowerBar.animate(500).style('opacity', 1);
+    powerUpAnimation = batteryPowerBar.animate(50).style('opacity', 1);
     powerUpAnimation.pause();
 
     if (nextBar) {
@@ -1055,7 +1096,23 @@ window.addEventListener("load", function () {
   }
 
   function cameraClick() {
+    if (!depleteBattery()) {
+      if (guiBleepAudio.currentTime > 0.1) {
+        guiBleepAudio.currentTime = 0;
+      }
+      guiBleepAudio.play();
+
+      batteryGroupEmpty
+          .style({opacity: 1})
+          .delay(1000)
+          .style({opacity: 0})
+      ;
+
+      return;
+    }
+
     captureImage();
+
     //playDoubleBeep();
 
     if (cameraClickAudio.currentTime > 0.5) {
@@ -1234,6 +1291,7 @@ window.addEventListener("load", function () {
   slot.id = 'bookSlot';
 
   function captureImage() {
+
     var slot1 = SVG(slot.id).size(1920 / albumSlotSizeMode, 1080/ albumSlotSizeMode);
 
     var clonedBackground = parent.clone(slot1);
