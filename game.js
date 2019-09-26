@@ -32,6 +32,8 @@ window.addEventListener("load", function () {
     }
   };
 
+  var maxPhotoCount = 2;
+
   var moveDistance = {
     x: 0,
     y: 0
@@ -253,17 +255,20 @@ window.addEventListener("load", function () {
   var timerGroup = SVG.adopt(background.getElementById('timerGroup'));
 
   var chargeRate = 0.10;
-  var chargeTime = {
-    0.75: false,
-    0.85: false,
-    1: false,
-    0.15: false,
-    0.25: false
-  };
+  var sunChargeTimes = [
+    {time: 0.75, charged: false},
+    {time: 0.90, charged: false},
+    {time: 0.95, charged: false},
+    {time: 0.05, charged: false},
+    {time: 0.10, charged: false},
+    {time: 0.25, charged: false}
+  ];
 
-  const chargeTimes = Object.entries(chargeTime);
-
-  console.log(chargeTime);
+  var moonChargeTimes = [
+    {time: 0.40, charged: false},
+    {time: 0.50, charged: false},
+    {time: 0.60, charged: false},
+  ];
 
   var sun1Animation = sun1.animate(cycleLength, '-').during(function(pos, morph, eased, situation) {
     var p = sunPath1.pointAt((eased) * sunPath1Length);
@@ -288,7 +293,7 @@ window.addEventListener("load", function () {
 
     if (gameTimer < situation.loop) {
       gameTimer = situation.loop;
-      depleteBattery();
+      //depleteBattery();
     }
 
     sun1.translate(
@@ -301,13 +306,41 @@ window.addEventListener("load", function () {
         timerGroup.node.getBBox().x + timerGroup.node.getBBox().width / 2,
         timerGroup.node.getBBox().y + timerGroup.node.getBBox().height / 2
     );
+/*
+    if (sunPosition <= 0.25 || sunPosition >= 0.75) {
+      moonChargeTimes.forEach(function(chargeTime) {
+        chargeTime.charged = false;
+      });
 
-    if (sunPosition > 0.75 && sunPosition < 0.25) {
-      for (var [t, c] of chargeTimes) {
+      sunChargeTimes.forEach(function(chargeTime, index) {
+        if (sunPosition >= chargeTime.time && !chargeTime.charged) {
+          chargeTime.charged = true;
 
-      }
-    }
+          if (sunChargeTimes[index+1]) {
+            sunChargeTimes[index+1].charged = false;
+            console.log(sunChargeTimes[index+1]);
+          }
 
+          batteryCharge();
+        }
+      });
+    } else if (sunPosition > 0.25 && sunPosition < 0.75) {
+      sunChargeTimes.forEach(function(chargeTime) {
+        chargeTime.charged = false;
+      });
+
+      moonChargeTimes.forEach(function(chargeTime, index) {
+        if (sunPosition >= chargeTime.time && !chargeTime.charged) {
+          chargeTime.charged = true;
+
+          if (moonChargeTimes[index+1]) {
+            moonChargeTimes[index+1].charged = false;
+          }
+
+          batteryCharge();
+        }
+      });
+    }*/
 
   }).loop().pause();
 
@@ -345,14 +378,6 @@ window.addEventListener("load", function () {
     if (gameTimer < situation.loop) {
       gameTimer = situation.loop;
       depleteBattery();
-
-      chargeTime = {
-        0.75: false,
-        0.85: false,
-        1: false,
-        0.15: false,
-        0.25: false
-      };
     }
 
     sun2.translate(
@@ -377,6 +402,7 @@ window.addEventListener("load", function () {
   var batteryPower = 5;
 
   var depleteBattery = function() {
+    return true;
     if (!batteries[batteryPower]) {
       // stopGame();
 
@@ -391,17 +417,24 @@ window.addEventListener("load", function () {
   };
 
   function batteryCharge() {
+    return;
     if (batteryPower !== 5) {
-      batteries[batteryPower].animate(batteryChargeTime).style('opacity', 1);
-
       batteryPower += 1;
+
+      batteries[batteryPower].animate(batteryChargeTime).style('opacity', 1);
     }
   }
 
   var batteryGroup = SVG.adopt(background.getElementById('batteryGroup'));
   var batteryGroupEmpty = SVG.adopt(background.getElementById('batteryGroupEmpty'));
+  var galleryIconFull = SVG.adopt(background.getElementById('galleryIconFull'));
+
+  galleryIconFull.click(function() {
+    toggleGallery();
+  });
 
   batteryGroupEmpty.style({opacity: 0});
+  galleryIconFull.hide();
 
   var powerUpAnimation;
 
@@ -1095,12 +1128,22 @@ window.addEventListener("load", function () {
     loadGuiBleepAudio();
   }
 
+  function playAudio(audio) {
+    if (audio.currentTime > 0.1) {
+      audio.currentTime = 0;
+    }
+    audio.play();
+  }
+
   function cameraClick() {
+    if (Object.keys(photos).length >= maxPhotoCount) {
+      playAudio(guiBleepAudio);
+
+      return;
+    }
+
     if (!depleteBattery()) {
-      if (guiBleepAudio.currentTime > 0.1) {
-        guiBleepAudio.currentTime = 0;
-      }
-      guiBleepAudio.play();
+      playAudio(guiBleepAudio);
 
       batteryGroupEmpty
           .style({opacity: 1})
@@ -1120,10 +1163,15 @@ window.addEventListener("load", function () {
     }
 
     cameraClickAudio.play();
+
+    if (Object.keys(photos).length >= maxPhotoCount) {
+      playAudio(guiBleepAudio);
+
+      galleryIconFull.show();
+    }
   }
 
   sceneParent.click(function(event) {
-    console.log('sceneParent');
     // if (!mouseCameraLocked) {
       cameraClick();
     // }
@@ -1159,8 +1207,6 @@ window.addEventListener("load", function () {
   var tagList = {};
 
   function buildTagList() {
-    var suggestionBox1 = SVG.adopt(background.getElementById('suggestionBox.1'));
-
     parent.select('.photo-subject').members.forEach(function(subject) {
       subject.classes().forEach(function(cssClass) {
         if (cssClass.match(/tag\-/)) {
@@ -1172,7 +1218,6 @@ window.addEventListener("load", function () {
         }
       });
     });
-
   }
 
   buildTagList();
@@ -1180,7 +1225,7 @@ window.addEventListener("load", function () {
   //Scoring
 
   var highScoreLikes = 0;
-  var photos = [];
+  var photos = {};
 
   //Sharebutton
   var shareButton = SVG.adopt(background.getElementById('shareButton'));
@@ -1191,7 +1236,7 @@ window.addEventListener("load", function () {
   function updateHighScore() {
     var likeHighScore;
 
-    console.log(highScoreLikes, photos.length);
+    //console.log(highScoreLikes, photos.length);
 
     likeHighScore = Math.ceil(highScoreLikes / photos.length);
 
@@ -1242,7 +1287,7 @@ window.addEventListener("load", function () {
       subjectCount += 1;
       total += subTtotal;
 
-      console.log(scoring, subTtotal);
+      //console.log(scoring, subTtotal);
     });
 
     let finalScore = Math.ceil(5 * (total / subjectCount));
@@ -1285,6 +1330,7 @@ window.addEventListener("load", function () {
   //Mark photo as scored
 
   var cameraInnerGroup = SVG.adopt(background.getElementById('cameraInnerGroup'));
+  var deleteButton = SVG.adopt(background.getElementById('deleteButton'));
 
   var slot = document.createElement("div");
   album.appendChild(slot);
@@ -1302,7 +1348,7 @@ window.addEventListener("load", function () {
     clonedBackground.width(clonedBackground.width() / albumSlotSizeMode);
     clonedBackground.height(clonedBackground.height() / albumSlotSizeMode);
 
-    photos.push(clonedBackground);
+    photos[slot1.id()] = clonedBackground;
 
     var previewPhoto;
 
@@ -1316,6 +1362,33 @@ window.addEventListener("load", function () {
         .delay(350)
         .after(function() {
           previewPhoto.remove();
+
+          var clonedDeleteButton = deleteButton.clone(clonedBackground);
+
+          clonedDeleteButton.id('deleteButtonCloned' + clonedBackground.id());
+
+          clonedDeleteButton.style({opacity: 0.25});
+
+          clonedDeleteButton.mouseout(function() {
+            clonedDeleteButton.style({opacity: 0.25});
+          });
+
+          clonedDeleteButton.mouseover(function() {
+            clonedDeleteButton.style({opacity: 1});
+          });
+
+          clonedDeleteButton.click(function(event) {
+            event.stopPropagation();
+            event.preventDefault();
+
+            slot1.remove();
+
+            delete photos[slot1.id()];
+
+            galleryIconFull.hide();
+
+            return false;
+          });
 
           //scorePhoto(clonedBackground);
         })
@@ -1336,6 +1409,10 @@ window.addEventListener("load", function () {
           albumFocus.show();
 
           scorePhoto(focusedPhoto);
+
+          var deleteButtonCloned = focusedPhoto.select('#deleteButtonCloned' + clonedBackground.id()).first();
+
+          deleteButtonCloned.hide();
 
           focusedPhoto.node.addEventListener('click', function(event) {
             event.preventDefault();
