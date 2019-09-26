@@ -428,13 +428,20 @@ window.addEventListener("load", function () {
   var batteryGroup = SVG.adopt(background.getElementById('batteryGroup'));
   var batteryGroupEmpty = SVG.adopt(background.getElementById('batteryGroupEmpty'));
   var galleryIconFull = SVG.adopt(background.getElementById('galleryIconFull'));
+  var galleryIconPreview = SVG.adopt(background.getElementById('galleryIconPreview'));
+
+  galleryIconPreview.click(function() {
+    toggleGallery();
+  });
 
   galleryIconFull.click(function() {
+    console.log('galleryIconFull');
     toggleGallery();
   });
 
   batteryGroupEmpty.style({opacity: 0});
   galleryIconFull.hide();
+  galleryIconPreview.hide();
 
   var powerUpAnimation;
 
@@ -1168,6 +1175,7 @@ window.addEventListener("load", function () {
       playAudio(guiBleepAudio);
 
       galleryIconFull.show();
+      galleryIconPreview.show();
     }
   }
 
@@ -1336,6 +1344,33 @@ window.addEventListener("load", function () {
   album.appendChild(slot);
   slot.id = 'bookSlot';
 
+  function focusThumbPhoto(thumbPhoto) {
+    photoFocused = true;
+
+    albumFocus.clear();
+    var focusedPhoto = thumbPhoto.clone(albumFocus);
+
+    focusedPhoto.width(1920);
+    focusedPhoto.height(1080);
+
+    albumFocus.show();
+
+    scorePhoto(focusedPhoto);
+
+    var deleteButtonCloned = focusedPhoto.select('#deleteButtonCloned' + thumbPhoto.id()).first();
+
+    deleteButtonCloned.hide();
+
+    focusedPhoto.node.addEventListener('click', function (event) {
+      event.preventDefault();
+
+      albumFocus.hide();
+      photoFocused = false;
+
+      return false;
+    });
+  }
+
   function captureImage() {
 
     var slot1 = SVG(slot.id).size(1920 / albumSlotSizeMode, 1080/ albumSlotSizeMode);
@@ -1362,6 +1397,8 @@ window.addEventListener("load", function () {
         .delay(350)
         .after(function() {
           previewPhoto.remove();
+
+          galleryIconPreview.show();
 
           var clonedDeleteButton = deleteButton.clone(clonedBackground);
 
@@ -1396,32 +1433,9 @@ window.addEventListener("load", function () {
 
     clonedBackground.click(
         function(event) {
-          photoFocused = true;
-
           event.preventDefault();
 
-          albumFocus.clear();
-          var focusedPhoto = clonedBackground.clone(albumFocus);
-
-          focusedPhoto.width(1920);
-          focusedPhoto.height(1080);
-
-          albumFocus.show();
-
-          scorePhoto(focusedPhoto);
-
-          var deleteButtonCloned = focusedPhoto.select('#deleteButtonCloned' + clonedBackground.id()).first();
-
-          deleteButtonCloned.hide();
-
-          focusedPhoto.node.addEventListener('click', function(event) {
-            event.preventDefault();
-
-            albumFocus.hide();
-            focusedPhoto = false;
-
-            return false;
-          });
+          focusThumbPhoto(clonedBackground);
 
           return false;
         }
