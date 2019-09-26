@@ -134,15 +134,6 @@ window.addEventListener("load", function () {
   var camera = background.getElementById('cameraReticle');
   camera = SVG.adopt(camera);
 
-  // Book
-
-  var book = background.getElementById('bookGroup');
-  book = SVG.adopt(book);
-
-  book.toParent(parent);
-  book.front();
-  book.hide();
-
   // Animals
   var rhinoWrapper = SVG.adopt(background.getElementById('rhinoWrapper'));
   var rhino = SVG.adopt(background.getElementById('rhino'));
@@ -712,7 +703,6 @@ window.addEventListener("load", function () {
         .after(function() {
           tentFabric.animate(2000).style({opacity: 1})
               .after(function() {
-                book.show();
               })
           ;
         })
@@ -842,10 +832,6 @@ window.addEventListener("load", function () {
       return;
     }
 
-    if (book.visible()) {
-      return event;
-    }
-
     event.preventDefault();
 
     var deadZone = cameraDeadZone.width() / 2;
@@ -924,15 +910,6 @@ window.addEventListener("load", function () {
 
         switch (event.keyCode) {
           case 69:
-            if (book.visible()) {
-              book.hide();
-              cameraGraphic.show();
-            } else {
-              book.show();
-              cameraGraphic.hide();
-              moveDistance.x = 0;
-              moveDistance.y = 0;
-            }
             break;
           case 37:
             nestedScene1Parent.x(nestedScene1Parent.x() + movement);
@@ -1187,32 +1164,44 @@ window.addEventListener("load", function () {
     return event;
   });
 
-  function playDoubleBeep() {
-    var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    // create Oscillator node
-    var oscillator = audioCtx.createOscillator();
+  var objectiveBar =  SVG.adopt(background.getElementById('objectiveBar'));
+  var objectiveBoxes = {
+    1: SVG.adopt(background.getElementById('objectiveBox1')),
+    2: SVG.adopt(background.getElementById('objectiveBox2')),
+    3: SVG.adopt(background.getElementById('objectiveBox3')),
+    4: SVG.adopt(background.getElementById('objectiveBox4')),
+  };
 
-    oscillator.type = 'square';
-    oscillator.frequency.setValueAtTime(3000, audioCtx.currentTime); // value in hertz
-    oscillator.connect(audioCtx.destination);
-    oscillator.start();
-    setTimeout(()=>{
-      oscillator.stop();
-    }, 75);
+  var objectivesGroup =  SVG.adopt(background.getElementById('objectives'));
 
-    setTimeout(()=>{
-      oscillator = audioCtx.createOscillator();
-
-        oscillator.type = 'square';
-        oscillator.frequency.setValueAtTime(3000, audioCtx.currentTime); // value in hertz
-        oscillator.connect(audioCtx.destination);
-        oscillator.start();
-        setTimeout(()=>{oscillator.stop();}, 75);
-
-    }, 100);
-  }
 
   var tagList = {};
+
+  var levelCount = 1;
+  var levels = {};
+
+  var mark = false;
+
+  function buildObjectiveList() {
+    for (var l=1 ; l <= levelCount; l++) {
+      var objectives = {};
+      var levelObjectives = SVG.adopt(background.getElementById('level' + l));
+
+      levelObjectives.select('.objective').members.forEach(function(objective, index) {
+        objectives[objective.id()] = {
+          objective: objective,
+          found: false
+        };
+      });
+
+      levels[l] = levels[l] || {
+        level: levelObjectives,
+        objectives: objectives
+      };
+
+      levelObjectives.hide();
+    }
+  }
 
   function buildTagList() {
     parent.select('.photo-subject').members.forEach(function(subject) {
@@ -1228,7 +1217,19 @@ window.addEventListener("load", function () {
     });
   }
 
+  var currentLevel = 1;
+
+  function buildLevelObjectives() {
+    if (!levels[currentLevel]) {
+      return false;
+    }
+
+    levels[currentLevel].level.show();
+  }
+
   buildTagList();
+  buildObjectiveList();
+  buildLevelObjectives();
 
   //Scoring
 
@@ -1315,7 +1316,7 @@ window.addEventListener("load", function () {
     updateHighScore();
   }
 
-  shareButton.click(function() {
+/*  shareButton.click(function() {
     menuBleep();
 
     photos.forEach(function(focusedPhoto) {
@@ -1329,7 +1330,7 @@ window.addEventListener("load", function () {
 
   shareButton.mouseout(function() {
     shareButton.style({opacity: 0.50});
-  });
+  });*/
 
   //Score Algorithme
 
