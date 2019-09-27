@@ -823,7 +823,12 @@ window.addEventListener("load", function () {
     );
   }
 
+  var introFinished = false;
+
   function intro() {
+
+    introFinished = false;
+
     mouseCameraLocked = true;
 
     introGroup.show();
@@ -888,11 +893,12 @@ window.addEventListener("load", function () {
           .animate(3000)
           //.delay(2000)
           .plot(tentDoorRightOpen.array())
+          .after(function() {
+            startSun();
+          })
           .delay(3000)
           .during(function (pos, morphed, eased) {
             moveCamera(-50 / (60 * 2), 600 / (60 * 2));
-
-            startSun();
           })
           .delay(2000)
           .during(function (pos) {
@@ -928,6 +934,8 @@ window.addEventListener("load", function () {
                             };
 
                             introGroup.hide();
+
+                            introFinished = true;
 
                             //outro();
                           }
@@ -1384,6 +1392,10 @@ window.addEventListener("load", function () {
   }
 
   function cameraClick() {
+    if (!introFinished) {
+      return;
+    }
+
     if (Object.keys(photos).length >= maxPhotoCount) {
       playAudio(guiBleepAudio);
 
@@ -1525,6 +1537,10 @@ window.addEventListener("load", function () {
   }
 
   function scorePhoto(focusedPhoto) {
+    if (!introFinished) {
+      return;
+    }
+
     var total = 0;
     var subjectCount = 0;
 
@@ -1656,6 +1672,9 @@ window.addEventListener("load", function () {
   }
 
   function captureImage() {
+    if (!introFinished) {
+      return;
+    }
 
     var slot1 = SVG(slot.id).size(1920 / albumSlotSizeMode, 1080/ albumSlotSizeMode);
 

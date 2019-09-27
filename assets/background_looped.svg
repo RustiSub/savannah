@@ -29,9 +29,9 @@
      inkscape:window-height="856"
      id="namedview821"
      showgrid="false"
-     inkscape:zoom="90.509668"
-     inkscape:cx="1867.4766"
-     inkscape:cy="889.08385"
+     inkscape:zoom="0.5"
+     inkscape:cx="661.11642"
+     inkscape:cy="402.41462"
      inkscape:window-x="0"
      inkscape:window-y="1"
      inkscape:window-maximized="1"
@@ -53,7 +53,7 @@
      inkscape:snap-midpoints="true"
      inkscape:snap-object-midpoints="true"
      inkscape:snap-center="true"
-     showguides="true"
+     showguides="false"
      inkscape:guide-bbox="true">
     <sodipodi:guide
        inkscape:locked="false"
@@ -6250,7 +6250,7 @@
   <g
      id="cameraGroup"
      transform="matrix(6.7600462,0,0,6.7600462,384.07227,142.93177)"
-     style="display:none;opacity:0.5">
+     style="display:inline;opacity:0.5">
     <g
        id="galleryBackground"
        inkscape:label="galleryBackground"
