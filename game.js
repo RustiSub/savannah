@@ -146,6 +146,70 @@ window.addEventListener("load", function () {
   animalPathSea.hide();
   var animalPathSeaLength = animalPathSea.length();
 
+  var animalPathCliffGroup = SVG.adopt(background.getElementById('animalPath.cliff.group'));
+  var animalPathCliff = SVG.adopt(background.getElementById('animalPath.cliff'));
+  animalPathCliff.hide();
+  var animalPathCliffLength = animalPathCliff.length();
+
+  // Ant
+  var antAnimationLength = 100000;
+  var ant = SVG.adopt(background.getElementById('ant'));
+  ant.hide();
+
+  ant.toParent(animalPathCliffGroup);
+
+  function startAnt() {
+    function singleAnt(antInstance) {
+      var previousCliffPoint;
+      var antShapeClone;
+
+      antInstance.show();
+
+      antShapeClone = antInstance.select('.ant-shape').first();
+
+      antInstance
+          .animate(antAnimationLength, '-')
+          .during(function (pos, morph, eased, situation) {
+            var p = animalPathCliff.pointAt((eased) * animalPathCliffLength);
+            var rotation = 0;
+
+            if (previousCliffPoint) {
+              var p1 = new Vector(p.x, p.y);
+              var p2 = new Vector(previousCliffPoint.x, previousCliffPoint.y);
+
+              var angle = Math.atan2((p2.y - p1.y),
+                  (p2.x - p1.x));
+
+              rotation = angle * (180 / Math.PI);
+            }
+
+            antInstance.translate(
+                p.x - ((antInstance.node.getBBox().x + (antInstance.node.getBBox().width / 2)) * antInstance.transform().scaleX),
+                p.y - ((antInstance.node.getBBox().y + (antInstance.node.getBBox().height / 2)) * antInstance.transform().scaleY)
+            );
+
+            antShapeClone.rotate(rotation);
+
+            previousCliffPoint = p;
+          }).loop()
+      ;
+    }
+
+    function spawnAnt(delay) {
+      ant
+          .delay(delay)
+          .after(function () {
+            singleAnt(ant.clone());
+          })
+      ;
+    }
+
+    spawnAnt(500);
+    spawnAnt(1000);
+    spawnAnt(1200);
+    spawnAnt(1400);
+  }
+
   // Dolphin
   var dolphin = SVG.adopt(background.getElementById('dolphin'));
   var dolphinShape = SVG.adopt(background.getElementById('dolphinShape'));
@@ -153,16 +217,16 @@ window.addEventListener("load", function () {
   var dolphinAnimationLength = 10000;
 
   dolphin.toParent(animalPathSeaGroup);
-  var previousPoint;
+  var previousSeaPoint;
   dolphin
       .animate(dolphinAnimationLength, '-')
       .during(function(pos, morph, eased, situation) {
         var p = animalPathSea.pointAt((eased) * animalPathSeaLength);
         var rotation = 0;
 
-        if (previousPoint) {
+        if (previousSeaPoint) {
           var p1 = new Vector(p.x, p.y);
-          var p2 = new Vector(previousPoint.x, previousPoint.y);
+          var p2 = new Vector(previousSeaPoint.x, previousSeaPoint.y);
 
           var angle = Math.atan2( (p2.y - p1.y),
               (p2.x - p1.x) );
@@ -177,7 +241,7 @@ window.addEventListener("load", function () {
 
         dolphinShape.rotate(rotation);
 
-        previousPoint = p;
+        previousSeaPoint = p;
       }).loop()
   ;
 
@@ -231,7 +295,7 @@ window.addEventListener("load", function () {
   };
 
   var rhinoWalk = function() {
-    var animationLength = 10000;
+    var animationLength = 15000;
     var preFlippedRhino = rhino.transform();
     rhino.flip('x');
 
@@ -507,6 +571,8 @@ window.addEventListener("load", function () {
     sun2Animation.play();
     moon1Animation.play();
     moon2Animation.play();
+
+    startAnt();
   }
 
   // Battery Power & Game End
