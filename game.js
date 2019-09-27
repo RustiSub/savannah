@@ -135,6 +135,7 @@ window.addEventListener("load", function () {
   camera = SVG.adopt(camera);
 
   // Animals
+  var rhinoGroup = SVG.adopt(background.getElementById('rhinoGroup'));
   var rhinoWrapper = SVG.adopt(background.getElementById('rhinoWrapper'));
   var rhino = SVG.adopt(background.getElementById('rhino'));
   var rhinoPath = rhino.array();
@@ -149,7 +150,7 @@ window.addEventListener("load", function () {
   animalPathDessert.hide();
 
   rhinoWrapper.toParent(animalPathDessertGroup);
-  rhino.flip('x');
+
   var animalPathDessertLength = animalPathDessert.length();
 
   var animations = [];
@@ -186,29 +187,61 @@ window.addEventListener("load", function () {
       lastIndex = animationIndex;
     }
   };
-  var animationLength = 20000;
-  rhinoWrapper.animate(animationLength, '-').during(function(pos, morph, eased, situation) {
-    var p = animalPathDessert.pointAt((eased) * animalPathDessertLength);
 
-    rhinoWrapper.translate(
-        p.x - ((rhinoWrapper.node.getBBox().x + (rhinoWrapper.node.getBBox().width / 2)) * rhinoWrapper.transform().scaleX),
-        p.y - ((rhinoWrapper.node.getBBox().y + (rhinoWrapper.node.getBBox().height / 2)) * rhinoWrapper.transform().scaleY)
-    );
+  var rhinoWalk = function() {
+    var animationLength = 10000;
+    var preFlippedRhino = rhino.transform();
+    rhino.flip('x');
 
-      rhinoWalkAnimation(pos, animationLength * eased, 200);
-  }).after(function() {
-    rhino.animate(1000).plot(rhinoPath);
-  });
+    rhinoWrapper
+        .animate(animationLength, '-')
+        .during(function(pos, morph, eased, situation) {
+          var p = animalPathDessert.pointAt((eased) * animalPathDessertLength);
 
-  //rhinoWalk();
+          rhinoWrapper.translate(
+              p.x - ((rhinoWrapper.node.getBBox().x + (rhinoWrapper.node.getBBox().width / 2)) * rhinoWrapper.transform().scaleX),
+              p.y - ((rhinoWrapper.node.getBBox().y + (rhinoWrapper.node.getBBox().height / 2)) * rhinoWrapper.transform().scaleY)
+          );
+
+          rhinoWalkAnimation(pos, animationLength * eased, 200);
+        }).after(function() {
+      //rhino.plot(rhinoHeadUpPath.array());
+      //rhino.transform({flip: 'x'}, true);
+      //rhino.flip('x', rhinoWrapper.node.getBBox().x);
+      rhino.animate(1000).plot(rhinoPath)
+          .delay(1000)
+          .animate(1000).plot(rhinoHeadUpPath.array())
+          .after(
+              function () {
+                rhino.transform(preFlippedRhino);
+
+                rhinoWrapper.animate(animationLength, '-').during(function(pos, morph, eased, situation) {
+                  var p = animalPathDessert.pointAt((1 - eased) * animalPathDessertLength);
+
+                  rhinoWrapper.translate(
+                      p.x - ((rhinoWrapper.node.getBBox().x + (rhinoWrapper.node.getBBox().width / 2)) * rhinoWrapper.transform().scaleX),
+                      p.y - ((rhinoWrapper.node.getBBox().y + (rhinoWrapper.node.getBBox().height / 2)) * rhinoWrapper.transform().scaleY)
+                  );
+
+                  rhinoWalkAnimation(pos, animationLength * eased, 200);
+                }).
+                delay(1000).after(function () {
+                  rhinoWalk();
+                });
+              }
+          )
+      ;
+    })
+    ;
+  };
+
+  rhinoWalk();
 
   //rhinoWrapper.hide();
 
   var walkAnimationLength = 100;
   var moveSpeed = 1;
   var moveSpeedModifier = 50;
-
-  rhino.scale(0.5);
 
   // Game State
   var gameState = 0;
@@ -504,7 +537,7 @@ window.addEventListener("load", function () {
 
   function splashScreen() {
 
-    splashScreenGroup.show();
+    splashScreenGroup.hide();
     splashScreenGroup.front();
 
     skipIntroButton.click(
