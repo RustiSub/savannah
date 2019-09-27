@@ -29,13 +29,13 @@
      inkscape:window-height="856"
      id="namedview821"
      showgrid="false"
-     inkscape:zoom="0.25"
-     inkscape:cx="1796.0021"
-     inkscape:cy="716.25282"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="1012.9782"
+     inkscape:cy="428.80577"
      inkscape:window-x="0"
      inkscape:window-y="1"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg8"
+     inkscape:current-layer="splashScreenGroup"
      scale-x="1"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -4341,7 +4341,7 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc" />
     <rect
-       style="display:none;opacity:1;fill:url(#linearGradient3500-7);fill-opacity:1;stroke:none;stroke-width:4.15245152;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="display:inline;opacity:1;fill:url(#linearGradient3500-7);fill-opacity:1;stroke:none;stroke-width:4.15245152;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="nightFilter2"
        width="1920"
        height="3467.6511"
@@ -5817,7 +5817,7 @@
         </g>
       </g>
       <rect
-         style="display:none;opacity:1;fill:url(#linearGradient3500);fill-opacity:1;stroke:none;stroke-width:1.09866953;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="display:inline;opacity:1;fill:url(#linearGradient3500);fill-opacity:1;stroke:none;stroke-width:1.09866953;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="nightFilter1"
          width="508"
          height="917.48273"
@@ -7521,7 +7521,7 @@
      id="splashScreenGroup"
      inkscape:label="Splashscreen"
      transform="matrix(1.0105263,0,0,1,0.00828889,300)"
-     style="display:none">
+     style="display:inline">
     <rect
        style="opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:5.01438284;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect3421"
@@ -7596,12 +7596,6 @@
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Arial Black';-inkscape-font-specification:'Arial Black, ';fill:#141414;fill-opacity:1;stroke-width:3.71537232"
            d="m 1351.1655,53.605969 h 27.6476 v 72.783571 l 0.073,3.4106 q 0,7.25659 -3.1204,13.78751 -3.0477,6.6035 -8.1999,10.66719 -5.0796,4.06369 -12.9893,5.87783 -7.8371,1.81415 -17.9963,1.81415 -23.2211,0 -31.929,-6.96632 -8.6354,-6.96633 -8.6354,-18.64943 0,-1.45132 0.1452,-3.91856 l 28.6635,3.26546 q 1.0885,3.99113 3.338,5.51501 3.2655,2.24954 8.2,2.24954 6.3858,0 9.5061,-3.41059 3.1929,-3.4106 3.1929,-11.90081 v -11.6831 q -4.354,5.15217 -8.7079,7.47428 -6.8212,3.6283 -14.7309,3.6283 -15.4565,0 -24.9627,-13.49726 -6.7486,-9.57869 -6.7486,-25.325487 0,-17.996338 8.7079,-27.429901 8.7079,-9.433564 22.7857,-9.433564 8.9982,0 14.8034,3.047766 5.8779,3.047767 10.9575,10.086657 z m -27.7927,37.371426 q 0,8.345076 3.5557,12.408765 3.5557,3.99112 9.361,3.99112 5.515,0 9.2159,-4.13625 3.7734,-4.208823 3.7734,-12.626465 0,-8.417641 -3.9186,-12.84416 -3.9185,-4.499084 -9.5787,-4.499084 -5.6601,0 -9.0707,4.136255 -3.338,4.063689 -3.338,13.569819 z" />
       </g>
-      <circle
-         r="223.13824"
-         cy="375.47263"
-         cx="935.617"
-         id="path3427"
-         style="opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:#0a0a0a;stroke-width:2.90631843;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
       <rect
          ry="54.641537"
          y="-152.46674"
@@ -7627,6 +7621,12 @@
          id="rect3424-2-7"
          style="display:inline;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:#0a0a0a;stroke-width:2.90631843;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     </g>
+    <circle
+       cy="375.47263"
+       cx="949.99182"
+       id="splashScreenLens"
+       style="display:inline;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:#020202;stroke-width:19.89556122;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:19.8955608, 79.5822432;stroke-dashoffset:0;stroke-opacity:1"
+       r="223.13824" />
     <rect
        inkscape:label="flash"
        y="-345.7142"

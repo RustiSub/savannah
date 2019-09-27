@@ -16,6 +16,7 @@ window.addEventListener("load", function () {
   let cycleLength = 60000;
   let batteryChargeTime = 1;
 
+  var musicAudio;
   var zoomInAudio;
   var zoomOutAudio;
   var cameraClickAudio;
@@ -32,7 +33,7 @@ window.addEventListener("load", function () {
     }
   };
 
-  var maxPhotoCount = 2;
+  var maxPhotoCount = 20;
 
   var moveDistance = {
     x: 0,
@@ -763,7 +764,8 @@ window.addEventListener("load", function () {
   var flash = SVG.adopt(background.getElementById('flash'));
   var skipIntroButton = SVG.adopt(background.getElementById('skipIntroButton'));
   var splashStartButton = SVG.adopt(background.getElementById('splashStartButton'));
-
+  var splashScreenLens = SVG.adopt(background.getElementById('splashScreenLens'));
+  console.log(splashScreenLens);
   splashScreenGroup.hide();
 
   function splashScreen() {
@@ -776,50 +778,70 @@ window.addEventListener("load", function () {
           introFinished = true;
           startSun();
           flash.front();
+
           loadAudio();
 
-          splashScreenGroup
-              .delay(0)
-              .after(function() {
-                // flash.animate().style({opacity: 1});
-              })
-              .style({opacity: 1})
-              .animate(1500)
-              .transform({scale: 10, cx: 951, cy: 400})
-              .style({opacity: 0})
-              .after(
-                  function() {
-                    startGame();
+          splashScreenLens.rotate(0);
 
-                    splashScreenGroup.remove();
-                  }
-              )
-          ;
+          var refreshId = setInterval(function () {
+            splashScreenLens.rotate(Math.random() * 360);
+
+            if (audioLoaded === audioTracks) {
+              clearInterval(refreshId);
+
+              splashScreenGroup
+                  .delay(0)
+                  .style({opacity: 1})
+                  .animate(1500)
+                  .transform({scale: 10, cx: 951, cy: 400})
+                  .style({opacity: 0})
+                  .after(
+                      function() {
+                        startGame();
+
+                        splashScreenGroup.remove();
+                      }
+                  )
+              ;
+            }
+          }, 0);
+
         }
     );
 
     splashStartButton.click(
         function() {
           flash.front();
+
           loadAudio();
 
-          splashScreenGroup
-              .delay(0)
-              .after(function() {
-                flash.animate().style({opacity: 1});
-              })
-              .style({opacity: 1})
-              .animate(1500)
-              .transform({scale: 10, cx: 951, cy: 400})
-              // .style({opacity: 0})
-              .after(
-                  function() {
-                    intro();
+          splashScreenLens.rotate(0);
 
-                    splashScreenGroup.remove();
-                  }
-              )
-          ;
+          var refreshId = setInterval(function () {
+            splashScreenLens.rotate(Math.random() * 360);
+
+            if (audioLoaded === audioTracks) {
+              clearInterval(refreshId);
+
+              splashScreenGroup
+                  .delay(0)
+                  .after(function() {
+                    flash.animate().style({opacity: 1});
+                  })
+                  .style({opacity: 1})
+                  .animate(1500)
+                  .transform({scale: 10, cx: 951, cy: 400})
+                  // .style({opacity: 0})
+                  .after(
+                      function() {
+                        intro();
+
+                        splashScreenGroup.remove();
+                      }
+                  )
+              ;
+            }
+          }, 0);
         }
     );
   }
@@ -896,6 +918,7 @@ window.addEventListener("load", function () {
           .plot(tentDoorRightOpen.array())
           .after(function() {
             startSun();
+            musicAudio.play();
           })
           .delay(3000)
           .during(function (pos, morphed, eased) {
@@ -913,7 +936,7 @@ window.addEventListener("load", function () {
                 .after(function () {
                   introGroup.hide();
                   powerUpAnimation.play();
-                  cameraGraphic.animate(500).style({opacity: 0.75})
+                  cameraGraphic.animate(500).style({opacity: 0.50})
                       .during(function (pos) {
                         zoomClamp = 0.43;
                         //30 steps
@@ -986,6 +1009,8 @@ window.addEventListener("load", function () {
 
   function startGame() {
     console.log('Game Start');
+
+    musicAudio.play();
 
     zoomClamp = 0.43;
     gameState = 1;
@@ -1308,6 +1333,9 @@ window.addEventListener("load", function () {
         var wave = player.createWave();
         zoomOutAudio = document.createElement("audio");
         zoomOutAudio.src = URL.createObjectURL(new Blob([wave], {type: "audio/wav"}));
+        zoomOutAudio.volume = 0.75;
+
+        audioLoaded++;
       }
     }, 0);
   }
@@ -1330,6 +1358,34 @@ window.addEventListener("load", function () {
         var wave = player.createWave();
         zoomInAudio = document.createElement("audio");
         zoomInAudio.src = URL.createObjectURL(new Blob([wave], {type: "audio/wav"}));
+
+        audioLoaded++;
+      }
+    }, 0);
+  }
+
+  function loadMusicAudio() {
+    var player = new CPlayer();
+    player.init(song);
+
+    // Generate music...
+    var done = false;
+    setInterval(function () {
+      if (done) {
+        return;
+      }
+
+      done = player.generate() >= 1;
+
+      if (done) {
+        // Put the generated song in an Audio element.
+        var wave = player.createWave();
+        musicAudio = document.createElement("audio");
+        musicAudio.src = URL.createObjectURL(new Blob([wave], {type: "audio/wav"}));
+        musicAudio.loop = true;
+        musicAudio.volume = 0.50;
+
+        audioLoaded++;
       }
     }, 0);
   }
@@ -1352,6 +1408,8 @@ window.addEventListener("load", function () {
         var wave = player.createWave();
         cameraClickAudio = document.createElement("audio");
         cameraClickAudio.src = URL.createObjectURL(new Blob([wave], {type: "audio/wav"}));
+
+        audioLoaded++;
       }
     }, 0);
   }
@@ -1374,15 +1432,23 @@ window.addEventListener("load", function () {
         var wave = player.createWave();
         guiBleepAudio = document.createElement("audio");
         guiBleepAudio.src = URL.createObjectURL(new Blob([wave], {type: "audio/wav"}));
+
+        audioLoaded++;
       }
     }, 0);
   }
 
+  var audioLoaded = 0;
+  var audioTracks = 5;
+
   function loadAudio() {
+    loadMusicAudio();
     loadCameraClickAudio();
     loadZoomInAudio();
     loadZoomOutAudio();
     loadGuiBleepAudio();
+
+    return true;
   }
 
   function playAudio(audio) {
@@ -1559,11 +1625,11 @@ window.addEventListener("load", function () {
         return;
       }
 
-      var rect = focusedPhoto.rect(rbox.width, rbox.height);
+/*      var rect = focusedPhoto.rect(rbox.width, rbox.height);
       rect.x(rbox.x);
       rect.y(rbox.y);
       rect.stroke({ color: '#f06', opacity: 0.6, width: 5 });
-      rect.fill({ color: '#f06', opacity: 0 });
+      rect.fill({ color: '#f06', opacity: 0 });*/
 
       let perfectScaleRatio = 0.75;
       let perfectCenter = 0.50;
