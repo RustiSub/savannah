@@ -135,6 +135,53 @@ window.addEventListener("load", function () {
   camera = SVG.adopt(camera);
 
   // Animals
+
+  var animalPathDessertGroup = SVG.adopt(background.getElementById('animalPath.dessert.group'));
+
+  var animalPathDessert = SVG.adopt(background.getElementById('animalPath.dessert'));
+  animalPathDessert.hide();
+
+  var animalPathSeaGroup = SVG.adopt(background.getElementById('animalPath.sea.group'));
+  var animalPathSea = SVG.adopt(background.getElementById('animalPath.sea'));
+  animalPathSea.hide();
+  var animalPathSeaLength = animalPathSea.length();
+
+  // Dolphin
+  var dolphin = SVG.adopt(background.getElementById('dolphin'));
+  var dolphinShape = SVG.adopt(background.getElementById('dolphinShape'));
+
+  var dolphinAnimationLength = 10000;
+
+  dolphin.toParent(animalPathSeaGroup);
+  var previousPoint;
+  dolphin
+      .animate(dolphinAnimationLength, '-')
+      .during(function(pos, morph, eased, situation) {
+        var p = animalPathSea.pointAt((eased) * animalPathSeaLength);
+        var rotation = 0;
+
+        if (previousPoint) {
+          var p1 = new Vector(p.x, p.y);
+          var p2 = new Vector(previousPoint.x, previousPoint.y);
+
+          var angle = Math.atan2( (p2.y - p1.y),
+              (p2.x - p1.x) );
+
+          rotation = angle * (180 / Math.PI);
+        }
+
+        dolphin.translate(
+            p.x - ((dolphin.node.getBBox().x + (dolphin.node.getBBox().width / 2)) * dolphin.transform().scaleX),
+            p.y - ((dolphin.node.getBBox().y + (dolphin.node.getBBox().height / 2)) * dolphin.transform().scaleY)
+        );
+
+        dolphinShape.rotate(rotation);
+
+        previousPoint = p;
+      })
+  ;
+
+  //Rhino
   var rhinoGroup = SVG.adopt(background.getElementById('rhinoGroup'));
   var rhinoWrapper = SVG.adopt(background.getElementById('rhinoWrapper'));
   var rhino = SVG.adopt(background.getElementById('rhino'));
@@ -145,10 +192,6 @@ window.addEventListener("load", function () {
   var rhinoWalk3 = SVG.adopt(background.getElementById('rhino.walk.3'));
   var rhinoWalk4 = SVG.adopt(background.getElementById('rhino.walk.4'));
 
-  var animalPathDessertGroup = SVG.adopt(background.getElementById('animalPath.dessert.group'));
-  var animalPathDessert = SVG.adopt(background.getElementById('animalPath.dessert'));
-  animalPathDessert.hide();
-
   rhinoWrapper.toParent(animalPathDessertGroup);
 
   var animalPathDessertLength = animalPathDessert.length();
@@ -158,7 +201,6 @@ window.addEventListener("load", function () {
   animations.push(rhinoWalk3.array());
   animations.push(rhinoWalk4.array());
   animations.push(rhinoWalk3.array());
-
 
   var lastIndex = 0;
 
@@ -205,9 +247,6 @@ window.addEventListener("load", function () {
 
           rhinoWalkAnimation(pos, animationLength * eased, 200);
         }).after(function() {
-      //rhino.plot(rhinoHeadUpPath.array());
-      //rhino.transform({flip: 'x'}, true);
-      //rhino.flip('x', rhinoWrapper.node.getBBox().x);
       rhino.animate(1000).plot(rhinoPath)
           .delay(1000)
           .animate(1000).plot(rhinoHeadUpPath.array())
@@ -236,12 +275,6 @@ window.addEventListener("load", function () {
   };
 
   rhinoWalk();
-
-  //rhinoWrapper.hide();
-
-  var walkAnimationLength = 100;
-  var moveSpeed = 1;
-  var moveSpeedModifier = 50;
 
   // Game State
   var gameState = 0;
