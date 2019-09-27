@@ -1,4 +1,4 @@
-window.addEventListener("load", function () {
+window.addEventListener("load", async function() {
 
   var Vector = wrect.Physics.Vector;
 
@@ -68,9 +68,17 @@ window.addEventListener("load", function () {
     sunGroup2.y(y);
   }
 
-  var background = document.getElementById('looptest').contentDocument;
-
-  var parent = background.getElementById('svg8');
+  // BEGIN DEV HACK TO WORK WITH IMG TAG
+  var img;
+  var background = document;
+  if (img = document.querySelector('img[inline]')) {
+    let resp = await fetch(img.src);
+    let data = await resp.text();
+    let svg = document.createElement('svg');
+    svg.innerHTML = data;
+    img.replaceWith(svg);
+  }
+  var parent = document.querySelector('#svg8');
   parent = SVG.adopt(parent);
 
   var sceneParent = parent.nested();
