@@ -151,6 +151,67 @@ window.addEventListener("load", function () {
   animalPathCliff.hide();
   var animalPathCliffLength = animalPathCliff.length();
 
+  var animalPathSkyGroup = SVG.adopt(background.getElementById('animalPath.sky.group'));
+  var animalPathSky = SVG.adopt(background.getElementById('animalPath.sky'));
+  animalPathSky.hide();
+  var animalPathSkyLength = animalPathSky.length();
+
+  // Eagle
+  var eagleAnimationLength = 50000;
+  var eagle = SVG.adopt(background.getElementById('eagle'));
+  eagle.hide();
+
+  eagle.toParent(animalPathSkyGroup);
+
+  function startEagle() {
+    function singleEagle(eagleInstance) {
+      var previousSkyPoint;
+      var eagleShapeClone;
+
+      eagleInstance.show();
+
+      eagleShapeClone = eagleInstance.select('.eagle-shape').first();
+
+      eagleInstance
+          .animate(eagleAnimationLength, '-')
+          .during(function (pos, morph, eased, situation) {
+            var p = animalPathSky.pointAt((1 - eased) * animalPathSkyLength);
+            var rotation = 0;
+
+            if (previousSkyPoint) {
+              var p1 = new Vector(p.x, p.y);
+              var p2 = new Vector(previousSkyPoint.x, previousSkyPoint.y);
+
+              var angle = Math.atan2((p2.y - p1.y),
+                  (p2.x - p1.x));
+
+              rotation = angle * (180 / Math.PI);
+            }
+
+            eagleInstance.translate(
+                p.x - ((eagleInstance.node.getBBox().x + (eagleInstance.node.getBBox().width / 2)) * eagleInstance.transform().scaleX),
+                p.y - ((eagleInstance.node.getBBox().y + (eagleInstance.node.getBBox().height / 2)) * eagleInstance.transform().scaleY)
+            );
+
+            eagleShapeClone.rotate(rotation);
+
+            previousSkyPoint = p;
+          }).loop()
+      ;
+    }
+
+    function spawnEagle(delay) {
+      ant
+          .delay(delay)
+          .after(function () {
+            singleEagle(eagle.clone());
+          })
+      ;
+    }
+
+    spawnEagle(0);
+  }
+
   // Ant
   var antAnimationLength = 100000;
   var ant = SVG.adopt(background.getElementById('ant'));
@@ -573,6 +634,7 @@ window.addEventListener("load", function () {
     moon2Animation.play();
 
     startAnt();
+    startEagle();
   }
 
   // Battery Power & Game End
