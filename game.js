@@ -178,7 +178,7 @@ window.addEventListener("load", function () {
         dolphinShape.rotate(rotation);
 
         previousPoint = p;
-      })
+      }).loop()
   ;
 
   //Rhino
@@ -570,7 +570,7 @@ window.addEventListener("load", function () {
 
   function splashScreen() {
 
-    splashScreenGroup.hide();
+    splashScreenGroup.show();
     splashScreenGroup.front();
 
     skipIntroButton.click(
