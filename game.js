@@ -184,6 +184,80 @@ window.addEventListener("load", function () {
   animalPathSky.hide();
   var animalPathSkyLength = animalPathSky.length();
 
+  var animalPathOasisGroup = SVG.adopt(background.getElementById('animalPath.oasis.group'));
+  var animalPathOasis = SVG.adopt(background.getElementById('animalPath.oasis'));
+  animalPathOasis.hide();
+  var animalPathOasisLength = animalPathOasis.length();
+
+  // Fire Fly
+  var fireFlyAnimationLength = 5000;
+  var fireFly = SVG.adopt(background.getElementById('fireFly'));
+  fireFly.hide();
+
+  fireFly.toParent(animalPathOasisGroup);
+
+  function startFireFly() {
+    function singleFireFly(fireFlyInstance) {
+      var previousOasisPoint;
+      var fireFlyShapeClone;
+
+      fireFlyInstance.show();
+
+      fireFlyShapeClone = fireFlyInstance.select('.fire-fly-shape').first();
+
+      var rotationClamp = 0;
+
+      fireFlyInstance
+          .animate(fireFlyAnimationLength, '-')
+          .during(function (pos, morph, eased, situation) {
+            var p = animalPathOasis.pointAt((eased) * animalPathOasisLength);
+            var rotation = 0;
+
+            if (previousOasisPoint) {
+              var p1 = new Vector(p.x, p.y);
+              var p2 = new Vector(previousOasisPoint.x, previousOasisPoint.y);
+
+              var angle = Math.atan2((p2.y - p1.y),
+                  (p2.x - p1.x));
+
+              rotation = angle * (180 / Math.PI);
+            }
+
+            if (rotationClamp > 10) {
+              fireFlyShapeClone.rotate(rotation);
+              rotationClamp = 0;
+            } else {
+              rotationClamp +=1;
+            }
+
+            fireFlyInstance.translate(
+                p.x - ((fireFlyInstance.node.getBBox().x + (fireFlyInstance.node.getBBox().width / 2)) * fireFlyInstance.transform().scaleX),
+                p.y - ((fireFlyInstance.node.getBBox().y + (fireFlyInstance.node.getBBox().height / 2)) * fireFlyInstance.transform().scaleY)
+            );
+
+            previousOasisPoint = p;
+          }).loop()
+      ;
+    }
+
+    function spawnFireFly(delay) {
+      fireFly
+          .delay(delay)
+          .after(function () {
+            singleFireFly(fireFly.clone());
+          })
+      ;
+    }
+
+    spawnFireFly(0);
+    spawnFireFly(500);
+    spawnFireFly(1000);
+    spawnFireFly(1500);
+    spawnFireFly(3000);
+    spawnFireFly(4000);
+    spawnFireFly(4500);
+  }
+
   // Eagle
   var eagleAnimationLength = 50000;
   var eagle = SVG.adopt(background.getElementById('eagle'));
@@ -285,7 +359,7 @@ window.addEventListener("load", function () {
     }
 
     function spawnAnt(delay) {
-      ant
+      eagle
           .delay(delay)
           .after(function () {
             singleAnt(ant.clone());
@@ -518,41 +592,6 @@ window.addEventListener("load", function () {
         timerGroup.node.getBBox().x + timerGroup.node.getBBox().width / 2,
         timerGroup.node.getBBox().y + timerGroup.node.getBBox().height / 2
     );
-/*
-    if (sunPosition <= 0.25 || sunPosition >= 0.75) {
-      moonChargeTimes.forEach(function(chargeTime) {
-        chargeTime.charged = false;
-      });
-
-      sunChargeTimes.forEach(function(chargeTime, index) {
-        if (sunPosition >= chargeTime.time && !chargeTime.charged) {
-          chargeTime.charged = true;
-
-          if (sunChargeTimes[index+1]) {
-            sunChargeTimes[index+1].charged = false;
-            console.log(sunChargeTimes[index+1]);
-          }
-
-          batteryCharge();
-        }
-      });
-    } else if (sunPosition > 0.25 && sunPosition < 0.75) {
-      sunChargeTimes.forEach(function(chargeTime) {
-        chargeTime.charged = false;
-      });
-
-      moonChargeTimes.forEach(function(chargeTime, index) {
-        if (sunPosition >= chargeTime.time && !chargeTime.charged) {
-          chargeTime.charged = true;
-
-          if (moonChargeTimes[index+1]) {
-            moonChargeTimes[index+1].charged = false;
-          }
-
-          batteryCharge();
-        }
-      });
-    }*/
 
   }).loop().pause();
 
@@ -665,6 +704,7 @@ window.addEventListener("load", function () {
 
     startAnt();
     startEagle();
+    startFireFly();
   }
 
   // Battery Power & Game End
