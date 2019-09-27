@@ -29,13 +29,13 @@
      inkscape:window-height="856"
      id="namedview821"
      showgrid="false"
-     inkscape:zoom="3.6203867"
-     inkscape:cx="82.128728"
-     inkscape:cy="57.546856"
+     inkscape:zoom="0.45254834"
+     inkscape:cx="2913.8201"
+     inkscape:cy="273.42184"
      inkscape:window-x="0"
      inkscape:window-y="1"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g2993"
+     inkscape:current-layer="g5515"
      scale-x="1"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -189,6 +189,11 @@
        position="170.81847,22.337769"
        orientation="0,1"
        id="guide3309"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="2629.6875,700"
+       orientation="1,0"
+       id="guide5512"
        inkscape:locked="false" />
   </sodipodi:namedview>
   <defs
@@ -3614,12 +3619,38 @@
     <g
        id="g3032"
        inkscape:label="sea">
-      <path
-         sodipodi:nodetypes="ccccccc"
-         inkscape:connector-curvature="0"
-         id="rect4648-5-2-1"
-         d="m 2191.2836,388.09222 h 1545.732 l -81.7592,118.57502 -411.1024,14.86411 c -247.1919,2.4298 -470.616,3.56013 -659.5547,-6.85676 -160.9913,-2.41468 -233.1712,-8.11215 -351.3312,-8.00735 z"
-         style="display:inline;opacity:1;fill:url(#linearGradient19719-0);fill-opacity:1;stroke-width:3.34004807;stroke-miterlimit:4;stroke-dasharray:none" />
+      <g
+         id="g5464"
+         inkscape:label="seaWaves">
+        <path
+           sodipodi:nodetypes="cccccccccccc"
+           inkscape:connector-curvature="0"
+           id="seaUpper.waves.1"
+           d="m 2191.2836,388.09222 c 96.0272,18.06176 200.2673,8.6124 318.0914,-14.84375 73.6383,20.44293 162.7192,40.04678 264.0625,-0.78125 62.0129,18.15623 127.4981,32.37712 220.3125,15.625 81.3837,16.57227 162.8907,6.31481 248.4375,-12.5 38.9163,22.73846 126.6948,10.59114 194.5313,2.34375 92.8506,7.70696 135.3283,37.53369 300.2968,10.15625 l -81.7592,118.57502 -411.1024,14.86411 c -247.1919,2.4298 -470.616,3.56013 -659.5547,-6.85676 -160.9913,-2.41468 -233.1712,-8.11215 -351.3312,-8.00735 z"
+           style="display:inline;opacity:0.5625;fill:#7e0101;fill-opacity:1;stroke-width:3.34004807;stroke-miterlimit:4;stroke-dasharray:none"
+           inkscape:label="seaUpper.waves.1" />
+        <path
+           inkscape:label="seaUpper.waves.2"
+           style="display:inline;opacity:0.71022728;fill:#037e01;fill-opacity:1;stroke-width:3.34004807;stroke-miterlimit:4;stroke-dasharray:none"
+           d="m 2191.2836,388.09222 c 96.0272,18.06176 320.2673,20.6124 438.0914,-2.84375 73.6383,20.44293 162.7192,40.04678 264.0625,-0.78125 62.0129,18.15623 127.4981,32.37712 220.3125,15.625 81.3837,16.57227 162.8907,6.31481 248.4375,-12.5 38.9163,22.73846 126.6948,10.59114 194.5313,2.34375 92.8506,7.70696 15.3283,25.53369 180.2968,-1.84375 l -81.7592,118.57502 -411.1024,14.86411 c -247.1919,2.4298 -470.616,3.56013 -659.5547,-6.85676 -160.9913,-2.41468 -233.1712,-8.11215 -351.3312,-8.00735 z"
+           id="seaUpper.waves.2"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="cccccccccccc" />
+        <path
+           sodipodi:nodetypes="cccccccccccc"
+           inkscape:connector-curvature="0"
+           id="seaUpper.waves.3"
+           d="m 2191.2836,388.09222 h 480.5289 243.75 242.1875 250 167.1875 162.0781 l -81.7592,118.57502 -411.1024,14.86411 c -247.1919,2.4298 -470.616,3.56013 -659.5547,-6.85676 -160.9913,-2.41468 -233.1712,-8.11215 -351.3312,-8.00735 z"
+           style="display:inline;opacity:1;fill:url(#linearGradient19719-0);fill-opacity:1;stroke-width:3.34004807;stroke-miterlimit:4;stroke-dasharray:none"
+           inkscape:label="seaUpper.waves.3" />
+        <path
+           inkscape:label="seaUpper"
+           style="display:inline;opacity:1;fill:url(#linearGradient19719-0);fill-opacity:1;stroke-width:3.34004807;stroke-miterlimit:4;stroke-dasharray:none"
+           d="m 2191.2836,388.09222 h 316.5289 243.75 242.1875 250 167.1875 326.0781 l -81.7592,118.57502 -411.1024,35.17661 c -247.1919,2.4298 -531.5535,12.93513 -720.4922,2.51824 -160.9913,-2.41468 -172.2337,-37.79965 -290.3937,-37.69485 z"
+           id="seaUpper"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="cccccccccccc" />
+      </g>
       <g
          transform="matrix(3.7795275,0,0,3.7795275,2030.3471,-287.12156)"
          style="display:inline;opacity:1"
@@ -3633,12 +3664,31 @@
            d="m 425.65114,190.89784 c -13.20377,1.94154 -27.86899,-24.31946 -36.19506,-15.41179 -22.9143,24.51493 -8.93948,38.65778 -43.25289,-0.87113 -4.26056,-4.90815 -8.84481,19.43913 -29.94081,19.80963 -6.96942,0.1224 -14.69901,-21.56924 -22.99048,-21.64362 -14.59682,-0.13095 -19.15283,19.29322 -36.15067,20.33971 -18.10704,1.11479 -38.68159,-37.24678 -49.85683,-20.97378 -26.56547,38.68373 -65.19046,17.51155 -91.10198,7.65708 -5.99622,-2.28044 -59.932176,13.23265 -67.222956,12.87753"
            style="display:inline;fill:none;stroke:#ff0e0e;stroke-width:1.32291675;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
       </g>
-      <path
-         sodipodi:nodetypes="ccccccc"
-         inkscape:connector-curvature="0"
-         id="rect4648-5-2"
-         d="M 2206.7516,411.52972 H 3719.338 l -64.0816,118.57502 -411.1024,14.86411 c -247.1919,2.4298 -470.616,3.56013 -659.5547,-6.85676 -160.9913,-2.41468 -233.1712,-8.11215 -351.3312,-8.00735 z"
-         style="display:inline;opacity:1;fill:url(#linearGradient3188);fill-opacity:1;stroke-width:3.34004807;stroke-miterlimit:4;stroke-dasharray:none" />
+      <g
+         id="g5515"
+         inkscape:label="seaShore">
+        <path
+           inkscape:label="seaShoreWaves"
+           style="display:inline;opacity:1;fill:#015c7e;fill-opacity:1;stroke:#e3f7ff;stroke-width:20;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.49019608"
+           d="M 2206.7516,453.51418 H 3719.338 l -64.0816,92.05852 -736.1024,14.86411 c -345.5156,11.3794 -378.1629,-14.58668 -685.8859,-14.86411 z"
+           id="seaShoreWaves"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="cccccc" />
+        <path
+           sodipodi:nodetypes="cccccc"
+           inkscape:connector-curvature="0"
+           id="path5544"
+           d="M 2206.7516,411.52972 H 3719.338 l -64.0816,54.8158 -736.1024,14.86411 c -345.5156,11.3794 -378.1629,-14.58668 -685.8859,-14.86411 z"
+           style="display:inline;opacity:1;fill:url(#linearGradient3188);fill-opacity:1;stroke:#e1f7ff;stroke-width:3.34004807;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0"
+           inkscape:label="seaShoreWaves" />
+        <path
+           sodipodi:nodetypes="cccccc"
+           inkscape:connector-curvature="0"
+           id="seaShore.waves.1"
+           d="M 2206.7516,449.19185 H 3719.338 l -64.0816,80.91289 c -226.0046,24.06277 -377.9819,64.57606 -678.2899,72.12697 -551.0916,-5.97384 -447.1071,-66.99217 -743.6984,-72.12697 z"
+           style="display:none;opacity:0.54199997;fill:#037e01;fill-opacity:1;stroke-width:3.34004807;stroke-miterlimit:4;stroke-dasharray:none"
+           inkscape:label="seaShoreWaves" />
+      </g>
     </g>
     <path
        style="display:inline;opacity:1;fill:url(#Mountain);fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"

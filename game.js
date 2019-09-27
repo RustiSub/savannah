@@ -116,23 +116,51 @@ window.addEventListener("load", function () {
 
   cameraGraphic.front();
 
-  var focusEffect = background.getElementById('focusEffect');
-  focusEffect = SVG.adopt(focusEffect);
-
-  focusEffect.x(parent.viewbox().x);
-  focusEffect.y(parent.viewbox().y);
-  focusEffect.width(parent.viewbox().width);
-  focusEffect.height(parent.viewbox().height);
-
-/*  focusEffect.style('opacity', 0);
-  focusEffect.animate().style('opacity', 1);
-  focusEffect.animate().style('opacity', 0);*/
-
-  focusEffect.front();
-  focusEffect.hide();
-
   var camera = background.getElementById('cameraReticle');
   camera = SVG.adopt(camera);
+
+  //Sea
+  var seaUpper = SVG.adopt(background.getElementById('seaUpper'));
+  var seaUpperWaves1 = SVG.adopt(background.getElementById('seaUpper.waves.1'));
+  var seaUpperWaves2 = SVG.adopt(background.getElementById('seaUpper.waves.2'));
+  var seaUpperWaves3 = SVG.adopt(background.getElementById('seaUpper.waves.3'));
+  seaUpperWaves1.hide();
+  seaUpperWaves2.hide();
+  seaUpperWaves3.hide();
+  var calmSea = seaUpper.array();
+
+  function startWaves() {
+    seaUpper
+        .animate(5000, '<').plot(seaUpperWaves1.array())
+        .animate(5000, '<').plot(seaUpperWaves2.array())
+        .animate(5000, '>').plot(seaUpperWaves3.array())
+        .animate(1).plot(calmSea)
+        .after(function () {
+          startWaves();
+        })
+    ;
+  }
+
+  var seaShoreWaves = SVG.adopt(background.getElementById('seaShoreWaves'));
+  var seaShoreWaves1 = SVG.adopt(background.getElementById('seaShore.waves.1'));
+  var calmShore = seaShoreWaves.array();
+
+  function startShoreWaves() {
+    seaShoreWaves
+        .animate(2500, '-', 5000)
+        .plot(seaShoreWaves1.array())
+        .animate(5000, '<').plot(calmShore)
+        .after(function () {
+          startShoreWaves();
+        })
+    ;
+  }
+
+  startShoreWaves();
+
+//seaUpper.waves.1
+  startWaves();
+  console.log(seaUpper);
 
   // Animals
 
