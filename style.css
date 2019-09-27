@@ -1,6 +1,6 @@
-* {
+/** {
 	transition: all 100ms;
-}
+}*/
 
 html, body {
 	height: 100%;

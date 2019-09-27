@@ -1,4 +1,14 @@
 window.addEventListener("load", async function() {
+  // BEGIN DEV HACK TO WORK WITH IMG TAG
+  var img;
+  var background = document;
+  if (img = document.querySelector('img[inline]')) {
+    let resp = await fetch(img.src);
+    let data = await resp.text();
+    let svg = document.createElement('svg');
+    svg.innerHTML = data;
+    img.replaceWith(svg);
+  }
 
   var Vector = wrect.Physics.Vector;
 
@@ -68,16 +78,6 @@ window.addEventListener("load", async function() {
     sunGroup2.y(y);
   }
 
-  // BEGIN DEV HACK TO WORK WITH IMG TAG
-  var img;
-  var background = document;
-  if (img = document.querySelector('img[inline]')) {
-    let resp = await fetch(img.src);
-    let data = await resp.text();
-    let svg = document.createElement('svg');
-    svg.innerHTML = data;
-    img.replaceWith(svg);
-  }
   var parent = document.querySelector('#svg8');
   parent = SVG.adopt(parent);
 
@@ -1732,7 +1732,7 @@ window.addEventListener("load", async function() {
 
     scorePhoto(focusedPhoto);
 
-    var deleteButtonCloned = focusedPhoto.select('#deleteButtonCloned' + thumbPhoto.id()).first();
+    var deleteButtonCloned = focusedPhoto.select('.deleteButtonCloned' + thumbPhoto.id()).first();
 
     deleteButtonCloned.hide();
 
@@ -1755,7 +1755,7 @@ window.addEventListener("load", async function() {
 
     var clonedBackground = parent.clone(slot1);
 
-    var clonedCameraGraphic = SVG.adopt(clonedBackground.node.getElementById('cameraGroup'));
+    var clonedCameraGraphic = clonedBackground.select('.camera-group').first();
     clonedCameraGraphic.hide();
 
     clonedBackground.width(clonedBackground.width() / albumSlotSizeMode);
@@ -1783,6 +1783,7 @@ window.addEventListener("load", async function() {
           var clonedDeleteButton = deleteButton.clone(clonedBackground);
 
           clonedDeleteButton.id('deleteButtonCloned' + clonedBackground.id());
+          clonedDeleteButton.addClass('deleteButtonCloned' + clonedBackground.id());
 
           clonedDeleteButton.style({opacity: 0.25});
 
