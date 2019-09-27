@@ -458,6 +458,7 @@ window.addEventListener("load", function () {
   clouds2.x(-100);
 
   var nightFilter2 = SVG.adopt(background.getElementById('nightFilter2'));
+  var nightLights = SVG.adopt(background.getElementById('nightLights'));
   var sky2Night = SVG.adopt(background.getElementById('sky2Night'));
 
   var sunPosition = 0;
@@ -495,6 +496,7 @@ window.addEventListener("load", function () {
 
     nightFilter1.style('opacity', opacity);
     nightFilter2.style('opacity', opacity);
+    nightLights.style('opacity', opacity);
     sky1Night.style('opacity', opacity);
     sky2Night.style('opacity', opacity);
 
