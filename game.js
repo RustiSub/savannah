@@ -1187,10 +1187,11 @@ window.addEventListener("load", function () {
       var objectives = {};
       var levelObjectives = SVG.adopt(background.getElementById('level' + l));
 
-      levelObjectives.select('.objective').members.forEach(function(objective, index) {
+      levelObjectives.select('.objective').members.forEach(function(objective) {
         objectives[objective.id()] = {
           objective: objective,
-          found: false
+          found: false,
+          boxDone: objective.parent().select('.objective-box').members[0]
         };
       });
 
@@ -1225,6 +1226,8 @@ window.addEventListener("load", function () {
     }
 
     levels[currentLevel].level.show();
+
+    console.log(levels);
   }
 
   buildTagList();
@@ -1296,10 +1299,26 @@ window.addEventListener("load", function () {
       subjectCount += 1;
       total += subTtotal;
 
+      subject.classes().forEach(function (tagClass) {
+        if (levels[currentLevel]['objectives'][tagClass]) {
+          levels[currentLevel]['objectives'][tagClass].found = true;
+          levels[currentLevel]['objectives'][tagClass].boxDone.animate(1000).style({opacity: 0.5});
+        }
+      });
+
+
       //console.log(scoring, subTtotal);
     });
 
-    let finalScore = Math.ceil(5 * (total / subjectCount));
+    var levelDone = true;
+
+    /*levels[currentLevel]['objectives'].forEach(function(objective) {
+      levelDone = levelDone && objective.found;
+    });
+
+    console.log('levelDone', levelDone);*/
+
+/*    let finalScore = Math.ceil(5 * (total / subjectCount));
 
     var like = starsGroupScore.clone(focusedPhoto);
     like.front();
@@ -1313,7 +1332,7 @@ window.addEventListener("load", function () {
 
     highScoreLikes += finalScore;
 
-    updateHighScore();
+    updateHighScore();*/
   }
 
 /*  shareButton.click(function() {
@@ -1394,6 +1413,8 @@ window.addEventListener("load", function () {
 
           previewPhoto.width(1920);
           previewPhoto.height(1080);
+
+          scorePhoto(previewPhoto);
         })
         .delay(350)
         .after(function() {
@@ -1427,8 +1448,6 @@ window.addEventListener("load", function () {
 
             return false;
           });
-
-          //scorePhoto(clonedBackground);
         })
     ;
 
