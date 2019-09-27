@@ -773,6 +773,7 @@ window.addEventListener("load", function () {
 
     skipIntroButton.click(
         function() {
+          introFinished = true;
           startSun();
           flash.front();
           loadAudio();
