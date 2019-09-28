@@ -134,16 +134,17 @@ window.addEventListener("load", async function() {
   var seaUpperWaves2 = SVG.adopt(background.getElementById('seaUpper.waves.2'));
   var seaUpperWaves3 = SVG.adopt(background.getElementById('seaUpper.waves.3'));
   seaUpperWaves1.hide();
-  seaUpperWaves2.hide();
-  seaUpperWaves3.hide();
+/*  seaUpperWaves2.hide();
+  seaUpperWaves3.hide();*/
   var calmSea = seaUpper.array();
 
   function startWaves() {
     seaUpper
         .animate(5000, '<').plot(seaUpperWaves1.array())
-        .animate(5000, '<').plot(seaUpperWaves2.array())
-        .animate(5000, '>').plot(seaUpperWaves3.array())
-        .animate(1).plot(calmSea)
+        .delay(1000)
+/*        .animate(5000, '<').plot(seaUpperWaves2.array())
+        .animate(5000, '>').plot(seaUpperWaves3.array())*/
+        .animate(10000).plot(calmSea)
         .after(function () {
           startWaves();
         })
@@ -153,6 +154,8 @@ window.addEventListener("load", async function() {
   var seaShoreWaves = SVG.adopt(background.getElementById('seaShoreWaves'));
   var seaShoreWaves1 = SVG.adopt(background.getElementById('seaShore.waves.1'));
   var calmShore = seaShoreWaves.array();
+
+  seaShoreWaves1.hide();
 
   function startShoreWaves() {
     seaShoreWaves
