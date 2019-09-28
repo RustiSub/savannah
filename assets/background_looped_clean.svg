@@ -40,14 +40,14 @@
      inkscape:window-height="859"
      id="namedview12664"
      showgrid="false"
-     inkscape:zoom="0.3461877"
-     inkscape:cx="3114.8907"
-     inkscape:cy="1717.2477"
+     inkscape:zoom="0.48958333"
+     inkscape:cx="597.11323"
+     inkscape:cy="563.19888"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
-     inkscape:current-layer="clouds2"
-     inkscape:snap-global="false" />
+     inkscape:current-layer="cameraGroup"
+     inkscape:snap-global="true" />
   <defs
      id="defs2">
     <linearGradient
@@ -341,7 +341,7 @@
        xlink:href="#Mountain" />
     <linearGradient
        id="Plant"
-       gradientTransform="matrix(0 0 0 0 631.8 1194.5)"
+       gradientTransform="matrix(0,0,0,0,631.8,1194.5)"
        osb:paint="solid">
       <stop
          id="stop4743"
@@ -1566,148 +1566,14 @@
        d="m 1920,531.7 h 1920 v 484.1 H 1920 Z"
        inkscape:connector-curvature="0"
        style="fill:#f0f38e;stroke-width:5;stroke-dasharray:none" />
-    <g
-       id="g2619-4"
-       transform="matrix(15.81102,0,0,15.81102,968.7,-1878.9)">
-      <path
-         id="path2563-6"
-         d="m 156.6,185 c 0,1.4 -11.6,3.8 -23.5,3.8 -11.8,0 -19.5,-2.4 -19.5,-3.7 0,-1.3 10,-3.3 22,-3.3 11.8,0 21,2 21,3.3 z"
-         inkscape:connector-curvature="0"
-         style="opacity:0.3;fill:url(#Tree_Branch);stroke-width:0.30000001;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-      <path
-         id="path2565-6"
-         d="m 138.6,185.4 c 0,0.4 -1,0.7 -2.4,0.7 -1.3,0 -2.3,-0.3 -2.3,-0.7 0,-0.3 0.9,-0.5 2.3,-0.6 2.5,-0.2 3,0 2.4,0.6 z"
-         inkscape:connector-curvature="0"
-         style="opacity:0.9;fill:url(#linearGradient3143);stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-      <path
-         id="path2567-8"
-         d="m 136.6,185 v -5 l -1.9,-2.9 -8.2,-4 -6.8,-2"
-         inkscape:connector-curvature="0"
-         style="fill:none;stroke:url(#Tree_Branch);stroke-width:1.29999995;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-      <path
-         id="path2569-4"
-         d="m 136.7,180.1 c 0,0 3,-2.7 4.8,-3.4 2.5,-1 7.9,-1 7.9,-1 l 4.9,-1.1 2.2,-3"
-         inkscape:connector-curvature="0"
-         style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.60000002;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-      <path
-         id="path2571-5"
-         d="m 136.7,180.2 1.5,-3.6 -1.2,-2.7 -3.7,-2.9"
-         inkscape:connector-curvature="0"
-         style="fill:none;stroke:url(#Tree_Branch);stroke-width:1.29999995;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-      <path
-         id="path2573-3"
-         d="m 137,173.5 1.2,-2.6 -0.1,-1.3"
-         inkscape:connector-curvature="0"
-         style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.5;stroke-dasharray:none" />
-      <path
-         id="path2575-6"
-         d="m 138.4,176.5 2.6,-1.3 1,-1.3 2.5,-0.4 4.4,-1.9"
-         inkscape:connector-curvature="0"
-         style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.80000001;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-      <path
-         id="path2577-1"
-         d="m 135.2,177 0.7,-1.9 -3.4,-2.5 -1.7,-2.3"
-         inkscape:connector-curvature="0"
-         style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.40000001;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-      <path
-         id="path2579-2"
-         d="m 154.5,174.5 1.3,-0.5 1.5,0.4 1.4,-0.9 0.2,-1"
-         inkscape:connector-curvature="0"
-         style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-      <path
-         id="path2581-9"
-         d="M 154.1,174.3 V 172"
-         inkscape:connector-curvature="0"
-         style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-      <path
-         id="path2583-9"
-         d="m 129.4,173.9 0.4,-1.7 -1.7,-0.3 -1.6,-1.2"
-         inkscape:connector-curvature="0"
-         style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-      <path
-         id="path2585-1"
-         d="m 132.4,176.7 -4.4,-0.3 -1.8,-0.6 0.3,-1.4 -2.8,-0.4 -2.2,-2"
-         inkscape:connector-curvature="0"
-         style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-      <path
-         id="path2587-8"
-         d="m 123.4,172.7 h -2.9 l -2.2,0.5 h -1.5 l -2.4,0.5 -0.6,-1.2 0.2,-1"
-         inkscape:connector-curvature="0"
-         style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-      <path
-         id="path2589-6"
-         d="m 137.7,174.4 2.2,-1.5 h 2 l 2.2,-1.8"
-         inkscape:connector-curvature="0"
-         style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-      <path
-         id="path2591-7"
-         d="m 107,172 a 75.5,75.5 0 0 1 29.4,-10.5 c 9.3,1.8 15.2,4 22.3,7.6 1.3,0.7 6.8,1.6 4.4,4.2 h -3 c -9,-0.1 -16,-0.7 -24,-1.3 -7.7,0.9 -16.3,0.3 -25.7,1 -1.7,0.1 -3.2,-0.6 -2.6,-1.3 z"
-         inkscape:connector-curvature="0"
-         style="opacity:0.9;fill:url(#Plant);stroke-width:0.30000001" />
-      <path
-         id="path2593-1"
-         d="m 136.7,185.6 v -1.2 l 0.2,0.6 c 0.3,-0.6 0.4,-0.8 0.6,-0.9 -0.3,0.3 -0.2,0.6 -0.4,0.9 0.2,0 0.4,-0.4 0.6,-0.7 l -0.7,1.2 c -0.2,0.2 -0.2,0 -0.3,0 z"
-         inkscape:connector-curvature="0"
-         style="fill:url(#Plant);stroke-width:0" />
-      <path
-         id="path2595-2"
-         d="m 136.2,185.5 v -1.2 c 0,0.2 0,0.4 -0.2,0.6 -0.2,-0.6 -0.3,-0.8 -0.5,-0.8 0.2,0.2 0.1,0.5 0.3,0.8 l -0.6,-0.6 c 0.3,0.7 0.5,0.8 0.8,1.2 z"
-         inkscape:connector-curvature="0"
-         style="fill:url(#Plant);stroke-width:0" />
-      <path
-         id="path2597-8"
-         d="m 136.3,185.7 c -0.1,-0.3 -0.3,-0.7 -0.3,-1.1 0,0.2 0.2,0.4 0.4,0.5 0,-0.6 0,-0.9 0.3,-1 -0.2,0.4 0,0.6 -0.1,1 l 0.4,-0.8 c -0.1,0.7 -0.3,1 -0.4,1.3 -0.1,0.2 -0.2,0.1 -0.3,0.1 z"
-         inkscape:connector-curvature="0"
-         style="fill:url(#Plant);stroke-width:0" />
-      <g
-         id="g2607-2"
-         transform="matrix(0.71012,0,0,0.71012,40.2,51.3)">
-        <path
-           id="path2599-8"
-           d="m 126.8,187.1 c 0,0.7 -2,1.3 -4.5,1.3 -2.5,0 -4.5,-0.6 -4.5,-1.3 0,-0.7 1.7,-1 4.5,-1.3 4.6,-0.4 5.5,0 4.5,1.3 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.9;fill:url(#linearGradient3145);stroke-width:0.89999998;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-        <path
-           id="path2601-7"
-           d="m 123.7,186.6 c -0.1,-2.1 -0.3,-4.3 0.1,-6.3 0,1.2 0.3,2.1 0.7,3.2 0.9,-3 1.3,-4.3 2.1,-4.4 -1,1.4 -0.6,3 -1.3,4.4 0.5,-0.3 1.2,-2 2.3,-3.5 -1.2,3.8 -1.9,4.8 -3,6.6 -0.5,0.6 -0.7,0.2 -0.9,0 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant);stroke-width:0.1" />
-        <path
-           id="path2603-1"
-           d="m 121.6,186.6 c 0,-2.2 0.3,-4.4 -0.1,-6.4 0,1.2 -0.3,2.2 -0.7,3.2 -1,-3 -1.3,-4.3 -2.2,-4.4 1,1.4 0.7,3 1.4,4.4 -0.5,-0.2 -1.3,-2 -2.3,-3.4 1.2,3.8 1.9,4.7 2.9,6.5 0.5,0.6 0.7,0.3 1,0 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant);stroke-width:0.1" />
-        <path
-           id="path2605-7"
-           d="m 122,187.9 c -0.5,-2 -1.2,-4 -1.2,-6.2 0.2,1.2 0.8,2 1.3,2.8 0.3,-3.2 0.4,-4.6 1.2,-5 -0.6,1.7 0,3 -0.4,4.7 0.4,-0.4 0.8,-2.5 1.5,-4.2 -0.4,4.1 -0.8,5.3 -1.4,7.4 -0.4,0.8 -0.7,0.6 -1,0.5 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant);stroke-width:0.1" />
-      </g>
-      <g
-         id="g2617-9"
-         transform="matrix(0.71012,0,0,0.71012,64.5,52.6)">
-        <path
-           id="path2609-3"
-           d="m 126.8,187.1 c 0,0.7 -2,1.3 -4.5,1.3 -2.5,0 -4.5,-0.6 -4.5,-1.3 0,-0.7 1.7,-1 4.5,-1.3 4.6,-0.4 5.5,0 4.5,1.3 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.9;fill:url(#linearGradient2885-9);stroke-width:0.89999998;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-        <path
-           id="path2611-8"
-           d="m 123.7,186.6 c -0.1,-2.1 -0.3,-4.3 0.1,-6.3 0,1.2 0.3,2.1 0.7,3.2 0.9,-3 1.3,-4.3 2.1,-4.4 -1,1.4 -0.6,3 -1.3,4.4 0.5,-0.3 1.2,-2 2.3,-3.5 -1.2,3.8 -1.9,4.8 -3,6.6 -0.5,0.6 -0.7,0.2 -0.9,0 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant);stroke-width:0.1" />
-        <path
-           id="path2613-4"
-           d="m 121.6,186.6 c 0,-2.2 0.3,-4.4 -0.1,-6.4 0,1.2 -0.3,2.2 -0.7,3.2 -1,-3 -1.3,-4.3 -2.2,-4.4 1,1.4 0.7,3 1.4,4.4 -0.5,-0.2 -1.3,-2 -2.3,-3.4 1.2,3.8 1.9,4.7 2.9,6.5 0.5,0.6 0.7,0.3 1,0 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant);stroke-width:0.1" />
-        <path
-           id="path2615-3"
-           d="m 122,187.9 c -0.5,-2 -1.2,-4 -1.2,-6.2 0.2,1.2 0.8,2 1.3,2.8 0.3,-3.2 0.4,-4.6 1.2,-5 -0.6,1.7 0,3 -0.4,4.7 0.4,-0.4 0.8,-2.5 1.5,-4.2 -0.4,4.1 -0.8,5.3 -1.4,7.4 -0.4,0.8 -0.7,0.6 -1,0.5 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant);stroke-width:0.1" />
-      </g>
-    </g>
+    <use
+       x="0"
+       y="0"
+       xlink:href="#tree1"
+       id="use13318-71"
+       width="100%"
+       height="100%"
+       transform="matrix(11.956091,0,0,11.956091,1169.2299,-1560.5816)" />
     <path
        id="rect18440"
        d="m 1920,873.9 c 263.2,52.3 431,66.8 820,27.7 230.7,-19.4 447.7,157.8 809,43.5 83,-26.2 -28.6,-84.5 291,-97 v 840.4 l -1920,-0.4 z"
@@ -1948,148 +1814,14 @@
          inkscape:connector-curvature="0"
          style="opacity:0.5;fill:#234c2c;stroke-width:1.29999995" />
     </g>
-    <g
-       id="g2619"
-       transform="matrix(4.29828,0,0,4.29828,1684.3,27.8)">
-      <path
-         id="path2563"
-         d="m 156.6,185 c 0,1.4 -11.6,3.8 -23.5,3.8 -11.8,0 -19.5,-2.4 -19.5,-3.7 0,-1.3 10,-3.3 22,-3.3 11.8,0 21,2 21,3.3 z"
-         inkscape:connector-curvature="0"
-         style="opacity:0.3;fill:url(#Tree_Branch);stroke-width:0.30000001;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-      <path
-         id="path2565"
-         d="m 138.6,185.4 c 0,0.4 -1,0.7 -2.4,0.7 -1.3,0 -2.3,-0.3 -2.3,-0.7 0,-0.3 0.9,-0.5 2.3,-0.6 2.5,-0.2 3,0 2.4,0.6 z"
-         inkscape:connector-curvature="0"
-         style="opacity:0.9;fill:url(#linearGradient2883);stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-      <path
-         id="path2567"
-         d="m 136.6,185 v -5 l -1.9,-2.9 -8.2,-4 -6.8,-2"
-         inkscape:connector-curvature="0"
-         style="fill:none;stroke:url(#Tree_Branch);stroke-width:1.29999995;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-      <path
-         id="path2569"
-         d="m 136.7,180.1 c 0,0 3,-2.7 4.8,-3.4 2.5,-1 7.9,-1 7.9,-1 l 4.9,-1.1 2.2,-3"
-         inkscape:connector-curvature="0"
-         style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.60000002;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-      <path
-         id="path2571"
-         d="m 136.7,180.2 1.5,-3.6 -1.2,-2.7 -3.7,-2.9"
-         inkscape:connector-curvature="0"
-         style="fill:none;stroke:url(#Tree_Branch);stroke-width:1.29999995;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-      <path
-         id="path2573"
-         d="m 137,173.5 1.2,-2.6 -0.1,-1.3"
-         inkscape:connector-curvature="0"
-         style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.5;stroke-dasharray:none" />
-      <path
-         id="path2575"
-         d="m 138.4,176.5 2.6,-1.3 1,-1.3 2.5,-0.4 4.4,-1.9"
-         inkscape:connector-curvature="0"
-         style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.80000001;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-      <path
-         id="path2577"
-         d="m 135.2,177 0.7,-1.9 -3.4,-2.5 -1.7,-2.3"
-         inkscape:connector-curvature="0"
-         style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.40000001;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-      <path
-         id="path2579"
-         d="m 154.5,174.5 1.3,-0.5 1.5,0.4 1.4,-0.9 0.2,-1"
-         inkscape:connector-curvature="0"
-         style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-      <path
-         id="path2581"
-         d="M 154.1,174.3 V 172"
-         inkscape:connector-curvature="0"
-         style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-      <path
-         id="path2583"
-         d="m 129.4,173.9 0.4,-1.7 -1.7,-0.3 -1.6,-1.2"
-         inkscape:connector-curvature="0"
-         style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-      <path
-         id="path2585"
-         d="m 132.4,176.7 -4.4,-0.3 -1.8,-0.6 0.3,-1.4 -2.8,-0.4 -2.2,-2"
-         inkscape:connector-curvature="0"
-         style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-      <path
-         id="path2587"
-         d="m 123.4,172.7 h -2.9 l -2.2,0.5 h -1.5 l -2.4,0.5 -0.6,-1.2 0.2,-1"
-         inkscape:connector-curvature="0"
-         style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-      <path
-         id="path2589"
-         d="m 137.7,174.4 2.2,-1.5 h 2 l 2.2,-1.8"
-         inkscape:connector-curvature="0"
-         style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-      <path
-         id="path2591"
-         d="m 107,172 a 75.5,75.5 0 0 1 29.4,-10.5 c 9.3,1.8 15.2,4 22.3,7.6 1.3,0.7 6.8,1.6 4.4,4.2 h -3 c -9,-0.1 -16,-0.7 -24,-1.3 -7.7,0.9 -16.3,0.3 -25.7,1 -1.7,0.1 -3.2,-0.6 -2.6,-1.3 z"
-         inkscape:connector-curvature="0"
-         style="opacity:0.9;fill:url(#Plant);stroke-width:0.30000001" />
-      <path
-         id="path2593"
-         d="m 136.7,185.6 v -1.2 l 0.2,0.6 c 0.3,-0.6 0.4,-0.8 0.6,-0.9 -0.3,0.3 -0.2,0.6 -0.4,0.9 0.2,0 0.4,-0.4 0.6,-0.7 l -0.7,1.2 c -0.2,0.2 -0.2,0 -0.3,0 z"
-         inkscape:connector-curvature="0"
-         style="fill:url(#Plant);stroke-width:0" />
-      <path
-         id="path2595"
-         d="m 136.2,185.5 v -1.2 c 0,0.2 0,0.4 -0.2,0.6 -0.2,-0.6 -0.3,-0.8 -0.5,-0.8 0.2,0.2 0.1,0.5 0.3,0.8 l -0.6,-0.6 c 0.3,0.7 0.5,0.8 0.8,1.2 z"
-         inkscape:connector-curvature="0"
-         style="fill:url(#Plant);stroke-width:0" />
-      <path
-         id="path2597"
-         d="m 136.3,185.7 c -0.1,-0.3 -0.3,-0.7 -0.3,-1.1 0,0.2 0.2,0.4 0.4,0.5 0,-0.6 0,-0.9 0.3,-1 -0.2,0.4 0,0.6 -0.1,1 l 0.4,-0.8 c -0.1,0.7 -0.3,1 -0.4,1.3 -0.1,0.2 -0.2,0.1 -0.3,0.1 z"
-         inkscape:connector-curvature="0"
-         style="fill:url(#Plant);stroke-width:0" />
-      <g
-         id="g2607"
-         transform="matrix(0.71012,0,0,0.71012,40.2,51.3)">
-        <path
-           id="path2599"
-           d="m 126.8,187.1 c 0,0.7 -2,1.3 -4.5,1.3 -2.5,0 -4.5,-0.6 -4.5,-1.3 0,-0.7 1.7,-1 4.5,-1.3 4.6,-0.4 5.5,0 4.5,1.3 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.9;fill:url(#linearGradient2885);stroke-width:0.89999998;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-        <path
-           id="path2601"
-           d="m 123.7,186.6 c -0.1,-2.1 -0.3,-4.3 0.1,-6.3 0,1.2 0.3,2.1 0.7,3.2 0.9,-3 1.3,-4.3 2.1,-4.4 -1,1.4 -0.6,3 -1.3,4.4 0.5,-0.3 1.2,-2 2.3,-3.5 -1.2,3.8 -1.9,4.8 -3,6.6 -0.5,0.6 -0.7,0.2 -0.9,0 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant);stroke-width:0.1" />
-        <path
-           id="path2603"
-           d="m 121.6,186.6 c 0,-2.2 0.3,-4.4 -0.1,-6.4 0,1.2 -0.3,2.2 -0.7,3.2 -1,-3 -1.3,-4.3 -2.2,-4.4 1,1.4 0.7,3 1.4,4.4 -0.5,-0.2 -1.3,-2 -2.3,-3.4 1.2,3.8 1.9,4.7 2.9,6.5 0.5,0.6 0.7,0.3 1,0 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant);stroke-width:0.1" />
-        <path
-           id="path2605"
-           d="m 122,187.9 c -0.5,-2 -1.2,-4 -1.2,-6.2 0.2,1.2 0.8,2 1.3,2.8 0.3,-3.2 0.4,-4.6 1.2,-5 -0.6,1.7 0,3 -0.4,4.7 0.4,-0.4 0.8,-2.5 1.5,-4.2 -0.4,4.1 -0.8,5.3 -1.4,7.4 -0.4,0.8 -0.7,0.6 -1,0.5 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant);stroke-width:0.1" />
-      </g>
-      <g
-         id="g2617"
-         transform="matrix(0.71012,0,0,0.71012,64.5,52.6)">
-        <path
-           id="path2609"
-           d="m 126.8,187.1 c 0,0.7 -2,1.3 -4.5,1.3 -2.5,0 -4.5,-0.6 -4.5,-1.3 0,-0.7 1.7,-1 4.5,-1.3 4.6,-0.4 5.5,0 4.5,1.3 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.9;fill:url(#linearGradient2623);stroke-width:0.89999998;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-        <path
-           id="path2611"
-           d="m 123.7,186.6 c -0.1,-2.1 -0.3,-4.3 0.1,-6.3 0,1.2 0.3,2.1 0.7,3.2 0.9,-3 1.3,-4.3 2.1,-4.4 -1,1.4 -0.6,3 -1.3,4.4 0.5,-0.3 1.2,-2 2.3,-3.5 -1.2,3.8 -1.9,4.8 -3,6.6 -0.5,0.6 -0.7,0.2 -0.9,0 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant);stroke-width:0.1" />
-        <path
-           id="path2613"
-           d="m 121.6,186.6 c 0,-2.2 0.3,-4.4 -0.1,-6.4 0,1.2 -0.3,2.2 -0.7,3.2 -1,-3 -1.3,-4.3 -2.2,-4.4 1,1.4 0.7,3 1.4,4.4 -0.5,-0.2 -1.3,-2 -2.3,-3.4 1.2,3.8 1.9,4.7 2.9,6.5 0.5,0.6 0.7,0.3 1,0 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant);stroke-width:0.1" />
-        <path
-           id="path2615"
-           d="m 122,187.9 c -0.5,-2 -1.2,-4 -1.2,-6.2 0.2,1.2 0.8,2 1.3,2.8 0.3,-3.2 0.4,-4.6 1.2,-5 -0.6,1.7 0,3 -0.4,4.7 0.4,-0.4 0.8,-2.5 1.5,-4.2 -0.4,4.1 -0.8,5.3 -1.4,7.4 -0.4,0.8 -0.7,0.6 -1,0.5 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant);stroke-width:0.1" />
-      </g>
-    </g>
+    <use
+       x="0"
+       y="0"
+       xlink:href="#tree1"
+       id="use13318-72"
+       width="100%"
+       height="100%"
+       transform="matrix(3.0623592,0,0,3.2589899,1759.2536,94.067517)" />
     <path
        id="rect18440-5-3"
        d="m 1920,216 c 240,98.7 447,368.7 818,397.6 l -198.4,23.8 c -199,-27.8 -400.7,-56.7 -619.6,-55 z"
@@ -2184,7 +1916,7 @@
          id="rect4659"
          d="m 194.8,80.6 h 129.8 v 38.2 H 194.8 Z"
          inkscape:connector-curvature="0"
-         style="fill:url(#linearGradient1915);stroke-width:1.29999995;stroke-dasharray:none" />
+         style="fill:#0e2a13;fill-opacity:1;stroke-width:1.29999995;stroke-dasharray:none" />
       <path
          id="rect4666"
          d="M 0,152.4 H 508 V 262.3 H 0 Z"
@@ -2215,6 +1947,36 @@
            style="display:none;fill:none;stroke:#000000;stroke-width:0.30000001" />
       </g>
       <g
+         id="g15156">
+        <use
+           x="0"
+           y="0"
+           xlink:href="#g2334"
+           id="use14706-9-9"
+           width="100%"
+           height="100%"
+           transform="matrix(-0.71490704,0,0,0.71490704,526.98104,46.452424)"
+           style="stroke-width:0.30000001" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#g2334"
+           id="use14706-60-9"
+           width="100%"
+           height="100%"
+           transform="matrix(0.83077323,0.16528776,-0.16528776,0.83077323,489.65322,14.639292)"
+           style="stroke-width:0.30000001" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#g2334"
+           id="use14706-5-9"
+           width="100%"
+           height="100%"
+           transform="matrix(-0.6431945,0.17234345,0.17234345,0.6431945,476.7255,49.370192)"
+           style="stroke-width:0.30000001" />
+      </g>
+      <g
          id="g4629-7"
          transform="translate(2.6,4.8)"
          style="opacity:0.3;fill:url(#linearGradient17160)">
@@ -2229,209 +1991,36 @@
          d="m 293.2,163 c -5,13.9 -32.7,47 -33.2,47.4 l -48.9,8.3 c 48.7,-26.8 52.3,-34.2 68,-50.9 18,-19 14,-31 1,-37 -0.6,-0.4 -5.3,-4.3 -2.8,-2.6 0.7,0.5 10.8,2.4 15.6,9 3.3,4.6 3.4,17.2 0.3,25.7 z"
          inkscape:connector-curvature="0"
          style="fill:url(#linearGradient4687);stroke-width:0.30000001" />
-      <g
-         id="g2252"
-         class="photo-subject photo-subjectId-tree"
-         transform="matrix(-0.564,0,0,0.564,388,57.8)">
-        <path
-           id="path2196"
-           d="m 156.6,185 c 0,1.4 -11.6,3.8 -23.5,3.8 -11.8,0 -19.5,-2.4 -19.5,-3.7 0,-1.3 10,-3.3 22,-3.3 11.8,0 21,2 21,3.3 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.3;fill:url(#Tree_Branch);stroke-width:0.30000001;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-        <path
-           id="path2198"
-           d="m 138.6,185.4 c 0,0.4 -1,0.7 -2.4,0.7 -1.3,0 -2.3,-0.3 -2.3,-0.7 0,-0.3 0.9,-0.5 2.3,-0.6 2.5,-0.2 3,0 2.4,0.6 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.9;fill:url(#linearGradient2254);stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-        <path
-           id="path2200"
-           d="m 136.6,185 v -5 l -1.9,-2.9 -8.2,-4 -6.8,-2"
-           inkscape:connector-curvature="0"
-           style="fill:none;stroke:url(#Tree_Branch);stroke-width:1.29999995;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-        <path
-           id="path2202"
-           d="m 136.7,180.1 c 0,0 3,-2.7 4.8,-3.4 2.5,-1 7.9,-1 7.9,-1 l 4.9,-1.1 2.2,-3"
-           inkscape:connector-curvature="0"
-           style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.60000002;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-        <path
-           id="path2204"
-           d="m 136.7,180.2 1.5,-3.6 -1.2,-2.7 -3.7,-2.9"
-           inkscape:connector-curvature="0"
-           style="fill:none;stroke:url(#Tree_Branch);stroke-width:1.29999995;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-        <path
-           id="path2206"
-           d="m 137,173.5 1.2,-2.6 -0.1,-1.3"
-           inkscape:connector-curvature="0"
-           style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.5;stroke-dasharray:none" />
-        <path
-           id="path2208"
-           d="m 138.4,176.5 2.6,-1.3 1,-1.3 2.5,-0.4 4.4,-1.9"
-           inkscape:connector-curvature="0"
-           style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.80000001;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-        <path
-           id="path2210"
-           d="m 135.2,177 0.7,-1.9 -3.4,-2.5 -1.7,-2.3"
-           inkscape:connector-curvature="0"
-           style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.40000001;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-        <path
-           id="path2212"
-           d="m 154.5,174.5 1.3,-0.5 1.5,0.4 1.4,-0.9 0.2,-1"
-           inkscape:connector-curvature="0"
-           style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-        <path
-           id="path2214"
-           d="M 154.1,174.3 V 172"
-           inkscape:connector-curvature="0"
-           style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-        <path
-           id="path2216"
-           d="m 129.4,173.9 0.4,-1.7 -1.7,-0.3 -1.6,-1.2"
-           inkscape:connector-curvature="0"
-           style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-        <path
-           id="path2218"
-           d="m 132.4,176.7 -4.4,-0.3 -1.8,-0.6 0.3,-1.4 -2.8,-0.4 -2.2,-2"
-           inkscape:connector-curvature="0"
-           style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-        <path
-           id="path2220"
-           d="m 123.4,172.7 h -2.9 l -2.2,0.5 h -1.5 l -2.4,0.5 -0.6,-1.2 0.2,-1"
-           inkscape:connector-curvature="0"
-           style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-        <path
-           id="path2222"
-           d="m 137.7,174.4 2.2,-1.5 h 2 l 2.2,-1.8"
-           inkscape:connector-curvature="0"
-           style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-        <path
-           id="path2224"
-           d="m 107,172 a 75.5,75.5 0 0 1 29.4,-10.5 c 9.3,1.8 15.2,4 22.3,7.6 1.3,0.7 6.8,1.6 4.4,4.2 h -3 c -9,-0.1 -16,-0.7 -24,-1.3 -7.7,0.9 -16.3,0.3 -25.7,1 -1.7,0.1 -3.2,-0.6 -2.6,-1.3 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.9;fill:url(#Plant);stroke-width:0.30000001" />
-        <path
-           id="path2226"
-           d="m 136.7,185.6 v -1.2 l 0.2,0.6 c 0.3,-0.6 0.4,-0.8 0.6,-0.9 -0.3,0.3 -0.2,0.6 -0.4,0.9 0.2,0 0.4,-0.4 0.6,-0.7 l -0.7,1.2 c -0.2,0.2 -0.2,0 -0.3,0 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant);stroke-width:0" />
-        <path
-           id="path2228"
-           d="m 136.2,185.5 v -1.2 c 0,0.2 0,0.4 -0.2,0.6 -0.2,-0.6 -0.3,-0.8 -0.5,-0.8 0.2,0.2 0.1,0.5 0.3,0.8 l -0.6,-0.6 c 0.3,0.7 0.5,0.8 0.8,1.2 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant);stroke-width:0" />
-        <path
-           id="path2230"
-           d="m 136.3,185.7 c -0.1,-0.3 -0.3,-0.7 -0.3,-1.1 0,0.2 0.2,0.4 0.4,0.5 0,-0.6 0,-0.9 0.3,-1 -0.2,0.4 0,0.6 -0.1,1 l 0.4,-0.8 c -0.1,0.7 -0.3,1 -0.4,1.3 -0.1,0.2 -0.2,0.1 -0.3,0.1 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant);stroke-width:0" />
-        <g
-           id="g2240"
-           transform="matrix(0.71012,0,0,0.71012,40.2,51.3)">
-          <path
-             id="path2232"
-             d="m 126.8,187.1 c 0,0.7 -2,1.3 -4.5,1.3 -2.5,0 -4.5,-0.6 -4.5,-1.3 0,-0.7 1.7,-1 4.5,-1.3 4.6,-0.4 5.5,0 4.5,1.3 z"
-             inkscape:connector-curvature="0"
-             style="opacity:0.9;fill:url(#linearGradient2256);stroke-width:0.89999998;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-          <path
-             id="path2234"
-             d="m 123.7,186.6 c -0.1,-2.1 -0.3,-4.3 0.1,-6.3 0,1.2 0.3,2.1 0.7,3.2 0.9,-3 1.3,-4.3 2.1,-4.4 -1,1.4 -0.6,3 -1.3,4.4 0.5,-0.3 1.2,-2 2.3,-3.5 -1.2,3.8 -1.9,4.8 -3,6.6 -0.5,0.6 -0.7,0.2 -0.9,0 z"
-             inkscape:connector-curvature="0"
-             style="fill:url(#Plant);stroke-width:0.1" />
-          <path
-             id="path2236"
-             d="m 121.6,186.6 c 0,-2.2 0.3,-4.4 -0.1,-6.4 0,1.2 -0.3,2.2 -0.7,3.2 -1,-3 -1.3,-4.3 -2.2,-4.4 1,1.4 0.7,3 1.4,4.4 -0.5,-0.2 -1.3,-2 -2.3,-3.4 1.2,3.8 1.9,4.7 2.9,6.5 0.5,0.6 0.7,0.3 1,0 z"
-             inkscape:connector-curvature="0"
-             style="fill:url(#Plant);stroke-width:0.1" />
-          <path
-             id="path2238"
-             d="m 122,187.9 c -0.5,-2 -1.2,-4 -1.2,-6.2 0.2,1.2 0.8,2 1.3,2.8 0.3,-3.2 0.4,-4.6 1.2,-5 -0.6,1.7 0,3 -0.4,4.7 0.4,-0.4 0.8,-2.5 1.5,-4.2 -0.4,4.1 -0.8,5.3 -1.4,7.4 -0.4,0.8 -0.7,0.6 -1,0.5 z"
-             inkscape:connector-curvature="0"
-             style="fill:url(#Plant);stroke-width:0.1" />
-        </g>
-        <g
-           id="g2250"
-           transform="matrix(0.71012,0,0,0.71012,64.5,52.6)">
-          <path
-             id="path2242"
-             d="m 126.8,187.1 c 0,0.7 -2,1.3 -4.5,1.3 -2.5,0 -4.5,-0.6 -4.5,-1.3 0,-0.7 1.7,-1 4.5,-1.3 4.6,-0.4 5.5,0 4.5,1.3 z"
-             inkscape:connector-curvature="0"
-             style="opacity:0.9;fill:url(#linearGradient2258);stroke-width:0.89999998;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-          <path
-             id="path2244"
-             d="m 123.7,186.6 c -0.1,-2.1 -0.3,-4.3 0.1,-6.3 0,1.2 0.3,2.1 0.7,3.2 0.9,-3 1.3,-4.3 2.1,-4.4 -1,1.4 -0.6,3 -1.3,4.4 0.5,-0.3 1.2,-2 2.3,-3.5 -1.2,3.8 -1.9,4.8 -3,6.6 -0.5,0.6 -0.7,0.2 -0.9,0 z"
-             inkscape:connector-curvature="0"
-             style="fill:url(#Plant);stroke-width:0.1" />
-          <path
-             id="path2246"
-             d="m 121.6,186.6 c 0,-2.2 0.3,-4.4 -0.1,-6.4 0,1.2 -0.3,2.2 -0.7,3.2 -1,-3 -1.3,-4.3 -2.2,-4.4 1,1.4 0.7,3 1.4,4.4 -0.5,-0.2 -1.3,-2 -2.3,-3.4 1.2,3.8 1.9,4.7 2.9,6.5 0.5,0.6 0.7,0.3 1,0 z"
-             inkscape:connector-curvature="0"
-             style="fill:url(#Plant);stroke-width:0.1" />
-          <path
-             id="path2248"
-             d="m 122,187.9 c -0.5,-2 -1.2,-4 -1.2,-6.2 0.2,1.2 0.8,2 1.3,2.8 0.3,-3.2 0.4,-4.6 1.2,-5 -0.6,1.7 0,3 -0.4,4.7 0.4,-0.4 0.8,-2.5 1.5,-4.2 -0.4,4.1 -0.8,5.3 -1.4,7.4 -0.4,0.8 -0.7,0.6 -1,0.5 z"
-             inkscape:connector-curvature="0"
-             style="fill:url(#Plant);stroke-width:0.1" />
-        </g>
-      </g>
-      <g
-         id="g5623-6"
-         class="photo-subject tag-palm-tree tag-tree"
-         transform="matrix(-0.71569,0.15707,0.15707,0.71569,663.7,-7.7)"
-         style="stroke-width:0.30000001">
-        <path
-           id="path5527-2"
-           d="m 406.6,183.1 c 1.2,1.1 2.7,0.7 2.5,-0.2 -0.4,-2 -1.6,-5.3 -0.9,-8.8 0.3,-1.4 -2,-1.2 -2,0.1"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Tree_Branch);stroke-dasharray:none" />
-        <path
-           id="path5529-10"
-           d="m 406.8,174 c 1,-1.6 2.2,-6.7 10.2,-3.4 0.1,0 -2,1.3 -5.3,0.8 -2.7,-0.4 -5,2.6 -5,2.6 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-        <path
-           id="path5529-5-8"
-           d="m 407.4,174 c -1.5,-1.3 -4,-6 -10.8,-0.5 0,0 2.4,0.7 5.3,-0.7 2.5,-1.2 5.5,1.1 5.5,1.1 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-        <path
-           id="path5529-1-5"
-           d="m 407.2,174 c -0.2,-1.9 -2.3,-6.7 6,-8.9 0.1,0 -0.8,2.3 -3.7,3.9 -2.4,1.3 -2.3,5 -2.3,5 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-        <path
-           id="path5529-5-5-7"
-           d="m 407.1,173.8 c -0.6,-1.9 -0.6,-7.1 -9.1,-5.8 -0.1,0 1.7,1.8 5,2 2.7,0.3 4.1,3.8 4.1,3.8 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-      </g>
+      <use
+         x="0"
+         y="0"
+         xlink:href="#tree1"
+         id="use13318-7"
+         width="100%"
+         height="100%"
+         transform="matrix(0.38565041,0,0,0.38565041,250.90279,78.400813)" />
+      <use
+         style="stroke-width:0.30000001"
+         transform="matrix(0.8439901,0,0,0.8439901,366.63921,23.442957)"
+         height="100%"
+         width="100%"
+         id="use14706-9"
+         xlink:href="#g2334"
+         y="0"
+         x="0" />
       <g
          id="g5623"
          class="photo-subject tag-palm-tree tag-tree"
-         style="stroke-width:0.30000001">
-        <path
-           id="path5527"
-           d="m 406.6,183.1 c 1.2,1.1 2.7,0.7 2.5,-0.2 -0.4,-2 -1.6,-5.3 -0.9,-8.8 0.3,-1.4 -2,-1.2 -2,0.1"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Tree_Branch);stroke-dasharray:none" />
-        <path
-           id="path5529"
-           d="m 406.8,174 c 1,-1.6 2.2,-6.7 10.2,-3.4 0.1,0 -2,1.3 -5.3,0.8 -2.7,-0.4 -5,2.6 -5,2.6 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-        <path
-           id="path5529-5"
-           d="m 407.4,174 c -1.5,-1.3 -4,-6 -10.8,-0.5 0,0 2.4,0.7 5.3,-0.7 2.5,-1.2 5.5,1.1 5.5,1.1 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-        <path
-           id="path5529-1"
-           d="m 407.2,174 c -0.2,-1.9 -2.3,-6.7 6,-8.9 0.1,0 -0.8,2.3 -3.7,3.9 -2.4,1.3 -2.3,5 -2.3,5 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-        <path
-           id="path5529-5-5"
-           d="m 407.1,173.8 c -0.6,-1.9 -0.6,-7.1 -9.1,-5.8 -0.1,0 1.7,1.8 5,2 2.7,0.3 4.1,3.8 4.1,3.8 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
+         style="stroke-width:0.30000001"
+         transform="matrix(-0.98077699,0.19513199,0.19513199,0.98077699,780.55397,-78.760538)">
+        <use
+           x="0"
+           y="0"
+           xlink:href="#g2334"
+           id="use14706-60"
+           width="100%"
+           height="100%"
+           transform="translate(375.35201,-8.7654788)" />
       </g>
       <g
          id="animalPath.dessert.group">
@@ -2441,149 +2030,14 @@
            inkscape:connector-curvature="0"
            style="fill:none;stroke:#ff0e0e;stroke-width:1.29999995;stroke-linecap:round;stroke-dasharray:none" />
       </g>
-      <g
-         id="g2316"
-         class="photo-subject tag-tree"
-         transform="matrix(0.72954,0,0,0.72954,58.4,38.3)">
-        <path
-           id="path2260"
-           d="m 156.6,185 c 0,1.4 -11.6,3.8 -23.5,3.8 -11.8,0 -19.5,-2.4 -19.5,-3.7 0,-1.3 10,-3.3 22,-3.3 11.8,0 21,2 21,3.3 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.3;fill:url(#Tree_Branch);stroke-width:0.30000001;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-        <path
-           id="path2262"
-           d="m 138.6,185.4 c 0,0.4 -1,0.7 -2.4,0.7 -1.3,0 -2.3,-0.3 -2.3,-0.7 0,-0.3 0.9,-0.5 2.3,-0.6 2.5,-0.2 3,0 2.4,0.6 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.9;fill:url(#linearGradient2318);stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-        <path
-           id="path2264"
-           d="m 136.6,185 v -5 l -1.9,-2.9 -8.2,-4 -6.8,-2"
-           inkscape:connector-curvature="0"
-           style="fill:none;stroke:url(#Tree_Branch);stroke-width:1.29999995;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-        <path
-           id="path2266"
-           d="m 136.7,180.1 c 0,0 3,-2.7 4.8,-3.4 2.5,-1 7.9,-1 7.9,-1 l 4.9,-1.1 2.2,-3"
-           inkscape:connector-curvature="0"
-           style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.60000002;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-        <path
-           id="path2268"
-           d="m 136.7,180.2 1.5,-3.6 -1.2,-2.7 -3.7,-2.9"
-           inkscape:connector-curvature="0"
-           style="fill:none;stroke:url(#Tree_Branch);stroke-width:1.29999995;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-        <path
-           id="path2270"
-           d="m 137,173.5 1.2,-2.6 -0.1,-1.3"
-           inkscape:connector-curvature="0"
-           style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.5;stroke-dasharray:none" />
-        <path
-           id="path2272"
-           d="m 138.4,176.5 2.6,-1.3 1,-1.3 2.5,-0.4 4.4,-1.9"
-           inkscape:connector-curvature="0"
-           style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.80000001;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-        <path
-           id="path2274"
-           d="m 135.2,177 0.7,-1.9 -3.4,-2.5 -1.7,-2.3"
-           inkscape:connector-curvature="0"
-           style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.40000001;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-        <path
-           id="path2276"
-           d="m 154.5,174.5 1.3,-0.5 1.5,0.4 1.4,-0.9 0.2,-1"
-           inkscape:connector-curvature="0"
-           style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-        <path
-           id="path2278"
-           d="M 154.1,174.3 V 172"
-           inkscape:connector-curvature="0"
-           style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-        <path
-           id="path2280"
-           d="m 129.4,173.9 0.4,-1.7 -1.7,-0.3 -1.6,-1.2"
-           inkscape:connector-curvature="0"
-           style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-        <path
-           id="path2282"
-           d="m 132.4,176.7 -4.4,-0.3 -1.8,-0.6 0.3,-1.4 -2.8,-0.4 -2.2,-2"
-           inkscape:connector-curvature="0"
-           style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-        <path
-           id="path2284"
-           d="m 123.4,172.7 h -2.9 l -2.2,0.5 h -1.5 l -2.4,0.5 -0.6,-1.2 0.2,-1"
-           inkscape:connector-curvature="0"
-           style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-        <path
-           id="path2286"
-           d="m 137.7,174.4 2.2,-1.5 h 2 l 2.2,-1.8"
-           inkscape:connector-curvature="0"
-           style="fill:none;stroke:url(#Tree_Branch);stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-        <path
-           id="path2288"
-           d="m 107,172 a 75.5,75.5 0 0 1 29.4,-10.5 c 9.3,1.8 15.2,4 22.3,7.6 1.3,0.7 6.8,1.6 4.4,4.2 h -3 c -9,-0.1 -16,-0.7 -24,-1.3 -7.7,0.9 -16.3,0.3 -25.7,1 -1.7,0.1 -3.2,-0.6 -2.6,-1.3 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.9;fill:url(#Plant);stroke-width:0.30000001" />
-        <path
-           id="path2290"
-           d="m 136.7,185.6 v -1.2 l 0.2,0.6 c 0.3,-0.6 0.4,-0.8 0.6,-0.9 -0.3,0.3 -0.2,0.6 -0.4,0.9 0.2,0 0.4,-0.4 0.6,-0.7 l -0.7,1.2 c -0.2,0.2 -0.2,0 -0.3,0 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant);stroke-width:0" />
-        <path
-           id="path2292"
-           d="m 136.2,185.5 v -1.2 c 0,0.2 0,0.4 -0.2,0.6 -0.2,-0.6 -0.3,-0.8 -0.5,-0.8 0.2,0.2 0.1,0.5 0.3,0.8 l -0.6,-0.6 c 0.3,0.7 0.5,0.8 0.8,1.2 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant);stroke-width:0" />
-        <path
-           id="path2294"
-           d="m 136.3,185.7 c -0.1,-0.3 -0.3,-0.7 -0.3,-1.1 0,0.2 0.2,0.4 0.4,0.5 0,-0.6 0,-0.9 0.3,-1 -0.2,0.4 0,0.6 -0.1,1 l 0.4,-0.8 c -0.1,0.7 -0.3,1 -0.4,1.3 -0.1,0.2 -0.2,0.1 -0.3,0.1 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant);stroke-width:0" />
-        <g
-           id="g2304"
-           transform="matrix(0.71012,0,0,0.71012,40.2,51.3)">
-          <path
-             id="path2296"
-             d="m 126.8,187.1 c 0,0.7 -2,1.3 -4.5,1.3 -2.5,0 -4.5,-0.6 -4.5,-1.3 0,-0.7 1.7,-1 4.5,-1.3 4.6,-0.4 5.5,0 4.5,1.3 z"
-             inkscape:connector-curvature="0"
-             style="opacity:0.9;fill:url(#linearGradient2320);stroke-width:0.89999998;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-          <path
-             id="path2298"
-             d="m 123.7,186.6 c -0.1,-2.1 -0.3,-4.3 0.1,-6.3 0,1.2 0.3,2.1 0.7,3.2 0.9,-3 1.3,-4.3 2.1,-4.4 -1,1.4 -0.6,3 -1.3,4.4 0.5,-0.3 1.2,-2 2.3,-3.5 -1.2,3.8 -1.9,4.8 -3,6.6 -0.5,0.6 -0.7,0.2 -0.9,0 z"
-             inkscape:connector-curvature="0"
-             style="fill:url(#Plant);stroke-width:0.1" />
-          <path
-             id="path2300"
-             d="m 121.6,186.6 c 0,-2.2 0.3,-4.4 -0.1,-6.4 0,1.2 -0.3,2.2 -0.7,3.2 -1,-3 -1.3,-4.3 -2.2,-4.4 1,1.4 0.7,3 1.4,4.4 -0.5,-0.2 -1.3,-2 -2.3,-3.4 1.2,3.8 1.9,4.7 2.9,6.5 0.5,0.6 0.7,0.3 1,0 z"
-             inkscape:connector-curvature="0"
-             style="fill:url(#Plant);stroke-width:0.1" />
-          <path
-             id="path2302"
-             d="m 122,187.9 c -0.5,-2 -1.2,-4 -1.2,-6.2 0.2,1.2 0.8,2 1.3,2.8 0.3,-3.2 0.4,-4.6 1.2,-5 -0.6,1.7 0,3 -0.4,4.7 0.4,-0.4 0.8,-2.5 1.5,-4.2 -0.4,4.1 -0.8,5.3 -1.4,7.4 -0.4,0.8 -0.7,0.6 -1,0.5 z"
-             inkscape:connector-curvature="0"
-             style="fill:url(#Plant);stroke-width:0.1" />
-        </g>
-        <g
-           id="g2314"
-           transform="matrix(0.71012,0,0,0.71012,64.5,52.6)">
-          <path
-             id="path2306"
-             d="m 126.8,187.1 c 0,0.7 -2,1.3 -4.5,1.3 -2.5,0 -4.5,-0.6 -4.5,-1.3 0,-0.7 1.7,-1 4.5,-1.3 4.6,-0.4 5.5,0 4.5,1.3 z"
-             inkscape:connector-curvature="0"
-             style="opacity:0.9;fill:url(#linearGradient2322);stroke-width:0.89999998;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-          <path
-             id="path2308"
-             d="m 123.7,186.6 c -0.1,-2.1 -0.3,-4.3 0.1,-6.3 0,1.2 0.3,2.1 0.7,3.2 0.9,-3 1.3,-4.3 2.1,-4.4 -1,1.4 -0.6,3 -1.3,4.4 0.5,-0.3 1.2,-2 2.3,-3.5 -1.2,3.8 -1.9,4.8 -3,6.6 -0.5,0.6 -0.7,0.2 -0.9,0 z"
-             inkscape:connector-curvature="0"
-             style="fill:url(#Plant);stroke-width:0.1" />
-          <path
-             id="path2310"
-             d="m 121.6,186.6 c 0,-2.2 0.3,-4.4 -0.1,-6.4 0,1.2 -0.3,2.2 -0.7,3.2 -1,-3 -1.3,-4.3 -2.2,-4.4 1,1.4 0.7,3 1.4,4.4 -0.5,-0.2 -1.3,-2 -2.3,-3.4 1.2,3.8 1.9,4.7 2.9,6.5 0.5,0.6 0.7,0.3 1,0 z"
-             inkscape:connector-curvature="0"
-             style="fill:url(#Plant);stroke-width:0.1" />
-          <path
-             id="path2312"
-             d="m 122,187.9 c -0.5,-2 -1.2,-4 -1.2,-6.2 0.2,1.2 0.8,2 1.3,2.8 0.3,-3.2 0.4,-4.6 1.2,-5 -0.6,1.7 0,3 -0.4,4.7 0.4,-0.4 0.8,-2.5 1.5,-4.2 -0.4,4.1 -0.8,5.3 -1.4,7.4 -0.4,0.8 -0.7,0.6 -1,0.5 z"
-             inkscape:connector-curvature="0"
-             style="fill:url(#Plant);stroke-width:0.1" />
-        </g>
-      </g>
+      <use
+         x="0"
+         y="0"
+         xlink:href="#tree1"
+         id="use13318"
+         width="100%"
+         height="100%"
+         transform="matrix(0.53173106,0,0,0.53173106,71.786109,54.476975)" />
       <g
          id="tree1"
          class="photo-subject photo-subject.tree photo-subjectId-tree tag-tree"
@@ -2681,30 +2135,19 @@
         <g
            id="g2140"
            transform="matrix(0.71012,0,0,0.71012,40.2,51.3)">
-          <path
-             id="path1740-3"
-             d="m 126.8,187.1 c 0,0.7 -2,1.3 -4.5,1.3 -2.5,0 -4.5,-0.6 -4.5,-1.3 0,-0.7 1.7,-1 4.5,-1.3 4.6,-0.4 5.5,0 4.5,1.3 z"
-             inkscape:connector-curvature="0"
-             style="opacity:0.9;fill:url(#linearGradient1742-2);stroke-width:0.89999998;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" />
-          <path
-             id="path4732-8-3"
-             d="m 123.7,186.6 c -0.1,-2.1 -0.3,-4.3 0.1,-6.3 0,1.2 0.3,2.1 0.7,3.2 0.9,-3 1.3,-4.3 2.1,-4.4 -1,1.4 -0.6,3 -1.3,4.4 0.5,-0.3 1.2,-2 2.3,-3.5 -1.2,3.8 -1.9,4.8 -3,6.6 -0.5,0.6 -0.7,0.2 -0.9,0 z"
-             inkscape:connector-curvature="0"
-             style="fill:url(#Plant);stroke-width:0.1" />
-          <path
-             id="path4732-8-1-3"
-             d="m 121.6,186.6 c 0,-2.2 0.3,-4.4 -0.1,-6.4 0,1.2 -0.3,2.2 -0.7,3.2 -1,-3 -1.3,-4.3 -2.2,-4.4 1,1.4 0.7,3 1.4,4.4 -0.5,-0.2 -1.3,-2 -2.3,-3.4 1.2,3.8 1.9,4.7 2.9,6.5 0.5,0.6 0.7,0.3 1,0 z"
-             inkscape:connector-curvature="0"
-             style="fill:url(#Plant);stroke-width:0.1" />
-          <path
-             id="path4732-8-6-8"
-             d="m 122,187.9 c -0.5,-2 -1.2,-4 -1.2,-6.2 0.2,1.2 0.8,2 1.3,2.8 0.3,-3.2 0.4,-4.6 1.2,-5 -0.6,1.7 0,3 -0.4,4.7 0.4,-0.4 0.8,-2.5 1.5,-4.2 -0.4,4.1 -0.8,5.3 -1.4,7.4 -0.4,0.8 -0.7,0.6 -1,0.5 z"
-             inkscape:connector-curvature="0"
-             style="fill:url(#Plant);stroke-width:0.1" />
+          <use
+             transform="matrix(1.4082127,0,0,1.4082127,-97.424069,-71.909651)"
+             x="0"
+             y="0"
+             xlink:href="#g2140-5"
+             id="use15234"
+             width="100%"
+             height="100%" />
         </g>
         <g
            id="g2140-5"
-           transform="matrix(0.71012,0,0,0.71012,64.5,52.6)">
+           transform="matrix(0.71012,0,0,0.71012,64.5,52.6)"
+           inkscape:label="plant">
           <path
              id="path1740-3-8"
              d="m 126.8,187.1 c 0,0.7 -2,1.3 -4.5,1.3 -2.5,0 -4.5,-0.6 -4.5,-1.3 0,-0.7 1.7,-1 4.5,-1.3 4.6,-0.4 5.5,0 4.5,1.3 z"
@@ -2784,68 +2227,6 @@
            inkscape:connector-curvature="0"
            sodipodi:nodetypes="ccccccccccc" />
       </g>
-      <g
-         id="g5623-63"
-         class="photo-subject tag-palm-tree tag-tree"
-         transform="matrix(-1,0,0,1,896.7,-1.3)"
-         style="stroke-width:0.30000001">
-        <path
-           id="path5527-1"
-           d="m 406.6,183.1 c 1.2,1.1 2.7,0.7 2.5,-0.2 -0.4,-2 -1.6,-5.3 -0.9,-8.8 0.3,-1.4 -2,-1.2 -2,0.1"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Tree_Branch);stroke-dasharray:none" />
-        <path
-           id="path5529-9"
-           d="m 406.8,174 c 1,-1.6 2.2,-6.7 10.2,-3.4 0.1,0 -2,1.3 -5.3,0.8 -2.7,-0.4 -5,2.6 -5,2.6 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-        <path
-           id="path5529-5-80"
-           d="m 407.4,174 c -1.5,-1.3 -4,-6 -10.8,-0.5 0,0 2.4,0.7 5.3,-0.7 2.5,-1.2 5.5,1.1 5.5,1.1 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-        <path
-           id="path5529-1-8"
-           d="m 407.2,174 c -0.2,-1.9 -2.3,-6.7 6,-8.9 0.1,0 -0.8,2.3 -3.7,3.9 -2.4,1.3 -2.3,5 -2.3,5 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-        <path
-           id="path5529-5-5-0"
-           d="m 407.1,173.8 c -0.6,-1.9 -0.6,-7.1 -9.1,-5.8 -0.1,0 1.7,1.8 5,2 2.7,0.3 4.1,3.8 4.1,3.8 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-      </g>
-      <g
-         id="g5623-6-1-1"
-         class="photo-subject tag-palm-tree tag-tree"
-         transform="matrix(0.71562731,0.15734087,-0.15734087,0.71562731,216.05144,-13.081101)"
-         style="stroke-width:0.30000001">
-        <path
-           id="path5527-2-0-1"
-           d="m 406.6,183.1 c 1.2,1.1 2.7,0.7 2.5,-0.2 -0.4,-2 -1.6,-5.3 -0.9,-8.8 0.3,-1.4 -2,-1.2 -2,0.1"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Tree_Branch);stroke-dasharray:none" />
-        <path
-           id="path5529-10-8-7"
-           d="m 406.8,174 c 1,-1.6 2.2,-6.7 10.2,-3.4 0.1,0 -2,1.3 -5.3,0.8 -2.7,-0.4 -5,2.6 -5,2.6 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-        <path
-           id="path5529-5-8-9-1"
-           d="m 407.4,174 c -1.5,-1.3 -4,-6 -10.8,-0.5 0,0 2.4,0.7 5.3,-0.7 2.5,-1.2 5.5,1.1 5.5,1.1 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-        <path
-           id="path5529-1-5-3-8"
-           d="m 407.2,174 c -0.2,-1.9 -2.3,-6.7 6,-8.9 0.1,0 -0.8,2.3 -3.7,3.9 -2.4,1.3 -2.3,5 -2.3,5 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-        <path
-           id="path5529-5-5-7-4-6"
-           d="m 407.1,173.8 c -0.6,-1.9 -0.6,-7.1 -9.1,-5.8 -0.1,0 1.7,1.8 5,2 2.7,0.3 4.1,3.8 4.1,3.8 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-      </g>
       <path
          id="rect4669"
          d="m 0,225 c 73.7,-13.2 113.3,-3.4 189.7,-2.8 70.8,-11.4 112,-18.8 115.1,-18.3 23.4,-1.4 33.3,0.3 43.3,4 59.1,22.8 95.4,29.7 135.8,24 19.2,-2.6 12.8,-2.3 24.1,0 V 447.4 H 0 Z"
@@ -2898,37 +2279,15 @@
          class="photo-subject tag-rock"
          inkscape:connector-curvature="0"
          style="fill:url(#linearGradient20058);stroke-width:0.1" />
-      <g
-         id="g2376-8"
-         class="photo-subject tag-palm-tree tag-tree"
-         transform="matrix(0.53991132,0.27747673,-0.27747673,0.53991132,-99.293504,-50.191799)"
-         style="stroke-width:0.30000001">
-        <path
-           id="path2366-0"
-           d="m 406.6,183.1 c 1.2,1.1 2.7,0.7 2.5,-0.2 -0.4,-2 -1.6,-5.3 -0.9,-8.8 0.3,-1.4 -2,-1.2 -2,0.1"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Tree_Branch);stroke-dasharray:none" />
-        <path
-           id="path2368-4"
-           d="m 406.8,174 c 1,-1.6 2.2,-6.7 10.2,-3.4 0.1,0 -2,1.3 -5.3,0.8 -2.7,-0.4 -5,2.6 -5,2.6 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-        <path
-           id="path2370-9"
-           d="m 407.4,174 c -1.5,-1.3 -4,-6 -10.8,-0.5 0,0 2.4,0.7 5.3,-0.7 2.5,-1.2 5.5,1.1 5.5,1.1 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-        <path
-           id="path2372-9"
-           d="m 407.2,174 c -0.2,-1.9 -2.3,-6.7 6,-8.9 0.1,0 -0.8,2.3 -3.7,3.9 -2.4,1.3 -2.3,5 -2.3,5 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-        <path
-           id="path2374-4"
-           d="m 407.1,173.8 c -0.6,-1.9 -0.6,-7.1 -9.1,-5.8 -0.1,0 1.7,1.8 5,2 2.7,0.3 4.1,3.8 4.1,3.8 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-      </g>
+      <use
+         style="stroke-width:0.30000001"
+         transform="matrix(-0.4743303,0,0,0.4743303,90.491108,69.651901)"
+         height="100%"
+         width="100%"
+         id="use14706-66"
+         xlink:href="#g2334"
+         y="0"
+         x="0" />
       <g
          id="jungle1"
          transform="matrix(0.26458,0,0,0.26458,-1015.6,0.8)"
@@ -2955,42 +2314,21 @@
            inkscape:connector-curvature="0"
            style="opacity:0.5;fill:#234c2c;stroke-width:1.29999995" />
       </g>
-      <g
-         id="g2376-8-7"
-         class="photo-subject tag-palm-tree tag-tree"
-         transform="matrix(-0.59738791,-0.0712342,-0.0712342,0.59738791,322.56948,98.463166)"
-         style="stroke-width:0.30000001">
-        <path
-           id="path2366-0-2"
-           d="m 406.6,183.1 c 1.2,1.1 2.7,0.7 2.5,-0.2 -0.4,-2 -1.6,-5.3 -0.9,-8.8 0.3,-1.4 -2,-1.2 -2,0.1"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Tree_Branch);stroke-dasharray:none" />
-        <path
-           id="path2368-4-2"
-           d="m 406.8,174 c 1,-1.6 2.2,-6.7 10.2,-3.4 0.1,0 -2,1.3 -5.3,0.8 -2.7,-0.4 -5,2.6 -5,2.6 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-        <path
-           id="path2370-9-0"
-           d="m 407.4,174 c -1.5,-1.3 -4,-6 -10.8,-0.5 0,0 2.4,0.7 5.3,-0.7 2.5,-1.2 5.5,1.1 5.5,1.1 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-        <path
-           id="path2372-9-7"
-           d="m 407.2,174 c -0.2,-1.9 -2.3,-6.7 6,-8.9 0.1,0 -0.8,2.3 -3.7,3.9 -2.4,1.3 -2.3,5 -2.3,5 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-        <path
-           id="path2374-4-6"
-           d="m 407.1,173.8 c -0.6,-1.9 -0.6,-7.1 -9.1,-5.8 -0.1,0 1.7,1.8 5,2 2.7,0.3 4.1,3.8 4.1,3.8 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-      </g>
+      <use
+         style="stroke-width:0.30000001"
+         transform="matrix(-0.6050668,0,0,0.6050668,90.21124,60.725916)"
+         height="100%"
+         width="100%"
+         id="use14706-6"
+         xlink:href="#g2334"
+         y="0"
+         x="0" />
       <g
          id="g2334"
          class="photo-subject tag-palm-tree tag-tree"
          transform="matrix(-0.88061327,0.35043858,0.35043858,0.88061327,336.39776,-109.5263)"
-         style="stroke-width:0.30000001">
+         style="stroke-width:0.30000001"
+         inkscape:label="palmTree">
         <path
            id="path2324"
            d="m 406.6,183.1 c 1.2,1.1 2.7,0.7 2.5,-0.2 -0.4,-2 -1.6,-5.3 -0.9,-8.8 0.3,-1.4 -2,-1.2 -2,0.1"
@@ -3017,204 +2355,126 @@
            inkscape:connector-curvature="0"
            style="fill:url(#Plant)" />
       </g>
-      <g
-         id="g2376"
-         class="photo-subject tag-palm-tree tag-tree"
-         transform="matrix(0.69734187,0.27750603,-0.27750603,0.69734187,-185.70071,-46.517176)"
-         style="stroke-width:0.30000001">
-        <path
-           id="path2366"
-           d="m 406.6,183.1 c 1.2,1.1 2.7,0.7 2.5,-0.2 -0.4,-2 -1.6,-5.3 -0.9,-8.8 0.3,-1.4 -2,-1.2 -2,0.1"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Tree_Branch);stroke-dasharray:none" />
-        <path
-           id="path2368"
-           d="m 406.8,174 c 1,-1.6 2.2,-6.7 10.2,-3.4 0.1,0 -2,1.3 -5.3,0.8 -2.7,-0.4 -5,2.6 -5,2.6 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-        <path
-           id="path2370"
-           d="m 407.4,174 c -1.5,-1.3 -4,-6 -10.8,-0.5 0,0 2.4,0.7 5.3,-0.7 2.5,-1.2 5.5,1.1 5.5,1.1 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-        <path
-           id="path2372"
-           d="m 407.2,174 c -0.2,-1.9 -2.3,-6.7 6,-8.9 0.1,0 -0.8,2.3 -3.7,3.9 -2.4,1.3 -2.3,5 -2.3,5 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-        <path
-           id="path2374"
-           d="m 407.1,173.8 c -0.6,-1.9 -0.6,-7.1 -9.1,-5.8 -0.1,0 1.7,1.8 5,2 2.7,0.3 4.1,3.8 4.1,3.8 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-      </g>
+      <use
+         style="stroke-width:0.30000001"
+         transform="matrix(-0.78359911,0,0,0.77121111,81.288612,43.685393)"
+         height="100%"
+         width="100%"
+         id="use14706"
+         xlink:href="#g2334"
+         y="0"
+         x="0" />
       <g
          id="g3268"
          class="photo-subject tag-grass"
          transform="matrix(0.69667,0,0,0.69667,32.6,33.5)"
          style="fill:url(#Plant);stroke-width:0">
-        <path
-           id="path2298-3"
-           d="m 130.2,125.7 c -0.1,-1 -0.2,-2.2 0,-3.3 0,0.7 0.1,1.2 0.3,1.7 0.5,-1.5 0.7,-2.2 1.2,-2.3 -0.5,0.8 -0.4,1.6 -0.7,2.3 0.2,-0.1 0.6,-1 1.2,-1.8 -0.7,2 -1,2.5 -1.5,3.4 -0.3,0.3 -0.4,0.2 -0.5,0 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.8" />
-        <path
-           id="path2300-2"
-           d="m 129,125.7 c 0,-1.1 0.2,-2.2 0,-3.3 a 4,4 0 0 1 -0.4,1.7 c -0.4,-1.6 -0.7,-2.3 -1,-2.3 0.4,0.7 0.3,1.5 0.6,2.3 -0.2,-0.1 -0.6,-1 -1.2,-1.8 0.7,2 1,2.5 1.5,3.4 0.3,0.3 0.4,0.1 0.5,0 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.8" />
-        <path
-           id="path2302-7"
-           d="m 129.3,126.4 c -0.3,-1 -0.6,-2.1 -0.6,-3.2 0,0.6 0.3,1 0.6,1.4 0.2,-1.6 0.2,-2.4 0.6,-2.6 -0.3,1 0,1.6 -0.2,2.5 0.3,-0.2 0.4,-1.3 0.8,-2.2 -0.2,2.1 -0.4,2.8 -0.7,3.9 -0.2,0.4 -0.4,0.2 -0.5,0.2 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.8" />
+        <use
+           transform="matrix(0.82907803,0,0,0.82907803,4.5389727,-27.890772)"
+           x="0"
+           y="0"
+           xlink:href="#g2140-5"
+           id="use15234-2"
+           width="100%"
+           height="100%" />
       </g>
       <g
          id="g3268-1"
          class="photo-subject tag-grass"
          transform="matrix(1.0337,0,0,1.0337,-3.8,-4.2)"
          style="fill:url(#Plant);stroke-width:0">
-        <path
-           id="path2298-3-4"
-           d="m 130.2,125.7 c -0.1,-1 -0.2,-2.2 0,-3.3 0,0.7 0.1,1.2 0.3,1.7 0.5,-1.5 0.7,-2.2 1.2,-2.3 -0.5,0.8 -0.4,1.6 -0.7,2.3 0.2,-0.1 0.6,-1 1.2,-1.8 -0.7,2 -1,2.5 -1.5,3.4 -0.3,0.3 -0.4,0.2 -0.5,0 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.8" />
-        <path
-           id="path2300-2-4"
-           d="m 129,125.7 c 0,-1.1 0.2,-2.2 0,-3.3 a 4,4 0 0 1 -0.4,1.7 c -0.4,-1.6 -0.7,-2.3 -1,-2.3 0.4,0.7 0.3,1.5 0.6,2.3 -0.2,-0.1 -0.6,-1 -1.2,-1.8 0.7,2 1,2.5 1.5,3.4 0.3,0.3 0.4,0.1 0.5,0 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.8" />
-        <path
-           id="path2302-7-9"
-           d="m 129.3,126.4 c -0.3,-1 -0.6,-2.1 -0.6,-3.2 0,0.6 0.3,1 0.6,1.4 0.2,-1.6 0.2,-2.4 0.6,-2.6 -0.3,1 0,1.6 -0.2,2.5 0.3,-0.2 0.4,-1.3 0.8,-2.2 -0.2,2.1 -0.4,2.8 -0.7,3.9 -0.2,0.4 -0.4,0.2 -0.5,0.2 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.8" />
+        <use
+           transform="matrix(0.67578664,0,0,0.67578664,27.178602,0.77634512)"
+           x="0"
+           y="0"
+           xlink:href="#g2140-5"
+           id="use15234-6"
+           width="100%"
+           height="100%" />
       </g>
       <g
          id="g3268-7"
          class="photo-subject tag-grass"
          transform="matrix(0.66297,0,0,0.66297,59.6,39)"
          style="fill:url(#Plant);stroke-width:0">
-        <path
-           id="path2298-3-6"
-           d="m 130.2,125.7 c -0.1,-1 -0.2,-2.2 0,-3.3 0,0.7 0.1,1.2 0.3,1.7 0.5,-1.5 0.7,-2.2 1.2,-2.3 -0.5,0.8 -0.4,1.6 -0.7,2.3 0.2,-0.1 0.6,-1 1.2,-1.8 -0.7,2 -1,2.5 -1.5,3.4 -0.3,0.3 -0.4,0.2 -0.5,0 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.8" />
-        <path
-           id="path2300-2-44"
-           d="m 129,125.7 c 0,-1.1 0.2,-2.2 0,-3.3 a 4,4 0 0 1 -0.4,1.7 c -0.4,-1.6 -0.7,-2.3 -1,-2.3 0.4,0.7 0.3,1.5 0.6,2.3 -0.2,-0.1 -0.6,-1 -1.2,-1.8 0.7,2 1,2.5 1.5,3.4 0.3,0.3 0.4,0.1 0.5,0 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.8" />
-        <path
-           id="path2302-7-8"
-           d="m 129.3,126.4 c -0.3,-1 -0.6,-2.1 -0.6,-3.2 0,0.6 0.3,1 0.6,1.4 0.2,-1.6 0.2,-2.4 0.6,-2.6 -0.3,1 0,1.6 -0.2,2.5 0.3,-0.2 0.4,-1.3 0.8,-2.2 -0.2,2.1 -0.4,2.8 -0.7,3.9 -0.2,0.4 -0.4,0.2 -0.5,0.2 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.8" />
+        <use
+           transform="matrix(0.7789167,0,0,0.7789167,11.559631,-18.450895)"
+           x="0"
+           y="0"
+           xlink:href="#g2140-5"
+           id="use15234-7"
+           width="100%"
+           height="100%" />
       </g>
       <g
          id="g3268-5"
          class="photo-subject tag-grass"
          transform="matrix(0.52816,0,0,0.52816,65.8,53)"
          style="fill:url(#Plant);stroke-width:0">
-        <path
-           id="path2298-3-8"
-           d="m 130.2,125.7 c -0.1,-1 -0.2,-2.2 0,-3.3 0,0.7 0.1,1.2 0.3,1.7 0.5,-1.5 0.7,-2.2 1.2,-2.3 -0.5,0.8 -0.4,1.6 -0.7,2.3 0.2,-0.1 0.6,-1 1.2,-1.8 -0.7,2 -1,2.5 -1.5,3.4 -0.3,0.3 -0.4,0.2 -0.5,0 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.8" />
-        <path
-           id="path2300-2-8"
-           d="m 129,125.7 c 0,-1.1 0.2,-2.2 0,-3.3 a 4,4 0 0 1 -0.4,1.7 c -0.4,-1.6 -0.7,-2.3 -1,-2.3 0.4,0.7 0.3,1.5 0.6,2.3 -0.2,-0.1 -0.6,-1 -1.2,-1.8 0.7,2 1,2.5 1.5,3.4 0.3,0.3 0.4,0.1 0.5,0 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.8" />
-        <path
-           id="path2302-7-0"
-           d="m 129.3,126.4 c -0.3,-1 -0.6,-2.1 -0.6,-3.2 0,0.6 0.3,1 0.6,1.4 0.2,-1.6 0.2,-2.4 0.6,-2.6 -0.3,1 0,1.6 -0.2,2.5 0.3,-0.2 0.4,-1.3 0.8,-2.2 -0.2,2.1 -0.4,2.8 -0.7,3.9 -0.2,0.4 -0.4,0.2 -0.5,0.2 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.8" />
+        <use
+           transform="matrix(0.69989502,0,0,0.69989502,23.306591,-3.7021807)"
+           x="0"
+           y="0"
+           xlink:href="#g2140-5"
+           id="use15234-82"
+           width="100%"
+           height="100%" />
       </g>
       <g
          id="g3268-1-5"
          class="photo-subject tag-grass"
          transform="matrix(1.5236,0,0,1.5236,-54.8,-59)"
          style="fill:url(#Plant);stroke-width:0">
-        <path
-           id="path2298-3-4-3"
-           d="m 130.2,125.7 c -0.1,-1 -0.2,-2.2 0,-3.3 0,0.7 0.1,1.2 0.3,1.7 0.5,-1.5 0.7,-2.2 1.2,-2.3 -0.5,0.8 -0.4,1.6 -0.7,2.3 0.2,-0.1 0.6,-1 1.2,-1.8 -0.7,2 -1,2.5 -1.5,3.4 -0.3,0.3 -0.4,0.2 -0.5,0 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.8" />
-        <path
-           id="path2300-2-4-0"
-           d="m 129,125.7 c 0,-1.1 0.2,-2.2 0,-3.3 a 4,4 0 0 1 -0.4,1.7 c -0.4,-1.6 -0.7,-2.3 -1,-2.3 0.4,0.7 0.3,1.5 0.6,2.3 -0.2,-0.1 -0.6,-1 -1.2,-1.8 0.7,2 1,2.5 1.5,3.4 0.3,0.3 0.4,0.1 0.5,0 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.8" />
-        <path
-           id="path2302-7-9-4"
-           d="m 129.3,126.4 c -0.3,-1 -0.6,-2.1 -0.6,-3.2 0,0.6 0.3,1 0.6,1.4 0.2,-1.6 0.2,-2.4 0.6,-2.6 -0.3,1 0,1.6 -0.2,2.5 0.3,-0.2 0.4,-1.3 0.8,-2.2 -0.2,2.1 -0.4,2.8 -0.7,3.9 -0.2,0.4 -0.4,0.2 -0.5,0.2 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.8" />
+        <use
+           transform="matrix(0.76499485,0,0,0.76499485,13.863793,-15.210178)"
+           x="0"
+           y="0"
+           xlink:href="#g2140-5"
+           id="use15234-8"
+           width="100%"
+           height="100%" />
       </g>
       <g
          id="g3268-1-6"
          class="photo-subject tag-grass"
-         transform="matrix(0.71682,0,0,0.71682,246.4,39.5)"
+         transform="matrix(0.2584224,0.08209248,-0.08209248,0.2584224,313.73513,83.630954)"
          style="fill:url(#Plant);stroke-width:0">
-        <path
-           id="path2298-3-4-6"
-           d="m 130.2,125.7 c -0.1,-1 -0.2,-2.2 0,-3.3 0,0.7 0.1,1.2 0.3,1.7 0.5,-1.5 0.7,-2.2 1.2,-2.3 -0.5,0.8 -0.4,1.6 -0.7,2.3 0.2,-0.1 0.6,-1 1.2,-1.8 -0.7,2 -1,2.5 -1.5,3.4 -0.3,0.3 -0.4,0.2 -0.5,0 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.8" />
-        <path
-           id="path2300-2-4-7"
-           d="m 129,125.7 c 0,-1.1 0.2,-2.2 0,-3.3 a 4,4 0 0 1 -0.4,1.7 c -0.4,-1.6 -0.7,-2.3 -1,-2.3 0.4,0.7 0.3,1.5 0.6,2.3 -0.2,-0.1 -0.6,-1 -1.2,-1.8 0.7,2 1,2.5 1.5,3.4 0.3,0.3 0.4,0.1 0.5,0 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.8" />
-        <path
-           id="path2302-7-9-2"
-           d="m 129.3,126.4 c -0.3,-1 -0.6,-2.1 -0.6,-3.2 0,0.6 0.3,1 0.6,1.4 0.2,-1.6 0.2,-2.4 0.6,-2.6 -0.3,1 0,1.6 -0.2,2.5 0.3,-0.2 0.4,-1.3 0.8,-2.2 -0.2,2.1 -0.4,2.8 -0.7,3.9 -0.2,0.4 -0.4,0.2 -0.5,0.2 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.8" />
+        <use
+           transform="matrix(2.0051478,0,0,2.0051478,-174.89694,-238.34168)"
+           x="0"
+           y="0"
+           xlink:href="#g2140-5"
+           id="use15234-65"
+           width="100%"
+           height="100%" />
       </g>
       <g
          id="g3268-1-6-9"
          class="photo-subject tag-grass"
-         transform="matrix(0.71682,0,0,0.71682,250.3,41)"
+         transform="matrix(0.69239495,0.18552667,-0.18552667,0.69239495,276.49674,20.010878)"
          style="fill:url(#Plant);stroke-width:0">
-        <path
-           id="path2298-3-4-6-9"
-           d="m 130.2,125.7 c -0.1,-1 -0.2,-2.2 0,-3.3 0,0.7 0.1,1.2 0.3,1.7 0.5,-1.5 0.7,-2.2 1.2,-2.3 -0.5,0.8 -0.4,1.6 -0.7,2.3 0.2,-0.1 0.6,-1 1.2,-1.8 -0.7,2 -1,2.5 -1.5,3.4 -0.3,0.3 -0.4,0.2 -0.5,0 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.8" />
-        <path
-           id="path2300-2-4-7-2"
-           d="m 129,125.7 c 0,-1.1 0.2,-2.2 0,-3.3 a 4,4 0 0 1 -0.4,1.7 c -0.4,-1.6 -0.7,-2.3 -1,-2.3 0.4,0.7 0.3,1.5 0.6,2.3 -0.2,-0.1 -0.6,-1 -1.2,-1.8 0.7,2 1,2.5 1.5,3.4 0.3,0.3 0.4,0.1 0.5,0 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.8" />
-        <path
-           id="path2302-7-9-2-6"
-           d="m 129.3,126.4 c -0.3,-1 -0.6,-2.1 -0.6,-3.2 0,0.6 0.3,1 0.6,1.4 0.2,-1.6 0.2,-2.4 0.6,-2.6 -0.3,1 0,1.6 -0.2,2.5 0.3,-0.2 0.4,-1.3 0.8,-2.2 -0.2,2.1 -0.4,2.8 -0.7,3.9 -0.2,0.4 -0.4,0.2 -0.5,0.2 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.8" />
+        <use
+           transform="matrix(0.73166775,0,0,0.73166775,18.560011,-9.7751961)"
+           x="0"
+           y="0"
+           xlink:href="#g2140-5"
+           id="use15234-22"
+           width="100%"
+           height="100%" />
       </g>
       <g
          id="g3268-1-6-5"
          class="photo-subject tag-grass"
          transform="matrix(1.2982,0,0,1.2982,166.9,-28.4)"
          style="fill:url(#Plant);stroke-width:0">
-        <path
-           id="path2298-3-4-6-1"
-           d="m 130.2,125.7 c -0.1,-1 -0.2,-2.2 0,-3.3 0,0.7 0.1,1.2 0.3,1.7 0.5,-1.5 0.7,-2.2 1.2,-2.3 -0.5,0.8 -0.4,1.6 -0.7,2.3 0.2,-0.1 0.6,-1 1.2,-1.8 -0.7,2 -1,2.5 -1.5,3.4 -0.3,0.3 -0.4,0.2 -0.5,0 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.8" />
-        <path
-           id="path2300-2-4-7-3"
-           d="m 129,125.7 c 0,-1.1 0.2,-2.2 0,-3.3 a 4,4 0 0 1 -0.4,1.7 c -0.4,-1.6 -0.7,-2.3 -1,-2.3 0.4,0.7 0.3,1.5 0.6,2.3 -0.2,-0.1 -0.6,-1 -1.2,-1.8 0.7,2 1,2.5 1.5,3.4 0.3,0.3 0.4,0.1 0.5,0 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.8" />
-        <path
-           id="path2302-7-9-2-5"
-           d="m 129.3,126.4 c -0.3,-1 -0.6,-2.1 -0.6,-3.2 0,0.6 0.3,1 0.6,1.4 0.2,-1.6 0.2,-2.4 0.6,-2.6 -0.3,1 0,1.6 -0.2,2.5 0.3,-0.2 0.4,-1.3 0.8,-2.2 -0.2,2.1 -0.4,2.8 -0.7,3.9 -0.2,0.4 -0.4,0.2 -0.5,0.2 z"
-           inkscape:connector-curvature="0"
-           style="opacity:0.8" />
+        <use
+           transform="matrix(1.1071715,0,0,1.1071715,-37.617633,-78.698019)"
+           x="0"
+           y="0"
+           xlink:href="#g2140-5"
+           id="use15234-72"
+           width="100%"
+           height="100%" />
       </g>
       <g
          id="g4636-6"
@@ -3226,68 +2486,15 @@
            inkscape:connector-curvature="0"
            style="stroke-width:1.29999995;stroke-dasharray:none" />
       </g>
-      <g
-         id="g5623-6-2"
-         class="photo-subject tag-palm-tree tag-tree"
-         transform="matrix(0.71569,0.15707,-0.15707,0.71569,233,-9)"
-         style="stroke-width:0.30000001">
-        <path
-           id="path5527-2-8"
-           d="m 406.6,183.1 c 1.2,1.1 2.7,0.7 2.5,-0.2 -0.4,-2 -1.6,-5.3 -0.9,-8.8 0.3,-1.4 -2,-1.2 -2,0.1"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Tree_Branch);stroke-dasharray:none" />
-        <path
-           id="path5529-10-88"
-           d="m 406.8,174 c 1,-1.6 2.2,-6.7 10.2,-3.4 0.1,0 -2,1.3 -5.3,0.8 -2.7,-0.4 -5,2.6 -5,2.6 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-        <path
-           id="path5529-5-8-5"
-           d="m 407.4,174 c -1.5,-1.3 -4,-6 -10.8,-0.5 0,0 2.4,0.7 5.3,-0.7 2.5,-1.2 5.5,1.1 5.5,1.1 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-        <path
-           id="path5529-1-5-2"
-           d="m 407.2,174 c -0.2,-1.9 -2.3,-6.7 6,-8.9 0.1,0 -0.8,2.3 -3.7,3.9 -2.4,1.3 -2.3,5 -2.3,5 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-        <path
-           id="path5529-5-5-7-0"
-           d="m 407.1,173.8 c -0.6,-1.9 -0.6,-7.1 -9.1,-5.8 -0.1,0 1.7,1.8 5,2 2.7,0.3 4.1,3.8 4.1,3.8 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-      </g>
-      <g
-         id="g5623-6-1"
-         class="photo-subject tag-palm-tree tag-tree"
-         transform="matrix(-0.71569,0.15707,0.15707,0.71569,681,-11.8)"
-         style="stroke-width:0.30000001">
-        <path
-           id="path5527-2-0"
-           d="m 406.6,183.1 c 1.2,1.1 2.7,0.7 2.5,-0.2 -0.4,-2 -1.6,-5.3 -0.9,-8.8 0.3,-1.4 -2,-1.2 -2,0.1"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Tree_Branch);stroke-dasharray:none" />
-        <path
-           id="path5529-10-8"
-           d="m 406.8,174 c 1,-1.6 2.2,-6.7 10.2,-3.4 0.1,0 -2,1.3 -5.3,0.8 -2.7,-0.4 -5,2.6 -5,2.6 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-        <path
-           id="path5529-5-8-9"
-           d="m 407.4,174 c -1.5,-1.3 -4,-6 -10.8,-0.5 0,0 2.4,0.7 5.3,-0.7 2.5,-1.2 5.5,1.1 5.5,1.1 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-        <path
-           id="path5529-1-5-3"
-           d="m 407.2,174 c -0.2,-1.9 -2.3,-6.7 6,-8.9 0.1,0 -0.8,2.3 -3.7,3.9 -2.4,1.3 -2.3,5 -2.3,5 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-        <path
-           id="path5529-5-5-7-4"
-           d="m 407.1,173.8 c -0.6,-1.9 -0.6,-7.1 -9.1,-5.8 -0.1,0 1.7,1.8 5,2 2.7,0.3 4.1,3.8 4.1,3.8 z"
-           inkscape:connector-curvature="0"
-           style="fill:url(#Plant)" />
-      </g>
+      <use
+         style="stroke-width:0.30000001"
+         transform="matrix(0.78611543,0,0,0.78611543,386.96066,29.711968)"
+         height="100%"
+         width="100%"
+         id="use14706-5"
+         xlink:href="#g2334"
+         y="0"
+         x="0" />
       <g
          id="g986-0"
          transform="matrix(0.98147,0.05135,-0.02096,0.51856,236.5,7.8)">
@@ -3754,184 +2961,27 @@
        id="fakeDarkness"
        d="m 850.8,-60.3 h 621.7 V 1068.8 H 850.8 Z"
        inkscape:connector-curvature="0"
-       style="stroke-width:2.20000005" />
+       style="display:inline;stroke-width:2.20000005" />
     <g
        id="g1833"
        transform="matrix(0.73661,-0.12242,-0.07338,0.7025,325.7,372.8)"
        style="stroke-linecap:round">
       <g
-         id="g1567"
-         transform="translate(-20.5)"
-         style="fill:none;stroke-width:1.29999995">
-        <path
-           id="path1487"
-           d="m 891.2,889.4 v -3.3"
-           inkscape:connector-curvature="0"
-           style="stroke:#fe0000" />
-        <path
-           id="path1487-0-1"
-           d="M 891.2,884.3 V 881"
-           inkscape:connector-curvature="0"
-           style="stroke:#fe0000" />
-        <path
-           id="path1487-7"
-           d="m 897.6,889.4 v -3.3"
-           inkscape:connector-curvature="0"
-           style="stroke:#fe0000" />
-        <path
-           id="path1487-0-1-2"
-           d="m 892.7,885.2 h 3.4"
-           inkscape:connector-curvature="0"
-           style="stroke:#580000" />
-        <path
-           id="path1487-0-1-0"
-           d="M 897.6,884.3 V 881"
-           inkscape:connector-curvature="0"
-           style="stroke:#fe0000" />
-        <path
-           id="path1487-0-1-2-5"
-           d="m 892.7,880 h 3.4"
-           inkscape:connector-curvature="0"
-           style="stroke:#fe0000" />
-        <path
-           id="path1487-0-1-2-8"
-           d="m 892.7,890.3 h 3.4"
-           inkscape:connector-curvature="0"
-           style="stroke:#fe0000" />
-      </g>
-      <g
-         id="g1567-1"
-         transform="translate(-11.2)"
-         style="fill:none;stroke-width:1.29999995">
-        <path
-           id="path1487-6"
-           d="m 891.2,889.4 v -3.3"
-           inkscape:connector-curvature="0"
-           style="stroke:#580000" />
-        <path
-           id="path1487-0-1-9"
-           d="M 891.2,884.3 V 881"
-           inkscape:connector-curvature="0"
-           style="stroke:#fe0000" />
-        <path
-           id="path1487-7-1"
-           d="m 897.6,889.4 v -3.3"
-           inkscape:connector-curvature="0"
-           style="stroke:#fe0000" />
-        <path
-           id="path1487-0-1-2-3"
-           d="m 892.7,885.2 h 3.4"
-           inkscape:connector-curvature="0"
-           style="stroke:#fe0000" />
-        <path
-           id="path1487-0-1-0-9"
-           d="M 897.6,884.3 V 881"
-           inkscape:connector-curvature="0"
-           style="stroke:#580000" />
-        <path
-           id="path1487-0-1-2-5-3"
-           d="m 892.7,880 h 3.4"
-           inkscape:connector-curvature="0"
-           style="stroke:#fe0000" />
-        <path
-           id="path1487-0-1-2-8-6"
-           d="m 892.7,890.3 h 3.4"
-           inkscape:connector-curvature="0"
-           style="stroke:#fe0000" />
-      </g>
-      <g
-         id="g1567-2"
-         transform="translate(0.5)"
-         style="fill:none;stroke-width:1.29999995">
-        <path
-           id="path1487-5"
-           d="m 891.2,889.4 v -3.3"
-           inkscape:connector-curvature="0"
-           style="stroke:#580000" />
-        <path
-           id="path1487-0-1-3"
-           d="M 891.2,884.3 V 881"
-           inkscape:connector-curvature="0"
-           style="stroke:#580000" />
-        <path
-           id="path1487-7-8"
-           d="m 897.6,889.4 v -3.3"
-           inkscape:connector-curvature="0"
-           style="stroke:#fe0000" />
-        <path
-           id="path1487-0-1-2-51"
-           d="m 892.7,885.2 h 3.4"
-           inkscape:connector-curvature="0"
-           style="stroke:#fe0000" />
-        <path
-           id="path1487-0-1-0-1"
-           d="M 897.6,884.3 V 881"
-           inkscape:connector-curvature="0"
-           style="stroke:#fe0000" />
-        <path
-           id="path1487-0-1-2-5-0"
-           d="m 892.7,880 h 3.4"
-           inkscape:connector-curvature="0"
-           style="stroke:#fe0000" />
-        <path
-           id="path1487-0-1-2-8-5"
-           d="m 892.7,890.3 h 3.4"
-           inkscape:connector-curvature="0"
-           style="stroke:#fe0000" />
-      </g>
-      <g
-         id="g1567-1-4"
-         transform="translate(9.8)"
-         style="fill:none;stroke-width:1.29999995">
-        <path
-           id="path1487-6-2"
-           d="m 891.2,889.4 v -3.3"
-           inkscape:connector-curvature="0"
-           style="stroke:#fe0000" />
-        <path
-           id="path1487-0-1-9-4"
-           d="M 891.2,884.3 V 881"
-           inkscape:connector-curvature="0"
-           style="stroke:#fe0000" />
-        <path
-           id="path1487-7-1-0"
-           d="m 897.6,889.4 v -3.3"
-           inkscape:connector-curvature="0"
-           style="stroke:#fe0000" />
-        <path
-           id="path1487-0-1-2-3-0"
-           d="m 892.7,885.2 h 3.4"
-           inkscape:connector-curvature="0"
-           style="stroke:#580000" />
-        <path
-           id="path1487-0-1-0-9-5"
-           d="M 897.6,884.3 V 881"
-           inkscape:connector-curvature="0"
-           style="stroke:#fe0000" />
-        <path
-           id="path1487-0-1-2-5-3-5"
-           d="m 892.7,880 h 3.4"
-           inkscape:connector-curvature="0"
-           style="stroke:#fe0000" />
-        <path
-           id="path1487-0-1-2-8-6-1"
-           d="m 892.7,890.3 h 3.4"
-           inkscape:connector-curvature="0"
-           style="stroke:#fe0000" />
-      </g>
-      <g
          id="g1796"
-         style="fill:#fe0000;stroke-width:1.79999995">
-        <circle
-           id="path1751"
-           cx="889.20001"
-           cy="883.79999"
-           r="0.60000002" />
-        <circle
-           id="path1751-8"
-           cx="889.20001"
-           cy="888.09998"
-           r="0.60000002" />
+         style="fill:#fe0000;stroke-width:1.79999995"
+         transform="matrix(0.9919458,-0.08085043,8.0234753e-4,1.0080542,4.5050806,65.80235)">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:13.17064285px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#fe0000;fill-opacity:1;stroke:none;stroke-width:0.5926789"
+           x="806.198"
+           y="815.36896"
+           id="text15575"
+           transform="matrix(0.97368553,0.05648554,0.10290549,1.0329954,0,0)"><tspan
+             sodipodi:role="line"
+             id="tspan15573"
+             x="806.198"
+             y="815.36896"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Arial Black';-inkscape-font-specification:'Arial Black, ';fill:#fe0000;fill-opacity:1;stroke-width:0.5926789">05:30 .</tspan></text>
       </g>
       <ellipse
          id="startButton"
@@ -3942,19 +2992,12 @@
          transform="matrix(0.99492,0.10069,-0.9564,0.29209,0,0)"
          style="fill:#fe0000;stroke:#580000;stroke-width:2.5" />
     </g>
-    <circle
-       id="path1751-8-8"
-       cx="1057.1"
-       cy="1065.5"
-       transform="matrix(0.98647,-0.16394,-0.1039,0.99459,0,0)"
-       r="0.40000001"
-       style="fill:#fe0000;stroke-width:1.29999995;stroke-linecap:round" />
   </g>
   <g
      id="cameraGroup"
      class="camera-group"
      transform="matrix(6.76005,0,0,6.76005,384,143)"
-     style="display:none;opacity:0.8">
+     style="display:inline;opacity:0.8">
     <g
        id="galleryBackground">
       <rect
@@ -3970,7 +3013,7 @@
        id="path3050"
        d="M -32.5,13.7 V -4.8 h 17.9"
        inkscape:connector-curvature="0"
-       style="fill:none;stroke:#000000;stroke-dasharray:none" />
+       style="display:inline;fill:none;stroke:#000000;stroke-dasharray:none" />
     <path
        id="path3050-1"
        d="M 202.9,13.7 V -4.8 h -18"
@@ -3980,7 +3023,7 @@
        id="path3050-7"
        d="m -32.5,103.8 v 18.4 h 17.9"
        inkscape:connector-curvature="0"
-       style="fill:none;stroke:url(#linearGradient22290);stroke-dasharray:none" />
+       style="fill:none;stroke:#000000;stroke-dasharray:none;stroke-width:0.9999926;stroke-miterlimit:4;stroke-opacity:1" />
     <path
        id="path3050-1-4"
        d="m 202.9,103.8 v 18.4 h -18"
@@ -4354,6 +3397,12 @@
     <g
        id="objectiveBar"
        transform="translate(154.4,-11)">
+      <path
+         id="path3724"
+         d="M -110.47269,5.7 H -92.4"
+         inkscape:connector-curvature="0"
+         style="fill-opacity:0;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round;stroke-dasharray:none"
+         sodipodi:nodetypes="cc" />
       <g
          id="shareButton-5"
          transform="matrix(1.00531,0,0,1.00531,-71,-107.7)"
@@ -4444,86 +3493,34 @@
            id="objectiveBox1"
            transform="matrix(0.25392,0,0,0.25392,-99.4,-20.5)"
            style="fill:none;stroke:#000000;stroke-width:2.9000001;stroke-dasharray:none">
-          <path
-             id="path22045-4"
-             d="m -111.8,90.9 v -6 h 5.8"
-             inkscape:connector-curvature="0" />
-          <path
-             id="path22047-3"
-             d="m -56.7,90.9 v -6 h -5.7"
-             inkscape:connector-curvature="0" />
-          <path
-             id="path22049-2"
-             d="m -56.7,119 v 6 h -5.7"
-             inkscape:connector-curvature="0" />
-          <path
-             id="path22051-6"
-             d="m -111.8,119 v 6 h 5.8"
-             inkscape:connector-curvature="0" />
+          <rect
+             style="opacity:1;vector-effect:none;fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:4.00848198;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+             id="rect15496"
+             width="55.099998"
+             height="51.287685"
+             x="-111.8"
+             y="79.30616" />
         </g>
         <g
            id="objectiveBox2"
            transform="matrix(0.25392,0,0,0.25392,-67,-20.5)"
            style="fill:none;stroke:#000000;stroke-width:2.9000001;stroke-dasharray:none">
-          <path
-             id="path22045-4-2"
-             d="m -111.8,90.9 v -6 h 5.8"
-             inkscape:connector-curvature="0" />
-          <path
-             id="path22047-3-6"
-             d="m -56.7,90.9 v -6 h -5.7"
-             inkscape:connector-curvature="0" />
-          <path
-             id="path22049-2-9"
-             d="m -56.7,119 v 6 h -5.7"
-             inkscape:connector-curvature="0" />
-          <path
-             id="path22051-6-9"
-             d="m -111.8,119 v 6 h 5.8"
-             inkscape:connector-curvature="0" />
+          <rect
+             style="display:inline;opacity:1;vector-effect:none;fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:4.00848198;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+             id="rect15496-73"
+             width="55.099998"
+             height="51.287685"
+             x="-111.8"
+             y="79.30616" />
         </g>
         <g
            id="objectiveBox3"
            transform="matrix(0.25392,0,0,0.25392,-34.6,-20.5)"
-           style="fill:none;stroke:#000000;stroke-width:2.9000001;stroke-dasharray:none">
-          <path
-             id="path22045-4-2-9"
-             d="m -111.8,90.9 v -6 h 5.8"
-             inkscape:connector-curvature="0" />
-          <path
-             id="path22047-3-6-4"
-             d="m -56.7,90.9 v -6 h -5.7"
-             inkscape:connector-curvature="0" />
-          <path
-             id="path22049-2-9-4"
-             d="m -56.7,119 v 6 h -5.7"
-             inkscape:connector-curvature="0" />
-          <path
-             id="path22051-6-9-1"
-             d="m -111.8,119 v 6 h 5.8"
-             inkscape:connector-curvature="0" />
-        </g>
+           style="fill:none;stroke:#000000;stroke-width:2.9000001;stroke-dasharray:none" />
         <g
            id="objectiveBox4"
            transform="matrix(0.25392,0,0,0.25392,-2.1,-20.5)"
-           style="fill:none;stroke:#000000;stroke-width:2.9000001;stroke-dasharray:none">
-          <path
-             id="path22045-4-2-6"
-             d="m -111.8,90.9 v -6 h 5.8"
-             inkscape:connector-curvature="0" />
-          <path
-             id="path22047-3-6-47"
-             d="m -56.7,90.9 v -6 h -5.7"
-             inkscape:connector-curvature="0" />
-          <path
-             id="path22049-2-9-8"
-             d="m -56.7,119 v 6 h -5.7"
-             inkscape:connector-curvature="0" />
-          <path
-             id="path22051-6-9-6"
-             d="m -111.8,119 v 6 h 5.8"
-             inkscape:connector-curvature="0" />
-        </g>
+           style="fill:none;stroke:#000000;stroke-width:2.9000001;stroke-dasharray:none" />
         <g
            id="objectives"
            transform="translate(197.3,-45.7)">
@@ -4635,15 +3632,24 @@
             </g>
           </g>
         </g>
+        <rect
+           style="display:inline;opacity:1;vector-effect:none;fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:1.01783371;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect15496-2"
+           width="13.990992"
+           height="13.022968"
+           x="-62.988258"
+           y="-0.36257946" />
+        <rect
+           style="display:inline;opacity:1;vector-effect:none;fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:1.01783371;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect15496-3"
+           width="13.990992"
+           height="13.022968"
+           x="-30.465254"
+           y="-0.21131854" />
       </g>
       <path
          id="path3011-9"
          d="M -13.5,6.2 H 6.8"
-         inkscape:connector-curvature="0"
-         style="fill-opacity:0;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round;stroke-dasharray:none" />
-      <path
-         id="path3724"
-         d="m -110.9,5.7 h 18.5"
          inkscape:connector-curvature="0"
          style="fill-opacity:0;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round;stroke-dasharray:none" />
       <path
@@ -4707,7 +3713,7 @@
   <g
      id="splashScreenGroup"
      transform="matrix(1.01053,0,0,1,0,300)"
-     style="display:none">
+     style="display:inline">
     <path
        id="rect3421"
        d="M 0,-345.7 H 1900 V 826.2 H 0 Z"
