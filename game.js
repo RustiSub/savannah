@@ -756,7 +756,7 @@ window.addEventListener("load", async function() {
   var introGroup = SVG.adopt(background.getElementById('introGroup'));
 
   introGroup.toParent(scene1Group);
-  introGroup.hide();
+  //introGroup.hide();
 
   var fakeDarkness = SVG.adopt(background.getElementById('fakeDarkness'));
   var fakeLight = SVG.adopt(background.getElementById('fakeLight'));
@@ -786,6 +786,9 @@ window.addEventListener("load", async function() {
     skipIntroButton.click(
         function() {
           introFinished = true;
+
+          introGroup.remove();
+
           startSun();
           flash.front();
 
@@ -890,8 +893,9 @@ window.addEventListener("load", async function() {
           moveCamera(150 / (60), 0);
         })
     ;
-
-    var startButtonAlarmAnimation = startButtonAlarm.animate().style({opacity: 0}).loop();
+    startButtonAlarm.show();
+    startButtonAlarm.style({opacity: 1});
+    var startButtonAlarmAnimation = startButtonAlarm.animate(500).style({opacity: 0}).loop();
 
     startButtonAlarm.click(function () {
           startButtonAlarmAnimation.finish();
@@ -899,17 +903,18 @@ window.addEventListener("load", async function() {
           fakeDarkness
               .delay(1000)
               .delay(2000).during(function () {
-            moveCamera(-100 / (60 * 2), 0);
-          })
+                moveCamera(-100 / (60 * 2), 0);
+              })
+              .after(function () {
+                afterStartButton();
+              })
               .animate(6000).style({opacity: 0})
           ;
-
-          afterStartButton();
         }
     );
 
     function afterStartButton() {
-      tentFabric.delay(1000).animate(6000).style({opacity: 0.99});
+      tentFabric.style({opacity: 1});
       fakeLight.delay(1000).animate(2000).style({opacity: 0});
 
 
@@ -1641,7 +1646,7 @@ window.addEventListener("load", async function() {
 
       subjectCount += 1;
       total += subTtotal;
-
+console.log(subject.classes());
       subject.classes().forEach(function (tagClass) {
         if (levels[currentLevel]['objectives'][tagClass]) {
           levels[currentLevel]['objectives'][tagClass].found = true;
