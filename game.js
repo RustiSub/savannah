@@ -134,21 +134,21 @@ window.addEventListener("load", async function() {
   var seaUpperWaves2 = SVG.adopt(background.getElementById('seaUpper.waves.2'));
   var seaUpperWaves3 = SVG.adopt(background.getElementById('seaUpper.waves.3'));
   seaUpperWaves1.hide();
-/*  seaUpperWaves2.hide();
-  seaUpperWaves3.hide();*/
+  /*  seaUpperWaves2.hide();
+    seaUpperWaves3.hide();*/
   var calmSea = seaUpper.array();
 
   function startWaves() {
-    seaUpper
-        .animate(5000, '<').plot(seaUpperWaves1.array())
-        .delay(1000)
-/*        .animate(5000, '<').plot(seaUpperWaves2.array())
-        .animate(5000, '>').plot(seaUpperWaves3.array())*/
-        .animate(10000).plot(calmSea)
-        .after(function () {
-          startWaves();
-        })
-    ;
+    /*    seaUpper
+            .animate(5000, '<').plot(seaUpperWaves1.array())
+            .delay(1000)
+    /!*        .animate(5000, '<').plot(seaUpperWaves2.array())
+            .animate(5000, '>').plot(seaUpperWaves3.array())*!/
+            .animate(10000).plot(calmSea)
+            .after(function () {
+              startWaves();
+            })
+        ;*/
   }
 
   var seaShoreWaves = SVG.adopt(background.getElementById('seaShoreWaves'));
@@ -895,13 +895,13 @@ window.addEventListener("load", async function() {
     var startButtonAlarmAnimation = startButtonAlarm.animate().style({opacity: 0}).loop();
 
     startButtonAlarm.click(function () {
-      startButtonAlarmAnimation.finish();
+          startButtonAlarmAnimation.finish();
 
           fakeDarkness
               .delay(1000)
               .delay(2000).during(function () {
-                moveCamera(-100 / (60 * 2), 0);
-              })
+            moveCamera(-100 / (60 * 2), 0);
+          })
               .animate(6000).style({opacity: 0})
           ;
 
@@ -1513,7 +1513,7 @@ window.addEventListener("load", async function() {
 
   sceneParent.click(function(event) {
     // if (!mouseCameraLocked) {
-      cameraClick();
+    cameraClick();
     // }
 
     return event;
@@ -1637,11 +1637,11 @@ window.addEventListener("load", async function() {
         return;
       }
 
-/*      var rect = focusedPhoto.rect(rbox.width, rbox.height);
-      rect.x(rbox.x);
-      rect.y(rbox.y);
-      rect.stroke({ color: '#f06', opacity: 0.6, width: 5 });
-      rect.fill({ color: '#f06', opacity: 0 });*/
+      /*      var rect = focusedPhoto.rect(rbox.width, rbox.height);
+            rect.x(rbox.x);
+            rect.y(rbox.y);
+            rect.stroke({ color: '#f06', opacity: 0.6, width: 5 });
+            rect.fill({ color: '#f06', opacity: 0 });*/
 
       let perfectScaleRatio = 0.75;
       let perfectCenter = 0.50;
@@ -1677,38 +1677,38 @@ window.addEventListener("load", async function() {
 
     console.log('levelDone', levelDone);*/
 
-/*    let finalScore = Math.ceil(5 * (total / subjectCount));
+    /*    let finalScore = Math.ceil(5 * (total / subjectCount));
 
-    var like = starsGroupScore.clone(focusedPhoto);
-    like.front();
+        var like = starsGroupScore.clone(focusedPhoto);
+        like.front();
 
-    for (var s=1; s <= finalScore; s++) {
-      var scoreLike = like.select('#starsGroupScore' + s).first();
+        for (var s=1; s <= finalScore; s++) {
+          var scoreLike = like.select('#starsGroupScore' + s).first();
 
-      scoreLike.style({ fill: '#FFF', opacity: 1 });
-      scoreLike.style('fill-opacity', 1);
-    }
+          scoreLike.style({ fill: '#FFF', opacity: 1 });
+          scoreLike.style('fill-opacity', 1);
+        }
 
-    highScoreLikes += finalScore;
+        highScoreLikes += finalScore;
 
-    updateHighScore();*/
+        updateHighScore();*/
   }
 
-/*  shareButton.click(function() {
-    menuBleep();
+  /*  shareButton.click(function() {
+      menuBleep();
 
-    photos.forEach(function(focusedPhoto) {
-      //scorePhoto(focusedPhoto);
+      photos.forEach(function(focusedPhoto) {
+        //scorePhoto(focusedPhoto);
+      });
     });
-  });
 
-  shareButton.mouseover(function() {
-    shareButton.style({opacity: 1});
-  });
+    shareButton.mouseover(function() {
+      shareButton.style({opacity: 1});
+    });
 
-  shareButton.mouseout(function() {
-    shareButton.style({opacity: 0.50});
-  });*/
+    shareButton.mouseout(function() {
+      shareButton.style({opacity: 0.50});
+    });*/
 
   //Score Algorithme
 
