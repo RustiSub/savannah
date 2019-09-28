@@ -10,6 +10,7 @@ window.addEventListener("load", async function() {
     img.replaceWith(svg);
   }
 
+
   var Vector = wrect.Physics.Vector;
 
   let zoomClamp = 0.45;
@@ -689,7 +690,6 @@ window.addEventListener("load", async function() {
   }
 
   var batteryGroup = SVG.adopt(background.getElementById('batteryGroup'));
-  var batteryGroupEmpty = SVG.adopt(background.getElementById('batteryGroupEmpty'));
   var galleryIconFull = SVG.adopt(background.getElementById('galleryIconFull'));
   var galleryIconPreview = SVG.adopt(background.getElementById('galleryIconPreview'));
 
@@ -702,7 +702,6 @@ window.addEventListener("load", async function() {
     toggleGallery();
   });
 
-  batteryGroupEmpty.style({opacity: 0});
   galleryIconFull.hide();
   galleryIconPreview.hide();
 
@@ -1300,7 +1299,6 @@ window.addEventListener("load", async function() {
       cameraInnerGroup.hide();
     }
   }
-
   galleryIcon.click(function(event) {
     console.log('galleryIcon');
     event.preventDefault();
@@ -1481,21 +1479,7 @@ window.addEventListener("load", async function() {
       return;
     }
 
-    if (!depleteBattery()) {
-      playAudio(guiBleepAudio);
-
-      batteryGroupEmpty
-          .style({opacity: 1})
-          .delay(1000)
-          .style({opacity: 0})
-      ;
-
-      return;
-    }
-
     captureImage();
-
-    //playDoubleBeep();
 
     if (cameraClickAudio.currentTime > 0.5) {
       cameraClickAudio.currentTime = 0;
