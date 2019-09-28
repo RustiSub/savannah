@@ -111,26 +111,6 @@
          stop-opacity="0" />
     </linearGradient>
     <linearGradient
-       id="likeGradient"
-       osb:paint="gradient">
-      <stop
-         id="stop1706"
-         offset="0"
-         stop-color="#ff0404" />
-      <stop
-         id="stop1708"
-         offset="1"
-         stop-color="red"
-         stop-opacity="0" />
-    </linearGradient>
-    <linearGradient
-       id="GUI-1"
-       osb:paint="solid">
-      <stop
-         id="stop22286"
-         offset="0" />
-    </linearGradient>
-    <linearGradient
        id="NightFilter"
        osb:paint="gradient">
       <stop
@@ -693,14 +673,6 @@
        y2="83.9"
        gradientUnits="userSpaceOnUse"
        xlink:href="#Mountain" />
-    <linearGradient
-       id="linearGradient22290"
-       x1="-33"
-       x2="-14.6"
-       y1="113.3"
-       y2="113.3"
-       gradientUnits="userSpaceOnUse"
-       xlink:href="#GUI-1" />
     <linearGradient
        id="linearGradient5688-7"
        x1="1832.4"
