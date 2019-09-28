@@ -1,10 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
      xmlns:xlink="http://www.w3.org/1999/xlink" id="svg8" width="1920" height="1080" viewBox="0 0 1920 1080">
     <defs id="defs2">
-        <linearGradient id="linearGradient1894">
-            <stop id="stop1890" offset="0" stop-color="#ffa000"/>
-            <stop id="stop1892" offset="1" stop-color="#ffa000" stop-opacity="0"/>
-        </linearGradient>
         <linearGradient id="linearGradient5784">
             <stop id="stop5780" offset="0" stop-color="#e4ffcc"/>
             <stop id="stop5782" offset="1" stop-color="#e4ffcc" stop-opacity="0"/>
@@ -12,21 +8,6 @@
         <linearGradient id="linearGradient5711">
             <stop id="stop5707" offset="0" stop-color="#fff"/>
             <stop id="stop5709" offset="1" stop-color="#fff" stop-opacity="0"/>
-        </linearGradient>
-        <linearGradient id="linearGradient3186">
-            <stop id="stop3182" offset="0" stop-color="#015c7e"/>
-            <stop id="stop3184" offset="1" stop-color="#015c7e" stop-opacity="0"/>
-        </linearGradient>
-        <linearGradient id="linearGradient1913">
-            <stop id="stop1909" offset="0" stop-color="#0e2a13"/>
-            <stop id="stop1911" offset="1" stop-color="#79d187" stop-opacity="0"/>
-        </linearGradient>
-        <linearGradient id="likeGradient" osb:paint="gradient">
-            <stop id="stop1706" offset="0" stop-color="#ff0404"/>
-            <stop id="stop1708" offset="1" stop-color="red" stop-opacity="0"/>
-        </linearGradient>
-        <linearGradient id="GUI-1" osb:paint="solid">
-            <stop id="stop22286" offset="0"/>
         </linearGradient>
         <linearGradient id="NightFilter" osb:paint="gradient">
             <stop id="stop3492" offset="0" stop-color="#0e0e41" stop-opacity=".7"/>
@@ -60,10 +41,6 @@
         </linearGradient>
         <linearGradient id="Sun" gradientTransform="translate(-201 217) scale(1.07535)" osb:paint="solid">
             <stop id="stop2080" offset="0" stop-color="#dac102"/>
-        </linearGradient>
-        <linearGradient id="linearGradient3274">
-            <stop id="stop3272" offset="0" stop-color="#fcfaf8" stop-opacity="0"/>
-            <stop id="stop3270" offset="1" stop-color="#fcfaf8"/>
         </linearGradient>
         <linearGradient id="BookCover" gradientTransform="matrix(1.0126 0 0 .28893 -14256.8 3436.7)" osb:paint="solid">
             <stop id="stop1664" offset="0" stop-color="#9a681a"/>
@@ -99,56 +76,17 @@
         <linearGradient id="Road" osb:paint="solid">
             <stop id="stop4683" offset="0" stop-color="#a2a613"/>
         </linearGradient>
-        <linearGradient id="linearGradient4642" x1="-.9" x2="286.1" y1="83.9" y2="83.9" gradientUnits="userSpaceOnUse"
-                        xlink:href="#Mountain"/>
         <linearGradient id="Plant" gradientTransform="matrix(0 0 0 0 631.8 1194.5)" osb:paint="solid">
             <stop id="stop4743" offset="0" stop-color="#488f28"/>
         </linearGradient>
         <linearGradient id="Tree_Branch" gradientTransform="matrix(.00031 0 0 .0009 4114.7 10211)" osb:paint="solid">
             <stop id="stop4841" offset="0" stop-color="#4f3200"/>
         </linearGradient>
-        <linearGradient id="linearGradient4741" x1="311" x2="342.7" y1="239.6" y2="239.6" gradientUnits="userSpaceOnUse"
-                        xlink:href="#Plant_Dirt"/>
-        <linearGradient id="linearGradient4747" x1="302.9" x2="377.6" y1="195.4" y2="195.4"
-                        gradientUnits="userSpaceOnUse" xlink:href="#Plant"/>
-        <linearGradient id="linearGradient17160" x1="-.9" x2="286.1" y1="83.9" y2="83.9" gradientUnits="userSpaceOnUse"
-                        xlink:href="#Mountain"/>
-        <linearGradient id="linearGradient18552" x1="3618.2" x2="3835.1" y1="866.8" y2="866.8"
-                        gradientUnits="userSpaceOnUse" xlink:href="#Rock"/>
-        <linearGradient id="linearGradient18580" x1="3639.4" x2="3856.3" y1="966.4" y2="966.4"
-                        gradientTransform="rotate(-8.2 6634.6 -14336.4) scale(.4241)" gradientUnits="userSpaceOnUse"
-                        xlink:href="#linearGradient18578"/>
-        <linearGradient id="linearGradient18580-0" x1="3639.4" x2="3856.3" y1="966.4" y2="966.4"
-                        gradientTransform="rotate(-8.2 6606.2 -13609.8) scale(.42409)" gradientUnits="userSpaceOnUse"
-                        xlink:href="#linearGradient18578"/>
-        <linearGradient id="linearGradient18580-9" x1="3639.4" x2="3856.3" y1="966.4" y2="966.4"
-                        gradientTransform="rotate(-8.2 6196.8 -14625.7) scale(.42409)" gradientUnits="userSpaceOnUse"
-                        xlink:href="#linearGradient18578"/>
         <linearGradient id="linearGradient20054" x2="508.5" y1="34.6" y2="34.6"
                         gradientTransform="matrix(1 0 0 4.6023 0 -251.4)" gradientUnits="userSpaceOnUse"
                         xlink:href="#Sky"/>
-        <linearGradient id="linearGradient20058" x1="3639.4" x2="3856.3" y1="966.4" y2="966.4"
-                        gradientTransform="rotate(-8.2 1305.3 3029) scale(.11221)" gradientUnits="userSpaceOnUse"
-                        xlink:href="#linearGradient18578"/>
-        <linearGradient id="linearGradient22034" x2="508.5" y1="34.6" y2="34.6"
-                        gradientTransform="matrix(3.77953 0 0 20.23945 1919.1 -921.8)" gradientUnits="userSpaceOnUse"
-                        xlink:href="#Sky"/>
-        <radialGradient id="radialGradient3276" cx="1067.7" cy="-44.3" r="575.6" fx="1067.7" fy="-44.3"
-                        gradientTransform="matrix(0 1.07778 -1.53234 0 892.1 -610.8)" gradientUnits="userSpaceOnUse"
-                        xlink:href="#linearGradient3274"/>
-        <linearGradient id="linearGradient5688" x1="1832.4" x2="2007.6" y1="1518.9" y2="1518.9"
-                        gradientTransform="rotate(15 -1466.4 4755.4) scale(.5)" gradientUnits="userSpaceOnUse"
-                        xlink:href="#linearGradient2112"/>
-        <linearGradient id="linearGradient1872" x1="1832.4" x2="2007.6" y1="1518.9" y2="1518.9"
-                        gradientTransform="rotate(15 -1466.4 4755.4) scale(.5)" gradientUnits="userSpaceOnUse"
-                        xlink:href="#linearGradient2112"/>
         <linearGradient id="linearGradient2350" x1="1920" x2="1920" y1="-152.1" y2="542.9"
                         gradientUnits="userSpaceOnUse" xlink:href="#linearGradient2414"/>
-        <linearGradient id="linearGradient2350-3" x1="1920" x2="1920" y1="-152.1" y2="542.9"
-                        gradientTransform="translate(1920)" gradientUnits="userSpaceOnUse"
-                        xlink:href="#linearGradient2414"/>
-        <linearGradient id="linearGradient2947" x1="1912" x2="1912" y1="-1522.2" y2="284.2"
-                        gradientUnits="userSpaceOnUse" xlink:href="#linearGradient2981"/>
         <linearGradient id="linearGradient3480" x1="1912" x2="1912" y1="-1522.2" y2="284.2"
                         gradientUnits="userSpaceOnUse" xlink:href="#linearGradient2981"/>
         <linearGradient id="linearGradient3500" x1="508.5" x2="508.5" y1="97.9" y2="-258.3"
@@ -159,109 +97,22 @@
         <linearGradient id="linearGradient2254-93" x1="336" x2="960" y1="-915.1" y2="-915.1"
                         gradientTransform="translate(-16.2 30.6) scale(.44308)" gradientUnits="userSpaceOnUse"
                         xlink:href="#Cloud"/>
-        <linearGradient id="linearGradient2254-93-7" x1="336" x2="960" y1="-915.1" y2="-915.1"
-                        gradientTransform="matrix(-.2789 0 0 .2789 1612.9 315)" gradientUnits="userSpaceOnUse"
-                        xlink:href="#Cloud"/>
-        <linearGradient id="linearGradient2254-93-7-5" x1="336" x2="960" y1="-915.1" y2="-915.1"
-                        gradientTransform="translate(1200.7 -470.2) scale(.17595)" gradientUnits="userSpaceOnUse"
-                        xlink:href="#Cloud"/>
-        <linearGradient id="linearGradient2254-93-75" x1="336" x2="960" y1="-915.1" y2="-915.1"
-                        gradientTransform="matrix(-.72276 0 0 .72276 1715 -501.4)" gradientUnits="userSpaceOnUse"
-                        xlink:href="#Cloud"/>
-        <linearGradient id="linearGradient2254-93-7-1" x1="336" x2="960" y1="-915.1" y2="-915.1"
-                        gradientTransform="translate(2468.5 384.2) scale(.2789)" gradientUnits="userSpaceOnUse"
-                        xlink:href="#Cloud"/>
-        <linearGradient id="linearGradient2254-93-7-1-1" x1="336" x2="960" y1="-915.1" y2="-915.1"
-                        gradientTransform="matrix(-.2789 0 0 .2789 3343.9 381.3)" gradientUnits="userSpaceOnUse"
-                        xlink:href="#Cloud"/>
-        <linearGradient id="linearGradient2254-93-7-1-8" x1="336" x2="960" y1="-915.1" y2="-915.1"
-                        gradientTransform="translate(2469.2 438.2) scale(.42017)" gradientUnits="userSpaceOnUse"
-                        xlink:href="#Cloud"/>
-        <linearGradient id="linearGradient2254-93-7-1-9" x1="336" x2="960" y1="-915.1" y2="-915.1"
-                        gradientTransform="matrix(.52309 0 0 .2789 1945.3 -931)" gradientUnits="userSpaceOnUse"
-                        xlink:href="#Cloud"/>
-        <linearGradient id="linearGradient2254-93-7-1-9-7" x1="336" x2="960" y1="-915.1" y2="-915.1"
-                        gradientTransform="matrix(-.52309 0 0 .2789 3396.2 -840.5)" gradientUnits="userSpaceOnUse"
-                        xlink:href="#Cloud"/>
-        <linearGradient id="linearGradient2254-93-7-1-9-4" x1="336" x2="960" y1="-915.1" y2="-915.1"
-                        gradientTransform="matrix(.52309 0 0 .2789 2662.6 -868.8)" gradientUnits="userSpaceOnUse"
-                        xlink:href="#Cloud"/>
-        <linearGradient id="linearGradient1742" gradientTransform="translate(-.4 1.2) scale(.0049)"
-                        gradientUnits="userSpaceOnUse" xlink:href="#Plant_Dirt"/>
-        <linearGradient id="linearGradient1742-2" gradientTransform="translate(-138.4 -164.5) scale(.00935)"
-                        gradientUnits="userSpaceOnUse" xlink:href="#Plant_Dirt"/>
-        <linearGradient id="linearGradient2191" gradientTransform="translate(-138.4 -164.5) scale(.00935)"
-                        gradientUnits="userSpaceOnUse" xlink:href="#Plant_Dirt"/>
-        <linearGradient id="linearGradient2254" gradientTransform="translate(-.4 1.2) scale(.0049)"
-                        gradientUnits="userSpaceOnUse" xlink:href="#Plant_Dirt"/>
-        <linearGradient id="linearGradient2256" gradientTransform="translate(-138.4 -164.5) scale(.00935)"
-                        gradientUnits="userSpaceOnUse" xlink:href="#Plant_Dirt"/>
-        <linearGradient id="linearGradient2258" gradientTransform="translate(-138.4 -164.5) scale(.00935)"
-                        gradientUnits="userSpaceOnUse" xlink:href="#Plant_Dirt"/>
-        <linearGradient id="linearGradient2318" gradientTransform="translate(-.4 1.2) scale(.0049)"
-                        gradientUnits="userSpaceOnUse" xlink:href="#Plant_Dirt"/>
-        <linearGradient id="linearGradient2320" gradientTransform="translate(-138.4 -164.5) scale(.00935)"
-                        gradientUnits="userSpaceOnUse" xlink:href="#Plant_Dirt"/>
-        <linearGradient id="linearGradient2322" gradientTransform="translate(-138.4 -164.5) scale(.00935)"
-                        gradientUnits="userSpaceOnUse" xlink:href="#Plant_Dirt"/>
-        <linearGradient id="linearGradient2623" gradientTransform="translate(-138.4 -164.5) scale(.00935)"
-                        gradientUnits="userSpaceOnUse" xlink:href="#Plant_Dirt"/>
-        <linearGradient id="linearGradient2883" gradientTransform="translate(-.4 1.2) scale(.0049)"
-                        gradientUnits="userSpaceOnUse" xlink:href="#Plant_Dirt"/>
-        <linearGradient id="linearGradient2885" gradientTransform="translate(-138.4 -164.5) scale(.00935)"
-                        gradientUnits="userSpaceOnUse" xlink:href="#Plant_Dirt"/>
-        <linearGradient id="linearGradient2885-9" gradientTransform="translate(-138.4 -164.5) scale(.00935)"
-                        gradientUnits="userSpaceOnUse" xlink:href="#Plant_Dirt"/>
-        <linearGradient id="linearGradient3143" gradientTransform="translate(-.4 1.2) scale(.0049)"
-                        gradientUnits="userSpaceOnUse" xlink:href="#Plant_Dirt"/>
-        <linearGradient id="linearGradient3145" gradientTransform="translate(-138.4 -164.5) scale(.00935)"
-                        gradientUnits="userSpaceOnUse" xlink:href="#Plant_Dirt"/>
-        <linearGradient id="linearGradient3533" x1="-.9" x2="286.1" y1="83.9" y2="83.9" gradientUnits="userSpaceOnUse"
-                        xlink:href="#Mountain"/>
-        <linearGradient id="linearGradient22290" x1="-33" x2="-14.6" y1="113.3" y2="113.3"
-                        gradientUnits="userSpaceOnUse" xlink:href="#GUI-1"/>
-        <linearGradient id="linearGradient5688-7" x1="1832.4" x2="2007.6" y1="1518.9" y2="1518.9"
-                        gradientTransform="rotate(15 -99.2 -1150.4) scale(.03314)" gradientUnits="userSpaceOnUse"
-                        xlink:href="#GUI"/>
-        <linearGradient id="linearGradient6632" gradientTransform="translate(-201 217) scale(1.07535)"
-                        gradientUnits="userSpaceOnUse" xlink:href="#GUI"/>
-        <linearGradient id="linearGradient6756" gradientTransform="translate(-201 217) scale(1.07535)"
-                        gradientUnits="userSpaceOnUse" xlink:href="#GUI"/>
-        <linearGradient id="linearGradient1850" x1="-.9" x2="286.1" y1="83.9" y2="83.9"
-                        gradientTransform="translate(0 -2.9) scale(3.77953)" gradientUnits="userSpaceOnUse"
-                        xlink:href="#Mountain"/>
-        <linearGradient id="linearGradient1915" x1="194.8" x2="194.8" y1="76.4" y2="17.6"
-                        gradientTransform="translate(0 11.1)" gradientUnits="userSpaceOnUse"
-                        xlink:href="#linearGradient1913"/>
-        <linearGradient id="linearGradient19719-0" x1="2036.1" x2="3957.9" y1="329.2" y2="329.2"
-                        gradientTransform="matrix(1 0 0 .24152 -123.4 367.9)" gradientUnits="userSpaceOnUse"
-                        xlink:href="#Sea"/>
-        <linearGradient id="linearGradient3188" x1="2206.8" x2="2206.8" y1="436" y2="264.7"
-                        gradientUnits="userSpaceOnUse" xlink:href="#linearGradient3186"/>
         <radialGradient id="radialGradient5713" cx="3643.8" cy="389.8" r="6" fx="3643.8" fy="389.8"
                         gradientTransform="translate(-2329.6 -249.2) scale(1.63934)" gradientUnits="userSpaceOnUse"
                         xlink:href="#linearGradient5711"/>
         <radialGradient id="radialGradient5786" cx="396.9" cy="1005.1" r="5.5" fx="396.9" fy="1005.1"
                         gradientTransform="matrix(14.24878 3.7276 -5.17215 19.7706 -331.1 -20277)"
                         gradientUnits="userSpaceOnUse" xlink:href="#linearGradient5784"/>
-        <radialGradient id="radialGradient1896" cx="424.3" cy="67.1" r=".8" fx="424.3" fy="67.1"
-                        gradientTransform="matrix(.64151 0 0 .54265 221.5 14.5)" gradientUnits="userSpaceOnUse"
-                        xlink:href="#linearGradient1894"/>
-        <linearGradient id="linearGradient2110" x1="2036.1" x2="3957.9" y1="329.2" y2="329.2"
-                        gradientTransform="matrix(1 0 0 .24152 -123.4 367.9)" gradientUnits="userSpaceOnUse"
-                        xlink:href="#Sea"/>
     </defs>
     <circle id="cameraReticle" cx="960" cy="540" r="447.1" fill="#0ff" stroke-dasharray="" stroke-width="4.1"
             opacity=".4"/>
-    <path id="focusEffect" fill="url(#radialGradient3276)" stroke-dasharray="" stroke-width="4.3"
-          d="M64.8 60.6h1790.4v958.8H64.8z"/>
     <g id="sunGroup1">
         <g id="sky1Day">
             <path id="sky1-4" fill="url(#linearGradient2350)" stroke-dasharray="" stroke-width="10.7"
                   d="M0-1777.2h1920V421H0z"/>
         </g>
         <g id="sky1Night">
-            <path id="sky1-4-31" fill="url(#linearGradient2947)" stroke-dasharray="" stroke-width="10.7"
+            <path id="sky1-4-31" fill="url(#linearGradient3480)" stroke-dasharray="" stroke-width="10.7"
                   d="M0-1777.2h1920V421H0z"/>
             <path id="path3040-89-7" fill="#9ccfff" stroke-dasharray="" stroke-width="2.3"
                   d="M742.7-1243.7l-27.8 81.9 51.7 69.3-86.5-1-50 70.5-25.6-82.6-82.6-25.7 70.6-49.9-1.1-86.5 69.3 51.7z"
@@ -301,7 +152,7 @@
                   d="M1920-782.8A1156.8 1156.8 0 0 1 3076.8 374.1 1156.8 1156.8 0 0 1 1920 1530.9 1156.8 1156.8 0 0 1 763.2 374 1156.8 1156.8 0 0 1 1920-782.8z"/>
         </g>
         <g id="moon1">
-            <path id="moon1Shape" fill="url(#linearGradient5688)" stroke-dasharray="" stroke-width="26.7"
+            <path id="moon1Shape" fill="#acbbdb" stroke-dasharray="" stroke-width="26.7"
                   d="M1930 1465.5a62.8 62.8 0 0 0-62.8 62.8 62.8 62.8 0 0 0 62.8 62.8 62.8 62.8 0 0 0 9-.7 75 75 0 0 1-33-62.1 75 75 0 0 1 33-62 62.8 62.8 0 0 0-9-.8z"
                   class="photo-subject tag-celestial tag-moon"/>
             <g id="g1865" stroke-dasharray="">
@@ -345,7 +196,7 @@
     </g>
     <g id="sunGroup2">
         <g id="sky2Day">
-            <path id="sky1-4-3" fill="url(#linearGradient2350-3)" stroke-dasharray="" stroke-width="10.7"
+            <path id="sky1-4-3" fill="url(#linearGradient2350)" stroke-dasharray="" stroke-width="10.7"
                   d="M1920-1777.2h1920V421H1920z"/>
         </g>
         <g id="sky2Night" transform="translate(1920)">
@@ -409,7 +260,7 @@
             <circle id="sunOrb1-8" cx="132.3" cy="15.6" r="1" stroke-width=".2"/>
         </g>
         <g id="moon2" stroke-dasharray="">
-            <path id="moon2Shape" fill="url(#linearGradient1872)" stroke-width="26.7"
+            <path id="moon2Shape" fill="#acbbdb" stroke-width="26.7"
                   d="M1930 1465.5a62.8 62.8 0 0 0-62.8 62.8 62.8 62.8 0 0 0 62.8 62.8 62.8 62.8 0 0 0 9-.7 75 75 0 0 1-33-62.1 75 75 0 0 1 33-62 62.8 62.8 0 0 0-9-.8z"/>
             <g id="g1865-6">
                 <ellipse id="path1006-0" cx="2313.4" cy="957.8" stroke-width="2.9" rx=".9" ry="1.4"
@@ -477,29 +328,29 @@
         </g>
         <path id="scene2" fill="#3c5bdc" stroke-dasharray="" stroke-width="2.2" d="M1920 0h1920v1080H1920z"
               opacity="0"/>
-        <path id="rect4648-5" fill="url(#linearGradient22034)" stroke-dasharray="" stroke-width="11.6"
-              d="M1920-1776.8h1920V491H1920z" opacity="0"/>
+        <path id="rect4648-5" fill="#028ec3" stroke-dasharray="" stroke-width="11.6" d="M1920-1776.8h1920V491H1920z"
+              opacity="0"/>
         <path id="rect17184-1" fill="#f0f38e" stroke-dasharray="" stroke-width="5" d="M1920 531.7h1920v484.1H1920z"/>
         <use id="use13318-71" width="100%" height="100%" transform="translate(1169.2 -1560.6) scale(11.95609)"
              xlink:href="#tree1"/>
         <path id="rect18440" fill="url(#Mountain)" stroke-dasharray="" stroke-width=".5"
               d="M1920 873.9c263.2 52.3 431 66.8 820 27.7 230.7-19.4 447.7 157.8 809 43.5 83-26.2-28.6-84.5 291-97v840.4l-1920-.4z"/>
-        <path id="path17420-5" fill="url(#linearGradient18552)" stroke-width=".6"
+        <path id="path17420-5" fill="#616161" stroke-width=".6"
               d="M3618.2 896c29.8-39 64-74.3 79.3-90.8 27.6-6 40-12 80.7-6.8 20.5 9.3 39.5 40.5 56.9 92.2a578.5 578.5 0 0 1-141.5 46.6c-62-9.9-64.2-24.4-75.4-41.3z"
               class="photo-subject tag-rock"/>
-        <path id="path17420-5-0-5" fill="url(#linearGradient18580-9)" stroke-width=".3"
+        <path id="path17420-5-0-5" fill="#505050" stroke-width=".3"
               d="M3743.7 933c10.1-18.1 22.4-35 27.7-42.8 11.3-4.2 16.1-7.5 33.5-7.8 9.2 2.7 19 14.6 29.5 35.3-13.6 9-29.6 18.5-56.5 28-26.7-.3-28.5-6.3-34.2-12.7z"
               class="photo-subject tag-rock"/>
         <g id="g18653-0" stroke-width=".3" transform="translate(2383.9 79) scale(3.77953)">
-            <path id="path17426-9" fill="url(#Plant_Dirt)" stroke-dasharray=""
+            <path id="path17426-9" fill="#8d8628" stroke-dasharray=""
                   d="M375.1 231a7.3 2.2 0 0 1-7.3 2.3 7.3 2.2 0 0 1-7.3-2.2 7.3 2.2 0 0 1 7.3-2.3 7.3 2.2 0 0 1 7.3 2.3z"/>
             <path id="path17432-0" fill="url(#Plant)"
                   d="M366.7 230.1c-.5-7.5-1.6-15 .5-22.2-.2 4.3 1.4 7.7 3.2 11.2 4.5-10.4 6.5-15 10.4-15.3-4.7 5-3.2 10.3-6.3 15.3 2.2-.8 5.9-7.1 11-12-6 13.3-9.1 16.7-14 22.8-2.7 2.1-3.6 1-4.8.2z"/>
         </g>
-        <path id="path17420-5-0" fill="url(#linearGradient18580)" stroke-width=".3"
+        <path id="path17420-5-0" fill="#505050" stroke-width=".3"
               d="M3706.6 998.6c10.1-18.2 22.4-35 27.8-42.9 11.2-4.2 16-7.4 33.5-7.7 9.1 2.6 19 14.6 29.4 35.2a246 246 0 0 1-56.5 28.2c-26.6-.4-28.5-6.4-34.2-12.8z"
               class="photo-subject tag-rock"/>
-        <path id="path17420-5-0-8" fill="url(#linearGradient18580-0)" stroke-width=".3"
+        <path id="path17420-5-0-8" fill="#505050" stroke-width=".3"
               d="M3602.5 1002.1c10.2-18.2 22.4-35 27.8-42.9 11.3-4.2 16.1-7.4 33.5-7.7 9.1 2.6 19 14.6 29.5 35.2-13.7 9-29.7 18.5-56.6 28.2-26.6-.4-28.4-6.4-34.2-12.8z"
               class="photo-subject tag-rock"/>
         <path id="path17190-5" fill="#6cba78" stroke-dasharray="" stroke-width="5"
@@ -512,10 +363,10 @@
                 <path id="seaUpper.waves.2" fill="#037e01" stroke-dasharray="" stroke-width="3.3"
                       d="M2191.3 388c96 18.2 320.3 20.7 438-2.8 73.7 20.5 162.8 40.1 264.1-.7 62 18.1 127.5 32.3 220.3 15.6 81.4 16.6 163 6.3 248.5-12.5 38.9 22.7 126.7 10.6 194.5 2.3 92.9 7.7 15.3 25.6 180.3-1.8l-81.7 118.6-411.1 14.8c-247.2 2.5-470.7 3.6-659.6-6.8-161-2.4-233.2-8.1-351.3-8z"
                       display="none" opacity=".7"/>
-                <path id="seaUpper.waves.3" fill="url(#linearGradient2110)" stroke-dasharray="" stroke-width="3.3"
+                <path id="seaUpper.waves.3" fill="#015c7e" stroke-dasharray="" stroke-width="3.3"
                       d="M2191.3 388H3737l-81.7 118.7-411.1 14.8c-247.2 2.5-470.7 3.6-659.6-6.8-161-2.4-233.2-8.1-351.3-8z"
                       display="none"/>
-                <path id="seaUpper" fill="url(#linearGradient19719-0)" stroke-dasharray="" stroke-width="3.3"
+                <path id="seaUpper" fill="#015c7e" stroke-dasharray="" stroke-width="3.3"
                       d="M2191.3 388H3737l-81.7 118.7-411.1 35.1c-247.2 2.5-531.6 13-720.5 2.6-161-2.5-172.3-37.8-290.4-37.7z"/>
                 <g id="g9790" transform="translate(2085.7 359) scale(.3665)">
                     <ellipse id="path9851" cx="2922.3" cy="556.4" fill="#9d8354" stroke-dasharray=""
@@ -576,8 +427,8 @@
             <g id="g5515" stroke-dasharray="">
                 <path id="seaShoreWaves" fill="#015c7e" stroke="#e3f7ff" stroke-opacity=".5" stroke-width="20"
                       d="M2206.8 453.5h1512.5l-64 92-736.1 15c-345.6 11.3-378.2-14.6-686-15z"/>
-                <path id="path5544" fill="url(#linearGradient3188)" stroke="#e1f7ff" stroke-opacity="0"
-                      stroke-width="3.3" d="M2206.8 411.5h1512.5l-64 54.8-736.1 15c-345.6 11.3-378.2-14.7-686-15z"/>
+                <path id="path5544" fill="#015c7e" stroke="#e1f7ff" stroke-opacity="0" stroke-width="3.3"
+                      d="M2206.8 411.5h1512.5l-64 54.8-736.1 15c-345.6 11.3-378.2-14.7-686-15z"/>
                 <path id="seaShore.waves.1" fill="#037e01" stroke-width="3.3"
                       d="M2206.8 449.2h1512.5l-64 80.9c-226 24-378 64.6-678.3 72.1-551.1-6-447.1-67-743.7-72.1z"
                       display="none" opacity=".5"/>
@@ -657,8 +508,8 @@
                 <use id="use14706-5-9" width="100%" height="100%"
                      transform="scale(-.66588 .66588) rotate(15 -639.5 -2682)" xlink:href="#g2334"/>
             </g>
-            <g id="g4629-7" fill="url(#linearGradient17160)" opacity=".3" transform="translate(2.6 4.8)">
-                <path id="path3798-8" fill="url(#linearGradient3533)" stroke-dasharray="" stroke-width="1.3"
+            <g id="g4629-7" fill="#5e3d21" opacity=".3" transform="translate(2.6 4.8)">
+                <path id="path3798-8" stroke-dasharray="" stroke-width="1.3"
                       d="M.5 47.4c28-23.7 29.7-40.3 95.6-1.3 13 7.7 26.2 9.8 37.6 3 19-11.3 31-8.6 42-8.4 34.3.5 61 51.4 109 89.7-6.5 2.2-35.6 4.7-63.2 3.2-31.8-1.7-63.1-8-79.7-15.2-31-13.2-52 26.5-74.5 21.5-40-8.7-65.5 4.4-66.8 5z"/>
             </g>
             <path id="path4675" fill="url(#linearGradient4687)" stroke-width=".3"
@@ -684,8 +535,8 @@
                       stroke-linejoin="round" stroke-width=".3"
                       d="M156.6 185c0 1.4-11.6 3.8-23.5 3.8-11.8 0-19.5-2.4-19.5-3.7 0-1.3 10-3.3 22-3.3 11.8 0 21 2 21 3.3z"
                       opacity=".3"/>
-                <path id="path1740" fill="url(#linearGradient1742)" stroke-dasharray="" stroke-linecap="round"
-                      stroke-linejoin="round" stroke-width=".5"
+                <path id="path1740" fill="#8d8628" stroke-dasharray="" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width=".5"
                       d="M138.6 185.4c0 .4-1 .7-2.4.7-1.3 0-2.3-.3-2.3-.7 0-.3.9-.5 2.3-.6 2.5-.2 3 0 2.4.6z"
                       opacity=".9"/>
                 <path id="path1703" fill="none" stroke="url(#Tree_Branch)" stroke-dasharray="" stroke-linecap="round"
@@ -727,34 +578,29 @@
                          xlink:href="#g2140-5"/>
                 </g>
                 <g id="g2140-5" transform="translate(64.5 52.6) scale(.71012)">
-                    <path id="path1740-3-8" fill="url(#linearGradient2191)" stroke-dasharray="" stroke-linecap="round"
+                    <path id="path1740-3-8" fill="#8d8628" stroke-dasharray="" stroke-linecap="round"
                           stroke-linejoin="round" stroke-width=".9"
                           d="M126.8 187.1c0 .7-2 1.3-4.5 1.3s-4.5-.6-4.5-1.3c0-.7 1.7-1 4.5-1.3 4.6-.4 5.5 0 4.5 1.3z"
                           opacity=".9"/>
-                    <path id="path4732-8-3-3" fill="url(#Plant)" stroke-width=".1"
+                    <path id="path4732-8-3-3" fill="#488f28" stroke-width=".1"
                           d="M123.7 186.6c-.1-2.1-.3-4.3.1-6.3 0 1.2.3 2.1.7 3.2.9-3 1.3-4.3 2.1-4.4-1 1.4-.6 3-1.3 4.4.5-.3 1.2-2 2.3-3.5-1.2 3.8-1.9 4.8-3 6.6-.5.6-.7.2-.9 0z"/>
-                    <path id="path4732-8-1-3-8" fill="url(#Plant)" stroke-width=".1"
+                    <path id="path4732-8-1-3-8" fill="#488f28" stroke-width=".1"
                           d="M121.6 186.6c0-2.2.3-4.4-.1-6.4 0 1.2-.3 2.2-.7 3.2-1-3-1.3-4.3-2.2-4.4 1 1.4.7 3 1.4 4.4-.5-.2-1.3-2-2.3-3.4 1.2 3.8 1.9 4.7 2.9 6.5.5.6.7.3 1 0z"/>
-                    <path id="path4732-8-6-8-0" fill="url(#Plant)" stroke-width=".1"
+                    <path id="path4732-8-6-8-0" fill="#488f28" stroke-width=".1"
                           d="M122 187.9c-.5-2-1.2-4-1.2-6.2.2 1.2.8 2 1.3 2.8.3-3.2.4-4.6 1.2-5-.6 1.7 0 3-.4 4.7.4-.4.8-2.5 1.5-4.2-.4 4.1-.8 5.3-1.4 7.4-.4.8-.7.6-1 .5z"/>
                 </g>
             </g>
-            <g id="g4629" fill="url(#linearGradient4642)" stroke-dasharray="" stroke-width="5">
+            <g id="g18123" stroke-dasharray="" stroke-width="1.3">
                 <path id="path1892" fill="#86572f"
-                      d="M212.1 96c-47-4-68.5-12.8-124.3 6.3-15 9.8-29.5 22.8-45.8 38 39.8 10.1 81.4 17.2 118.4 10.8 44-6.2 84.8-13.7 121.2-24.9A563 563 0 0 0 212.2 96z"
-                      transform="translate(0 .8) scale(.26458)"/>
-                <path id="path1861" fill="url(#linearGradient1850)"
-                      d="M820.3 236.6C699 249.2 578.2 227 463.9 197c-20.2 2.7-41.2 0-62.4-7.5C223.5 162.6 59.2 313.8 4.6 174c-1 .8-3.6 2.3-4.6 3.1v367.6c5-2.4 103.5-51.9 254.2-18.8 85.1 18.7 184.4-116.9 301.1-67 117.3 50.3 467.6 49 520.8 31.2C970.7 406 892.6 306 820.3 236.6z"
-                      transform="translate(0 .8) scale(.26458)"/>
+                      d="M56.1 26.2c-12.4-1-18.1-3.4-32.9 1.7-4 2.6-7.8 6-12 10a77.6 77.6 0 0 0 31.2 2.9C54.1 39 65 37.2 74.5 34.2c-6-3-12-5.8-18.4-8z"/>
+                <path id="path1861" fill="#5e3d21"
+                      d="M217 63.4c-32 3.3-64-2.5-94.3-10.5-5.3.7-10.9 0-16.5-2-47-7-90.5 33-105-4-.2.1-1 .5-1.2.8v97.2c1.3-.6 27.4-13.7 67.3-5 22.5 5 48.7-30.9 79.6-17.7 31 13.3 123.7 13 137.8 8.3-27.9-22.3-48.5-48.7-67.7-67.1z"/>
                 <path id="path1856" fill="#6e4827"
-                      d="M614.6 149.4c-29.9.6-64.6 6.6-109.4 33.3-13.2 7.9-27 12.4-41.3 14.3 111.6 35.7 247.6 55.5 356.4 39.6-67.4-62.2-126.5-88.7-205.7-87.2z"
-                      transform="translate(0 .8) scale(.26458)"/>
+                      d="M162.6 40.3c-7.9.2-17 1.8-29 8.8-3.4 2.1-7 3.3-10.9 3.8 29.6 9.5 65.5 14.7 94.3 10.5-17.8-16.5-33.4-23.5-54.4-23z"/>
                 <path id="path1853" fill="#6e4827"
-                      d="M281.7 126.2c-81.4 11-160.7 34.8-239.7 14-11.3 10.5-23.5 21.9-37.4 33.8 27.8 130.4 286.3 43.9 396.9 15.5-42.1-16.7-81.6-43.6-119.8-63.2z"
-                      transform="translate(0 .8) scale(.26458)"/>
+                      d="M74.5 34.2C53 37 32 43.4 11.1 37.9c-3 2.8-6.2 5.8-9.9 9 7.4 34.4 75.8 11.5 105 4-11.1-4.4-21.6-11.5-31.7-16.7z"/>
                 <path id="path3798" fill="#fdfaf8"
-                      d="M87.8 102.2c23.2-6.8 42.5-9 60.4-3.6 10.5 3.2 17-2.5 29-3.9 9.5-1 24.1 2.6 34.9 1.3-47.3-15-82.9-20.4-124.3 6.2z"
-                      transform="translate(0 .8) scale(.26458)"/>
+                      d="M23.2 27.8a27.6 27.6 0 0 1 16-1c2.8 1 4.5-.6 7.7-1 2.5-.2 6.4.7 9.2.4-12.5-4-22-5.4-32.9 1.6z"/>
             </g>
             <g id="g4636" fill="url(#Mountain)" stroke-dasharray="" stroke-width="5" transform="translate(-.5)">
                 <path id="path1887" fill="#6e4827"
@@ -778,16 +624,16 @@
             <path id="path4691" fill="#686868" stroke-width=".3"
                   d="M4 246.7c13.2-17.3 28.5-33 35.2-40.3 12.3-2.6 17.8-5.3 35.9-3 9 4.1 17.5 18 25.2 41A257 257 0 0 1 37.5 265C10 260.7 9 254.2 4 246.7z"
                   class="photo-subject photo-subjectId-rock tag-rock"/>
-            <path id="path4734" fill="url(#Plant_Dirt)" stroke-dasharray="" stroke-width=".3"
+            <path id="path4734" fill="#8d8628" stroke-dasharray="" stroke-width=".3"
                   d="M375.1 231a7.3 2.2 0 0 1-7.3 2.3 7.3 2.2 0 0 1-7.3-2.2 7.3 2.2 0 0 1 7.3-2.3 7.3 2.2 0 0 1 7.3 2.3z"/>
-            <path id="path4709" fill="url(#linearGradient4741)" stroke-dasharray="" stroke-width=".3"
+            <path id="path4709" fill="#8d8628" stroke-dasharray="" stroke-width=".3"
                   d="M342.6 238.5c-.5 3-6.4 6.8-14.5 6.9-8 0-16.4-3.8-17-7 0-3.5 6.7-4 15.4-4.5 11-.6 17 .8 16.1 4.6z"/>
-            <path id="path4707" fill="url(#linearGradient4747)" stroke-width=".3"
+            <path id="path4707" fill="#488f28" stroke-width=".3"
                   d="M322.7 237.6c-4.5-17-.7-31.3-2.7-37.2a220.2 220.2 0 0 0-17.1-38.7c11.8.2 24.5 8.4 28 38.8-.3-16 3-30-4.6-49 12.3 3.5 19.2 21.1 15.2 39.9 8.3-13.9 21-25.1 36.1-18.4-16 7-30.8 25.5-42.6 47.4 4-1.7 13-9.9 11.7-5-6 7.6-13 14.1-14.4 21.9-3.4 2-6.7 3.3-9.6.3z"
                   class="photo-subject photo-subjectId-plant"/>
-            <path id="path4732" fill="url(#Plant)" stroke-width=".3"
+            <path id="path4732" fill="#488f28" stroke-width=".3"
                   d="M366.7 230.1c-.5-7.5-1.6-15 .5-22.2-.2 4.3 1.4 7.7 3.2 11.2 4.5-10.4 6.5-15 10.4-15.3-4.7 5-3.2 10.3-6.3 15.3 2.2-.8 5.9-7.1 11-12-6 13.3-9.1 16.7-14 22.8-2.7 2.1-3.6 1-4.8.2z"/>
-            <path id="path17420-5-0-1" fill="url(#linearGradient20058)" stroke-width=".1"
+            <path id="path17420-5-0-1" fill="#505050" stroke-width=".1"
                   d="M.5 270c2.7-4.8 5.8-9.2 7.2-11.3 3-1.1 4.3-2 8.9-2 2.4.6 5 3.8 7.8 9.3a65 65 0 0 1-15 7.4c-7 0-7.4-1.7-9-3.4z"
                   class="photo-subject tag-rock"/>
             <use id="use14706-66" width="100%" height="100%" stroke-width=".3"
@@ -912,7 +758,7 @@
                       stroke-width=".3"
                       d="M194.4 180.7c-38-12.9-34.3 27.7 36.1 1.5 35.2-13 21.3 15.5 41.9 10.4 31.6-24.2-25.1.2-56.6 2-21.6 1.1-12-10.7-21.4-14z"/>
             </g>
-            <ellipse id="path1888" cx="493.7" cy="50.9" fill="url(#radialGradient1896)" stroke-dasharray=""
+            <ellipse id="path1888" cx="493.7" cy="51" fill="#ffa000" fill-opacity=".5" stroke-dasharray=""
                      stroke-linecap="round" stroke-width="0" rx=".5" ry=".4"/>
         </g>
     </g>
@@ -1066,7 +912,7 @@
         </g>
     </g>
     <g id="cameraGroup" class="camera-group" opacity=".8" transform="translate(384 143) scale(6.76005)">
-        <g id="galleryBackground">
+        <g id="galleryBackground" display="none">
             <rect id="galleryBackgroundImage" width="284" height="159.8" x="-56.8" y="-21.1" fill="#7c7c7c"
                   stroke-dasharray="" stroke-linecap="round" stroke-width="1.2" rx="1.6"/>
         </g>
@@ -1098,8 +944,8 @@
         </g>
         <g id="batteryGroup" stroke-dasharray="" stroke-width=".6" transform="translate(-160 -3.8) scale(.77295)">
             <path id="rect1070" fill="none" stroke="url(#GUI)" d="M170.2 7.3h13.1v6.2h-13.1z"/>
-            <path id="rect1072" fill="url(#GUI)" d="M183.6 8.2h2v4.3h-2z"/>
-            <g id="g1511" fill="url(#GUI)" transform="translate(.2)">
+            <path id="rect1072" fill="#090909" d="M183.6 8.2h2v4.3h-2z"/>
+            <g id="g1511" fill="#090909" transform="translate(.2)">
                 <path id="batteryPowerBar.2" d="M173.4 8.3h1.4v4.3h-1.4z"/>
                 <path id="batteryPowerBar.3" d="M175.8 8.3h1.4v4.3h-1.4z"/>
                 <path id="batteryPowerBar.4" d="M178.2 8.3h1.4v4.3h-1.4z"/>
@@ -1193,13 +1039,13 @@
                 <g id="g25204-0" transform="translate(22.9 29.3) scale(.74114)">
                     <path id="path25147-1" fill="none" stroke="#000" stroke-linecap="round" stroke-width="1.5"
                           d="M80 113.2l7-4"/>
-                    <circle id="path25145-1-4" cx="87" cy="109.2" r="1.7" fill="url(#GUI)" stroke="url(#GUI)"
+                    <circle id="path25145-1-4" cx="87" cy="109.2" r="1.7" fill="#090909" stroke="url(#GUI)"
                             stroke-width=".3"/>
                     <path id="path25147-2-0" fill="none" stroke="#000" stroke-linecap="round" stroke-width="1.5"
                           d="M80 113.2l7 4"/>
-                    <circle id="path25145-12" cx="80" cy="113.2" r="1.7" fill="url(#GUI)" stroke="url(#GUI)"
+                    <circle id="path25145-12" cx="80" cy="113.2" r="1.7" fill="#090909" stroke="url(#GUI)"
                             stroke-width=".3"/>
-                    <circle id="path25145-9-1" cx="87" cy="117.3" r="1.7" fill="url(#GUI)" stroke="url(#GUI)"
+                    <circle id="path25145-9-1" cx="87" cy="117.3" r="1.7" fill="#090909" stroke="url(#GUI)"
                             stroke-width=".3"/>
                 </g>
                 <circle id="path25234-2" cx="85.2" cy="113.2" r="8" fill-opacity="0" stroke="#000"
@@ -1256,7 +1102,7 @@
                                   rx="1.8"/>
                         </g>
                         <g id="g917">
-                            <path id="tag-rhino" fill="url(#GUI)" stroke-dasharray="" stroke-width="0"
+                            <path id="tag-rhino" fill="#090909" stroke-dasharray="" stroke-width="0"
                                   d="M-289 50.6c.3-1 1.7-2.1 2.9-1.7 1.3.5 2.6 0 3 0 .7.2.9.3 1.8.2.5 0 .8.4 1 .7.5.5.6.8.5 1.2v.8c0 1.5 0 1.1-.2 0l-.2 1c0 .3.3.9.4 1.1-.2 0-.6.8-.3 1h-1.1s.1-.2.4-.2v-1.3c.2 0-.1 1.1-.5 1.2v.3h-1s.2-.3.4-.3c.6-1.3 0-2 0-2.2-.6 1.1-2.9.9-3.4.7 0 .3 0 1.2.4 1.6v.2h-1l.2-.3c.1-.3-.5-.9-.5-1.3-.1 0-.2.3-.2.7 0 .5-.3.5 0 .7.3.4-.9.2-1.2.2 0-.2.2-.2.4-.3.3-.1 0-1.3-.2-1.6-.1 0-.5 0-.7.2a16 16 0 0 1-1 1.6h-1c-.1.1-.3-.3-.4-.4-.4 0-1.2-.8-1.1-1.2l1 .3c0-.1-.3-.6-.1-.5l.6-.1c.3-.3.3-.8.4-1.3-.2 0-.4-.7-.3-.8.1.2.3.4.5.4 0-.4 0-.8.5-.6z"
                                   class="photo-subject suggestion-icon-rhino objective"/>
                             <rect id="boxDone2" width="14.7" height="10.9" x="-293.1" y="46.5" fill="#19ff00"
@@ -1264,7 +1110,7 @@
                                   rx="1.8"/>
                         </g>
                         <g id="g921">
-                            <path id="tag-moon" fill="url(#linearGradient5688-7)" stroke-dasharray="" stroke-width="1.8"
+                            <path id="tag-moon" stroke-dasharray="" stroke-width="1.8"
                                   d="M-251.5 47.7a4.2 4.2 0 0 0-4.1 4.2 4.2 4.2 0 0 0 4.1 4.2 4.2 4.2 0 0 0 .6 0 5 5 0 0 1-2.2-4.2 5 5 0 0 1 2.2-4.1 4.2 4.2 0 0 0-.6 0z"
                                   class="photo-subject tag-celestial tag-moon suggestion-icon-moon objective"/>
                             <rect id="boxDone3" width="14.7" height="10.9" x="-260.6" y="46.5" fill="#19ff00"
@@ -1272,13 +1118,12 @@
                                   rx="1.8"/>
                         </g>
                         <g id="g927">
-                            <g id="tag-sun" stroke-dasharray=""
+                            <g id="tag-sun" fill="#090909" stroke-dasharray=""
                                class="photo-subject tag-celestial tag-sun suggestion-icon-sun objective"
                                transform="translate(-450.6 24.9) scale(1.73719)">
-                                <path id="path1299-0-5-6" fill="url(#linearGradient6756)" stroke-width="0"
+                                <path id="path1299-0-5-6" stroke-width="0"
                                       d="M132.2 12.8l-.7 1-1.3-.1.3 1.2-1 .8 1 .7-.1 1.2 1.2-.3.8 1 .7-1 1.2.1-.3-1.2 1-.7-1-.7.2-1.3-1.3.3zm0 1.2a1.6 1.6 0 0 1 1.7 1.6 1.6 1.6 0 0 1-1.6 1.6 1.6 1.6 0 0 1-1.6-1.6 1.6 1.6 0 0 1 1.6-1.6z"/>
-                                <circle id="sunOrb1-8-6" cx="132.3" cy="15.6" r="1" fill="url(#linearGradient6632)"
-                                        stroke-width=".2"/>
+                                <circle id="sunOrb1-8-6" cx="132.3" cy="15.6" r="1" stroke-width=".2"/>
                             </g>
                             <rect id="boxDone4" width="14.7" height="10.9" x="-228.2" y="46.5" fill="#19ff00"
                                   stroke-dasharray="" stroke-linecap="round" class="objective-box" opacity="0"
@@ -1312,7 +1157,7 @@
                   d="M85.1 86v-1.5c0-.1.2-.2.5-.2h2.2c.2 0 .4 0 .4.2V86z"/>
         </g>
     </g>
-    <g id="splashScreenGroup" transform="matrix(1.01053 0 0 1 0 300)">
+    <g id="splashScreenGroup" display="none" transform="matrix(1.01053 0 0 1 0 300)">
         <path id="rect3421" stroke-dasharray="" stroke-width="5" d="M0-345.7h1900V826.2H0z"/>
         <g id="g25418" transform="translate(14.4)">
             <rect id="rect3424" width="1399" height="685.4" x="236.1" y="-41.8" fill="#fff" stroke="#0a0a0a"
