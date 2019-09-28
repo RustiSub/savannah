@@ -14,8 +14,6 @@ window.addEventListener("load", async function() {
   var Vector = wrect.Physics.Vector;
 
   let zoomClamp = 0.45;
-  //zoomClamp = 0.1;
-  //zoomClamp = 1.5;
 
   var zoomLevel = zoomClamp;
 
@@ -1570,8 +1568,6 @@ window.addEventListener("load", async function() {
     }
 
     levels[currentLevel].level.show();
-
-    console.log(levels);
   }
 
   buildTagList();
@@ -1591,8 +1587,6 @@ window.addEventListener("load", async function() {
 
   function updateHighScore() {
     var likeHighScore;
-
-    //console.log(highScoreLikes, photos.length);
 
     likeHighScore = Math.ceil(highScoreLikes / photos.length);
 
@@ -1646,7 +1640,7 @@ window.addEventListener("load", async function() {
 
       subjectCount += 1;
       total += subTtotal;
-console.log(subject.classes());
+
       subject.classes().forEach(function (tagClass) {
         if (levels[currentLevel]['objectives'][tagClass]) {
           levels[currentLevel]['objectives'][tagClass].found = true;

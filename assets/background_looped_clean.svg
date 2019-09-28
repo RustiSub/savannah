@@ -41,13 +41,13 @@
      inkscape:window-height="856"
      id="namedview12664"
      showgrid="false"
-     inkscape:zoom="0.24479168"
-     inkscape:cx="717.9865"
-     inkscape:cy="605.74706"
+     inkscape:zoom="0.34618771"
+     inkscape:cx="427.03367"
+     inkscape:cy="534.89698"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
-     inkscape:current-layer="introGroup"
+     inkscape:current-layer="scene2Group"
      inkscape:snap-global="true" />
   <defs
      id="defs2">
@@ -1384,7 +1384,7 @@
        id="nightFilter2"
        d="M 1920,-1779.5 H 3840 V 1688.2 H 1920 Z"
        inkscape:connector-curvature="0"
-       style="display:none;fill:url(#linearGradient3500-7);stroke-width:4.19999981;stroke-dasharray:none" />
+       style="display:inline;fill:url(#linearGradient3500-7);stroke-width:4.19999981;stroke-dasharray:none" />
     <g
        id="nightLights"
        transform="translate(-10.9,-15.4)">
@@ -2133,7 +2133,7 @@
          id="nightFilter1"
          d="M 0,-470.1 H 508 V 447.4 H 0 Z"
          inkscape:connector-curvature="0"
-         style="display:none;fill:url(#linearGradient3500);stroke-width:1.10000002;stroke-dasharray:none" />
+         style="display:inline;fill:url(#linearGradient3500);stroke-width:1.10000002;stroke-dasharray:none" />
       <g
          id="animalPath.oasis.group"
          transform="translate(222,-2.8)">
@@ -3125,7 +3125,8 @@
                  width="100%"
                  height="100%"
                  transform="matrix(0.06854387,0,0,0.06854387,-350.65108,12.669029)"
-                 inkscape:label="tag-rhino" />
+                 inkscape:label="tag-rhino"
+                 class="objective" />
             </g>
             <g
                id="g921">
@@ -3147,7 +3148,8 @@
                  width="100%"
                  height="100%"
                  transform="matrix(0.07007572,0,0,0.07007572,-386.65388,-55.247825)"
-                 inkscape:label="tag-moon" />
+                 inkscape:label="tag-moon"
+                 class="objective" />
             </g>
             <g
                id="g927">
@@ -3267,7 +3269,7 @@
   <g
      id="splashScreenGroup"
      transform="matrix(1.01053,0,0,1,0,300)"
-     style="display:none">
+     style="display:inline">
     <path
        id="rect3421"
        d="M 0,-345.7 H 1900 V 826.2 H 0 Z"
