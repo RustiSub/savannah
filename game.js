@@ -1054,6 +1054,7 @@ window.addEventListener("load", async function() {
     characterDataOldValue: true
   };
 
+
   var scene1Observer = new MutationObserver(function (mutationsList) {
     mutationsList.forEach(mutation => {
       var scene1Width = scene1Group.node.getBBox().width;
@@ -1756,6 +1757,7 @@ window.addEventListener("load", async function() {
     var clonedBackground = parent.clone(slot1);
 
     var clonedCameraGraphic = clonedBackground.select('.camera-group').first();
+
     clonedCameraGraphic.hide();
 
     clonedBackground.width(clonedBackground.width() / albumSlotSizeMode);
