@@ -12,6 +12,10 @@
     - **Right click** - Camera Lock/Unlock
     - **Move mouse** - Camera Pan
 - Camera GUI
+    - **Top Left** - Battery
+        - Taking pictures drains your Battery
+        - The battery will slowly charge
+        - If you drain all your battery, you won't be able to access the Camera until it is recharged!
     - **Top Middle** - Objectives         
         - Take a picture of a subject to clear the Objective
         - Clear all the Objectives and hit the Share Button! 

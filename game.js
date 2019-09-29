@@ -534,9 +534,10 @@ window.addEventListener("load", async function() {
     clouds1.x(400 * opacity);
     clouds2.x(200 * opacity);
 
-    if (gameTimer < situation.loop) {
-      gameTimer = situation.loop;
-      //depleteBattery();
+    if (gameTimer < situation.loop / 2) {
+      gameTimer = situation.loop / 2;
+
+      depleteBattery(1);
     }
 
     sun1.translate(
@@ -1010,6 +1011,10 @@ window.addEventListener("load", async function() {
   var zoomTotal = 0;
 
   var mouseWheelHandler = (event) => {
+    if (batteryPower <= 0) {
+      return;
+    }
+
     if (!introFinished) {
       return;
     }
@@ -1165,11 +1170,18 @@ window.addEventListener("load", async function() {
       return;
     }
 
+    if (batteryPower <= 0) {
+      menuBleep();
+      return;
+    }
+
     if (Object.keys(photos).length >= maxPhotoCount) {
       playAudio(guiBleepAudio);
 
       return;
     }
+
+    depleteBattery();
 
     captureImage();
 
@@ -1422,6 +1434,49 @@ window.addEventListener("load", async function() {
       return false;
     });
   }
+
+  var batteryPower = 5;
+
+  var depleteBattery = function(charge) {
+    charge = charge || -1;
+
+    if (charge > 0) {
+      if (batteryPower === 0) {
+        zoomClamp = 0.43;
+        zoomLevel = zoomClamp;
+        cameraZoom(sceneParent, zoomLevel);
+      }
+      batteryPower += charge;
+      batteryPower = batteryPower === 5 ? 5 : batteryPower;
+
+      var batteryPowerBar = SVG.adopt(background.getElementById('batteryPowerBar.' + batteryPower));
+      batteryPowerBar.style('opacity', 1);
+    } else {
+      var batteryPowerBar = SVG.adopt(background.getElementById('batteryPowerBar.' + batteryPower));
+      batteryPowerBar.style('opacity', 0.1);
+
+      batteryPower += charge;
+    }
+
+    if (batteryPower <= 2) {
+      cameraGraphic.style({opacity: 0.3 + ((batteryPower / 5) * 0.2)});
+    }
+
+    if (batteryPower <= 2) {
+      menuBleep();
+    }
+
+    if (batteryPower === 0) {
+      cameraGraphic.animate(1000).style({opacity: 0});
+
+      zoomClamp = 0.55;
+      zoomLevel = zoomClamp;
+      cameraZoom(sceneParent, zoomLevel);
+    }
+
+    return true;
+  };
+
 
   function captureImage() {
     if (!introFinished) {
