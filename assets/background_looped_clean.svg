@@ -41,13 +41,13 @@
      inkscape:window-height="856"
      id="namedview12664"
      showgrid="false"
-     inkscape:zoom="0.34618771"
-     inkscape:cx="427.03367"
-     inkscape:cy="534.89698"
+     inkscape:zoom="0.9791667"
+     inkscape:cx="968.1674"
+     inkscape:cy="801.04563"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
-     inkscape:current-layer="scene2Group"
+     inkscape:current-layer="g3691"
      inkscape:snap-global="true" />
   <defs
      id="defs2">
@@ -2367,7 +2367,7 @@
   <g
      id="introGroup"
      transform="matrix(3.04336,0,0,3.04336,-2586.2,-1573.5)"
-     style="display:inline;stroke-dasharray:none">
+     style="display:none;stroke-dasharray:none">
     <path
        id="fakeLight"
        d="m 850.8,-60.3 h 627.3 V 1068.8 H 850.8 Z"
@@ -3066,10 +3066,24 @@
              x="-111.8"
              y="79.30616" />
         </g>
+        <rect
+           style="display:inline;opacity:1;vector-effect:none;fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:1.01783371;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect15496-2"
+           width="13.990992"
+           height="13.022968"
+           x="-62.988258"
+           y="-0.36257946" />
         <g
            id="objectiveBox3"
            transform="matrix(0.25392,0,0,0.25392,-34.6,-20.5)"
            style="fill:none;stroke:#000000;stroke-width:2.9000001;stroke-dasharray:none" />
+        <rect
+           style="display:inline;opacity:1;vector-effect:none;fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:1.01783371;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect15496-3"
+           width="13.990992"
+           height="13.022968"
+           x="-30.465254"
+           y="-0.21131854" />
         <g
            id="objectiveBox4"
            transform="matrix(0.25392,0,0,0.25392,-2.1,-20.5)"
@@ -3188,20 +3202,6 @@
             </g>
           </g>
         </g>
-        <rect
-           style="display:inline;opacity:1;vector-effect:none;fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:1.01783371;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-           id="rect15496-2"
-           width="13.990992"
-           height="13.022968"
-           x="-62.988258"
-           y="-0.36257946" />
-        <rect
-           style="display:inline;opacity:1;vector-effect:none;fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:1.01783371;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-           id="rect15496-3"
-           width="13.990992"
-           height="13.022968"
-           x="-30.465254"
-           y="-0.21131854" />
       </g>
       <path
          id="path3011-9"
@@ -3269,7 +3269,7 @@
   <g
      id="splashScreenGroup"
      transform="matrix(1.01053,0,0,1,0,300)"
-     style="display:inline">
+     style="display:none">
     <path
        id="rect3421"
        d="M 0,-345.7 H 1900 V 826.2 H 0 Z"

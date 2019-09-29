@@ -10,9 +10,6 @@ window.addEventListener("load", async function() {
     img.replaceWith(svg);
   }
 
-
-  var Vector = wrect.Physics.Vector;
-
   let zoomClamp = 0.45;
 
   var zoomLevel = zoomClamp;
@@ -192,8 +189,8 @@ window.addEventListener("load", async function() {
             var rotation = 0;
 
             if (previousOasisPoint) {
-              var p1 = new Vector(p.x, p.y);
-              var p2 = new Vector(previousOasisPoint.x, previousOasisPoint.y);
+              var p1 = p;
+              var p2 = previousOasisPoint;
 
               var angle = Math.atan2((p2.y - p1.y),
                   (p2.x - p1.x));
@@ -259,8 +256,8 @@ window.addEventListener("load", async function() {
             var rotation = 0;
 
             if (previousSkyPoint) {
-              var p1 = new Vector(p.x, p.y);
-              var p2 = new Vector(previousSkyPoint.x, previousSkyPoint.y);
+              var p1 = p;
+              var p2 = previousSkyPoint;
 
               var angle = Math.atan2((p2.y - p1.y),
                   (p2.x - p1.x));
@@ -315,8 +312,8 @@ window.addEventListener("load", async function() {
             var rotation = 0;
 
             if (previousCliffPoint) {
-              var p1 = new Vector(p.x, p.y);
-              var p2 = new Vector(previousCliffPoint.x, previousCliffPoint.y);
+              var p1 = p;
+              var p2 = previousCliffPoint;
 
               var angle = Math.atan2((p2.y - p1.y),
                   (p2.x - p1.x));
@@ -366,8 +363,8 @@ window.addEventListener("load", async function() {
         var rotation = 0;
 
         if (previousSeaPoint) {
-          var p1 = new Vector(p.x, p.y);
-          var p2 = new Vector(previousSeaPoint.x, previousSeaPoint.y);
+          var p1 = p;
+          var p2 = previousSeaPoint;
 
           var angle = Math.atan2( (p2.y - p1.y),
               (p2.x - p1.x) );
@@ -981,9 +978,10 @@ window.addEventListener("load", async function() {
     event.preventDefault();
 
     var deadZone = cameraDeadZone.width() / 2;
-    var mouseVector = new Vector(event.x, event.y);
-    var cameraCenterVector = new Vector(camera.cx(), camera.cy());
-    var distanceVector = mouseVector.distance(cameraCenterVector);
+    var mouseVector = {x: event.x, y: event.y};
+    var cameraCenterVector = {x: camera.cx(), y: camera.cy()};
+    var tempV = {x: mouseVector.x - cameraCenterVector.x, y: mouseVector.y - cameraCenterVector.y};
+    var distanceVector = Math.sqrt(tempV.x * tempV.x + tempV.y * tempV.y);
 
     if (distanceVector > deadZone) {
       moveDistance.x = camera.cx() - event.x;
