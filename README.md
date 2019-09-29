@@ -24,3 +24,17 @@
             - Each Gallery Thumb Nail has a Delete Button
                 - This Deletes the Picture (without confirmation)
     - **Bottom Left** - Controls
+- Sources
+    - Game built as part of "Gynvael's Summer GameDev Challenge 2019"
+        - https://gynvael.coldwind.pl/?lang=en&id=719
+    - Graphics created with Inkscape
+        - https://inkscape.org/
+    - Animations and scene management with SVG.js
+        - https://github.com/svgdotjs/svg.js
+        - Path Morphing with svg.pathmorphing.js
+            - https://github.com/svgdotjs/svg.pathmorphing.js
+    - Music and SFX created with Soundbox
+        - https://sb.bitsnbites.eu/
+- Special Thanks
+    - BDaenen / Vassildador - For all the help with crushing the file size and overal gamedev (morale) support!
+        - https://github.com/bdaenen
