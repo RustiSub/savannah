@@ -1,7 +1,7 @@
 # Shutterbug
 - Requirements
     - There is **sound** so unmute your headphones / speakers
-    - The Game is exclusively played with a **2+ button mouse**
+    - The Game is exclusively played with a **2+ button + mousewheel mouse**
     - The Game itself should contain all the info needed to play    
 - Start 
     - **Start** - view intro and start the game
