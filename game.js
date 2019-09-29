@@ -774,7 +774,7 @@ window.addEventListener("load", async function() {
     ;
     startButtonAlarm.show();
     startButtonAlarm.style({opacity: 1});
-    var startButtonAlarmAnimation = startButtonAlarm.animate(500).style({opacity: 0}).loop();
+    var startButtonAlarmAnimation = startButtonAlarm.animate(1000).style({opacity: 0}).loop();
 
     startButtonAlarm.click(function () {
           startButtonAlarmAnimation.finish();
@@ -787,7 +787,6 @@ window.addEventListener("load", async function() {
               .after(function () {
                 afterStartButton();
               })
-              .animate(6000).style({opacity: 0})
           ;
         }
     );
@@ -807,6 +806,9 @@ window.addEventListener("load", async function() {
 
       tentDoorRight
           .delay(6000)
+          .during(function (pos, moprhed, eased) {
+            fakeDarkness.opacity(1 - (1 * eased));
+          })
           .animate(3000)
           //.delay(2000)
           .plot(tentDoorRightOpen.array())
