@@ -23,9 +23,8 @@ window.addEventListener("load", async function() {
   let moveClamp = 200;
 
   let cycleLength = 60000;
-  let batteryChargeTime = 1;
 
-  var musicAudio;
+  var musicAudio = {};
   var zoomInAudio;
   var zoomOutAudio;
   var cameraClickAudio;
@@ -61,20 +60,6 @@ window.addEventListener("load", async function() {
 
     sunGroup1.y(sunGroup1.y() + y);
     sunGroup2.y(sunGroup2.y() + y);
-  }
-
-  function moveCameraTo(x, y) {
-    nestedScene1Parent.x(x);
-    nestedScene2Parent.x(x);
-
-    sunGroup1.x(x);
-    sunGroup2.x(x);
-
-    nestedScene1Parent.y(y);
-    nestedScene2Parent.y(y);
-
-    sunGroup1.y(y);
-    sunGroup2.y(y);
   }
 
   var parent = document.querySelector('#svg8');
@@ -130,24 +115,9 @@ window.addEventListener("load", async function() {
   //Sea
   var seaUpper = SVG.adopt(background.getElementById('seaUpper'));
   var seaUpperWaves1 = SVG.adopt(background.getElementById('seaUpper.waves.1'));
-  var seaUpperWaves2 = SVG.adopt(background.getElementById('seaUpper.waves.2'));
-  var seaUpperWaves3 = SVG.adopt(background.getElementById('seaUpper.waves.3'));
   seaUpperWaves1.hide();
-  /*  seaUpperWaves2.hide();
-    seaUpperWaves3.hide();*/
-  var calmSea = seaUpper.array();
 
   function startWaves() {
-    /*    seaUpper
-            .animate(5000, '<').plot(seaUpperWaves1.array())
-            .delay(1000)
-    /!*        .animate(5000, '<').plot(seaUpperWaves2.array())
-            .animate(5000, '>').plot(seaUpperWaves3.array())*!/
-            .animate(10000).plot(calmSea)
-            .after(function () {
-              startWaves();
-            })
-        ;*/
   }
 
   var seaShoreWaves = SVG.adopt(background.getElementById('seaShoreWaves'));
@@ -168,10 +138,7 @@ window.addEventListener("load", async function() {
   }
 
   startShoreWaves();
-
-//seaUpper.waves.1
   startWaves();
-  console.log(seaUpper);
 
   // Animals
 
@@ -420,12 +387,10 @@ window.addEventListener("load", async function() {
   ;
 
   //Rhino
-  var rhinoGroup = SVG.adopt(background.getElementById('rhinoGroup'));
   var rhinoWrapper = SVG.adopt(background.getElementById('rhinoWrapper'));
   var rhino = SVG.adopt(background.getElementById('rhino'));
   var rhinoPath = rhino.array();
   var rhinoHeadUpPath = SVG.adopt(background.getElementById('rhino.head.up'));
-  var rhinoWalk1 = SVG.adopt(background.getElementById('rhino.walk.1'));
   var rhinoWalk2 = SVG.adopt(background.getElementById('rhino.walk.2'));
   var rhinoWalk3 = SVG.adopt(background.getElementById('rhino.walk.3'));
   var rhinoWalk4 = SVG.adopt(background.getElementById('rhino.walk.4'));
@@ -550,22 +515,6 @@ window.addEventListener("load", async function() {
 
   var timerGroup = SVG.adopt(background.getElementById('timerGroup'));
 
-  var chargeRate = 0.10;
-  var sunChargeTimes = [
-    {time: 0.75, charged: false},
-    {time: 0.90, charged: false},
-    {time: 0.95, charged: false},
-    {time: 0.05, charged: false},
-    {time: 0.10, charged: false},
-    {time: 0.25, charged: false}
-  ];
-
-  var moonChargeTimes = [
-    {time: 0.40, charged: false},
-    {time: 0.50, charged: false},
-    {time: 0.60, charged: false},
-  ];
-
   var sun1Animation = sun1.animate(cycleLength, '-').during(function(pos, morph, eased, situation) {
     var p = sunPath1.pointAt((eased) * sunPath1Length);
 
@@ -637,11 +586,6 @@ window.addEventListener("load", async function() {
   var sun2Animation = sun2.animate(cycleLength, '-').during(function(pos, morph, eased, situation){
     var p = sunPath1.pointAt((eased) * sunPath2Length);
 
-    if (gameTimer < situation.loop) {
-      gameTimer = situation.loop;
-      depleteBattery();
-    }
-
     sun2.translate(
         p.x - ((sun2.node.getBBox().x + (sun2.node.getBBox().width / 2)) * sun2.transform().scaleX),
         p.y - ((sun2.node.getBBox().y + (sun2.node.getBBox().height / 2)) * sun2.transform().scaleY)
@@ -660,34 +604,7 @@ window.addEventListener("load", async function() {
     );
   }).loop().pause();
 
-  var batteries = {};
-  var batteryPower = 5;
 
-  var depleteBattery = function() {
-    return true;
-    if (!batteries[batteryPower]) {
-      // stopGame();
-
-      return false;
-    }
-
-    batteries[batteryPower].animate(batteryChargeTime).style('opacity', 0.1);
-
-    batteryPower -= 1;
-
-    return true;
-  };
-
-  function batteryCharge() {
-    return;
-    if (batteryPower !== 5) {
-      batteryPower += 1;
-
-      batteries[batteryPower].animate(batteryChargeTime).style('opacity', 1);
-    }
-  }
-
-  var batteryGroup = SVG.adopt(background.getElementById('batteryGroup'));
   var galleryIconFull = SVG.adopt(background.getElementById('galleryIconFull'));
   var galleryIconPreview = SVG.adopt(background.getElementById('galleryIconPreview'));
 
@@ -696,14 +613,11 @@ window.addEventListener("load", async function() {
   });
 
   galleryIconFull.click(function() {
-    console.log('galleryIconFull');
     toggleGallery();
   });
 
   galleryIconFull.hide();
   galleryIconPreview.hide();
-
-  var powerUpAnimation;
 
   function startSun() {
     sun1Animation.play();
@@ -716,37 +630,6 @@ window.addEventListener("load", async function() {
     startFireFly();
   }
 
-  // Battery Power & Game End
-  for (var b = 5; b >= 1; b--) {
-    var nextBar;
-    var batteryPowerBar = SVG.adopt(background.getElementById('batteryPowerBar.' + b));
-
-    batteryPowerBar.style('opacity', 0.1);
-
-    powerUpAnimation = batteryPowerBar.animate(50).style('opacity', 1);
-    powerUpAnimation.pause();
-
-    if (nextBar) {
-      var loadNextBarFunction = function(barAnimation) {
-        return function(situation) {
-          barAnimation.play();
-        };
-      } (nextBar);
-
-      powerUpAnimation.after(loadNextBarFunction);
-    } else {
-      powerUpAnimation.after(function() {
-        batteryPower = 5;
-      });
-    }
-
-    nextBar = batteryPowerBar;
-
-    batteries[b] = batteryPowerBar;
-  }
-
-  nextBar = null;
-
   // Intro
 
   gameState = 0;
@@ -754,12 +637,10 @@ window.addEventListener("load", async function() {
   var introGroup = SVG.adopt(background.getElementById('introGroup'));
 
   introGroup.toParent(scene1Group);
-  //introGroup.hide();
 
   var fakeDarkness = SVG.adopt(background.getElementById('fakeDarkness'));
   var fakeLight = SVG.adopt(background.getElementById('fakeLight'));
   var tentFabric = SVG.adopt(background.getElementById('tentFabric'));
-  var tentGroup = SVG.adopt(background.getElementById('tentGroup'));
   var startButtonAlarm = SVG.adopt(background.getElementById('startButton'));
 
   var tentDoorLeft = SVG.adopt(background.getElementById('tentDoorLeft'));
@@ -773,7 +654,7 @@ window.addEventListener("load", async function() {
   var skipIntroButton = SVG.adopt(background.getElementById('skipIntroButton'));
   var splashStartButton = SVG.adopt(background.getElementById('splashStartButton'));
   var splashScreenLens = SVG.adopt(background.getElementById('splashScreenLens'));
-  console.log(splashScreenLens);
+
   splashScreenGroup.hide();
 
   function splashScreen() {
@@ -948,7 +829,6 @@ window.addEventListener("load", async function() {
             tentFabric.animate(2000).style({opacity: 0})
                 .after(function () {
                   introGroup.hide();
-                  powerUpAnimation.play();
                   cameraGraphic.animate(500).style({opacity: 0.50})
                       .during(function (pos) {
                         zoomClamp = 0.43;
@@ -973,8 +853,6 @@ window.addEventListener("load", async function() {
                             introGroup.hide();
 
                             introFinished = true;
-
-                            //outro();
                           }
                       );
                 })
@@ -991,38 +869,9 @@ window.addEventListener("load", async function() {
     y: nestedScene1Parent.y()
   };
 
-  function outro() {
-    gameState = 2;
-
-    mouseCameraLocked = true;
-
-    introGroup.show();
-    //fakeDarkness.hide();
-
-    cameraGraphic.animate(3000).style({opacity: 0})
-        .during(function(pos) {
-          moveCamera(
-              (cameraState.afterIntro.x - nestedScene1Parent.x()) * (pos / 60 * 3),
-              (cameraState.afterIntro.y - nestedScene1Parent.y()) * (pos  / 60 * 3)
-          );
-
-          zoomClamp = cameraState.afterIntro.zoomClamp;
-          cameraZoom(sceneParent,  zoomLevel - ((zoomLevel - cameraState.afterIntro.zoom) * pos));
-        })
-        .after(function() {
-          tentFabric.animate(2000).style({opacity: 1})
-              .after(function() {
-              })
-          ;
-        })
-    ;
-  }
-
   // Game Start
 
   function startGame() {
-    console.log('Game Start');
-
     musicAudio.play();
 
     zoomClamp = 0.43;
@@ -1036,19 +885,6 @@ window.addEventListener("load", async function() {
     moon2Animation.at(sunPos - 0.5, true);
 
     toggleCameraLock(true);
-
-    powerUpAnimation.play();
-  }
-
-  function stopGame() {
-    console.log('Game Stop');
-
-    gameState = 0;
-
-    sun1Animation.pause();
-    sun2Animation.pause();
-    moon1Animation.pause();
-    moon2Animation.pause();
   }
 
   const mutationConfig = {
@@ -1130,10 +966,6 @@ window.addEventListener("load", async function() {
 
   cameraZoom(sceneParent, zoomLevel);
 
-  const useEventType = (typeof window.PointerEvent === 'function') ? 'pointer' : 'mouse';
-
-
-
   var cameraDeadZone = background.getElementById('cameraDeadZone');
   cameraDeadZone = SVG.adopt(cameraDeadZone);
 
@@ -1213,51 +1045,6 @@ window.addEventListener("load", async function() {
 
   background.addEventListener('mousewheel', mouseWheelHandler);
 
-  background.addEventListener('keydown',
-      function (event) {
-        //event.stopPropagation();
-        //event.preventDefault();
-
-        var movement = 50 / (Math.abs(zoomLevel));
-
-        switch (event.keyCode) {
-          case 69:
-            break;
-          case 37:
-            nestedScene1Parent.x(nestedScene1Parent.x() + movement);
-            nestedScene2Parent.x(nestedScene2Parent.x() + movement);
-            break;
-          case 39:
-            nestedScene1Parent.x(nestedScene1Parent.x() - movement);
-            nestedScene2Parent.x(nestedScene2Parent.x() - movement);
-            break;
-          case 38:
-            nestedScene1Parent.y(nestedScene1Parent.y() + movement);
-            nestedScene2Parent.y(nestedScene2Parent.y() + movement);
-            break;
-          case 40:
-            nestedScene1Parent.y(nestedScene1Parent.y() - movement);
-            nestedScene2Parent.y(nestedScene2Parent.y() - movement);
-            break;
-          case 90:
-            zoomLevel += 1;
-
-            cameraZoom(sceneParent, zoomLevel);
-            break;
-          case 83:
-            zoomLevel -= 1;
-
-            cameraZoom(sceneParent, zoomLevel);
-            break;
-          case 32:
-            focusEnabled = !focusEnabled;
-            break;
-        }
-      }
-  );
-
-  var focusEnabled = false;
-
   background.addEventListener('contextmenu', function(event) {
     event.preventDefault();
 
@@ -1268,11 +1055,6 @@ window.addEventListener("load", async function() {
   var galleryBackground = SVG.adopt(background.getElementById('galleryBackground'));
 
   galleryBackground.hide();
-
-  galleryBackground.click(function() {
-    console.log('galleryBackground');
-    //toggleGallery();
-  });
 
   galleryIcon.mouseover(function() {
     galleryIcon.style({opacity: 1});
@@ -1303,7 +1085,6 @@ window.addEventListener("load", async function() {
     }
   }
   galleryIcon.click(function(event) {
-    console.log('galleryIcon');
     event.preventDefault();
 
     toggleGallery();
@@ -1328,9 +1109,9 @@ window.addEventListener("load", async function() {
 
   album.hidden = true;
 
-  function loadZoomOutAudio() {
+  function loadAudioTrack(sound, volume, callback) {
     var player = new CPlayer();
-    player.init(zoomOut);
+    player.init(sound);
 
     // Generate music...
     var done = false;
@@ -1344,107 +1125,11 @@ window.addEventListener("load", async function() {
       if (done) {
         // Put the generated song in an Audio element.
         var wave = player.createWave();
-        zoomOutAudio = document.createElement("audio");
-        zoomOutAudio.src = URL.createObjectURL(new Blob([wave], {type: "audio/wav"}));
-        zoomOutAudio.volume = 0.75;
+        var audio = document.createElement("audio");
+        audio.src = URL.createObjectURL(new Blob([wave], {type: "audio/wav"}));
+        audio.volume = volume;
 
-        audioLoaded++;
-      }
-    }, 0);
-  }
-
-  function loadZoomInAudio() {
-    var player = new CPlayer();
-    player.init(zoomIn);
-
-    // Generate music...
-    var done = false;
-    setInterval(function () {
-      if (done) {
-        return;
-      }
-
-      done = player.generate() >= 1;
-
-      if (done) {
-        // Put the generated song in an Audio element.
-        var wave = player.createWave();
-        zoomInAudio = document.createElement("audio");
-        zoomInAudio.src = URL.createObjectURL(new Blob([wave], {type: "audio/wav"}));
-
-        audioLoaded++;
-      }
-    }, 0);
-  }
-
-  function loadMusicAudio() {
-    var player = new CPlayer();
-    player.init(song);
-
-    // Generate music...
-    var done = false;
-    setInterval(function () {
-      if (done) {
-        return;
-      }
-
-      done = player.generate() >= 1;
-
-      if (done) {
-        // Put the generated song in an Audio element.
-        var wave = player.createWave();
-        musicAudio = document.createElement("audio");
-        musicAudio.src = URL.createObjectURL(new Blob([wave], {type: "audio/wav"}));
-        musicAudio.loop = true;
-        musicAudio.volume = 0.50;
-
-        audioLoaded++;
-      }
-    }, 0);
-  }
-
-  function loadCameraClickAudio() {
-    var player = new CPlayer();
-    player.init(cameraClickSound);
-
-    // Generate music...
-    var done = false;
-    setInterval(function () {
-      if (done) {
-        return;
-      }
-
-      done = player.generate() >= 1;
-
-      if (done) {
-        // Put the generated song in an Audio element.
-        var wave = player.createWave();
-        cameraClickAudio = document.createElement("audio");
-        cameraClickAudio.src = URL.createObjectURL(new Blob([wave], {type: "audio/wav"}));
-
-        audioLoaded++;
-      }
-    }, 0);
-  }
-
-  function loadGuiBleepAudio() {
-    var player = new CPlayer();
-    player.init(guiBleep);
-
-    // Generate music...
-    var done = false;
-    setInterval(function () {
-      if (done) {
-        return;
-      }
-
-      done = player.generate() >= 1;
-
-      if (done) {
-        // Put the generated song in an Audio element.
-        var wave = player.createWave();
-        guiBleepAudio = document.createElement("audio");
-        guiBleepAudio.src = URL.createObjectURL(new Blob([wave], {type: "audio/wav"}));
+        callback(audio);
 
         audioLoaded++;
       }
@@ -1455,11 +1140,11 @@ window.addEventListener("load", async function() {
   var audioTracks = 5;
 
   function loadAudio() {
-    loadMusicAudio();
-    loadCameraClickAudio();
-    loadZoomInAudio();
-    loadZoomOutAudio();
-    loadGuiBleepAudio();
+    loadAudioTrack(song, 0.5, function(audio) { musicAudio = audio; musicAudio.loop = true; });
+    loadAudioTrack(cameraClickSound, 1, function(audio) { cameraClickAudio = audio; });
+    loadAudioTrack(zoomIn, 1, function(audio) { zoomInAudio = audio; });
+    loadAudioTrack(zoomOut, 0.5, function(audio) { zoomOutAudio = audio; });
+    loadAudioTrack(guiBleep, 0.5, function(audio) { guiBleepAudio = audio; });
 
     return true;
   }
@@ -1505,17 +1190,6 @@ window.addEventListener("load", async function() {
 
     return event;
   });
-
-  var objectiveBar =  SVG.adopt(background.getElementById('objectiveBar'));
-  var objectiveBoxes = {
-    1: SVG.adopt(background.getElementById('objectiveBox1')),
-    2: SVG.adopt(background.getElementById('objectiveBox2')),
-    3: SVG.adopt(background.getElementById('objectiveBox3')),
-    4: SVG.adopt(background.getElementById('objectiveBox4')),
-  };
-
-  var objectivesGroup =  SVG.adopt(background.getElementById('objectives'));
-
 
   var tagList = {};
 
@@ -1579,24 +1253,6 @@ window.addEventListener("load", async function() {
   var highScoreLikes = 0;
   var photos = {};
 
-  //Sharebutton
-  var shareButton = SVG.adopt(background.getElementById('shareButton'));
-  var likesGlobal = SVG.adopt(background.getElementById('likesGlobal'));
-  var likesGroup = SVG.adopt(background.getElementById('likesGroup'));
-  var starsGroupScore = SVG.adopt(background.getElementById('starsGroupScore'));
-
-  function updateHighScore() {
-    var likeHighScore;
-
-    likeHighScore = Math.ceil(highScoreLikes / photos.length);
-
-    for (var s=1; s <= likeHighScore; s++) {
-      var scoreLike = likesGroup.select('#starsGroupHighScore' + s).first();
-
-      scoreLike.style({ fill: '#FFF', opacity: 1 });
-      scoreLike.style('fill-opacity', 1);
-    }
-  }
 
   function scorePhoto(focusedPhoto) {
     if (!introFinished) {
@@ -1647,9 +1303,6 @@ window.addEventListener("load", async function() {
           levels[currentLevel]['objectives'][tagClass].boxDone.animate(1000).style({opacity: 0.5});
         }
       });
-
-
-      //console.log(scoring, subTtotal);
     });
 
     var levelDone = true;
@@ -1809,10 +1462,6 @@ window.addEventListener("load", async function() {
     );
   }
 
-  background.addEventListener('mousedown', function(event) {
-
-  });
-
   var cameraLockGroup = SVG.adopt(background.getElementById('cameraLockGroup'));
 
   function toggleCameraLock(lock) {
@@ -1871,9 +1520,6 @@ window.addEventListener("load", async function() {
   }
 
   function loop(timestamp) {
-    // if (gameState !== 1) {
-    //   return;
-    // }
     var progress = timestamp - lastRender;
 
     update(progress);
