@@ -14,7 +14,7 @@
 - Camera GUI
     - **Top Middle** - Objectives         
         - Take a picture of a subject to clear the Objective
-        - Clear all the Objectives to get a new set of Objectives
+        - Clear all the Objectives and hit the Share Button! 
     - **Top Right** - Current Sun/Moon Position  
     - **Bottom Right** - View Gallery
         - You can view all the Pictures you took

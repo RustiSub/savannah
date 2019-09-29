@@ -663,7 +663,7 @@ window.addEventListener("load", async function() {
         function() {
           introFinished = true;
 
-          introGroup.remove();
+          introGroup.hide();
 
           startSun();
           flash.front();
@@ -688,7 +688,7 @@ window.addEventListener("load", async function() {
                       function() {
                         startGame();
 
-                        splashScreenGroup.remove();
+                        splashScreenGroup.hide();
                       }
                   )
               ;
@@ -1010,6 +1010,10 @@ window.addEventListener("load", async function() {
   var zoomTotal = 0;
 
   var mouseWheelHandler = (event) => {
+    if (!introFinished) {
+      return;
+    }
+
     if (mouseCameraLocked) {
       return;
     }
@@ -1205,6 +1209,7 @@ window.addEventListener("load", async function() {
 
       levelObjectives.select('.objective').members.forEach(function(objective) {
         objectives[objective.id()] = {
+          level: levelObjectives,
           objective: objective,
           found: false,
           boxDone: objective.parent().select('.objective-box').members[0]
@@ -1253,6 +1258,9 @@ window.addEventListener("load", async function() {
   var highScoreLikes = 0;
   var photos = {};
 
+  var shareAnimation;
+
+  var levelComplete = false;
 
   function scorePhoto(focusedPhoto) {
     if (!introFinished) {
@@ -1276,12 +1284,6 @@ window.addEventListener("load", async function() {
         return;
       }
 
-      /*      var rect = focusedPhoto.rect(rbox.width, rbox.height);
-            rect.x(rbox.x);
-            rect.y(rbox.y);
-            rect.stroke({ color: '#f06', opacity: 0.6, width: 5 });
-            rect.fill({ color: '#f06', opacity: 0 });*/
-
       let perfectScaleRatio = 0.75;
       let perfectCenter = 0.50;
 
@@ -1303,48 +1305,83 @@ window.addEventListener("load", async function() {
           levels[currentLevel]['objectives'][tagClass].boxDone.animate(1000).style({opacity: 0.5});
         }
       });
-    });
 
-    var levelDone = true;
-
-    /*levels[currentLevel]['objectives'].forEach(function(objective) {
-      levelDone = levelDone && objective.found;
-    });
-
-    console.log('levelDone', levelDone);*/
-
-    /*    let finalScore = Math.ceil(5 * (total / subjectCount));
-
-        var like = starsGroupScore.clone(focusedPhoto);
-        like.front();
-
-        for (var s=1; s <= finalScore; s++) {
-          var scoreLike = like.select('#starsGroupScore' + s).first();
-
-          scoreLike.style({ fill: '#FFF', opacity: 1 });
-          scoreLike.style('fill-opacity', 1);
+      for (var o of Object.values(levels[currentLevel]['objectives'])) {
+        if (!o.found) {
+          levelComplete = false;
+          break;
         }
 
-        highScoreLikes += finalScore;
+        levelComplete = o.found;
+      }
+    });
 
-        updateHighScore();*/
+    if (levelComplete) {
+      var circle = SVG.adopt(background.getElementById('path25234-2'));
+      shareAnimation = circle
+          .animate().attr({
+            fill: '#42f545'
+            , 'fill-opacity': 0.5
+          }).after(function () {
+            menuBleep();
+          })
+          .animate().attr({
+            'fill-opacity': 0.1
+          })
+          .loop();
+    }
   }
 
-  /*  shareButton.click(function() {
-      menuBleep();
+  var shareButton = SVG.adopt(background.getElementById('shareButton-5'));
 
-      photos.forEach(function(focusedPhoto) {
-        //scorePhoto(focusedPhoto);
-      });
+  shareButton.click(function() {
+
+    if (!levelComplete) {
+      return;
+    }
+
+    levels[currentLevel]['level'].hide();
+
+    var circle = SVG.adopt(background.getElementById('path25234-2'));
+    circle
+        .animate().attr({
+      fill: '#000'
+      , 'fill-opacity': 0.1
     });
 
-    shareButton.mouseover(function() {
-      shareButton.style({opacity: 1});
-    });
+    shareAnimation.finish();
 
-    shareButton.mouseout(function() {
-      shareButton.style({opacity: 0.50});
-    });*/
+    var p = 0;
+    for (var downnloadPhoto of Object.values(photos)) {
+      var clonedFocusedPhoto = downnloadPhoto.clone(parent);
+
+      clonedFocusedPhoto.width(1920);
+      clonedFocusedPhoto.height(1080);
+
+      downnloadPhoto.hide();
+
+      var deleteButtonCloned = clonedFocusedPhoto.select('.deleteButtonCloned' + downnloadPhoto.id()).first();
+
+      deleteButtonCloned.hide();
+
+      var svgBlob = new Blob([parent.node.outerHTML], {type:"image/svg+xml;charset=utf-8"});
+
+      var svgUrl = URL.createObjectURL(svgBlob);
+      var downloadLink = document.createElement("a");
+      downloadLink.href = svgUrl;
+      downloadLink.download = 'shutterbug_' + Math.round((new Date()).getTime() / 1000) + '_' + p +  ".svg";
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+
+      clonedFocusedPhoto.remove();
+      downnloadPhoto.remove();
+
+      p++;
+    }
+
+    photos = {};
+  });
 
   //Score Algorithme
 
