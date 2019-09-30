@@ -1447,7 +1447,7 @@ window.addEventListener("load", async function() {
         cameraZoom(sceneParent, zoomLevel);
       }
       batteryPower += charge;
-      batteryPower = batteryPower === 5 ? 5 : batteryPower;
+      batteryPower = batteryPower >= 5 ? 5 : batteryPower;
 
       var batteryPowerBar = SVG.adopt(background.getElementById('batteryPowerBar.' + batteryPower));
       batteryPowerBar.style('opacity', 1);
